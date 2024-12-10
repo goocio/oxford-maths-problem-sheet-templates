@@ -1,0 +1,103 @@
+\documentclass[answers]{exam}
+\usepackage{../MT2023}
+
+\title{Geometry -- Sheet 2\\Vector product, Vector algebra}
+\author{YOUR NAME HERE :)}
+\date{Michaelmas Term 2023}
+
+
+\begin{document}
+\maketitle
+\begin{questions}
+
+\question%1
+Write the equations of each of the following lines in the form $\mathbf{r} \wedge \mathbf{a}=\mathbf{b}$.
+\begin{parts}
+\part%1a
+The line through the points $(1,1,1)$ and $(1,2,3)$.
+
+\part%1b
+The line with equation $(x-1) / 2=y / 3=z+1$.
+
+\part%1c
+The intersection of the planes $x+y+z=1$ and $x-y-z=2$.
+\end{parts}
+
+
+
+\question%2 the fact you can represent cross products by matrices is *very* helpful, for example with angular velocity/momentum as you'll see in Dynamics
+Let \[
+	\mathbf{a}=\begin{pmatrix}
+		a_{1} \\
+		a_{2} \\
+		a_{3}
+	\end{pmatrix},\qquad \mathbf{b}=\begin{pmatrix}
+		b_{1} \\
+		b_{2} \\
+		b_{3}
+	\end{pmatrix},\qquad M=\begin{pmatrix}
+		0 & -a_{3} & a_{2} \\
+		a_{3} & 0 & -a_{1} \\
+		-a_{2} & a_{1} & 0
+	\end{pmatrix}.
+\] Show that $\mathbf{a} \wedge \mathbf{b}=M \mathbf{b}$ and use the vector triple product to show that $M^{3}=-|\mathbf{a}|^{2} M$.
+
+
+
+\question%3
+\begin{parts}
+\part%3a
+Let $A, B, C$ be three points in space with position vectors $\mathbf{a}, \mathbf{b}, \mathbf{c}$ from an origin $O$. Show that $A, B$ and $C$ are collinear if and only if \[
+	\mathbf a\wedge\mathbf b+\mathbf b\wedge\mathbf c+\mathbf c\wedge\mathbf a=\mathbf0.
+\]
+
+\part%3b
+Show that the equation of the plane containing three non-collinear points with position vectors $\mathbf{a}, \mathbf{b}, \mathbf{c}$ is \[
+	\mathbf r\cdot(\mathbf a\wedge\mathbf b+\mathbf b\wedge\mathbf c+\mathbf c\wedge\mathbf a)=[\mathbf a, \mathbf b, \mathbf c].
+\] Deduce that four points $A, B, C, D$ with respective position vectors $\mathbf{a}, \mathbf{b}, \mathbf{c}, \mathbf{d}$ are coplanar if and only if \[
+	[\mathbf{a}, \mathbf{b}, \mathbf{c}]-[\mathbf{b}, \mathbf{c}, \mathbf{d}]+[\mathbf{c}, \mathbf{d}, \mathbf{a}]-[\mathbf{d}, \mathbf{a}, \mathbf{b}]=0.
+\]
+\end{parts}
+
+
+
+\question%4
+\begin{parts}
+\part%4a
+Let $A$ be a $3 \times 3$ matrix and $\mathbf{u}, \mathbf{v}, \mathbf w$ be three column vectors in $\mathbb{R}^{3}$. Use the determinant product rule to show that \[
+	[A\mathbf u,A\mathbf v,A\mathbf w]=\det A\times[\mathbf u, \mathbf v, \mathbf w].
+\]
+
+\part%4b
+Let $T$ be the tetrahedron with vertices $(0,0,0),(0,0,1),(0,1,0)$ and $(1,0,0)$. Let $0<c<1$. Show that the triangular intersection of $T$ with the plane $z=c$ has area $(1-c)^{2} / 2$. Hence find the volume of $T$.
+
+\part%4c
+Deduce that the volume of the tetrahedron with vertices $\mathbf{0}, \mathbf{u}, \mathbf{v}, \mathbf{w}$ is given by $|[\mathbf{u}, \mathbf{v}, \mathbf{w}]| / 6$.
+\end{parts}
+
+
+
+\question%5
+\begin{parts}
+\part%5a
+Let $\mathbf{a}$ and $\mathbf{b}$ be independent vectors in $\mathbb{R}^{3}$. Show that $|\mathbf{a}|^{2}|\mathbf{b}|^{2}-(\mathbf{a} \cdot \mathbf{b})^{2}=|\mathbf{a} \wedge \mathbf{b}|^{2} \neq 0$.
+
+\part%5b
+Using the fact that $\mathbf{a}$, $\mathbf{b}$ and $\mathbf{a} \wedge \mathbf{b}$ form a basis of $\mathbb{R}^{3}$, or otherwise, show that the planes \[
+	\mathbf{r} \cdot \mathbf{a}=\alpha, \quad \mathbf{r} \cdot \mathbf{b}=\beta
+\] intersect in a line parallel to $\mathbf{a} \wedge \mathbf{b}$.
+
+\part%5c
+ Under what conditions do the equations in (b) and the equation $\mathbf{r} \cdot \mathbf{c}=\gamma$ (where $\mathbf{c} \neq \mathbf{0}$) have a unique common solution?
+\end{parts}
+
+
+
+\question%6
+(Optional) Two non-parallel lines $l_{1}$ and $l_{2}$ in three-dimensional space have respective equations $\mathbf{r} \wedge \mathbf{a}_{1}=\mathbf{b}_{1}$ and $\mathbf{r} \wedge \mathbf{a}_{2}=\mathbf{b}_{2}$. For $i=1,2$ let $\Pi_{i}$ denote the plane of the form $\mathbf{r} \cdot\left(\mathbf{a}_{1} \wedge \mathbf{a}_{2}\right)=k_{i}$ which contains $l_{i}$. Show that $k_{1}=\mathbf{b}_{1} \cdot \mathbf{a}_{2}$ and find $k_{2}$. Hence show that the least distance between the lines equals \[
+	\frac{\left|\mathbf{a}_{1} \cdot \mathbf{b}_{2}+\mathbf{a}_{2} \cdot \mathbf{b}_{1}\right|}{\left|\mathbf{a}_{1} \wedge \mathbf{a}_{2}\right|}.
+\]
+
+\end{questions}
+
+\end{document}

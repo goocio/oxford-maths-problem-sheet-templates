@@ -1,0 +1,120 @@
+\documentclass[answers]{exam}
+\usepackage{../MT2023}
+
+\title{Analysis I -- Sheet 6\\Convergence tests}
+\author{YOUR NAME HERE :)}
+\date{Michaelmas Term 2023}
+
+
+\begin{document}
+\maketitle
+\begin{questions}
+
+\question%1
+For the following choices of $a_{k}$, use the indicated test to establish whether or not $\sum a_{k}$ converges. In each case, comment on possible alternative approaches.
+\begin{parts}
+\part%1a
+$\dfrac{(2 k+1)(3 k-1)}{(k+1)(k+2)^{2}}$\hfill(Comparison Test, limit form)
+
+\part%1b
+$\dfrac{1}{k^{\frac{1}{k}}k}$\hfill(Comparison Test, limit form)
+
+\part%1c
+$\dfrac{k !}{k^{k}}$\hfill(Ratio Test)
+
+\part%1d
+$\displaystyle\binom{2k}k^{-1}(4-10^{-23})^{k}$\hfill(Ratio Test)
+
+\part%1e
+$2^{-k} k$ if $k$ is of the form $2^{m}$ and 0 otherwise\hfill(Ratio Test)
+\end{parts}
+
+
+
+\question%2
+\begin{parts}
+\part%2a
+Use the Integral Test to prove that $\sum_{k \geqslant 3} \frac{1}{k(\log k)^{p}}$ converges if $p>1$ and diverges if $0<p \leqslant 1$.
+
+\part%2b
+For which positive values of $\alpha$ ($\alpha$ not assumed to be a natural number) does $\sum \frac{k^{-\alpha}}{1+\alpha^{-k}}$ converge?
+\end{parts}
+
+
+
+\question%3
+For which of the following choices of $a_{k}$ is $\sum a_{k}$ convergent? Justify your answers (using standard convergence tests where appropriate).
+\begin{parts}
+\part%3a
+$\displaystyle\frac{k+2^{k}}{2^{k} k}$;
+
+\part%3b
+$\displaystyle\frac{1}{k} \sin \frac{1}{k}$;
+
+\part%3c
+$\displaystyle\frac{\sinh k}{2^{k}}$;
+
+\part%£d
+$\displaystyle(-1)^{k-1}\frac{\log k}{\sqrt k}$;
+
+\part%3e
+$\displaystyle\begin{cases}1/k^2 & \text{if }k\text{ is odd,}\\ -(\log k)/k^2 &\text{if }k\text{ is even;}\end{cases}$
+
+\part%3f
+$\displaystyle\left(1-\frac1k\right)^{2k}$.
+\end{parts}
+
+
+
+\question%4
+For each of the following power series $\sum c_{k} x^{k}$, establish which of the following is true: (i) $\sum\left|c_{k} x^{k}\right|$ converges for all $x \in \mathbb{R}$; (ii) $\sum\left|c_{k} x^{k}\right|$ converges only for $x=0$; (iii) $\sum\left|c_{k} x^{k}\right|$ converges for $|x|<R$ and diverges for $|x|>R$ for some $R \in \mathbb{R}^{>0}$, which you should determine. What can you say in each case about the values of $x$ for which $\sum c_{k} x^{k}$ converges?
+\begin{parts}
+\part%4a
+$\displaystyle\sum k^{2020} x^{k}$;
+
+\part%4b
+$\displaystyle\sum \frac{x^{k}}{2^{k} k^{4}}$;
+
+\part%4c
+$\displaystyle\sum 2^{k} x^{k !}$;
+
+\part%4d
+$\displaystyle\sum k^{k} x^{k}$;
+
+\part%4e
+$\displaystyle\sum \frac{1}{(4 k) !} x^{2 k}$;
+
+\part%4f
+$\displaystyle\sum \sin (k) x^{k}$.
+\end{parts}
+
+
+
+\question%5
+Give either a justification or a counterexample for each of the following statements about real series.
+\begin{parts}
+\part%5a
+If $k a_{k} \to 0$ as $k \to \infty$ then $\sum a_{k}$ converges.
+
+\part%5b
+If $\lim _{k \to \infty} \frac{a_{k+1}}{a_{k}}$ exists and equals $L$, where $L>1$, then $\sum a_{k}$ diverges.
+
+\part%5c
+If $\sum a_{k}$ converges and $\frac{a_{k}}{b_{k}} \to 1$ then $\sum b_{k}$ converges.
+\end{parts}
+
+
+
+\question%6
+(\emph{Optional, or for use for consolidation later.})
+\begin{parts}
+\part%6a
+Prove that the series $\sum_{k \geqslant 2}(\log k)^{-k}$ and $\sum_{k \geqslant 2}(\log k)^{-\log k}$ converge.
+
+\part%6b
+Prove that for any constant $\alpha>0$, the series $\sum_{k \geqslant 2}(\log k)^{-\alpha}$ diverges.
+\end{parts}
+
+\end{questions}
+
+\end{document}

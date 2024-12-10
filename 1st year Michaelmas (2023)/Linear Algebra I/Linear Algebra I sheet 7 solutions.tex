@@ -1,0 +1,141 @@
+\documentclass[answers]{exam}
+\usepackage{../MT2023}
+
+\title{Linear Algebra -- Sheet 7\\Bilinear forms, Inner products}
+\author{YOUR NAME HERE :)}
+\date{Michaelmas Term 2023}
+
+
+\begin{document}
+\maketitle
+\section*{Main course}
+\begin{questions}
+
+\question%1
+Let $V$ be a real vector space. A bilinear form $\langle-,-\rangle$ on $V$ is said to be skew-symmetric if $\left\langle v_{1}, v_{2}\right\rangle=-\left\langle v_{2}, v_{1}\right\rangle$ for all $v_{1}, v_{2} \in V$. It is said to be alternating if $\langle v, v\rangle=0$ for all $v \in V$.
+\begin{parts}
+\part%1a
+Show that every bilinear form on $V$ may be written uniquely as the sum of a symmetric bilinear form and a skew-symmetric bilinear form.
+
+\part%1b
+Show that a bilinear form $\langle-,-\rangle$ on $V$ is alternating if and only if it is skew-symmetric.
+\end{parts}
+
+
+
+\question%2
+Let $V$ be a real vector space and let $\langle-,-\rangle,\langle-,-\rangle_{1}$ and $\langle-,-\rangle_{2}$ be inner products on $V$. The norm of a vector $v$ is defined by $\|v\|:=\sqrt{\langle v, v\rangle}$. Norms $\|v\|_{1}$ and $\|v\|_{2}$ are defined analogously.
+\begin{parts}
+\part%2a
+Show that if $u, v \in V$ then $\langle u, v\rangle=\frac{1}{2}(\|u+v\|^{2}-\|u\|^{2}-\|v\|^{2})$.
+
+\part%2b
+Deduce that if $\|x\|_{1}=\|x\|_{2}$ for all $x \in V$ then $\langle u, v\rangle_{1}=\langle u, v\rangle_{2}$ for all $u, v \in V$.
+\end{parts}
+
+
+
+\question%3
+\begin{parts}
+\part%3a
+Let $V$ be a 2-dimensional real vector space with basis $\left\{e_{1}, e_{2}\right\}$. Describe all the inner products $\langle-,-\rangle$ on $V$ for which $\left\langle e_{1}, e_{1}\right\rangle=1$ and $\left\langle e_{2}, e_{2}\right\rangle=1$.
+
+\part%3b
+Show that if $V$ is the 3-dimensional real vector space $\mathbb{R}_{2}[x]$ of polynomials of degree at most 2 in $x$, then the definition $\langle f(x), g(x)\rangle:=f(0) g(0)+f(1) g(1)+f(2) g(2)$ describes an inner product on $V$.
+\end{parts}
+
+
+
+\question%4
+Let $V$ be an $n$-dimensional real vector space with inner product $\langle-,-\rangle$, and let $U$ be an $m$ dimensional subspace of $V$. Define $U^{\perp}:=\{v \in V:\langle v, u\rangle=0$ for all $u \in U\}$.
+\begin{parts}
+\part%4a
+Show that $U^{\perp}$ is a subspace of $V$, and that $U^{\perp} \cap U=\{0\}$.
+
+\part%4b
+Let $u_{1}, \ldots, u_{m}$ be a basis for $U$. Define $T: V \rightarrow \mathbb{R}^{m}$ by $T(v)=\left(x_{1}, \ldots, x_{m}\right)$, where $x_{i}:=\langle v, u_{i}\rangle$ for $i=1, \ldots, m$. Show that $T$ is a linear transformation.
+
+\part%4c
+For $T$ as in (b), show that $\ker T=U^{\perp}$ and that $\operatorname{rank} T=m$.
+
+\part%4d
+Deduce that $\dim U^{\perp}=n-m$ and that $V=U \oplus U^{\perp}$.
+
+\part%4e
+Let $V\coloneqq\mathbb{R}_{2}[x]$ with the inner product defined in Q3(b), and let $U$ be the subspace spanned by 1 and $x$. Find polynomials $p(x) \in U$ and $q(x) \in U^{\perp}$ such that $x^{2}=p(x)+q(x)$.
+\end{parts}
+
+
+
+\question%5
+Let $a, b, c$ be real numbers. Use the Cauchy-Schwarz inequality to show that if $x^{2}+y^{2}+z^{2}=1$ then $a x+b y+c z \leqslant \sqrt{a^{2}+b^{2}+c^{2}}$. At what points does equality hold?
+
+
+\question%6
+Let $V$ be a complex vector space, and let $\langle-,-\rangle: V \times V \rightarrow \mathbb{C}$ be a sesquilinear form: that is, for all $u, v, w \in V$ and all $\alpha, \beta \in \mathbb{C}$, \[
+	\text{(i)}\quad\langle\alpha u+\beta v,w\rangle=\alpha\langle u,w\rangle+\beta\langle v,w\rangle\qquad
+	\text{and}\qquad
+	\text{(ii)}\quad\langle u, v\rangle=\overline{\langle v, u\rangle}.
+\]
+Note that $\langle v, v\rangle \in \mathbb{R}$ for all $v \in V$. If $\langle v, v\rangle>0$ for all $v \in V \backslash\{0\}$ then the form is said to be \emph{Hermitian}.
+\begin{parts}
+\part%6a
+Show that $\langle u, \alpha v+\beta w\rangle=\bar{\alpha}\langle u, v\rangle+\bar{\beta}\langle u, w\rangle$ for all $u, v, w \in V$ and all $\alpha, \beta \in \mathbb{C}$.
+
+\part%6b
+Show that if $\left\langle\left(x_{1}, \ldots, x_{n}\right),\left(y_{1}, \ldots, y_{n}\right)\right\rangle=x_{1} \overline{y_{1}}+\cdots+x_{n} \overline{y_{n}}$ then $\langle-,-\rangle$ is a Hermitian form on $\mathbb{C}^{n}$.
+
+\part%6c
+Now suppose that $V$ is finite-dimensional over $\mathbb{C}$ and that the form $\langle-,-\rangle$ is Hermitian. Let $U$ be a subspace of $V$, and, as in Q4, define $U^{\perp}:=\{v \in V:\langle v, u\rangle=0$ for all $u \in U\}$. Show that $U^{\perp} \leqslant V$ and that $V=U \oplus U^{\perp}$.
+\end{parts}
+
+\end{questions}
+
+
+
+\section*{Starter}
+\begin{questions}
+
+\question%S1
+Let $V=\mathcal{M}_{2 \times 2}(\mathbb{R})$. For $A, B \in \mathcal{M}_{2 \times 2}(\mathbb{R})$, define $\langle A, B\rangle=\operatorname{tr}\left(A^{T} B\right)$. Does this define an inner product on $V$?
+
+
+
+\question%S2
+For each given inner product space $V$ and vector $u \in V$, find a basis for the space $u^{\perp}$.
+\begin{parts}
+\part%S2a
+$V=\mathbb{R}^{3}$ with the usual dot product, $u=(3,-1,2)$.
+
+\part%S2b
+$V=\mathbb{R}_{2}[x]$ with inner product as in Q3(b) overleaf, $u(x)=x^{2}-5 x+6$.
+\end{parts}
+
+
+
+\question%S3
+For $\left(x_{1}, \ldots, x_{n}\right),\left(y_{1}, \ldots, y_{n}\right) \in \mathbb{C}^{n}$, define $\left\langle\left(x_{1}, \ldots, x_{n}\right),\left(y_{1}, \ldots, y_{n}\right)\right\rangle=x_{1} y_{1}+\cdots+x_{n} y_{n}$. Does this define a Hermitian form on $\mathbb{C}^{n}$? (Compare with Q6(b) overleaf.)
+
+\end{questions}
+
+
+
+\section*{Pudding}
+\begin{questions}
+
+\question%P1
+Let $V$ be a real inner product space. Suppose that $v_{1}, v_{2} \in V$ have the property that $\left\langle v_{1}, v\right\rangle=$ $\left\langle v_{2}, v\right\rangle$ for all $v \in V$. Does this mean that $v_{1}=v_{2}$? Give a proof or counterexample.
+
+
+
+\question%P2
+Let $V=\mathbb{R}_{2}[x]$ with the inner product defined in Q3(b) overleaf. Find an orthonormal basis of $V$.
+
+
+
+\question%P3
+Let $V$ be a real vector space with inner product $\langle-,-\rangle$ and associated length function $\|\cdot\|$. Show that $\left\|v_{1}+v_{2}\right\|^{2}+\left\|v_{1}-v_{2}\right\|^{2}=2\left\|v_{1}\right\|^{2}+2\left\|v_{2}\right\|^{2}$ for all $v_{1}, v_{2} \in V$ -- this is called the parallelogram law.
+
+\end{questions}
+
+\end{document}

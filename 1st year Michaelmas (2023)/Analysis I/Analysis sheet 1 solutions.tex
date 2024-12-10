@@ -1,0 +1,87 @@
+\documentclass[answers]{exam}
+\usepackage{../MT2023}
+
+\title{Analysis I -- Sheet 1\\Real numbers, Arithmetic, Order}
+\author{YOUR NAME HERE :)}
+\date{Michaelmas Term 2023}
+
+
+\begin{document}
+\maketitle
+\begin{questions}
+
+\question%1
+{}[\emph{Try to write out detailed answers, justifying each line of your argument by appealing to one of the axioms.}] Prove, from the given axioms for the real numbers, that for real numbers $a, b, c, d$:
+\begin{parts}
+\part%1a
+$a(b c)=c(b a)$;
+
+\part%1b
+$-(a+b)=(-a)+(-b)$;
+
+\part%1c
+if $a b=a c$ and $a \neq 0$, then $b=c$;
+
+\part%1d
+if $a<b$ and $c<d$ then $a+c<b+d$;
+
+\part%1e
+if $a \leq b$ and $c \leq d$ then $a+c=b+d$ only if $a=b$ and $c=d$.
+\end{parts}
+
+
+
+\question%2
+{}[\emph{Less detailed answers are required than in Q1, but you should try to justify each step using axioms or results which have already been proven from the axioms.}] Prove the following assertions, for real numbers $a, b, c$:
+\begin{parts}
+\part%2a
+if $a<b$, then $a c>b c$ if and only if $c<0$;
+
+\part%2b
+$a^{2}+b^{2}=0$ if and only if $a=b=0$;
+
+\part%2c
+$a^{3}<b^{3}$ if and only if $a<b$.
+\end{parts}
+
+
+
+\question%3
+\begin{parts}
+\part%3a
+Prove that $(a^{m})^{-1}=(a^{-1})^{m}$, for all $a \in \mathbb{R} \setminus\{0\}$ (for $m=1,2, \ldots$).
+
+\part%3b
+Prove that $a^{k+1}=a^{k} a$ for $a \neq 0$ and $k=-1,-2,-3, \ldots$.
+
+\part%3c
+Derive the law of indices: $a^{m} a^{n}=a^{m+n}$ for $a \neq 0$ and $m, n \in \mathbb{Z}$.
+\end{parts}
+
+
+
+\question%4
+{}[\emph{In this question you may use familiar results about arithmetic and order in the real numbers. Here, and from now on, you are not expected to justify each line of your argument by citing axioms or properties derived from the axioms.}]
+For $n=1,2,3, \ldots$, let \[
+a_{n}=\left(1+\frac{1}{n}\right)^{n} \quad \text { and } \quad b_{n}=\left(1+\frac{1}{n}\right)^{n+1}.\]
+\begin{parts}
+\part%4a
+Show that the inequality $a_{n} \leqslant a_{n+1}$ can be rearranged as \[
+\left(\frac{n(n+2)}{(n+1)^{2}}\right)^{n+1} \geqslant \frac{n}{n+1}.\]
+By applying Bernoulli's inequality to the left-hand side, verify this inequality.
+
+\part%4b
+Show that $b_{n+1} \leq b_{n}$ for all $n$.
+
+\part%4c
+Show that $a_{n} \leq a_{n+1} \leqslant b_{n+1} \leqslant b_{n}$ for all $n$. Deduce that $a_{n}<3$ for all $n$.
+\end{parts}
+
+
+
+\question%5
+Define $\max (a, b)$, the \emph{maximum} of two real numbers $a$ and $b$, saying which axiom(s) show that your specification is well defined. Using your definition, prove that $\max (a, b)=\frac{1}{2}(a+b)+\frac{1}{2}|a-b|$, and write down an analogous formula for $\min (a, b)$.
+
+\end{questions}
+
+\end{document}

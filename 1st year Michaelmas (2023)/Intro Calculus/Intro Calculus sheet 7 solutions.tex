@@ -1,0 +1,101 @@
+\documentclass[answers]{exam}
+\usepackage{../MT2023}
+
+\title{Intro Calculus -- Sheet 7}
+\author{YOUR NAME HERE :)}
+\date{Michaelmas Term 2023}
+
+\def\del{\boldsymbol{\nabla}}
+
+
+\begin{document}
+\maketitle
+\begin{questions}
+
+\question%1
+Find the gradient $\del f$ for each of the following functions:
+\begin{parts}
+\part%1a
+$\displaystyle f(x, y)=e^{x^{2}-y^{2}} \sin 2 x y;$
+
+\part%1b
+$\displaystyle f(x, y, z)=(x^{2}+y^{2}+z^{2})^{-1 / 2}.$
+\end{parts}
+
+
+
+\question%2
+For each of the following functions sketch some contours $f(x, y)=$ constant (include enough contours to explore all four quadrants of $(x, y))$ and indicate $\del f$ by arrows at some points on these curves. Use one set of axes for each case. \begin{parts}
+\part%2a
+$\displaystyle f(x, y)=x y;$
+
+\part%2b
+$\displaystyle f(x, y)=\frac{1}{4} x^{2}+y^{2};$
+
+\part%2c
+$\displaystyle f(x, y)=\frac{x}{y}.$
+\end{parts}
+
+
+
+\question%3
+Show that there is no function $f(x, y, z)$ such that $\del f(x, y, z)=(y, z, x)$.
+
+
+
+\question%4
+Let $f(x, y)=x^{2} y^{3}$ and determine $\del f$. Given the vector $\mathbf{a}=(1,1)$ and the unit vector $\mathbf{v}=(a, b)$ with $a^{2}+b^{2}=1$, evaluate \[
+	\lim_{t\to0}\frac{f(\mathbf a+t\mathbf v)-f(\mathbf a)}t.
+\] What is the maximum value of this limit that can be obtained by varying $a$ in the vector $\mathbf v$?
+
+
+
+\question%5 poor bug...
+A bug is walking on the $x y$-plane which is a toxic environment. The level of toxicity is given by the function $f(x, y)=2 x^{2} y-3 x^{3}$. The bug starts at the point $(1,2)$. In what direction away from $(1,2)$ should it initially move in order to lower its exposure to the toxin as rapidly as possible?
+
+
+
+\question%6
+Find a unit vector perpendicular to the surface $x^{2} y+y^{2} z+z^{2} x+1=0$ at the point $(1,2,-1)$. Hence, or otherwise, write the equations of the tangent plane and the normal line at this point.
+
+
+
+\question%7
+Let $f$ and $g$ be sufficiently differentiable functions of $x, y, z$.
+\begin{parts}
+\part%7a
+Prove the following:
+\begin{subparts}
+\subpart%7ai
+$\displaystyle\del(f g)=f \del g+g \del f$;
+
+\subpart%7aii
+$\displaystyle\del(f^{n})=n f^{n-1} \del f$;
+
+\subpart%7aiii
+$\displaystyle\del\left(\frac fg\right)=\frac{g\del f-f\del g}{g^2}$.
+\end{subparts}
+
+\part%7b
+In Cartesian coordinates $(x, y, z)$ the Laplacian operator, $\del^2$, is defined by \[
+	\del^2f=\frac{\partial^2f}{\partial x^2}+\frac{\partial^2f}{\partial y^2}+\frac{\partial^2f}{\partial z^2}.
+\] Show that \[
+	\del^2(fg)=f \del^2g+2(\del f)\cdot(\del g)+g\del^2f.
+\]
+\end{parts}
+
+
+
+\question%8
+Use the Taylor series for a function of two variables to expand the following functions about the point $x=1, y=1$, to the order shown.
+\begin{parts}
+\part%8a
+$f(x, y)=x^{3}+y^{2}+3 x^{2} y$, to all orders;
+
+\part%8b
+$f(x, y)=x^{2}+y+\cos (2 \pi x y)$, to second order.
+\end{parts}
+
+\end{questions}
+
+\end{document}

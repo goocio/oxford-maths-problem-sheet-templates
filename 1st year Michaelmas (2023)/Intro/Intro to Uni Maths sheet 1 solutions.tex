@@ -1,0 +1,106 @@
+\documentclass[answers]{exam}
+\usepackage{../MT2023}
+
+\title{Introduction to University Mathematics -- Sheet 1}
+\author{YOUR NAME HERE :)}
+\date{Michaelmas Term 2023}
+
+
+\begin{document}
+\maketitle
+\begin{questions}
+
+\question%1
+Given $n$ positive numbers $x_{1}, x_{2}, \ldots, x_{n}$ such that $x_{1}+x_{2}+\cdots+x_{n} \leqslant 1 / 3$, prove by induction that \[
+	(1-x_1)(1-x_2)\times\cdots\times(1-x_n)\geqslant\frac23.
+\] [\emph{Hint: for the inductive step, consider $x_{1}, x_{2}, \ldots, x_{n-1}, x_{n}+x_{n+1}$.}]
+
+
+
+\question%2
+Using the recursive definition of addition given in lectures, follow the steps below to show that addition on $\mathbb{N}$ is commutative; that is, $x+y=y+x$ for all $x, y \in \mathbb{N}$.
+\begin{parts}
+\part%2a
+First prove the result for $y=0$ and all $x$ by inducting on $x$.
+
+\part%2b
+Next prove the result for $y=1$ and all $x$.
+
+\part%2c
+Prove the general result by inducting on $y$.
+\end{parts}
+
+
+
+\question%3
+\begin{parts}
+\part%3a
+Let $A, B$, and $C$ be subsets of a set $S$. Write out a proof that \[
+	A \cap(B \cup C)=(A \cap B) \cup(A \cap C)
+\]
+
+\part%3b
+Let $D, E$, and $F$ be subsets of a set $S$. Use (a) and De Morgan's laws to show that \[
+	D \cup(E \cap F)=(D \cup E) \cap(D \cup F).
+\]
+\end{parts}
+
+
+
+\question%4
+Let $A$ and $B$ be finite sets.
+\begin{parts}
+\part%4a
+Assuming for this part that $A$ and $B$ are disjoint, and adopting the recursive definition of cardinality given in lectures, use induction on $|B|$ to show that $A \cup B$ is finite and that \[
+	|A \cup B|=|A|+|B|
+\]
+
+\part%4b
+Show that for general $A$ and $B, A \cup B=(A \setminus B) \cup(A \cap B) \cup(B \setminus A)$. Deduce that \[
+	|A|+|B|=|A \cup B|+|A \cap B|.
+\]
+\end{parts}
+
+
+
+\question%5
+Which of the following relations on $\mathbb{N}$ are reflexive, which are symmetric, which are transitive?
+\begin{parts}
+\part%5a
+the relation $a \mid b$ (read as ``$a$ divides $b$").
+
+\part%5b
+the relation $a \nmid b$ (does not divide).
+
+\part%5c
+$a, b$ are related if $a, b$ leave the same remainder after division by 2021.
+
+\part%5d
+$a, b$ are related if $\operatorname{hcf}(a, b)>2021$.
+\end{parts}
+
+
+
+\question%6
+How many partitions are there of a set of size 1? of size 2? of size 3? of size 4? of size 5?
+
+
+
+\question%7
+Let $S=\{(m, n): m, n \in \mathbb{Z}, n \geqslant 1\}$.
+\begin{parts}
+\part%7a
+Show that $\sim$ defined by \[
+	(m_1,n_1)\sim(m_2,n_2) \quad \text{if and only if} \quad m_1n_2=m_2n_1
+\] is an equivalence relation on $S$.
+
+\part%7b
+The set of equivalence classes is denoted $S / \sim$. Show that $\oplus$ and $\otimes$ defined by \begin{align*}
+	\overline{(m_1,n_1)}\oplus\overline{(m_2,n_2)}&=\overline{(m_1n_2+m_2n_1,n_1n_2)}\\
+	\overline{(m_1,n_1)}\otimes\overline{(m_2,n_2)}&=\overline{(m_1m_2,n_1n_2)}
+\end{align*} are well-defined binary operations on $S / \sim$. What set is $S / \sim$ a model for?
+\end{parts}
+
+\end{questions}
+
+\end{document}

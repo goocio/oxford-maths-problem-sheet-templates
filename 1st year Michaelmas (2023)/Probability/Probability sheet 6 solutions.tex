@@ -1,0 +1,88 @@
+\documentclass[answers]{exam}
+\usepackage{../MT2023}
+
+\title{Probability -- Sheet 6}
+\author{YOUR NAME HERE :)}
+\date{Michaelmas Term 2023}
+
+
+\begin{document}
+\maketitle
+\begin{questions}
+
+\question%1
+\begin{parts}
+\part%1a
+If $X$ is a constant random variable, say $\mathbb{P}(X=a)=1$ for some $a \in \mathbb{N}$, what is its probability generating function?
+
+\part%1b
+If $Y$ has probability generating function $G_{Y}(s)$, and $m, n$ are positive integers, what is the probability generating function of $Z=m Y+n$?
+\end{parts}
+
+
+
+\question%2
+\begin{parts}
+\part%2a
+Suppose that we perform a sequence of independent trials, each of which has probability $p$ of success. Let $Y$ be the number of trials up to and including the $m$th success, where $m \geq 1$ is fixed. Explain why \[
+	\mathbb P(Y=k)=\binom{k-1}{m-1}p^{m}(1-p)^{k-m}, \quad k=m, m+1, \ldots
+\] (This is called the \emph{negative binomial} distribution.)
+
+\part%2b
+By expressing $Y$ as a sum of $m$ independent random variables, find its probability generating function.
+\end{parts}
+
+
+
+\question%3
+Let $X_{1}, X_{2}, \ldots$ be a sequence of independent and identically distributed non-negative integer valued random variables, and let $N$ be a non-negative integer valued random variable which is independent of the sequence $X_{1}, X_{2}, \ldots$. Let $Z=X_{1}+\ldots+X_{N}$ (where we take $Z=0$ if $N=0$).
+\begin{parts}
+\part%3a
+Show that \[
+	\mathbb E[Z]=\mathbb E[N] \mathbb E[X_{1}]
+\] and \[
+	\operatorname{var}(Z)=\operatorname{var}(N)(\mathbb E[X_1])^2+\mathbb E[N] \operatorname{var}(X_1).
+\]
+
+\part%3b
+If $N \sim \operatorname{Po}(\lambda)$ and $X_{1} \sim \operatorname{Ber}(p)$, find $\operatorname{var}(Z)$.
+
+\part%3c
+{}[\emph{Optional}] Suppose we remove the condition that $N$ is independent of the sequence $(X_{i})$. Is it still necessarily the case that $\mathbb{E}[Z]=\mathbb{E}[N] \mathbb{E}[X_{1}]$? Find a proof or a counterexample.
+\end{parts}
+
+
+
+\question%4 the extension here reminds me of that 3blue1brown video called something like "olympiad level counting"
+A random variable $X$ has probability generating function $G_{X}$. Find a simple expression using $G_{X}$ for the probability that $X$ is even. [\emph{Hint: consider the value of $G_{X}(-1)$. Possible extension: suggest a similar expression for the probability that $X$ is divisible by 4 - be creative about what values of the generating function you might evaluate!}]
+
+
+
+\question%5
+A population of cells is grown on a Petri dish. Once a minute, each cell tries to reproduce by splitting in two. This is successful with probability $1 / 4$; with probability $1 / 12$, the cell dies instead; and with the remaining probability $2 / 3$, nothing happens. Assume that different cells behave independently and that we begin with a single cell. What is the probability generating function $G_1(s)$ of the number of cells on the dish after 1 minute? How about after 2 minutes? What is the probability that after 2 minutes the population has died out?
+
+
+
+\question%6
+Consider a branching process in which each individual has 2 offspring with probability $p$, and 0 offspring with probability $1-p$. Let $X_{n}$ be the size of the $n$th generation, with $X_{0}=1$.
+\begin{parts}
+\part%6a
+Write down the mean $\mu$ of the offspring distribution, and its probability generating function $G(s)$.
+
+\part%6b
+Find the probability that the process eventually dies out. [\emph{Recall that this probability is the smallest non-negative solution of the equation $s=G(s)$.}] Verify that the probability that the process survives for ever is positive if and only if $\mu>1$.
+
+\part%6c
+Let $\beta_{n}=\mathbb{P}\left(X_{n}>0\right)$, the probability the process survives for at least $n$ generations. Write down $G(s)$ in the case $p=1 / 2$. Deduce that in that case, \[
+\beta_{n}=\beta_{n-1}-\beta_{n-1}^{2} / 2
+\] and use induction to prove that, for all $n$, \[
+	\frac{1}{n+1} \leq \beta_{n} \leq \frac{2}{n+2}.
+\]
+
+\part%6d
+{}[\emph{For further exploration!}] In lectures we considered a simple random walk, which at each step goes up with probability $p$ and down with probability $1-p$. Suppose the walk starts from site 1. By taking limits in the gambler's ruin model, we showed that the probability that the walk ever hits site 0 equals 1 for $p \leq 1 / 2$, and $(1-p) / p$ for $p>1 / 2$. Compare this probability to your answer in part (b). Can you find a link between the branching process and the random walk? [\emph{Hint: if I take an individual in the branching process and replace it by its children (if any), what happens to the size of the population?}]
+\end{parts}
+
+\end{questions}
+
+\end{document}

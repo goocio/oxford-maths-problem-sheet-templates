@@ -1,0 +1,122 @@
+\documentclass[answers]{exam}
+\usepackage{../MT2023}
+
+\title{Probability -- Sheet 7}
+\author{YOUR NAME HERE :)}
+\date{Michaelmas Term 2023}
+
+
+\begin{document}
+\maketitle
+\begin{questions}
+
+\question%1
+Sketch the cumulative distribution function of the following distributions:
+\begin{parts}
+\part%1a
+the (discrete) uniform distribution on $\{1,2, \ldots, n\}$;
+
+\part%1b
+the (continuous) uniform distribution on $[a, b]$;
+
+\part%1c
+the exponential distribution with parameter 1;
+
+\part%1d
+the normal distribution with mean 0 and variance 1.
+\end{parts}
+
+
+
+\question%2
+For each case below, does there exist a constant $c$ such that the given function is a probability density function? If so, find $c$ and find the cumulative distribution function. (In each case, the given function is zero outside the interval $(0,1)$.)
+\begin{parts}
+\part%2a
+$f_{1}(x)=c x$ for $0<x<1$.
+
+\part%2b
+$f_{2}(x)=c x^{-1}$ for $0<x<1$.
+
+\part%2c
+$f_{3}(x)=c x^{-1 / 2}$ for $0<x<1$.
+
+\part%2d
+$f_{4}(x)=c(4 x^{3}-x)$ for $0<x<1$.
+\end{parts}
+
+
+
+\question%3
+Let $U$ be a uniformly distributed random variable on $[0,1]$. Find
+\begin{parts}
+\part%3a
+$\mathbb{E}[U]$ and $\operatorname{var}(U)$;
+
+\part%3b
+$\mathbb{P}(U<a \mid U<b)$ for $0<a<b<1$.
+\end{parts}
+
+
+
+\question%4
+Let $X$ be exponentially distributed with parameter $\lambda$.
+\begin{parts}
+\part%4a
+Find $\mathbb{P}(X>x)$.
+
+\part%4b
+Find $\mathbb{P}(a \leq X \leq b)$ for $0<a<b$.
+
+\part%4c
+Show that $\mathbb{P}(X>a+x \mid X>a)=\mathbb{P}(X>x)$ for $a, x>0$. [\emph{This is the memoryless property of the exponential distribution (compare to Question 3 on Sheet 3).}]
+
+\part%4d
+Find $\mathbb{P}(\sin X>\frac{1}{2})$.
+
+\part%4e
+Let $c>0$. What is the distribution of the random variable $c X$? [\emph{Try using part (a).}]
+
+\part%4f
+For $x \in \mathbb{R}$, let $\lceil x\rceil$ denote the ceiling of $x$; that is, the smallest integer greater than or equal to $x$. Show that the discrete random variable $\lceil X\rceil$ has a geometric distribution, and find its parameter. [\emph{Hint: write the event $\{\lceil X\rceil=k\}$ as $\{X \in I\}$ for some interval $I$.}]
+\end{parts}
+
+
+
+\question%5 ?? what is a "number" and what's it doing in my maths question
+Blood plasma nicotine levels in smokers can be modelled by a normal random variable $X$ with mean 315 and variance $131^2$, the units being nanograms per millilitre.
+\begin{parts}
+\part%5a
+What is the probability that a randomly chosen smoker has nicotine levels lower than 300?
+
+\part%5b
+What is the probability that a randomly chosen smoker has nicotine levels between 300 and 500?
+
+\part%5c
+If 20 smokers are to be tested what is the probability that at most one has a nicotine level higher than 500?
+\end{parts}
+
+
+
+\question%6
+The radius of a circle is uniformly distributed on $[0, b]$. Find the cumulative distribution function, the probability density function, the expectation and the variance of the random variable representing the area of the circle.
+
+
+
+\question%7 very cool question especially for programming enthusiasts and/or computer scientists since this is how computers can sample from different distributions, by "converting" between them
+Let $X$ be a continuous random variable taking values in $[a, b]$ with c.d.f. $F_{X}$ which is strictly increasing on $[a, b]$.
+\begin{parts}
+\part%7a
+Show that the random variable $F_{X}(X)$ has a uniform distribution on $[0,1]$.
+
+\part%7b
+Let $U$ be a uniform random variable on $[0,1]$. What is the distribution of the random variable $F_{X}^{-1}(U)$, where $F_{X}^{-1}$ is the inverse of $F_{X}$?
+
+\part%7c
+Suppose that $U_{1}, U_{2}, \ldots, U_{n}$ are a set of computer-generated pseudo-random numbers (assumed to be drawn from a uniform distribution on $[0,1]$). How would you use them to simulate a random sample $X_{1}, X_{2}, \ldots, X_{n}$ from the distribution with density \[
+	f(x)=\mu e^{-\mu x}, \quad x \geq 0 ?
+\]
+\end{parts}
+
+\end{questions}
+
+\end{document}

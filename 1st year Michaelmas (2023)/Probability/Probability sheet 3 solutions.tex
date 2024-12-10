@@ -1,0 +1,78 @@
+\documentclass[answers]{exam}
+\usepackage{../MT2023}
+
+\title{Probability -- Sheet 3}
+\author{YOUR NAME HERE :)}
+\date{Michaelmas Term 2023}
+
+
+\begin{document}
+\maketitle
+\begin{questions}
+
+\question%1
+Find the mean of the Binomial $(n, p)$ distribution. [\emph{Try this two different ways: (i) directly from the probability mass function; (ii) using the representation of a binomial random variable as a sum of Bernoulli random variables, and linearity of expectation.}]
+
+
+
+\question%2
+Suppose that $X$ is a discrete random variable taking non-negative integer values. Show that \[
+	\mathbb{E}[X]=\sum_{k=0}^{\infty} \mathbb{P}(X>k).
+\] [\emph{Hint: you may find it helpful to write the right-hand side in terms of the probability mass function.}]
+
+
+
+\question%3
+Let $X$ have geometric distribution with parameter $p$, i.e. $\mathbb{P}(X=k)=p(1-p)^{k-1}$ for $k \geq 1$.
+\begin{parts}
+\part%3a
+Find $\mathbb{P}(X>k)$ for $k \geq 0$.
+
+\part%3b
+Show that \[ \mathbb{P}(X=k+r|X>k)=\mathbb{P}(X=r) \text { for all } k \geq 0, r \geq 1.\] [This is called the \emph{memoryless property} of the geometric distribution.]
+\end{parts}
+
+
+
+\question%4
+Let $X \sim \operatorname{Bin}(n, \lambda / n)$ for some parameter $\lambda>0$.
+\begin{parts}
+\part%4a
+By using the approximation $(1-\frac{x}{n})^{n} \approx e^{-x}$ (which is valid for large $n$), show that for fixed $k \geq 0$ and for $n$ large, \[
+	\mathbb{P}(X=k) \approx \frac{e^{-\lambda} \lambda^{k}}{k !}.
+\]
+
+\part%4b
+A text file contains 1000 characters. When the file is sent by e-mail from one machine to another, each character (independently of all other characters) has probability 0.001 of being corrupted. From part (a), use a Poisson random variable to estimate the probability that the file is transferred without error. Compare this to the answer obtained when you model the number of errors as a binomial random variable.
+\end{parts}
+
+
+
+\question%5
+Let $f: \mathbb{R} \rightarrow \mathbb{R}$ be given by $f(x)=e^{\theta x}$ for some $\theta \in \mathbb{R}$ and suppose that $X \sim \operatorname{Po}(\lambda)$ for some $\lambda>0$. Show that \[
+	\mathbb{E}[f(X)]=\exp(\lambda(e^{\theta}-1)).
+\]
+
+
+
+\question%6
+You repeatedly flip a coin, with probability $p$ of heads and $q=1-p$ of tails. Flips are independent. Let $X$ denote the number of flips until you get two heads in a row. By considering the partition $A_{1}, A_{2}, A_{3}$ where $A_{1}$ is the event $\{tail on the first flip\}$, $A_{2}$ is the event $\{head on the first flip, tail on the second\}$ and $A_{3}$ is the event $\{heads on the first two flips\}$, find $\mathbb{E}[X]$.
+
+
+
+\question%7
+(\textbf{The coupon collector problem}). Packets of cornflakes contain a plastic toy, of which there are $n$ different types. Each packet is equally likely to contain any of the toys. You want to collect all of them.
+\begin{parts}
+\part%7a
+You find the first new toy in the first packet you open. What is the probability that the next packet contains a \emph{different} toy? What is the distribution of the number of packets after the first that you need to buy in order to find the second type of toy? State any assumptions you make.
+
+\part%7b
+More generally, suppose that you have already found $k-1$ different types of toy, for some $k \geq 1$. What is the distribution of $T_{k}$, the additional number of packets of cornflakes you have to buy in order to find the $k$ th type of toy?
+
+\part%7c
+Let $T=T_{1}+\cdots+T_{n}$ be the total number of packets needed to collect the full set of different toys. What is the expectation of $T$? How quickly does this grow as $n$ becomes large?
+\end{parts}
+
+\end{questions}
+
+\end{document}

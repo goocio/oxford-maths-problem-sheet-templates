@@ -1,0 +1,144 @@
+\documentclass[answers]{exam}
+\usepackage{../MT2023}
+
+\title{Linear Algebra -- Sheet 5\\Kernel, Image, Rank, Nullity}
+\author{YOUR NAME HERE :)}
+\date{Michaelmas Term 2023}
+
+
+\begin{document}
+\maketitle
+\section*{Main course}
+\begin{questions}
+
+\question%1
+Which of the following formulae describe linear transformations $T: \mathbb{R}^{3} \to \mathbb{R}^{3}$?
+\begin{parts}
+\part%1a
+$T(x, y, z)=(y, z, 0)$;
+
+\part%1b
+$T(x, y, z)=(|x|,-z, 0)$;
+
+\part%1c
+$T(x, y, z)=(x-1, x, y)$;
+
+\part%1d
+$T(x, y, z)=(y z, z x, x y)$.
+\end{parts}
+
+
+
+\question%2
+Describe the kernel and image of each of the following linear transformations, and in each case find the nullity and the rank.
+\begin{parts}
+\part%2a
+$T: \mathbb{R}_{\text {col }}^{4} \to \mathbb{R}_{\text {col }}^{3}$ given by $T(X)=A X$ for $X \in \mathbb{R}_{\text {col }}^{4}$, where $A=\begin{pmatrix}1 & -1 & 1 & 1 \\ 1 & 2 & -1 & 1 \\ 0 & 3 & -2 & 0\end{pmatrix}$.
+
+\part%2b
+$V=\mathcal{M}_{n \times n}(\mathbb{R})$, and $T: V \to \mathbb{R}$ is given by $T(X)=\operatorname{tr}(X)$, the sum $x_{11}+x_{22}+\cdots+x_{n n}$ of the entries on the main diagonal of $X$.
+\end{parts}
+
+
+
+\question%3
+Let $V=\mathbb{R}_{n}[x]$, the vector space of real polynomials of degree $\leqslant n$. Define $D: V \to V$ to be differentiation with respect to $x$. Find the rank and nullity of $D$.
+
+
+
+\question%4
+Let $V$ be a finite-dimensional vector space, and let $S, T: V \to V$ be linear transformations.
+\begin{parts}
+\part%4a
+Show that $\operatorname{Im}(S+T) \leqslant \operatorname{Im} S+\operatorname{Im} T$. Deduce that $\operatorname{rank}(S+T) \leqslant \operatorname{rank} S+\operatorname{rank} T$.
+
+\part%4b
+Show that $\operatorname{null}(S T) \leqslant \operatorname{null} S+\operatorname{null} T$. [\emph{Hint: Focus on the restriction of $S$ to $\operatorname{Im} T$, and consider its image and kernel.}]
+\end{parts}
+
+
+
+\question%5
+Let $V$ be a finite-dimensional vector space.
+\begin{parts}
+\part%5a
+Let $U, W$ be subspaces such that $V=U \oplus W$. Let $P: V \to V$ be the projection onto $U$ along $W$, and let $Q: V \to V$ be the projection onto $W$ along $U$.
+\begin{subparts}
+\subpart%5ai
+Show that $Q=\mathrm{id}_{V}-P$.
+
+\subpart%5aii
+Show that $P^{2}=P$, that $Q^{2}=Q$ and that $P Q=Q P=0$.
+\end{subparts}
+
+\part%5b
+Now let $T: V \to V$ be a linear transformation such that $T^{2}=T$ (such linear transformations are said to be idempotent).
+\begin{subparts}
+\subpart%5bi
+For $v \in V$ let $u=T v$ and let $w=v-T v$. Show that $u \in \operatorname{Im} T, w \in \ker T$ and $v=u+w$.
+
+\subpart%5bii
+Show that $\operatorname{Im} T \cap \ker T=\{0\}$.
+
+\subpart%5biii
+Deduce that $V=U \oplus W$ where $U:=\operatorname{Im} T, W:=\ker T$, and that $T$ is the projection onto $U$ along $W$.
+\end{subparts}
+\end{parts}
+
+
+
+\question%6
+Let $V$ be an $n$-dimensional vector space and let $T: V \to V$ be a linear transformation. Prove that the following statements are equivalent:\begin{center}(a) $\operatorname{Im} T=\ker T$,\qquad and\qquad (b) $T^{2}=0$, $n$ is even and $\operatorname{rank} T=\frac{1}{2} n$.\end{center}
+
+\end{questions}
+
+
+
+\section*{Starter}
+\begin{questions}
+
+\question%S1
+Let $V, W$ be vector spaces over $\mathbb{F}$, let $T: V \to W$. Prove that $T$ is linear if and only if $T(\alpha v_{1}+\beta v_{2})=\alpha T(v_{1})+\beta T(v_{2})$ for all $v_{1}, v_{2} \in V$ and $\alpha, \beta \in \mathbb{F}$.
+
+
+
+\question%S2
+Given vector spaces $V$ and $W$ over $\mathbb{F}$, prove that the set of linear transformations $V \to W$ forms a vector space (with pointwise addition and scalar multiplication).
+
+
+
+\question%S3
+For each of the following maps, show that it is linear, find the kernel and image, and find the rank and nullity. Check that the Rank-Nullity Theorem is satisfied in each case.
+\begin{parts}
+\part%S3a
+$T_{1}: \mathbb{R}^{4} \to \mathbb{R}^{3}$ given by $T(x_{1}, x_{2}, x_{3}, x_{4})=(x_{2}+x_{3}-2 x_{4}, x_{1}-x_{2}, x_{1}-x_{3}+4 x_{4})$.
+
+\part%S3b
+$T_{2}: \mathbb{R}_{\text {col }}^{3} \to \mathbb{R}_{\text {col }}^{2}$ given by $T_{2}(x)=A x$ where $A=\begin{pmatrix}3 & 4 & 7 \\ -1 & 0 & -6\end{pmatrix}$.
+
+\part%S3c
+$T_{3}: \mathcal{M}_{m \times n}(\mathbb{R}) \to \mathcal{M}_{n \times m}(\mathbb{R})$ given by $T_{3}(X)=X^{T}$.
+\end{parts}
+\end{questions}
+
+
+
+\section*{Pudding}
+\begin{questions}
+
+\question%P1
+Consider the usual dot product on $\mathbb{R}^{3}$ : we define $(x_{1}, x_{2}, x_{3}) \cdot(y_{1}, y_{2}, y_{3})=x_{1} y_{1}+x_{2} y_{2}+x_{3} y_{3}$. Fix a vector $(a_{1}, a_{2}, a_{3}) \in \mathbb{R}^{3}$, and define a map $T: \mathbb{R}^{3} \to \mathbb{R}$ by $T(x_{1}, x_{2}, x_{3})=(x_{1}, x_{2}, x_{3}) \cdot(a_{1}, a_{2}, a_{3})$. Show that $T$ is linear. Find its kernel and image, and its rank and nullity.
+
+
+
+\question%P2
+Let $T: \mathbb{R}^{7} \to \mathbb{R}^{4}$ be a linear map. What are the possible nullities of $T$? Justify your answer. For each such possibility, give an example of a linear map $T: \mathbb{R}^{7} \to \mathbb{R}^{4}$ with that nullity.
+
+
+
+\question%P3
+Consider the real vector space $V$ consisting of all real (infinite) sequences. Consider the map $T: V \to V$ given by $T_{1}(x_{1}, x_{2}, x_{3}, \ldots)=(0, x_{1}, x_{2}, x_{3}, \ldots)$. Show that $T_{1}$ is linear. What is the kernel of $T_{1}$? What is its image? Define $T_{2}$ by $T_{2}(x_{1}, x_{2}, x_{3}, \ldots)=(x_{1}+x_{2}, 0, x_{3}, x_{4}, 0,0,0, \ldots)$. Show that $T_{2}$ is linear. What is the kernel of $T_{2}$? What is its image? Can you give an example of a linear map $T_{3}: V \to V$ where neither the kernel nor the image of $T_{3}$ has finite dimension?
+
+\end{questions}
+
+\end{document}

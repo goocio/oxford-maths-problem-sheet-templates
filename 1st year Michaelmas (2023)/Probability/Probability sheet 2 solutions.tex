@@ -1,0 +1,92 @@
+\documentclass[answers]{exam}
+\usepackage{../MT2023}
+
+\title{Probability -- Sheet 2}
+\author{YOUR NAME HERE :)}
+\date{Michaelmas Term 2023}
+
+
+\begin{document}
+\maketitle
+\begin{questions}
+
+\question%1
+Two dice are thrown and the numbers they show are represented by a pair $(i, j)$. Suppose that the 36 possible outcomes in $\Omega=\{(i, j): 1 \leq i, j \leq 6\}$ are all equally likely. Let \begin{align*}
+	A&=\{\text{the first die shows } 3\}, \\
+	B&=\{\text{the second die shows an even number}\}, \\
+	C&=\{\text{the sum is even}\}.
+\end{align*}
+\begin{parts}
+\part%1a
+Show that $A$ and $B$ are independent.
+
+\part%1b
+Show that $B$ and $C$ are independent.
+
+\part%1c
+Show that $A$ and $C$ are independent.
+
+\part%1d
+Are $A$, $B$, and $C$ independent?
+\end{parts}
+
+
+
+\question%2
+A laboratory test is $95\%$ effective in detecting a certain disease when it is in fact present. However, the test also gives a false positive result for $1\%$ of healthy people tested. (That is, if a healthy person is tested, then with probability 0.01 the test will indicate that the disease is present.) Suppose $0.5\%$ of the population actually has the disease. What is the probability that a randomly tested person has the disease, given that their test result is positive?
+
+
+
+\question%3
+An urn contains $m$ red balls and $n$ blue balls. Two balls are drawn uniformly at random from the urn, without replacement.
+\begin{parts}
+\part%3a
+What is the probability that the first ball drawn is red?
+
+\part%3b
+What is the probability that the second ball drawn is red?
+
+\part%3c
+What is the probability that the first is red given that the second is red?
+\end{parts}
+
+
+
+\question%4
+Parliament contains a proportion $p$ of Conservative members, who never update their views about anything, and a proportion $1-p$ of Labour members, who change their minds at random (with probability $r$) between successive votes on the same issue. A randomly chosen member is noticed to have voted twice in succession in the same way. What is the probability that this member will vote the same way next time?
+
+
+
+\question%5
+\begin{parts}
+\part%5a
+A fair coin is tossed 26 times. Write down an expression for the probability of seeing exactly 13 heads and 13 tails.
+
+\part%5b
+A pack of 52 cards (containing 26 red and 26 black cards) is shuffled, and then 26 cards are dealt. Write down an expression for the probability that exactly 13 red and 13 black cards are dealt.
+\end{parts}
+
+
+
+\question%6
+\textbf{(Euler's formula for the Riemann zeta function).} For real numbers $s>1$, the Riemann zeta function is defined by \[
+	\zeta(s)=\sum_{n=1}^{\infty} \frac{1}{n^{s}}.
+\] Fix $s>1$ and consider a positive integer-valued random variable $X$ with probability mass function given by \[
+	p_{X}(n)=\mathbb{P}(X=n)=\frac{1}{n^{s}} \frac{1}{\zeta(s)}, \quad n \geq 1.
+\]
+\begin{parts}
+\part%6a
+Let $k \geq 2$ be an integer. What is the probability that $X$ is divisible by $k$?
+
+\part%6b
+Let $D_{k}$ be the event that $X$ is divisible by $k$. Show that the events $\left\{D_{p}: p\right.$ prime$\}$ are independent. [\emph{Hint: make sure you look back at the definition of independence for an infinite collection of events.}]
+
+\part%6c
+Recall from lectures that if the family $\{A_{i}, i \in I\}$ of events is independent, then so is the family $\{A_{i}^{c}, i \in I\}$. (Optional exercise: prove this result!) Use (b) to prove Euler's formula: for every $s>1$, \[
+	\zeta(s)=\prod_{p \text { prime}}\left(1-\frac{1}{p^{s}}\right)^{-1},
+\]where the product is over all prime numbers (one is not included as a prime). [\emph{Hint: you may assume that for independent events $A_{1}, A_{2}, \ldots$, we have $\mathbb{P}\left(\bigcap_{i=1}^{\infty} A_{i}\right)=$ $\prod_{i=1}^{\infty} \mathbb{P}\left(A_{i}\right)$. Note that this does not follow directly from the definition of independence (proving it requires a slightly tricky argument using the countable additivity axiom).}]
+\end{parts}
+
+\end{questions}
+
+\end{document}

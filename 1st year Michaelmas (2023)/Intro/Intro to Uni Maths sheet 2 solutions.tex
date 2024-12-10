@@ -1,0 +1,182 @@
+\documentclass[answers]{exam}
+\usepackage{../MT2023}
+
+\title{Introduction to University Mathematics -- Sheet 2}
+\author{YOUR NAME HERE :)}
+\date{Michaelmas Term 2023}
+
+
+\begin{document}
+\maketitle
+\begin{questions}
+
+\question%1
+Define $f: \mathbb{R} \to \mathbb{R}$ by $f(x)=\sin x$ for all real numbers $x$.
+\begin{parts}
+\part%1a
+What are $f([0, \pi])$, $f([0,2 \pi])$, $f([0,3 \pi])$?
+
+\part%1b
+What are $f^{-1}(\{0\})$, $f^{-1}(\{1\})$, $f^{-1}(\{2\})$?
+
+\part%1c
+Let $A=[0, \pi]$ and $B=[2 \pi, 3 \pi]$. Show that $f(A \cap B) \neq f(A) \cap f(B)$.
+
+\part%1d
+Let $A=[0, \pi]$. Find $f^{-1}(f(A))$ and $f(f^{-1}(A))$.
+\end{parts}
+
+
+
+\question%2
+Let $A=\{1,2,3\}$ and $B=\{1,2,3,4,5\}$.
+\begin{parts}
+\part%2a
+How many $f: A \to B$ are there?
+
+\part%2b
+How many $f: B \to A$ are there?
+
+\part%2c
+How many injective $f: A \to B$ are there?
+
+\part%2d
+How many injective $f: B \to A$ are there?
+
+\part%2e
+How many surjective $f: A \to B$ are there?
+
+\part%2f
+How many surjective $f: B \to A$ are there?
+\end{parts}
+
+
+
+\question%3
+Which of the following statements about natural numbers are true, which false?
+\begin{parts}
+\part%3a
+2 is prime or 2 is odd.
+
+\part%3b
+2 is prime or 2 is even.
+
+\part%3c
+If 2 is odd then 2 is prime.
+
+\part%3d
+If 2 is even then 2 is prime.
+
+\part%3e
+For all $n \in \mathbb{N}$, if $n$ is a square number then $n$ is not prime.
+
+\part%3f
+For all $n \in \mathbb{N}$, $n$ is not prime if and only if $n$ is a square number.
+
+\part%3g
+For all even primes $p>2$, $p^{2}=2021$.
+\end{parts}
+
+
+
+\question%4
+\begin{parts}
+\part%4a
+Re-write each statement using symbols ($\epsilon$, $\forall$, $\exists$, etc.).
+\begin{subparts}
+\subpart%4ai
+for all real numbers $x, y$ there exists a real number $z>x$ such that $f(z)>y$;
+
+\subpart%4aii
+for every real number $x$ there exists a real number $y$ such that for all real $z$ either $z \leq y$ or $f(z) \neq x$;
+
+\subpart%4aiii
+there exist real numbers $x,y$ such that for every real number $z$ if $z\leq y$ then $f(z)=x$;
+
+\subpart%4aiv
+there is a real number $x$ such that for every real number $y$ there is a real number $z>y$ for which $f(z)=x$;
+
+\subpart%4av
+for all real $x$ and $y$ there is a real number $z$ such that $z \leq y$ and $f(z) \neq x$;
+
+\subpart%4avi
+there exist real numbers $x$ and $y$ such that for every real number $z$ either $z \leq x$ or $f(z) \leq y$.
+\end{subparts}
+
+\part%4b
+Organise the assertions about a function $f: \mathbb{R} \to \mathbb{R}$ into pairs such that one member of the pair is true if and only if the other is false.
+\end{parts}
+
+
+
+\question%5
+Each card in a pack has a number on one side and a letter on the other. Four cards are placed on the table: \[% good demo of the joys of TeX...
+	\fbox{\vbox to 30pt{\vfil\hbox to 17pt{\;\huge\textbf2\;}\vfil}}\quad
+	\fbox{\vbox to 30pt{\vfil\hbox to 17pt{\;\huge\textbf3\;}\vfil}}\quad
+	\fbox{\vbox to 30pt{\vfil\hbox to 17pt{\huge\textbf A}\vfil}}\quad
+	\fbox{\vbox to 30pt{\vfil\hbox to 17pt{\huge\textbf B}\vfil}}
+\] You are permitted to turn just two cards over in order to test the following hypothesis: a card that has an even number on one side has a vowel on the other. Which two cards should you turn? Or is it impossible?
+
+
+
+\question%6
+Let $X, Y$ and $Z$ be sets, and let $f: X \to Y$ and $g: Y \to Z$ be functions. Which of the following statements are true, which false? In each case either carefully prove the statement or give a specific counter-example.
+\begin{parts}
+\part%6a
+if $f$ and $g$ are surjective then $g \circ f$ is surjective.
+
+\part%6b
+if $g$ is surjective then $g \circ f$ is surjective.
+
+\part%6c
+if $g \circ f$ is surjective then $g$ is surjective.
+\end{parts}
+
+
+
+\question%7 f(A) is more commonly called the *trace* of A, and the properties here will come in very handy in linear algebra
+Let $n \geq 2$ be an integer, let $S$ be the set of $n \times n$ matrices with real coefficients, and define $f: S \to \mathbb{R}$ by \[
+	f(A)=\sum_{i=1}^{n} a_{i i} \qquad
+	\text{for} \qquad
+	A=\begin{pmatrix}
+		a_{11} & \ldots & a_{1 n} \\
+		\vdots & \ddots & \vdots \\
+		a_{n 1} & \ldots & a_{n n}
+	\end{pmatrix}
+\] Prove or disprove each of the following statements:
+\begin{parts}
+\part%7a
+$f(A+B)=f(A)+f(B)$ for all $A, B \in S$;
+
+\part%7b
+$f(A B)=f(A) f(B)$ for all $A, B \in S$;
+
+\part%7c
+$f(A B)=f(B A)$ for all $A, B \in S$;
+
+\part%7d
+$f(A)=0$ if and only if $A$ is not invertible.
+\end{parts}
+
+
+
+\question%8
+Let $f: \mathbb{R} \to \mathbb{R}$.
+\begin{parts}
+\part%8a this is the definition of continuity you'll see in analysis II
+Translate the following statement into English: \[
+	\forall\varepsilon>0 \quad \forall a \in \mathbb{R} \quad \exists \delta>0 \quad \forall x \in \mathbb{R} \quad|x-a|<\delta \implies|f(x)-f(a)|<\varepsilon.
+\]
+
+\part%8b this is the definition of uniform continuity you'll see in analysis II
+Express the following statement using the symbols $\forall$, $\exists$, and $\implies$: \begin{center}
+	for every positive real number $\varepsilon$ there exists a positive real number $\delta$ such that for all real numbers $a$ and $x$, $|f(x)-f(a)|<\varepsilon$ whenever $|x-a|<\delta$.
+\end{center}
+
+\part%8c
+Do these statements say the same thing? Can you prove whether or not they hold for the case $f(x)=x^{2}$?
+\end{parts}
+
+\end{questions}
+
+\end{document}

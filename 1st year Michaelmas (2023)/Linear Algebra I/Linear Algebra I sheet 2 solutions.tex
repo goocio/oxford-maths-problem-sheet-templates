@@ -1,0 +1,201 @@
+\documentclass[answers]{exam}
+\usepackage{../MT2023}
+
+\title{Linear Algebra -- Sheet 2\\Elementary row operations, Reduced row echelon form}
+\author{YOUR NAME HERE :)}
+\date{Michaelmas Term 2023}
+
+\newcommand*{\bump}{\vspace{1em}\phantom{}\vspace{-1.75em}}
+
+
+\begin{document}
+\maketitle
+\section*{Main course}
+\begin{questions}
+
+\question%1
+\begin{parts}
+\part%1a
+Let $J_{n}$ be the $n \times n$ matrix with all entries equal to 1. For what values of $\alpha, \beta \in \mathbb{R}$ is the matrix $\alpha I_{n}+\beta J_{n}$ is invertible? [\emph{Hint: note that $J_{n}^{2}=n J_{n}$; seek an inverse of $\alpha I_{n}+\beta J_{n}$ of the form $\lambda I_{n}+\mu J_{n}$ where $\lambda, \mu \in \mathbb{R}$.}]
+
+\part%1b
+Find the inverse of $\begin{pmatrix}3 & 2 & 2 & 2 \\ 2 & 3 & 2 & 2 \\ 2 & 2 & 3 & 2 \\ 2 & 2 & 2 & 3\end{pmatrix}$.
+\end{parts}
+
+
+
+\question%2
+Use EROs to reduce each of the following matrices to RRE form:
+\begin{parts}
+\part%2a
+\bump \[
+	\begin{pmatrix}
+		2 & 4 & -3 & 0 \\
+		1 & -4 & 3 & 0 \\
+		3 & -5 & 2 & 1
+	\end{pmatrix};
+\]
+
+\part%2b
+\bump \[
+	\begin{pmatrix}
+		1 & 2 & 3 & 0 \\
+		2 & 3 & 4 & 1 \\
+		3 & 4 & 5 & 2
+	\end{pmatrix};
+\]
+
+\part%2c
+\bump \[
+	\begin{pmatrix}
+		1 & 2 & 3 & 0 \\
+		2 & 3 & 4 & 2 \\
+		3 & 4 & 5 & 2
+	\end{pmatrix}.
+\]
+\end{parts}
+
+
+
+\question%3
+Let $A$ and $B$ be $m \times n$ matrices, and let $C$ be an $n \times p$ matrix.
+\begin{parts}
+\part%3a
+Show that $(A+B)^{T}=A^{T}+B^{T}$ and that $(\lambda A)^{T}=\lambda A^{T}$ for scalars $\lambda$.
+
+\part%3b
+Show that $(A C)^{T}=C^{T} A^{T}$.
+
+\part%3c
+Suppose that $m=n$ and $A^{-1}$ exists. Show that $A^{T}$ is invertible and that $(A^{T})^{-1}=(A^{-1})^{T}$.
+\end{parts}
+
+
+
+\question%4
+The trace of a square matrix is the sum of its diagonal elements. Let $A$ be an $m \times n$ matrix and $B$ be $n \times m$. Show that $\operatorname{trace}(AB)=\operatorname{trace}(BA)$.
+
+
+
+\question%5
+Use EROs to find the inverses of each of the following matrices:
+\begin{parts}
+\part%5a
+\bump \[
+	\begin{pmatrix}
+		2 & 3 \\
+		3 & 2
+	\end{pmatrix};
+\]
+
+\part%5b
+\bump \[
+	\begin{pmatrix}
+		1 & 1 & 0 \\
+		1 & 0 & 1 \\
+		0 & 1 & 1
+	\end{pmatrix};
+\]
+
+\part%5c
+\bump \[
+	\begin{pmatrix}
+		1 & -1 & 0 & 0 \\
+		1 & 0 & -1 & 0 \\
+		1 & 0 & 0 & -1 \\
+		0 & 1 & 1 & 1
+	\end{pmatrix}.
+\]
+\end{parts}
+
+
+
+\question%6
+\begin{parts}
+\part%6a
+Show that if the $m \times n$ matrices $A, B$ can be reduced to the same matrix $E$ in echelon form, then there is a sequence of EROs that changes $A$ into $B$.
+
+\part%6b
+Show that an $n \times n$ real matrix can be reduced to RRE form by a sequence of at most $n^{2}$ EROs.
+\end{parts}
+
+\end{questions}
+
+
+
+\section*{Starter}
+\begin{questions}
+
+\question%S1
+Use EROs to determine whether the following matrices are invertible. For each invertible matrix, find the inverse.
+\begin{parts}
+\part%S1a
+\bump \[
+	\begin{pmatrix}
+		1 & 2 \\
+		3 & 4
+	\end{pmatrix};
+\]
+
+\part%S1b
+\bump \[
+	\begin{pmatrix}
+		1 & 2 & 3 \\
+		-1 & 0 & 1 \\
+		2 & 4 & 6
+	\end{pmatrix};
+\]
+
+\part%S1c
+\bump \[
+	\begin{pmatrix}
+		-2 & 0 & 4 & 3 \\
+		1 & 7 & 5 & -6 \\
+		-3 & 7 & 13 & 0 \\
+		0 & 1 & 2 & 3
+	\end{pmatrix}.
+\]
+\end{parts}
+
+
+
+\question%S2
+Show that the inverse of an ERO is an ERO. (Hint: consider each of the three types of ERO separately.)
+
+
+
+\question%S3
+Prove from the vector space axioms that if $V$ is a vector space, $v, z \in V$ and $v+z=v$, then $z=0_{V}$.
+
+\end{questions}
+
+
+
+\section*{Pudding}
+\begin{questions}
+
+\question%P1
+Use EROs to explore for which real numbers $a, b, c, d$ the $2 \times 2$ matrix $\begin{pmatrix}a & b \\ c & d\end{pmatrix}$ is invertible. You will need to proceed on a case by case basis.
+
+
+
+\question%P2
+\begin{parts}
+\part%P2a
+What happens if we multiply an upper triangular matrix by an upper triangular matrix?
+
+\part%P2b
+What if we multiply a lower triangular matrix by a lower triangular matrix?
+
+\part%P2c
+What if we multiply a lower triangular matrix by an upper triangular matrix?
+\end{parts}
+
+
+
+\question%P3
+Let $V\coloneqq\mathbb{R} \times \mathbb{Z}$, the set of all pairs $(x, k)$ where $x$ is a real number and $k$ is an integer. Define addition coordinate-wise so that $(x, k)+(y, m)=(x+y, k+m)$, and define scalar multiplication by real numbers $\lambda$ by the rule $\lambda(x, k)=(\lambda x, 0)$. Which of the vector space axioms are satisfied, and which are not?
+
+\end{questions}
+
+\end{document}

@@ -1,0 +1,89 @@
+\documentclass[answers]{exam}
+\usepackage{../MT2023}
+\usepackage{xurl}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,urlcolor=blue,}
+\urlstyle{same}
+
+\title{Geometry -- Sheet 3\\Conics}
+\author{YOUR NAME HERE :)}
+\date{Michaelmas Term 2023}
+
+
+\begin{document}
+\maketitle
+\begin{questions}
+
+\question%1
+Noting that the point $(x_{0}, y_{0})$ is at a distance $|a x_{0}+b y_{0}+c| / \sqrt{a^{2}+b^{2}}$ from the line $a x+b y+c=0$, find the equations in Cartesian co-ordinates of:
+\begin{parts}
+\part%1a
+the ellipse with foci at $(\pm 2,0)$ which passes through $(0,1)$;
+
+\part%1b
+the hyperbola with asymptotes $y=\pm 2 x$ and directrices $x=\pm 1$;
+
+\part%1c
+the ellipse consisting of all points $P$ such that $|A P|+|B P|=10$, where $A$ is $(3,0)$ and $B$ is $(-3,0)$;
+
+\part%1d
+the parabola with directrix $x+y=1$ and focus $(-1,-1)$.
+\end{parts}
+
+
+
+\question%2
+Consider the parabola $C$ with equation $y^{2}=4 a x$ and let point $P=(a t^{2}, 2 a t)$.
+\begin{parts}
+\part%2a
+What is the gradient of $C$ at $P$ in terms of $t$?
+
+\part%2b
+The focus $F$ is at $(a, 0)$. Let $l_{1}$ denote the line connecting $P$ and $F$, and $\theta_{1}$ denote the angle between $l_{1}$ and the tangent to $C$ at $P$. Show that \[
+	\cos \theta_{1}=\frac{t}{\sqrt{t^{2}+1}}.
+\]
+
+\part%2c
+Let $l_{2}$ denote the horizontal line through $P$ and $\theta_{2}$ denote the angle between $l_{2}$ and the tangent to $C$ at $P$. Show that $\theta_{1}=\theta_{2}$. (Consequently any light beam emitted from the focus $F$ will reflect horizontally after contact with a parabolic mirror.)
+\end{parts}
+
+
+
+\question%3
+\begin{parts}
+\part%3a
+The conic $C$ is formed by intersecting the double cone $x^{2}+y^{2}=z^{2}$ with the plane $x+y+z=1$. Show that the point with position vector \[
+	\mathbf r(t)=(1+(\sec t-\tan t)/\sqrt2, 1+(\sec t+\tan t)/\sqrt2, -1-\sqrt2\sec t)
+\] lies on $C$.
+
+\part%3b
+Show that the vectors $\mathbf{e}_{1}=(1 / \sqrt{6}, 1 / \sqrt{6},-\sqrt{2 / 3})$ and $\mathbf{e}_{2}=(-1 / \sqrt{2}, 1 / \sqrt{2}, 0)$ are of unit length, are perpendicular to one another and are parallel to the plane $x+y+z=1$. Show further that \[
+	\mathbf{r}(t)=(1,1,-1)+(a \sec t) \mathbf{e}_{1}+(b \tan t) \mathbf{e}_{2}
+\] where $a$ and $b$ are positive numbers to be determined.
+
+\part%3c
+Show that $C$ has eccentricity $2 / \sqrt{3}$, has foci $(1,1,-1) \pm 2 \mathbf{e}_{1}$ and that the directrices, in parametric form, are $(1,1,-1) \pm 3 \mathbf{e}_{1} / 2+\lambda \mathbf{e}_{2}$.
+\end{parts}
+
+
+
+\question%4
+By rotating the $x y$-axes appropriately, and subsequently completing the squares, show that the curve \[
+	6 x^{2}+4 x y+9 y^{2}-12 x-4 y-4=0
+\] is an ellipse and find its area.
+
+
+
+\question%5
+Let $\mathbf{v}$ and $\mathbf{w}$ be independent vectors in $\mathbb{R}^{2}$. Show that \[
+	\mathbf{r}(t)=\mathbf{v} \cos t+\mathbf{w} \sin t
+\] where $0 \leqslant t<2 \pi$, is a parametrization of an ellipse.
+
+
+
+\question%6
+(Optional) Let $P$ be a point on an ellipse with foci $F_{1}$ and $F_{2}$. Show that the two lines $F_{1} P$ and $F_{2} P$ make the same angle with the normal to the ellipse. [\emph{This means that if you are playing billiards on an elliptical table, with a pocket on one focus and the ball placed on the other focus, every shot will go in! (Assuming it is hit sufficiently hard.) \href{https://www.youtube.com/watch?v=4KHCuXN2F3I}{Click here for a cool YouTube video showing this.}}] Consider: is there a related statement for a hyperbola?
+
+\end{questions}
+
+\end{document}

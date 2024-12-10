@@ -1,0 +1,77 @@
+\documentclass[answers]{exam}
+\usepackage{../MT2023}
+
+\title{Intro Calculus -- Sheet 6}
+\author{YOUR NAME HERE :)}
+\date{Michaelmas Term 2023}
+
+\newcommand*{\bump}{\vspace{1em}\phantom{}\vspace{-1.75em}}
+
+
+\begin{document}
+\maketitle
+\begin{questions}
+
+\question%1
+Evaluate the following integrals and in each case, sketch the area of integration:
+\begin{parts}
+\part%1a
+\bump \[
+	\int_{x=0}^{x=1}\int_{y=0}^{y=3-3x}\mathrm{~d}y\mathrm{~d}x;
+\]
+
+\part%1b
+\bump \[
+	\int_{y=0}^{y=1}\int_{x=0}^{x=\sqrt{1-y^{2}}}\mathrm{~d}x\mathrm{~d}y;
+\]
+
+\part%1c
+\bump \[
+	\int_{x=0}^{x=4}\int_{y=0}^{y=\sqrt x}\mathrm{~d}y\mathrm{~d}x.
+\]
+\end{parts}
+
+
+
+\question%2
+Use a double integral to find the area of the region bounded by the curves $y^2=4x$ and $2x+y=4$.
+
+
+
+\question%3
+\begin{parts}
+\part%3a
+Let $a>0$. Sketch the curve \[
+	x^{2 / 3}+y^{2 / 3}=a^{2 / 3}
+\] in the quadrant $x, y>0$.
+
+\part%3b
+The variables $u$ and $v$ are given in terms of $x$ and $y$ by \[
+	x=u \cos ^{3} v, \qquad y=u \sin ^{3} v .
+\] What is the equation of the curve in terms of the new coordinates $u$ and $v$? Calculate the Jacobian $\frac{\partial(x, y)}{\partial(u, v)}$ and hence find the area of the region bounded by the curve and the positive $x$- and $y$-axes.
+\end{parts}
+
+
+
+\question%4
+Let $a>0$. The curve with polar equation \[
+	r=a(1+\cos \theta), \qquad 0 \leq \theta<2 \pi
+\] is called a cardioid. Sketch the curve and, using a double integral, show that the area bounded by it equals $\frac{3}{2} \pi a^{2}$.
+
+
+
+\question%5
+Calculate the scalar line integral of the vector field \[
+	\mathbf F(\mathbf r)=(2xy^2-3yz+1,2yx^2-3xz,-3xy)
+\] along the path consisting of the straight-line segment joining the origin to the point $(a, b, c)$.
+
+
+
+\question%6
+Find the length of the curve given by \[
+	x=t, \qquad y=-\ln(\cos t), \qquad 0 \leq t \leq\frac\pi4.
+\]
+
+\end{questions}
+
+\end{document}

@@ -1,0 +1,106 @@
+\documentclass[answers]{exam}
+\usepackage{../MT2023}
+
+\title{Probability -- Sheet 1}
+\author{YOUR NAME HERE :)}
+\date{Michaelmas Term 2023}
+
+
+\begin{document}
+\maketitle
+\begin{questions}
+
+\question%1
+How many ways are there to order the letters of the word ABSTEMIOUSLY? In how many of these do the letters A and B remain next to each other? In how many do the six vowels (AEIOUY) remain in alphabetical order?
+
+
+
+\question%2
+Celia the centipede has 100 feet, 100 socks, and 100 shoes. How many orders can she choose from to put on her socks and shoes? (She must put a sock on foot $i$ before putting a shoe on foot $i$.)
+
+
+
+\question%3
+A fair die is rolled nine times. What is the probability that 1 appears three times, 2 and 3 each appear twice, 4 and 5 once, and 6 not at all?
+
+
+
+\question%4
+Let $[n+1]$ be the set defined by $[n+1]=\{1,2,...,n+1\}$. Call a subset of $[n+1]$ with $r+1$ distinct elements an $(r+1)$-subset. How many $(r+1)$-subsets of $[n+1]$ have $(k+1)$ as their largest element? Hence deduce that \[
+	\sum_{k=r}^n\binom kr=\binom{n+1}{r+1}.
+\]
+
+
+
+\question%5 if you don't like how \emptyset looks, there's \varnothing instead
+Starting from the axioms of probability, $\mathbf{P}_1$ -- $\mathbf{P}_3$ from lectures, deduce the following results.
+\begin{parts}
+\part%5a
+$\mathbb P(\emptyset)=0$,
+
+\part%5b
+$\mathbb P(A\setminus B)=\mathbb P(A)-\mathbb P(A\cap B)$,
+
+\part%5c
+$\mathbb P(A\cup B)=\mathbb P(A)+\mathbb P(B)-\mathbb P(A\cap B)$.
+\end{parts}
+
+
+
+\question%6
+Let $A$, $B$, and $C$ be events. The event "$A$ and $B$ occur but $C$ does not" may be expressed $A\cap B\cap C^c$.
+\begin{parts}
+\part%6a
+Find an expression for the event "at least one of $B$ and $C$ occurs but $A$ does not".
+
+\part%6b
+Show that the probability of the event in (a) is equal to \[
+	\mathbb P(B)+\mathbb P(C)-\mathbb P(B\cap C)-\mathbb P(A\cap C)-\mathbb P(A\cap B)+\mathbb P(A\cap B\cap C.
+\]
+
+\part%6c
+How many of the numbers $1,2,...,600$ are divisible by 5 or 7 but not by 4?
+\end{parts}
+
+
+
+\question%7
+\textbf{(The birthday problem.)} There are $n$ people present in a room. Assume that people's birthdays are equally likely to be on any day of the year.
+\begin{parts}
+\part%7a
+What is the probability that at least two of them celebrate their birthday on the same day? How large does $n$ need to be for this probability to be more than $\frac12$? (Ignore leap years.)
+
+\part%7b
+What is the probability that at least one of them celebrates their birthday on the same day as you? How large does $n$ need to be for this probability to be more than $\frac12$?
+\end{parts}
+
+
+
+\question%8
+A confused college porter tries to hang $n$ keys on their $n$ hooks. He does manage to hang one key per hook, but other than this all arrangements of keys on hooks are equally likely. Let $A_i$ be the event that key $i$ is on the correct hook. We would first like to find the probability that at least one key is on the correct hook, which is $\mathbb{P}(\bigcup_{i=1}^n A_i)$. The generalisation of 5(c) to the case of $n$ events is \begin{align*}
+	\mathbb{P}\left(\bigcup_{1 \leq i \leq n} A_i\right)
+		&=\sum_{i=1}^n \mathbb{P}(A_i)-\sum_{1 \leq i<j \leq n} \mathbb{P}(A_i \cap A_j)+\sum_{1 \leq i<j<k \leq n} \mathbb{P}(A_i \cap A_j \cap A_k) \\
+		&-\cdots+(-1)^{n+1} \mathbb{P}\left(\bigcap_{1 \leq i \leq n} A_i\right).
+\end{align*} This is the inclusion-exclusion formula.
+\begin{parts}
+\part%8a
+Explain why $\mathbb{P}(A_1)=\frac{(n-1)!}{n!}$ and $\mathbb{P}(A_1\cap A_2)=\frac{(n-2)!}{n!}$.
+
+\part%8b
+The second sum on the right-hand side above is over all pairs $(i,j)$ which satisfy the condition $1 \leq i<j \leq n$. Write down the number of such pairs.
+
+\part%8c
+By generalising the ideas in (a) and (b), find the probability that at least one key is on the correct hook.
+
+\part%8d
+Now let $p_n(r)$ denote the probability that exactly $r$ keys are on the correct hook, for $0 \leq r \leq n$. Find $p_n(0)$. Show that \[
+	p_n(r)=\frac{1}{r !} \sum_{k=0}^{n-r} \frac{(-1)^k}{k !}.
+\]
+
+\part%8e
+(\emph{Optional}.) Use induction to prove the inclusion-exclusion formula.
+\end{parts}
+
+\end{questions}
+
+\end{document}

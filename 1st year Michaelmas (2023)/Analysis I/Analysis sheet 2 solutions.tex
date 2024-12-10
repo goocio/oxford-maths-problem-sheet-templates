@@ -1,0 +1,107 @@
+\documentclass[answers]{exam}
+\usepackage{../MT2023}
+
+\title{Analysis I -- Sheet 2\\Real numbers, Arithmetic, Order}
+\author{YOUR NAME HERE :)}
+\date{Michaelmas Term 2023}
+
+
+\begin{document}
+\maketitle
+\begin{questions}
+
+\question%1
+For each of the following conditions, find and sketch the set of all pairs $(x, y) \in \mathbb{R}^{2}$ satisfying the condition:
+\begin{parts}
+\part%1a
+$|x|+|y|=1$;
+
+\part%1b
+$|x-y|+|x+y|=1$;
+
+\part%1c
+$\max (|x|,|y|)=1$.
+\end{parts}
+
+
+
+\question%2
+A student claims erroneously that \[
+	\frac{1}{|a+b|} \leqslant \frac{1}{|a|+|b|} \quad\text {if } a+b \neq 0.
+\] Find an example to show that this is false in general. How might the student have come to make the error? Find an argument based on the Reverse Triangle Inequality which gives a valid upper bound for $1 /|a+b|$ in terms of $|a|$ and $|b|$.
+
+
+
+\question%3
+Prove that the subset $S=\{2^{n}: n \in \mathbb{Z}^{\geqslant 1}\}$ of $\mathbb{R}$ is not bounded above. [\emph{You should not make any use of logarithms.}]
+
+
+
+\question%4
+For each of the following sets, decide which of the following exist: (i) supremum; (ii) infimum; (iii) maximum; (iv) minimum. In each case, either write down the value (without proof) or indicate why it is not defined.
+\begin{parts}
+\part%4a
+$\mathbb{Q} \cap[0, \sqrt{2}]$;
+
+\part%4b
+$\{(-1)^{n}+\frac{1}{n}: n \in \mathbb{Z}^{\geqslant 1}\}$;
+
+\part%4c
+$\{3^{n}: n \in \mathbb{Z}\}$;
+
+\part%4d
+$\bigcup\limits_{n=1}^{\infty}\left[\frac{1}{2 n}, \frac{1}{2 n-1}\right]$.
+\end{parts}
+
+
+
+\question%5
+Let $S, T$ be non-empty subsets of $\mathbb{R}$.
+\begin{parts}
+\part%5a
+Assume that $S$ and $T$ are bounded above. Prove that $S \cup T$ is bounded above and that $\sup (S \cup T)=\max (\sup S, \sup T)$.
+
+\part%5b
+Assume that $S$ and $T$ are bounded below. Prove that the set \[
+	S+T:=\{s+t: s \in S, t \in T\}
+\] is bounded below and that $\inf (S+T)=\inf S+\inf T$.
+\end{parts}
+
+
+
+\vspace{-.3\baselineskip}
+\question%6
+Prove that there exists a unique real number $a$ such that $a^{3}=2$. [\emph{Hint: adapt the proof of the existence of $\sqrt{2}$ from the lecture video.}]
+
+
+
+\question%7
+\begin{parts}
+\part%7a
+Prove that there are uncountably many irrational numbers.
+
+\part%7b
+Let $a, b$ be real numbers with $a<b$. Show that there is a natural number $n$ such that $\frac{1}{n}<b-a$. Deduce that there is a rational number in the interval $(a, b)$.
+
+\part%7c
+Show further that between any two real numbers there is an irrational number.
+\end{parts}
+
+
+
+\question%8
+(Optional) A complex number is said to be \emph{algebraic} if it is the root of a polynomial with integer coefficients and otherwise is said to be \emph{transcendental}.
+\begin{parts}
+\part%8a
+Show that there are only countably many cubic polynomials with integer coefficients.
+
+\part%8b
+Show that there are only countably many complex numbers which are roots of some integer-coefficient cubic polynomial.
+
+\part%8c
+Show further that there are only countably many algebraic numbers but uncountably many transcendental numbers.
+\end{parts}
+
+\end{questions}
+
+\end{document}

@@ -1,0 +1,90 @@
+\documentclass[answers]{exam}
+\usepackage{../MT2023}
+
+\title{Intro Calculus -- Sheet 1}
+\author{YOUR NAME HERE :)}
+\date{Michaelmas Term 2023}
+
+\newcommand*{\bump}{\vspace{1em}\phantom{}\vspace{-1.75em}}
+
+
+\begin{document}
+\maketitle
+\begin{questions}
+
+\question%1
+Evaluate the following integrals:
+\begin{parts}
+\part%1a
+\bump \[
+	\int_0^1\frac 1{e^x+1}\mathrm{~d}x;
+\]
+
+\part%1b
+\bump \[
+	\displaystyle\int_0^2x^3e^{-x}\mathrm{~d}x;
+\]
+
+\part%1c
+\bump \[
+	\displaystyle\int(2x^3-x)\arctan x\mathrm{~d}x.
+\]
+\end{parts}
+
+
+
+\question%2
+For integer $n$, let \[
+	I_n=\int_0^\infty x^ne^{-x^2}\mathrm{~d}x.
+\] Show that \[
+	I_n=\frac{n-1}2I_{n-2},
+\] and determine the domain of $n$ if we only consider integer values. Find $I_5$ and, given that $I_0=\sqrt\pi/2$, find $I_6$.
+
+
+
+\question%3
+Find the solutions, with their domains, to the following initial-value problems:
+\begin{parts}
+\part%3a
+\bump \[
+	\frac{\mathrm dy}{\mathrm dx}=\frac{2xy^2+x}{x^2y+y},\qquad
+	y(\sqrt2)=1,
+\]
+
+\part%3b
+\bump \[
+	\sin x\sin y\frac{\mathrm dy}{\mathrm dx}=\cos x\cos y,\qquad
+	y\left(\frac\pi2\right)=\frac\pi4.
+\]
+\end{parts}
+
+
+
+\question%4
+Solve the initial value problem \[
+	\frac{\mathrm dy}{\mathrm dx}=\frac{y}{x+y+2},\qquad
+	y(0)=1,
+\] using the substitutions \[
+	X=x+a\quad\text{and}\quad Y=y+b,
+\] for some suitable constants $a$ and $b$ which you should find. Indicate the domain of the solution.
+
+
+
+\question%5
+Find the solution of the initial value problem \[
+	\frac{\mathrm d^2y}{\mathrm dx^2}=\frac 1{1+x^2},\qquad
+	y(0)=y'(0)=0,
+\] and verify that $\displaystyle y(1)=\frac\pi4-\frac12\ln2$.
+
+
+
+\question%6
+By making a substitution $z=\frac{\mathrm dy}{\mathrm dx}$, or otherwise, solve the initial value problem \[
+	\frac{\mathrm d^2y}{\mathrm dx^2}=(1+3x^2)\left(\frac{\mathrm dy}{\mathrm dx}\right)^2,\qquad
+	y(1)=0,\quad
+	y'(1)=-\frac12.
+\]
+
+\end{questions}
+
+\end{document}

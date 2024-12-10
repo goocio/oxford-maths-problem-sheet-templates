@@ -1,0 +1,108 @@
+\documentclass[answers]{exam}
+\usepackage{../MT2023}
+
+\title{Geometry -- Sheet 7\\Surface area, Isometry}
+\author{YOUR NAME HERE :)}
+\date{Michaelmas Term 2023}
+
+
+\begin{document}
+\maketitle
+\begin{questions}
+
+\question%1
+Let $\mathbf{r}$ be a parametrization of a subset of the $x y$-plane in $\mathbb{R}^{3}$ so that \[
+	\mathbf{r}(u, v)=(x(u, v), y(u, v), 0), \qquad(u, v) \in U
+\] Determine $\mathbf{r}_{u} \wedge \mathbf{r}_{v}$ and show that the area of $\mathbf{r}(U)$ equals \[
+	\iint\limits_u\left|\frac{\partial(x, y)}{\partial(u, v)}\right|~\mathrm du~\mathrm dv.
+\]
+
+
+
+\question%2
+Part of a catenoid is formed by rotating the graph of $y=\cosh x$ (where $a \leqslant x \leqslant b$) about the $x$-axis. Calculate the area of the resulting surface.
+
+
+
+\question%3
+Let $0<\alpha<\pi / 2$ and let $S_{\alpha}$ be the cap of the unit sphere $x^{2}+y^{2}+z^{2}=1$ parametrized as \[
+	\mathbf r(\theta, \phi)=(\sin\theta\cos\phi, \sin\theta\sin\phi, \cos\theta)\qquad
+	0<\theta<\alpha,\quad 0<\phi<2\pi.
+\]
+\begin{parts}
+\part%3a
+Determine $\mathbf{r}_{\theta} \wedge \mathbf{r}_{\phi}$ and show that the surface area of $S_{\alpha}$ equals $2 \pi(1-\cos \alpha)$.
+
+\part%3b
+Rederive the result of (a) by considering the cap as part of the graph $z=\sqrt{1-x^{2}-y^{2}}$ and using the formula for a graph's surface area.
+\end{parts}
+
+
+
+\question%4
+Let $\theta$ and $\phi$ denote spherical polar co-ordinates on the unit sphere $x^{2}+y^{2}+z^{2}=1$. The \emph{Albers equal-area conic projection} is defined by \[
+	x=\frac1n\sqrt{C-2n\cos\theta}\sin n\phi,\qquad
+	y=\rho_0-\frac1n\sqrt{C-2n\cos\theta}\cos n\phi
+\] where $n, C, \rho_{0}$ are constants. Describe the image in the plane of a latitude ($\theta=$ const.) and a meridian ($\phi=$ const.) Determine the Jacobian $|\partial(x, y) / \partial(\phi, \theta)|$ and explain why this means the projection preserves area.
+
+
+
+\question%5
+\begin{parts}
+\part%5a search up the wiki page on "first fundamental form"
+Let $\mathbf{r}(u, v)$ be a parametrization of a surface in $\mathbb{R}^{3}$ and $\gamma(t)=\mathbf{r}(u(t), v(t))$. Show the following: \[
+	\boldsymbol\gamma'(t)=u'\mathbf r_u+v'\mathbf r_v,\qquad
+	|\boldsymbol\gamma'(t)|^2=E(u')^2+2Fu'v'+G(v')^2,\qquad
+	|\mathbf{r}_{u} \wedge \mathbf{r}_{v}|^2=EG-F^2
+\] where $E=\mathbf{r}_{u} \cdot \mathbf{r}_{u}$, $F=\mathbf{r}_{u} \cdot \mathbf{r}_{v}$, $G=\mathbf{r}_{v} \cdot \mathbf{r}_{v}$.
+
+\part%5b
+The flat torus in $\mathbb{R}^{4}$ can be parametrized as \[
+	\mathbf r(\theta, \phi)=(\cos \theta, \sin \theta, \cos \phi, \sin \phi),\qquad
+	(\theta, \phi) \in U=(0,2 \pi) \times(0,2 \pi).
+\] Let $\gamma(t)=(\theta(t), \phi(t))$ be a curve in $U$.
+\begin{subparts}
+\subpart%5bi
+Show that the curve $\gamma$, and its image $\mathbf{r}(\gamma)$ in the flat torus, have the same length.
+
+\subpart%5bii
+As there is no vector product in $\mathbb{R}^{4}$ we cannot use our current formulae to work out the surface area of the flat torus. What do you think its surface area equals?
+\end{subparts}
+\end{parts}
+
+
+
+\question%6
+\begin{parts}
+\part%6a
+Compute the area of the helicoid \[
+	\mathrm{s}(X, Z)=(X \cos Z, X \sin Z, Z)
+\] for $A<X<B, 0<Z<C<2 \pi$.
+
+\part%6b
+Rederive the result by defining an isometry between the catenoid and helicoid and using the calculation in Question 2. You might find it helpful to use the identities: $\sinh (2 x)=2 \sinh x \cosh x, \cosh (\arsinh x)=\sqrt{1+x^{2}}$.
+\end{parts}
+
+
+
+\question%7
+(Optional) Let $0<a \leqslant b \leqslant c<\pi / 2$ and let $A=(0,0,1)$ and $B=(\sin c, 0, \cos c)$ be points on the unit sphere.
+\begin{parts}
+\part%7a
+Show that there is a point $C$ which is at a distance $b$ from $A$ and at a distance $a$ from $B$ if and only if $a+b \geqslant c$. [Hint: every point at a distance $b$ from $A$ has the form $(\sin b \cos \phi, \sin b \sin \phi, \cos b)$ for some $\phi$.]
+
+\part%7b
+\begin{subparts}
+\subpart%7bi
+Prove the spherical cosine rule which states that, for a spherical triangle with sides $a, b, c$ and opposite angles $\alpha, \beta, \gamma$, \[
+	\cos a=\cos b \cos c+\sin b \sin c \cos \alpha.
+\]
+
+\subpart%7bii
+Show that when $a, b, c$ are small enough, that we can ignore terms of order 3 and above, so that the approximations $\cos x \approx 1-x^{2} / 2$ and $\sin x \approx x$ apply, then the spherical cosine rule approximates the usual cosine rule.
+\end{subparts}
+\end{parts}
+
+\end{questions}
+
+\end{document}

@@ -1,0 +1,141 @@
+\documentclass[answers]{exam}
+\usepackage{../MT2023}
+
+\title{Analysis I -- Sheet 3\\Convergence, Infinite limits, Complex sequences}
+\author{YOUR NAME HERE :)}
+\date{Michaelmas Term 2023}
+
+
+\begin{document}
+\maketitle
+\begin{questions}
+
+\question%1
+For each of the following choices of $a_{n}$, and for arbitrary $\varepsilon>0$, find $N$ such that $\left|a_{n}\right|<\varepsilon$ whenever $n \geqslant N$. [\emph{You need only to find a value of $N$ that works, not necessarily the smallest such $N$.}]
+\begin{parts}
+\part%1a
+$\displaystyle\frac{1}{n^{2}+3}$,
+
+\part%1b
+$\displaystyle\frac{1}{n(n-\pi)}$,
+
+\part%1c
+$\displaystyle\frac{1}{\sqrt{5 n-1}}$.
+\end{parts}
+
+
+
+\question%2
+Use sandwiching arguments to prove that, for each of the following choices of $a_{n}$, the sequence $\left(a_{n}\right)$ converges to 0:
+\begin{parts}
+\part%2a
+$\displaystyle\frac{n+1}{n^{2}+n+1}$,
+
+\part%2b
+$\displaystyle2^{-n} \cos \left(n^{2}\right)$,
+
+\part%2c
+$\displaystyle\sin \frac{1}{n}$,
+
+\part%2d
+$\displaystyle\begin{cases}\frac{1}{2^{n}} & \text { if } n \text { is prime, } \\ -\frac{1}{3^{n}} & \text { otherwise. }\end{cases}$
+\end{parts}
+
+
+
+\question%3
+\begin{parts}
+\part%3a
+Prove that $\sqrt{n+1}-\sqrt{n} \to 0$ by using the identity $a-b=(\sqrt{a}-\sqrt{b})(\sqrt{a}+\sqrt{b})$ (for $a, b \in \mathbb{R}^{\geqslant 0}$).
+
+\part%3b
+Prove that $n^{1 / n} \geqslant 1$ for $n=1,2, \ldots$ Let $a_{n}=n^{1 / n}-1$. Prove, by applying the binomial theorem to $\left(1+a_{n}\right)^{n}$, that \[
+	a_{n} \leqslant \sqrt{\frac{2}{n-1}} \text{ for } n>1.
+\] Deduce that $n^{1 / n} \to 1$.
+\end{parts}
+
+
+
+\question%4
+\begin{parts} 
+\part%4a
+Write down, carefully quantified, what it means for a real sequence $\left(a_{n}\right)$ (i) to be convergent; (ii) to be bounded; (iii) to tend to infinity. Write down, carefully quantified, the negations of (i), (ii), (iii).
+
+\part%4b
+Formulate and prove an analogue of the Sandwiching Lemma applicable to real sequences that tend to infinity.
+
+\part%4c
+For each of the following choices of $a_{n}$ decide whether or not the sequence tends to infinity:
+\begin{subparts}
+\subpart%4ci
+$\displaystyle\frac{n^{2}+n+1}{n+1}$,
+
+\subpart%4cii
+$\displaystyle n^{2} \sin n$,
+
+\subpart%4ciii
+$\displaystyle\frac{n^{3 / 4}}{\sqrt{5 n-1}}$,
+
+\subpart%4civ
+$\displaystyle\left(1+\frac{1}{n}\right)^{n}$.
+\end{subparts}
+\end{parts}
+
+
+
+\question%5
+Assume that $(a_{n})$ is a sequence such that $a_{n} \to 0$. Let $(b_{n})$ be a bounded sequence. Prove that $a_{n} b_{n} \to 0$. Give an example of a single sequence $(a_{n})$ such that $a_{n} \to 0$ and of appropriate sequences $(c_{n})$ to demonstrate that each of the following possibilities can occur:
+[\emph{The idea is to use the same sequence $(a_{n})$ for all of these parts, but you can use different $(c_{n})$ for each.}]
+\begin{parts}
+\part%5a
+$a_{n} c_{n} \to 0$ and $(c_{n})$ is unbounded;
+
+\part%5b
+$a_{n} c_{n} \to \infty$;
+
+\part%5c
+$(a_{n} c_{n})$ converges to a non-zero limit;
+
+\part%5d
+$(a_{n} c_{n})$ is bounded and divergent;
+
+\part%5e
+$a_{n} c_{n} \to-\infty$.
+\end{parts}
+
+
+
+\question%6
+For each of the following choices of $z_{n}$, decide whether or not $\left(z_{n}\right)$ converges:
+\begin{parts}
+\part%6a
+$\displaystyle\left(\frac{1}{1+\mathrm{i}}\right)^{n}$,
+
+\part%6b
+$\displaystyle\frac{(1-\mathrm{i}) n}{n+\mathrm{i}}$,
+
+\part%6c
+$\displaystyle(-1)^{n} \frac{n+\mathrm{i}}{n}$.
+\end{parts}
+
+
+
+\question%7 if you somehow haven't heard of the Mandelbrot set, search it up for some cool fractal images. Many fractals can be obtained by taking a simple recursion relation and plotting based on covergence of iteratively applying the relation to each point in the plane - try out an app called Xaos, it has lots of fractals built in which you can zoom and you can also get it to render custom ones (which it'll perform a bit less well on, but it's still fun)
+{}[\emph{Optional.}] Let $c$ be a complex number. The complex numbers $z_{n}(c)$ are defined recursively by \[ z_{1}(c)=c, \quad z_{n+1}(c)=\left(z_{n}(c)\right)^{2}+c \text { for } n \geqslant 1. \] The \emph{Mandelbrot set} is defined by \[ M=\left\{c \in \mathbb{C}: \text { the sequence }\left(z_{n}(c)\right) \text { is bounded}\right\}. \]
+\begin{parts} 
+\part%7a
+Show that each of $-2,-1,0, i$ lies in $M$ but that $1 \notin M$.
+
+\part%7b
+Show that if $c \in M$ then $\overline{c} \in M$, where $\overline{c}$ denotes the conjugate of $c$.
+
+\part%7c
+Show that if $|c| \leqslant \frac{1}{4}$ then $\left|z_{n}(c)\right|<\frac{1}{2}$ for all $n$. (So if $|c| \leqslant \frac{1}{4}$ then $c \in M$.)
+
+\part%7d
+Show that if $|c|=2+\varepsilon$ where $\epsilon>0$, then $\left|z_{n}(c)\right| \geqslant 2+a_{n} \varepsilon$ for $n \geqslant 1$ where $a_{n}=\left(4^{n}+2\right) / 6$. Deduce that the Mandelbrot set lies entirely within the disc $|z| \leqslant 2$.
+\end{parts}
+
+\end{questions}
+
+\end{document}

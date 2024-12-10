@@ -1,0 +1,258 @@
+\documentclass[answers]{exam}
+\usepackage{../MT2023}
+
+\title{Linear Algebra -- Sheet 1\\Systems of equations, Matrices}
+\author{YOUR NAME HERE :)}
+\date{Michaelmas Term 2023}
+
+\newcommand*{\bump}{\vspace{1em}\phantom{}\vspace{-1.75em}}
+
+
+\begin{document}
+\maketitle
+\section*{Main Course}
+\begin{questions}
+
+\question%1
+Use any method you can think of to decide which (if any) of the following systems of linear equations with real coefficients have no solutions, which have a unique solution (in which case, what is it?), which have infinitely many solutions.
+\begin{parts}
+\part%1a
+\bump \[
+	\left\{\begin{aligned}
+		2x+4y-3z&=0\\
+		x-4y+3z&=0\\
+		3x-5y+2z&=1
+	\end{aligned}\right.;
+\]
+
+\part%1b
+\bump \[
+	\left\{\begin{aligned}
+		x+2y+3z& =0 \\
+		2 x+3 y+4 z & =1 \\
+		3 x+4 y+5 z & =2
+	\end{aligned}\right.;
+\]
+
+\part%1c
+\bump \[
+	\left\{\begin{aligned}
+		x+2 y+3 z & =0 \\
+		2 x+3 y+4 z & =2 \\
+		3 x+4 y+5 z & =2
+	\end{aligned}\right..
+\]
+\end{parts}
+
+
+
+\question%2
+Let \[
+	A:=\begin{pmatrix}1 & 2 \\ 3 & 4\end{pmatrix},\quad
+	B:=\begin{pmatrix}1 \\ 2 \\ 4\end{pmatrix},\quad
+	C:=\begin{pmatrix}-1 & 5 \\ 4 & 4\end{pmatrix},\quad
+	D:=\begin{pmatrix}1 & 4 & -3 \\ 2 & 4 & -2\end{pmatrix},\quad
+	E:=\begin{pmatrix}1 & 2\end{pmatrix},\quad
+	F:=\begin{pmatrix}-1 & 5 & -6 \\ 3 & 4 & -1\end{pmatrix}.
+\] For which pairs $X, Y \in\{A, B, C, D, E, F\}$ is $X-2 Y$ defined? And when it is defined, calculate it.
+
+
+
+\question%3
+Calculate the following matrix products: \[
+	\begin{pmatrix}
+		1 & 2 \\
+		2 & 3
+	\end{pmatrix}\begin{pmatrix}
+		x \\
+		y
+	\end{pmatrix} ; \qquad\begin{pmatrix}
+		0 & 1 \\
+		2 & 3 \\
+		4 & 6
+	\end{pmatrix}\begin{pmatrix}
+		1 & 2 \\
+		2 & 3
+	\end{pmatrix} ; \qquad\begin{pmatrix}
+		1 & 2 & 3 \\
+		2 & 3 & 4 \\
+		3 & 4 & 5
+	\end{pmatrix}^{2}
+\]
+
+
+
+\question%4
+Let $A$ be the $2 \times 2$ matrix $\begin{pmatrix}a & b \\ c & d\end{pmatrix}$.
+\begin{parts}
+\part%4a
+Show that $A$ commutes with $B=\begin{pmatrix}1 & 0 \\ 0 & 0\end{pmatrix}$ if and only if $A$ is diagonal (that is, $b=c=0$).
+
+\part%4b
+Which $2 \times 2$ matrices $A$ commute with $C=\begin{pmatrix}1 & 1 \\ 0 & 0\end{pmatrix}$?
+
+\part%4c
+Use the results of (a) and (b) to find the matrices $A$ that commute with every $2 \times 2$ matrix.
+\end{parts}
+
+
+
+\question%5
+For each $\alpha \in \mathbb{R}$, find the RRE form for the matrix \[
+	\begin{pmatrix}
+		1 & 2 & -3 & -2 & 4 & 1 \\
+		2 & 5 & -8 & -1 & 6 & 2 \\
+		1 & 4 & -7 & 4 & 0 & \alpha
+	\end{pmatrix}.
+\] Use your result either to solve the following system of linear equations over $\mathbb{R}$, or to find values of $\alpha$ for which it has no solution: \[%formatting hell...
+	\arraycolsep=1.4pt
+	\left\{\begin{array}{rcrcrcrcrcr}
+		x_{1}  &+ &2x_{2} &- &3x_{3} &- &2x_{4} &+ &4x_{5} &= &1 \\
+		2x_{1} &+ &5x_{2} &- &8x_{3} &-  &x_{4} &+ &6x_{5} &= &2 \\
+		x_{1}  &+ &4x_{2} &- &7x_{3} &+ &4x_{4} &  &       &= &\alpha
+	\end{array}\right.
+\]
+
+
+
+\question%6
+Let $A$ and $B$ denote square matrices with real entries. For each of the following assertions, find either a proof or a counterexample. [\emph{Hint: where the assertions are false there are counterexamples of size $2 \times 2$.}]
+\begin{parts}
+\part%6a
+$A^{2}-B^{2}=(A-B)(A+B)$.
+
+\part%6b
+If $A B=0$ then $A=0$ or $B=0$.
+
+\part%6c
+If $A B=0$ then $A$ and $B$ cannot both be invertible.
+
+\part%6d
+If $A$ and $B$ are invertible then $A+B$ is invertible.
+
+\part%6e
+If $A B A=0$ and $B$ is invertible then $A^{2}=0$.
+\end{parts}
+
+\end{questions}
+
+
+
+\section*{Starter}
+\begin{questions}
+
+\question%S1
+Let \[
+	A:=\begin{pmatrix}-1 & 3 \\ 1 & 2 \\ 7 & -2\end{pmatrix},\qquad
+	B:=\begin{pmatrix}4 & -3 & 1 \\ 3 & -2 & 1 \\ 7 & 0 & 1\end{pmatrix},\qquad
+	C:=\begin{pmatrix}2 & -2 & 3 \\ 0 & 0 & 0 \\ 5 & -4 & 3\end{pmatrix}.
+\] For which pairs $X$, $Y \in\{A, B, C\}$ is $X Y$ defined? When it is defined, calculate it.
+
+
+
+\question%S2
+Calculate the following matrix products.
+\begin{parts}
+\part%S2a
+\bump \[
+	\begin{pmatrix}
+		x & y & z & w
+	\end{pmatrix}\begin{pmatrix}
+		1 & 0 & 0 & 0 \\
+		0 & 1 & 0 & 0 \\
+		0 & 0 & 1 & 0 \\
+		0 & 0 & 0 & 1
+	\end{pmatrix}\begin{pmatrix}
+		x \\
+		y \\
+		z \\
+		w
+	\end{pmatrix};
+\]
+
+\part%S2b
+\bump \[
+	\begin{pmatrix}
+		x & y & z & w
+	\end{pmatrix}\begin{pmatrix}
+		1 & 0 & 0 & 0 \\
+		0 & -1 & 0 & 0 \\
+		0 & 0 & -1 & 0 \\
+		0 & 0 & 0 & -1
+	\end{pmatrix}\begin{pmatrix}
+		x \\
+		y \\
+		z \\
+		w
+	\end{pmatrix}.
+\]
+\end{parts}
+
+
+
+\question%S3
+Let $A, B$ be invertible $n \times n$ matrices. Then show $A B$ is invertible, and $(A B)^{-1}=B^{-1} A^{-1}$.
+
+\end{questions}
+
+
+
+\section*{Pudding}
+\begin{questions}
+
+\question%P1
+Let $\alpha \in \mathbb{R}$ and\[
+	A=\begin{pmatrix}
+		\cos \alpha & \sin \alpha \\
+		\sin \alpha & -\cos \alpha
+	\end{pmatrix}
+\]
+\begin{parts}
+\part%P1a
+Show that $A^{2}=I_{2}$.
+
+\part%P1b
+Show that there is no real $2 \times 2$ matrix $M$ such that $M^{2}=A$.
+
+\part%P1c
+Is there a matrix $M$ with complex entries such that $M^{2}=A$?
+\end{parts}
+
+
+
+\question%P2
+We can identify a complex number $z=x+y i$ with the $2 \times 2$ real matrix $Z$ by \[
+	x+y i=z \quad \leftrightarrow \quad Z=\begin{pmatrix}
+		x & y \\
+		-y & x
+	\end{pmatrix}.
+\] Let $z, w$ be two complex numbers such that $z \leftrightarrow Z$ and $w \leftrightarrow W$. Show that $z+w \leftrightarrow Z+W$ and $z w \leftrightarrow Z W$.
+
+
+
+\question%P3
+(Here $\mathbb{Z}_{n}$ denotes the integers modulo $n$.) In each of the given fields, put the matrix \[
+	\begin{pmatrix}
+		1 & 1 & 1 & 0 & 1 \\
+		1 & 2 & -1 & 2 & 0 \\
+		0 & 1 & 1 & 2 & 1
+	\end{pmatrix}
+\] into reduced row echelon form, and hence determine how many solutions $(x_{1}, x_{2}, x_{3}, x_{4})$ there are to the system \[
+	x_{1}+x_{2}+x_{3}=1;\qquad
+	x_{1}+2 x_{2}-x_{3}+2 x_{4}=0;\qquad
+	x_{2}+x_{3}+2 x_{4}=1
+\] over that field.
+\begin{parts}
+\part%P3a
+$\mathbb R$;
+
+\part%P3b
+$\mathbb Z_3$;
+
+\part%P3c
+$\mathbb Z_5$.
+\end{parts}
+
+\end{questions}
+
+\end{document}

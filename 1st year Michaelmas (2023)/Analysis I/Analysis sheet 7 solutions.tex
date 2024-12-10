@@ -1,0 +1,176 @@
+\documentclass[answers]{exam}
+\usepackage{../MT2023}
+
+\title{Analysis I -- Sheet 7\\Conditional convergence, Power series}
+\author{YOUR NAME HERE :)}
+\date{Michaelmas Term 2023}
+
+
+\begin{document}
+\maketitle
+\begin{questions}
+
+\question%1
+\begin{parts}
+\part%1a
+Prove that \[
+	1+\frac{1}{3}-\frac{1}{2}+\frac{1}{5}+\frac{1}{7}-\frac{1}{4}+\cdots=\frac{3}{2} \log 2.
+\]
+
+\part%1b
+Calculate the value of \[
+	\sum_{k=1}^{\infty} \frac{1}{k\left(9 k^{2}-1\right)}.
+\]
+\end{parts}
+
+
+
+\question%2
+Find the radius of convergence of each of the following real power series (start the sum at $k=1$ where appropriate):
+\begin{parts}
+\part%2a
+$\displaystyle\sum(-1)^{k} k^{2} x^{k}$;
+
+\part%2b
+$\displaystyle\sum \frac{(2 k-1)(2 k-3) \cdots 3 \cdot 1}{k !} x^{k}$;
+
+\part%2c
+$\displaystyle\sum\left(\frac{x}{k}\right)^{k}$;
+
+\part%2d
+$\displaystyle\sum k^{\frac{1}{k}} x^{k}$.
+\end{parts}
+
+
+
+\question%3
+\begin{parts}
+\part%3a
+Give examples of real power series $\sum c_{k} x^{k}$ with the specified radius of convergence $R$ and with the specified behaviour at $\pm R$ :
+\begin{subparts}
+\subpart%3ai
+$R=1$ and the power series converges at -1 but diverges at 1;
+
+\subpart%3aii
+$R=1$ and the power series converges at 1 and diverges at -1;
+
+\subpart%3aiii
+$R=2$ and the power series converges at 2 and -2;
+
+\subpart%3aiv
+$R=2$ and the power series diverges at 2 and -2.
+\end{subparts}
+
+\part%3b
+Let the real series $\sum a_{k} x^{k}, \sum b_{k} x^{k}$ and $\sum c_{k} x^{k}$ have radius of convergence $R, S$ and $T$, respectively, where $c_{k}=a_{k}+b_{k}$. Obtain a lower bound for $T$ involving $R$ and $S$. Provide examples to illustrate what possibilities can arise.
+\end{parts}
+
+
+
+\question%4
+\begin{parts}
+\part%4a
+For which real values of $x$ does $\sum x^{k}$ converge?
+
+\part%4b
+Use the Differentiation Theorem for power series to evaluate the following, specifying where the formulae you obtain are valid:
+\begin{subparts}
+\subpart%4bi
+$\displaystyle{\sum_{k=1}^{\infty} k x^{k}};$
+
+\subpart%4bii
+$\displaystyle{\sum_{k=1}^{\infty} k^{2} x^{k}}.$
+\end{subparts}
+\end{parts}
+
+
+
+\question%5
+\begin{parts}
+\part%5a
+Prove that the power series \[
+\sum_{k=0}^{\infty} \frac{x^{k}}{(2 k) !} \qquad \text { and } \qquad \sum_{k=0}^{\infty} \frac{x^{k}}{(2 k+1) !}
+\] have infinite radius of convergence.
+
+\part%5b
+Define \[
+	p(x)=\sum_{k=0}^{\infty} \frac{x^{k}}{(2 k) !} \qquad
+	\text{and} \qquad
+	q(x)=\sum_{k=0}^{\infty} \frac{x^{k}}{(2 k+1) !}.
+\] Use the Differentiation Theorem to compute $p'(x)$ and $q'(x)$ and prove that $2 p'(x)=$ $q(x)$ and $p(x)-q(x)=2 x q'(x)$. Hence prove that, for all $x$, $(p(x))^{2}=1+x(q(x))^{2} .$
+\end{parts}
+
+
+
+\question%6 This question is not necessarily intended to be completed independently, and certainly not in one sitting - but definitely try at least the first two parts, and the first statement in part e, since they should certainly be doable. This question proves something called Heine-Borel, which technically isn't even covered fully in 2nd year metric spaces, let alone 1st year, if that's any consolation.
+\makeatletter[\textbf{New Question from 2023 - Feedback is welcome: Alex Ritter, ritter@maths}]\\
+Show that:\makeatother
+\begin{parts}
+\part%a
+Given any point $p$ in an open subset $U \subseteq \mathbb{R}$, there are rationals $c_{p}, r_{p} \in \mathbb{Q}$ such that the interval $\left(c_{p}-r_{p}, c_{p}+r_{p}\right) \subseteq U$ contains $p$.
+
+\part%b
+Any open subset $U \subseteq \mathbb{R}$ is a countable union of open intervals.
+
+\part%c
+If $S \subseteq \bigcup_{i \in I} U_{i}$ for open sets $U_{i} \subseteq \mathbb{R}$, there is a countable $J \subseteq I$ with $S \subseteq \bigcup_{j \in J} U_{j}$.
+
+\part%d
+If $S$ in (3) is bounded and closed, then there is a finite such $J$.
+
+\part%e
+$(0,1)$ is the union of countably many closed intervals, but it is not the union of countably many disjoint closed intervals.
+
+\part%f
+\emph{Challenge Exercise:} $(0,1)$ is not the union of countably many disjoint closed sets.
+\end{parts}
+
+
+
+\question%7
+\begin{parts}
+\part%7a
+Find the radius of convergence of the power series defining the function $J_{0}$, where \[
+	J_{0}(x)=\sum_{k=0}^{\infty} \frac{(-1)^{k}}{(k !)^{2}}\left(\frac{x}{2}\right)^{2 k}.
+\]
+
+\part%7b
+Use the Differentiation Theorem to show that $y=J_{0}(x)$ is a solution of the equation \[
+	x y''+y'+x y=0.
+\]
+\end{parts}
+
+
+
+\question%8
+\emph{(Optional)} The Fibonacci numbers $F_{n}$ are defined by $F_{0}=0, F_{1}=1$ and $F_{k+2}=$ $F_{k+1}+F_{k}$ for $k \geqslant 0$. Define \[
+	F(x)=\sum_{k=0}^{\infty} F_{k} x^{k}
+\] Determine the radius of convergence of the series defining $F(x)$. By summing the identity \[
+	F_{k+2} x^{k}=F_{k+1} x^{k}+F_{k} x^{k}
+\] over all $k \geqslant 0$, or otherwise, find $F(x)$ in closed form.
+
+
+
+\question%9
+\emph{(Optional: addition formula for $\sinh$)}
+\begin{parts}
+\part%9a
+Show that each of the power series $\sum_{k=0}^{\infty} \frac{x^{2 k}}{(2 k) !}$ and $\sum_{k=0}^{\infty} \frac{x^{2 k+1}}{(2 k+1) !}$ converges for all $x \in \mathbb{R}$.
+
+\part%9b
+Define \[
+C(x)=\sum_{k=0}^{\infty} \frac{x^{2 k}}{(2 k) !} \qquad \text { and } \qquad S(x)=\sum_{k=0}^{\infty} \frac{x^{2 k+1}}{(2 k+1) !}. \]
+\begin{subparts}
+\subpart%9bi
+Assuming the Differentiation Theorem for power series, calculate the derivatives of $C(x)$ and $S(x)$.
+
+\subpart%9bii
+For fixed $d \in \mathbb{R}$, let \[
+f_{d}(x)=S(d+x) C(d-x)+S(d-x) C(d+x).
+\] By considering the derivative of $f_{d}(x)$, prove that, for all $a, b \in \mathbb{R}$, $S(a+b)=S(a) C(b)+S(b) C(a) .$
+\end{subparts}
+\end{parts}
+
+\end{questions}
+ 
+\end{document}

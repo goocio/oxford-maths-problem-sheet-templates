@@ -1,0 +1,177 @@
+\documentclass[answers]{exam}
+\usepackage{../MT2023}
+
+\title{Linear Algebra -- Sheet 6\\Matrices of linear maps, Change of basis}
+\author{YOUR NAME HERE :)}
+\date{Michaelmas Term 2023}
+
+
+\begin{document}
+\maketitle
+\section*{Main course}
+\begin{questions}
+
+\question%1
+Let $V$ be a finite-dimensional vector space, and let $U, W$ be subspaces such that $V=U \oplus W$. Let $T: V \to V$ be a linear transformation with the property that $T(U) \subseteq U$ and $T(W) \subseteq W$.
+\begin{parts}
+\part%1a
+Show that the matrix of $T$ with respect to a basis of $V$ which is the union of bases of $U$ and of $W$ has block form $\begin{pmatrix}A&0\\0&B\end{pmatrix}$, where $A$ is the matrix of the restriction of $T$ to $U$ and $B$ is the matrix of the restriction of $T$ to $W$.
+
+\part%1b
+Now let $V=\mathbb{R}^{4}$ and define $T(x_{1}, x_{2}, x_{3}, x_{4})=(x_{1}+x_{2}, x_{1}-x_{2}, x_{4}, 0)$. Find 2-dimensional subspaces $U$ and $W$ such that $T(U) \subseteq U, T(W) \subseteq W$, and $V=U \oplus W$.
+
+\part%1c
+For the subspaces $U, W$ you found in (b), find bases $B_{U}$ for $U$ and $B_{W}$ for $W$, and find the matrix of $T$ with respect to $B_{U} \cup B_{W}$ as in (a).
+\end{parts}
+
+
+
+\question%2
+Show that if $A$ and $B$ are similar $n \times n$ matrices then $\operatorname{trace}(A)=\operatorname{trace}(B)$.
+
+
+
+\question%3
+Let $A \in \mathcal{M}_{n \times n}(\mathbb{R})$. Show that if $A^{2}=0$ then $\operatorname{rank} A \leqslant \frac{1}{2} n$. Show more generally that if $A^{k}=0$ then $\operatorname{rank} A \leqslant n(k-1) / k$.
+
+
+
+\question%4
+Let $T: \mathbb{R}^{3} \to \mathbb{R}^{3}$ be the linear map $T(x, y, z)=(y,-x, z)$ for all $(x, y, z) \in \mathbb{R}^{3}$. Let $\mathcal{E}$ be the standard basis of $\mathbb{R}^{3}$, and let $\mathcal{F}$ be the basis $f_{1}, f_{2}, f_{3}$ where $f_{1}=(1,1,1), f_{2}=(1,1,0)$ and $f_{3}=(1,0,0)$.
+\begin{parts}
+\part%4a
+Calculate the matrix $A$ of $T$ with respect to the standard basis $\mathcal{E}$ of $\mathbb{R}^{3}$.
+
+\part%4b
+Calculate (directly) the matrix $B$ of $T$ with respect to the basis $\mathcal{F}$.
+
+\part%4c
+Let $I$ be the identity map of $\mathbb{R}^{3}$. Calculate the matrix $P$ of $I$ with respect to the bases $\mathcal{E}, \mathcal{F}$ and the matrix $Q$ of $I$ with respect to the bases $\mathcal{F}, \mathcal{E}$, and check that $P Q=I_{3}$.
+
+\part%4d
+What do you predict is true about $Q B P$? Now compute it -- were you right?
+\end{parts}
+
+
+
+\question%5
+Let $A \in \mathcal{M}_{m \times n}(\mathbb{R})$ and let $\mathbf{b} \in \mathbb{R}_{\text {col }}^{m}$. Prove that
+\begin{parts}
+\part%5a
+if $m<n$ then the system of linear equations $A \mathbf{x}=\mathbf{0}$ always has a non-trivial solution;
+
+\part%5b
+if $m<n$ then the system of linear equations $A \mathbf{x}=\mathbf{b}$ has either no solution or infinitely many different solutions;
+
+\part%5c
+if $A$ has rank $m$ then the system of linear equations $A \mathbf{x}=\mathbf{b}$ always has a solution;
+
+\part%5d
+if $A$ has rank $n$ then the system of linear equations $A \mathbf{x}=\mathbf{b}$ has at most one solution;
+
+\part%5e
+if $m=n$ and $A$ has rank $n$, then the system $A \mathbf{x}=\mathbf{b}$ has precisely one solution.
+\end{parts}
+
+
+
+\question%6
+Let $n \geqslant 2$ and let $V_{n}:=\{a_{0} x^{n}+a_{1} x^{n-1} y+\cdots+a_{n} y^{n}: a_{0}, a_{1}, \ldots, a_{n} \in \mathbb{R}\}$, the real vector space of homogeneous polynomials of degree $n$ in two variables $x$ and $y$. Let $B_{n}$ be the "natural" ordered basis $x^{n}, x^{n-1} y, \ldots, x y^{n-1}, y^{n}$ of $V_{n}$. Define $L: V_{n} \to V_{n-2}$ by $L(f):=\frac{\partial^{2} f}{\partial x^{2}}+\frac{\partial^{2} f}{\partial y^{2}}$.
+\begin{parts}
+\part%6a
+Check that $L$ (the two-variable Laplace operator) is a linear transformation.
+
+\part%6b
+Find the matrix of $L$ with respect to the bases $B_{n}$ of $V_{n}$ and $B_{n-2}$ of $V_{n-2}$.
+
+\part%6c
+Find the rank of this matrix, and hence find the dimension of $\{f \in V_{n}: L(f)=0\}$.
+\end{parts}
+
+\end{questions}
+
+
+
+\section*{Starter}
+\begin{questions}
+
+\question%S1
+In each part below, you are given two vector spaces $V$ and $W$, a linear map $T: V \to W$, and ordered bases $B_{V}$ and $B_{W}$ for $V$ and $W$ respectively. Find the matrix $A$ of $T$ with respect to these bases.
+\begin{parts}
+\part%S1a
+$V=W=\mathbb{R}^{3}$, with standard basis $B_{V}=B_{W}$, and $T(x, y, z)=(y, z, 0)$.
+
+\part%S1b
+$V=\mathbb{R}^{5}$ with standard basis $B_{V}$, and $W=\mathbb{R}^{3}$ with ordered basis $w_{1}=(-1,1,0), w_{2}=(1,0,1)$, $w_{3}=(0,2,1)$, and $T\left(x_{1}, x_{2}, x_{3}, x_{4}, x_{5}\right)=\left(x_{1}-x_{3}+x_{4}, x_{1}+x_{2}, x_{5}\right)$.
+
+\part%S1c
+$V=W=\mathbb{R}^{3}$, with ordered bases $B_{V}$ given by $v_{1}=(3,-2,0), v_{2}=(1,1,1), v_{3}=(4,7,-2)$ and $B_{W}$ given by $w_{1}=(1,0,0), w_{2}=(0,1,1), w_{3}=(0,1,-1)$, and $T$ the identity map.
+\end{parts}
+
+
+
+\question%S2
+Let $V=\mathbb{R}_{3}[x]$ be the real vector space of polynomials of degree at most 3 (as in Sheet 5 Q3). Let $B_{3}$ be the ordered basis $x^{3}, x^{2}, x, 1$. For each of the following linear maps $T: V \to V$, find the matrix for $T$ with respect to $B_{3}$.
+\begin{parts}
+\part%S2a
+$T=D$, differentiation.
+\part%S2b
+$T(p(x))=p(x+1)$.
+\part%S2c
+$T(p(x))=\int_{0}^{1}(t-x)^{3} p(t) \mathrm{~d} t$
+\end{parts}
+
+
+
+\question%S3
+For each of the following matrices, use elementary row operations and elementary column operations to reduce the matrix to a block matrix with an identity matrix in the top left-hand corner and 0 elsewhere.
+\begin{parts}
+\part%S3a
+$\begin{pmatrix}1 & 2 & -1 \\ 3 & 7 & 4 \\ 5 & -1 & 6\end{pmatrix}$
+
+\part%S3b
+$\begin{pmatrix}0 & 1 & 4 & 9 \\ -2 & 8 & -7 & 3 \\ 1 & 5 & -6 & 0\end{pmatrix}$
+
+\part%S3c
+$\begin{pmatrix}7 & -1 & 2 \\ 1 & 0 & -3 \\ 5 & -1 & 8\end{pmatrix}$
+\end{parts}
+
+\end{questions}
+
+
+
+\section*{Pudding}
+\begin{questions}
+
+\question%P1
+S2 above asks you to find the matrix $A$ for differentiation of polynomials of degree at most 3, with respect to the ordered basis $x^{3}, x^{2}, x, 1$. Now find the matrix $B$ with respect to the ordered basis $1, x, x^{2}, x^{3}$. Can you find a matrix $P$ such that $B=P^{-1} A P$?
+
+
+
+\question%P2
+Is it true that if $A, B$ and $C$ are $n \times n$ real matrices then $\operatorname{trace}(A B C)=\operatorname{trace}(B A C)$? Is it true that $\operatorname{trace}(A B C)=\operatorname{trace}(B C A)$? (Give a proof or counterexample for each.)
+
+
+
+\question%P3
+Let $A$ be an $n \times n$ real matrix. For each of the following, give a proof or a counterexample.
+\begin{parts}
+\part%P3a
+If $A$ is similar to 0 , then $A=0$.
+
+\part%P3b
+If $A$ is similar to $I_{n}$, then $A=I_{n}$.
+
+\part%P3c
+If $A$ is similar to a diagonal matrix, then $A$ is diagonal.
+
+\part%P3d
+If $A$ is similar to a symmetric matrix, then $A$ is symmetric.
+
+\part%P3e
+If $A$ is similar to $B$, then $A^{2}$ is similar to $B^{2}$.
+\end{parts}
+
+\end{questions}
+
+\end{document}

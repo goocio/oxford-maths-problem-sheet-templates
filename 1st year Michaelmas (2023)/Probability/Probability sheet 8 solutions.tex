@@ -1,0 +1,106 @@
+\documentclass[answers]{exam}
+\usepackage{../MT2023}
+
+\title{Probability -- Sheet 8}
+\author{YOUR NAME HERE :)}
+\date{Michaelmas Term 2023}
+
+
+\begin{document}
+\maketitle
+\begin{questions}
+
+\question%1
+Continuous random variables $X$ and $Y$ have joint probability density function \[
+	\text{(1) } f_{X, Y}(x, y)=C_{1}(x^{2}+\frac{1}{3} x y), x \in(0,1), y \in(0,2); \qquad
+	\text{(2) } f_{X, Y}(x, y)=C_{2} e^{-x-y}, 0<x<y<\infty.
+\]
+\begin{parts}
+\part%1a
+Find the values of the constants $C_{1}$ and $C_{2}$.
+
+\part%1b
+For each of the joint densities above:
+\begin{subparts}
+\subpart%1bi
+are $X$ and $Y$ independent?
+
+\subpart%1bii
+find the marginal probability density functions of $X$ and of $Y$;
+
+\subpart%1biii
+find $\mathbb{P}(X \leq 1 / 2, Y \leq 1)$.
+\end{subparts}
+
+\part%1c
+In case (2), if the region had been $0<x, y<\infty$, how would this affect your answer to the question about independence?
+\end{parts}
+
+
+
+\question%2 ripoff of pokemon go
+In the game of Oxémon Ko, you wander the streets of an old university town in search of a set of $n$ different small furry creatures. Let $T_{i}$ be the time (in hours) at which you first see a creature of type $i$, for $1 \leq i \leq n$. Suppose that $(T_{i}, 1 \leq i \leq n)$ are independent, and that $T_{i}$ has exponential distribution with parameter $\lambda_{i}$.
+\begin{parts}
+\part%2a
+Let $X=\min \left\{T_{1}, T_{2}, \ldots, T_{n}\right\}$ be the time at which you see your first creature. Show that $X$ has an exponential distribution and give its parameter. [\emph{Hint: consider $\mathbb{P}(X>t)$ and use independence.}]
+
+\part%2b
+What is the expected number of types of creature that you have not met by time 1?
+
+\part%2c
+Let $M=\max\{T_{1}, T_{2}, \ldots, T_{n}\}$ be the time until you have met all $n$ different types of creature. Suppose now they are all equally common, with $\lambda_{i}=1$ for all $i$. Find the median of the distribution of $M$. (As well as giving an exact expression, try to describe how quickly it grows as $n$ becomes large.) [\emph{Here you may wish to consider instead $\mathbb{P}(M \leq t)$. You may find useful an estimate like $\alpha^{1 / n}-1=e^{\frac{1}{n} \log \alpha}-1 \approx \frac{1}{n} \log \alpha$ for large $n$.}]
+\end{parts}
+
+
+
+\question%3
+Let $U$ and $V$ be independent random variables, both uniformly distributed on $[0,1]$. Find the probability that the quadratic equation $x^{2}+2 U x+V=0$ has two real solutions.
+
+
+
+\question%4
+A fair die is thrown $n$ times. Using Chebyshev's inequality, show that with probability at least $31 / 36$, the number of sixes obtained is between $n / 6-\sqrt{n}$ and $n / 6+\sqrt{n}$.
+
+
+
+\question%5
+Suppose that you take a random sample of size $n$ from a distribution with mean $\mu$ and variance $\sigma^{2}$. Using Chebyshev's inequality, determine how large $n$ needs to be to ensure that the difference between the sample mean and $\mu$ is less than two standard deviations with probability exceeding 0.99.
+
+
+
+\question%6
+A fair coin is tossed $n+1$ times. For $1 \leq i \leq n$, let $A_{i}$ be 1 if the $i$th and $(i+1)$st outcomes are both heads, and 0 otherwise.
+\begin{parts}
+\part%6
+Find the mean and the variance of $A_{i}$.
+
+\part%6b
+Find the covariance of $A_{i}$ and $A_{j}$ for $i \neq j$. (Consider the cases $|i-j|=1$ and $|i-j|>1$.)
+
+\part%6c
+Define $M=A_{1}+\cdots+A_{n}$, the number of occurrences of the motif $\mathrm{HH}$ in the sequence. Find the mean and variance of $M$. [\emph{Recall the formula for the variance of a sum of random variables, in terms of their variances and pairwise covariances.}]
+
+\part%6d
+Use a similar method to find the mean and variance of the number of occurrences of the motif $\mathrm{TH}$ in the sequence.
+\end{parts}
+
+
+
+\question%7
+What is the distribution of the sum of $n$ independent Bernoulli random variables with parameter $p$? By considering this sum and applying the weak law of large numbers, identify the limit \[
+	\lim_{n\to\infty}\sum_{\substack{r\in\mathbb{N}:\\an<r<bn}}\binom nrp^r(1-p)^{n-r}
+\] in the cases:
+\begin{parts}
+\part%7a
+$p<a$;
+
+\part%7b
+$a<p<b$;
+
+\part%7c
+$b<p$.
+\end{parts}
+
+\end{questions}
+
+\end{document}

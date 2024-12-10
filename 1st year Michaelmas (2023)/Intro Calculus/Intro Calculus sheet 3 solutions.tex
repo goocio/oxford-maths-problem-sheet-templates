@@ -1,0 +1,95 @@
+\documentclass[answers]{exam}
+\usepackage{../MT2023}
+
+\title{Intro Calculus -- Sheet 3}
+\author{YOUR NAME HERE :)}
+\date{Michaelmas Term 2023}
+
+
+\begin{document}
+\maketitle
+\begin{questions}
+
+\question%1
+Let \[
+	f(x, y)=\exp \left(\frac{y}{x}\right),
+\] where $x \neq 0$. Find all the first order and second order partial derivatives of $f$.
+
+
+
+\question%2
+The polar co-ordinates $r$ and $\theta$ are defined for $x>0, y \in \mathbb{R}$ by \[
+	r=\sqrt{x^{2}+y^{2}}, \qquad
+	\theta=\arctan\left(\frac yx\right)\in\left(-\frac\pi2,\frac\pi2\right).
+\]
+\begin{parts}
+\part%2a
+Sketch the curves $r=\text{const}$ and $\theta=\text{const}$. Using your sketches, and without calculating any partial derivatives, determine the points at which $\frac{\partial r}{\partial y}$ is positive. At what points is $\frac{\partial y}{\partial r}$ positive?
+
+\part%2b
+Find partial derivatives \[
+	\frac{\partial r}{\partial x},\quad
+	\frac{\partial \theta}{\partial x},\quad
+	\frac{\partial r}{\partial y},\quad
+	\frac{\partial \theta}{\partial y},\quad
+	\frac{\partial x}{\partial r},\quad
+	\frac{\partial y}{\partial r},\quad
+	\frac{\partial x}{\partial \theta},\quad
+	\frac{\partial y}{\partial \theta}.
+\] Verify that $\frac{\partial r}{\partial y} \frac{\partial y}{\partial r}<1$ at all points.
+\end{parts}
+
+
+
+\question%3 This comes up later in the Fourier Series and Partial Differential Equations course in Hilary, where you go the other way and derive that this is in fact the *general solution* to this partial differential equation (called the wave equation), which is incredible since you can basically never actually get general solutions to PDEs
+Let $F(x, t)=f(x-c t)+g(x+c t)$, where $f$ and $g$ are differentiable functions of one variable, and $c$ is a constant. Show that \[
+	c^2\frac{\partial^2F}{\partial x^2}=\frac{\partial^2F}{\partial t^2}.
+\]
+
+
+
+\question%4
+Let $F(x, y)=f(y \ln x)$ where $f$ is a twice differentiable function of one variable and $x>0$. Show that \[
+	x\frac{\partial F}{\partial x}+y\frac{\partial F}{\partial y}=xy\frac{\partial^2F}{\partial x\partial y}-x^2\ln x\frac{\partial^2F}{\partial x^2}.
+\]
+
+
+
+\question%5
+\begin{parts}
+\part%5a
+Suppose that $F$ is a differentiable function of $x$ and $y$, and that $y$ is a function of $x$. Show that \[
+	\frac{\mathrm dF}{\mathrm dx}=\frac{\partial F}{\partial x}+\frac{\partial F}{\partial y}\frac{\mathrm dy}{\mathrm dx}.
+\] If $y(x)$ is defined implicitly by the equation $F(x,y)=0$, deduce that \[
+	\frac{\mathrm dy}{\mathrm dx}=\left.-\frac{\partial F}{\partial x}\middle/\frac{\partial F}{\partial y},\right.
+\] provided that $\frac{\partial F}{\partial y} \neq 0$.
+
+\part%5b
+Let $F(x, y)=f(x^{2}+g(x+2 y))$, where $f$ and $g$ are differentiable functions of one variable. Given that the equation $F(x, y)=0$ defines a function $y(x)$, show that \[
+	\frac{\mathrm dy}{\mathrm dx}=-\frac{2x+g'(w)}{2g'(w)}\qquad
+	\text{and}\qquad
+	\frac{\mathrm d^2y}{\mathrm dx^2}=-\frac{(g'(w))^2+2x^2g''(w)}{(g'(w))^3}
+\] where $w=x+2 y$. State any restrictions that are needed on $f$ and $g$.
+\end{parts}
+
+
+
+\question%6
+The variables $u$ and $v$ are given in terms of $x$ and $y$ by \[
+	u=x^{2}-y^{2} \qquad \text{and} \qquad v=2 x y.
+\] Let $g(u, v)=f(x, y)$ be differentiable functions of two variables.
+\begin{parts}
+\part%6a
+Use the chain rule to show that \[
+	\frac{\partial^2f}{\partial x^2}=2\frac{\partial g}{\partial u}+4x^2\frac{\partial^2g}{\partial u^2}+8xy\frac{\partial^2g}{\partial u\partial v}+4y^2\frac{\partial^2g}{\partial v^2},
+\] and find a similar expression for $\frac{\partial^2f}{\partial y^2}$.
+
+\part%6b
+Hence express $\frac{\partial^2f}{\partial x^2}+\frac{\partial^2f}{\partial y^2}$ in terms of the partial derivatives of $g$, and deduce that if $f(x,y)=x+y$ then \[
+	\frac{\partial^2g}{\partial u^2}+\frac{\partial^2g}{\partial v^2}=0.
+\]
+\end{parts}
+
+\end{questions}
+
+\end{document}

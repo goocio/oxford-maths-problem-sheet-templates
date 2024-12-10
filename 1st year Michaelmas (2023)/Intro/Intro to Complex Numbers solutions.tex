@@ -1,0 +1,198 @@
+\documentclass[answers]{exam}
+\usepackage{../MT2023}
+
+\title{Introduction to Complex Numbers}
+\author{YOUR NAME HERE :)}
+\date{Michaelmas Term 2023}
+
+
+\begin{document}
+\maketitle
+\begin{questions}
+
+\question%1
+Which of the following quadratic equations require the use of complex numbers to solve them? \[
+	3 x^{2}+2 x-1=0 ; \qquad 2 x^{2}-6 x+9=0 ; \qquad-4 x^{2}+7 x-9=0.
+\]
+
+
+
+\question%2
+Show directly that if $z w=0$, where $z, w$ are two complex numbers, then $z=0$ or $w=0$ (or both). Now re-prove this making use of properties of the modulus function.
+
+
+
+\question%3
+Put each of the following numbers into the form $a+b i$. \[
+	(3+2 i)+(2-7 i), \qquad(1+2 i)(3-i), \qquad(1+2 i) /(3-i), \qquad(1+i)^{4}.
+\]
+
+
+
+\question%4
+Find the modulus and argument of each of the following numbers. \[
+	1+\sqrt{3} i, \quad(2+i)(3-i), \quad(1+i)^{5}, \quad(1+2 i)^{3} /(2-i)^{3}.
+\]
+
+
+
+\question%5
+Find the two square roots of $-5-12 i$. Hence solve the quadratic equation $z^{2}-(4+i) z+(5+5 i)=0$.
+
+
+
+\question%6
+On separate Argand diagrams sketch the following sets.
+\begin{parts}
+\part%6a
+$|z|<1$;
+
+\part%6b
+$\operatorname{Re}z=3$;
+
+\part%6c
+$|z-1|=|z+i|$;
+
+\part%6d
+$\arg(z-i)=\frac\pi4$;
+
+\part%6e
+$-\frac\pi4<\arg z<\frac\pi4$;
+
+\part%6f
+$\operatorname{Re}(z+1)=|z-1|$;
+
+\part%6g
+$|z-3-4i|=5$;
+
+\part%6h
+$\operatorname{Re}((1+i)z)=1$;
+
+\part%6i
+$\operatorname{Im}(z^3)>0$.
+\end{parts}
+
+
+
+\question%7 in case you haven't seen it before, "cis" is used as shorthand for "cosine plus i sine" by approximately 7 people on the planet because e^(i theta) already exists
+Let $z=\operatorname{cis} \theta=e^{i \theta}$ and let $n$ be an integer.
+\begin{parts}
+\part%7a
+Show that $2 \cos \theta=z+z^{-1}$ and that $2 i \sin \theta=z-z^{-1}$.
+
+\part%7b
+Using De Moivre's theorem, show further that $2 \cos n \theta=z^{n}+z^{-n}$ and that $2 i \sin n \theta=z^{n}-z^{-n}$.
+
+\part%7c
+Deduce that $16 \cos ^{5} \theta=\cos 5 \theta+5 \cos 3 \theta+10 \cos \theta$ and evaluate $\int_{0}^{\pi / 2} \cos ^{5} \theta \mathrm{~d} \theta$.
+\end{parts}
+
+
+
+\question%8
+Let $\zeta=\operatorname{cis}(2 \pi / 5)=e^{2 \pi i / 5}$. Show that $1+\zeta+\zeta^{2}+\zeta^{3}+\zeta^{4}=0$. Show further that \[
+	(z-\zeta-\zeta^{4})(z-\zeta^{2}-\zeta^{3})=z^{2}+z-1
+\] and deduce that $\cos (2 \pi / 5)=(\sqrt{5}-1) / 4$.
+
+
+
+\question%9
+Write down the seven roots of $z^{7}+1=0$. By considering the coefficient of $z^{6}$ in the factorization of $z^{7}+1$, show that \[
+	\cos \left(\frac{\pi}{7}\right)+\cos \left(\frac{3 \pi}{7}\right)+\cos \left(\frac{5 \pi}{7}\right)=\frac12.
+\]
+
+
+
+\question%10
+\begin{parts}
+\part%10a
+Let $\zeta=\operatorname{cis}(\pi / 7)=e^{i \pi / 7}$. Simplify the expression $(\zeta-\zeta^{6})(\zeta^{3}-\zeta^{4})(\zeta^{5}-\zeta^{2})$. Hence show that \[
+	\cos (\pi / 7) \cos (3 \pi / 7) \cos (5 \pi / 7)=-1 / 8
+\]
+
+\part%10b
+Given that $\cos 7 \theta=64 \cos ^{7} \theta-112 \cos ^{5} \theta+56 \cos ^{3} \theta-7 \cos \theta$, rederive the result of (a).
+\end{parts}
+
+
+
+\section*{Optional Extension Questions}
+
+\question%11
+\begin{parts}
+\part%11a
+Let $a, b, c$ be positive real numbers. By expanding $(a+b+c)(a^{2}+b^{2}+c^{2}-a b-b c-c a)$ and considering the second factor as a quadratic in $a$, show that \[
+	a^{3}+b^{3}+c^{3} \geqslant 3 a b c \qquad \text{if } a, b, c>0.
+\]
+
+\part%11b
+Let $\omega^{3}=1, \omega \neq 1$. Show for any real numbers $a, b, c$ that \[
+	a^3+b^3+c^3-3abc=(a+b+c)(a+\omega b+\omega^2c)(a+\omega^2b+\omega c)
+\] Hence find all real numbers $a, b, c$ which satisfy $a^{3}+b^{3}+c^{3}=3 a b c$.
+\end{parts}
+
+
+
+\question%12
+\begin{parts}
+\part%12a
+Let $p, q$ be complex numbers. Show that Viète's substitution $z=w-p /(3 w)$ turns the equation $z^{3}+p z=q$ into the quadratic in $w^{3}$.
+
+\part%12b
+Use Viète's substitution to solve the cubic $z^{3}-12 z+8=0$.
+\end{parts}
+
+
+
+\question%13
+\begin{parts}
+\part%13a
+Let $P(z)$ be a polynomial with (possibly repeated) roots $\alpha_{1}, \alpha_{2}, \ldots, \alpha_{k}$. Show that \[
+	\frac{P'(z)}{P(z)}=\frac1{z-\alpha_1}+\frac1{z-\alpha_2}+\cdots+\frac1{z-\alpha_k}.
+\]
+
+\part%13b
+Deduce that if $\operatorname{Im} \alpha_{i}>0$ for each $i$, then $\operatorname{Im} \beta>0$ for any root $\beta$ of $P'(z)$.
+
+\part%13c
+Deduce further that if all the roots $\alpha$ of a polynomial $P(z)$ satisfy $|\alpha|<R$ then all the roots $\beta$ of $P'(z)$ satisfy $|\beta|<R$.
+\end{parts}
+
+
+
+\question%14
+\begin{parts}
+\part%14a
+Show, for any complex number $z$ and positive integer $n$, that \[
+	z^{2n}-1=(z^2-1)\prod_{k=1}^{n-1}\left\{z^2-2z\cos\left(\frac{k\pi}n\right)+1\right\}.
+\]
+
+\part%14b
+Deduce that for any real $\theta$ that \[
+	\sin n\theta=2^{n-1}\sin\theta\prod_{k=1}^{n-1}\left\{\cos\theta-\cos\left(\frac{k\pi}n\right)\right\}.
+\]
+
+\part%14c
+Determine \[
+	\prod_{k=1}^{2 n} \cos \left(\frac{k \pi}{2 n+1}\right).
+\]
+\end{parts}
+
+
+
+\question%15
+Let $k>0$.
+\begin{parts}
+\part%15a
+Sketch the curve $C_{k}$ with equation $|z+1 / z|=k$.
+
+\part%15b
+What are the extreme values of $|z|$ on $C_{k}$?
+
+\part%15c
+Show that the curve $C_{2}$ consists of precisely two circles.
+\end{parts}
+
+\end{questions}
+
+\end{document}

@@ -1,0 +1,181 @@
+\documentclass[answers]{exam}
+\usepackage{../MT2023}
+
+\title{Linear Algebra -- Sheet 3\\Vector spaces, Spanning, Linear independence}
+\author{YOUR NAME HERE :)}
+\date{Michaelmas Term 2023}
+
+
+\begin{document}
+\maketitle
+\section*{Main course}
+\begin{questions}
+
+\question%1
+Show that the set of real sequences $\left(u_{n}\right)$ that satisfy the recurrence relation $u_{n+1}=u_{n}+u_{n-1}$ (for $n \geqslant 1$) is a real vector space (a subspace of the space of all sequences of real numbers). Find a basis, and write down the dimension of the vector space.
+
+
+
+\question%2
+For each of the following vector spaces and each of the specified subsets, determine whether or not the subset is a subspace. That is, in each case, either verify the conditions defining a subspace (or use the subspace test), or show by an example that one of the conditions does not hold.
+\begin{parts}
+\part%2a
+$V=\mathbb{R}^{4}:$
+\begin{subparts}
+\subpart%2ai
+$\{(a, b, c, d) \in V: a+b=c+d\}$;
+
+
+\subpart%2aii
+$\{(a, b, c, d) \in V: a+b=1\}$;
+
+
+\subpart%2aiii
+$\left\{(a, b, c, d) \in V: a^{2}=b^{2}\right\}$.
+\end{subparts}
+
+\part%2b
+$V=\mathcal{M}_{n \times n}(\mathbb{R}):$
+\begin{subparts}
+\subpart%2bi
+the set of upper triangular matrices;
+
+\subpart%2bii
+the set of invertible matrices;
+
+\subpart%2biii
+the set of matrices that are not invertible.
+\end{subparts}
+\end{parts}
+
+
+
+\question%3
+Let $S$ be a finite spanning set for a vector space $V$. Let $T$ be a smallest subset of $S$ that spans $V$. Show that $T$ is linearly independent, hence a basis of $V$.
+
+
+
+\question%4
+\begin{parts}
+\part%4a
+Which of the following sets of vectors in $\mathbb{R}^{3}$ are linearly independent?
+\begin{subparts}
+\subpart%4ai
+$\{(1,3,0),(2,-3,4),(3,0,4)\}$;
+
+\subpart%4aii
+$\{(1,2,3),(2,3,1),(3,1,2)\}$.
+\end{subparts}
+
+\part%4b
+Let $V:=\mathbb{R}^{\mathbb{R}}=\{f: \mathbb{R} \rightarrow \mathbb{R}\}$. Which of the following sets are linearly independent in $V$?
+\begin{subparts}
+\subpart%4bi
+$\{f, g, h\}$ where $f(x)=5 x^{2}+x+1, g(x)=2 x+3$ and $h(x)=x^{2}-1$.
+
+\subpart%4bii
+$\{p, q, r\}$ where $p(x)=\cos ^{2}(x), q(x)=\cos (2 x)$ and $r(x)=1$.
+\end{subparts}
+\end{parts}
+
+
+
+\question%5
+\begin{parts}
+\part%5a
+Let $u, v, w$ be linearly independent vectors in a vector space $V$.
+\begin{subparts}
+\subpart%5ai
+Show that $u+v, u-v, u-2 v+w$ are also linearly independent.
+
+\subpart%5aii
+Are $u+v-3 w, u+3 v-w, v+w$ linearly independent?
+\end{subparts}
+
+\part%5b
+Let $\left\{v_{1}, v_{2}, \ldots, v_{n}\right\}$ be a linearly independent set of $n$ vectors in a vector space $V$. Prove that each of the following sets is also linearly independent:
+\begin{subparts}
+\subpart%5bi
+$\{c_{1} v_{1}, c_{2} v_{2}, \ldots, c_{n} v_{n}\}$ where $c_{i} \neq 0$ for $1 \leqslant i \leqslant n$;
+
+\subpart%5bii
+$\{w_{1}, w_{2}, \ldots, w_{n}\}$ where $w_{i}=v_{i}+v_{1}$ for $1 \leqslant i \leqslant n$.
+\end{subparts}
+\end{parts}
+
+
+
+\question%6
+\begin{parts}
+\part%6a
+Let $V_{1}:=\left\{\left(x_{1}, \ldots, x_{n}\right) \in \mathbb{R}^{n}: x_{1}+\cdots+x_{n}=0\right\}$. Show that $V_{1}$ is a subspace of $\mathbb{R}^{n}$ and find a basis for it.
+
+\part%6b
+Let $V_{2}:=\left\{\left(x_{i j}\right) \in \mathcal{M}_{n \times n}(\mathbb{R}): x_{i j}=x_{j i}\right.$ for all relevant $\left.(i, j)\right\}$. Show that $V_{2}$ is a subspace of $\mathcal{M}_{n \times n}(\mathbb{R})$ -- this is the space of real symmetric matrices -- and find a basis for it.
+
+\part%6c
+Let $V_{3}:=\{(x_{i j}) \in \mathcal{M}_{n \times n}(\mathbb{R}): x_{i j}=-x_{j i}\text{ for all relevant }(i, j)\}$. Show that $V_{3}$ is a subspace of $\mathcal{M}_{n \times n}(\mathbb{R})$ -- this is the space of real skew-symmetric $n \times n$ matrices -- and find a basis for it.
+\end{parts}
+
+\end{questions}
+
+
+
+\section*{Starter}
+\begin{questions}
+
+\question%S1
+Let $V$ be a vector space, and take subspaces $U, W \leqslant V$. Then prove that $U+W \leqslant V$ and $U \cap W \leqslant V$.
+
+
+
+\question%S2
+For each of the following, give an example or prove that no such example exists, first when $V=\mathbb{R}^{3}$, and second when $V=\mathcal{M}_{2 \times 2}(\mathbb{R})$.
+\begin{parts}
+\part%2a
+A set of 2 linearly independent vectors in $V$.
+
+\part%2b
+A set of 3 linearly independent vectors in $V$.
+
+\part%2c
+A set of 4 linearly independent vectors in $V$.
+
+\part%2d
+A spanning set of 2 vectors in $V$.
+
+\part%2e
+A spanning set of 3 vectors in $V$.
+
+\part%2f
+A spanning set of 4 vectors in $V$.
+\end{parts}
+
+
+
+\question%S3
+Let $V$ be the set of polynomials of degree at most 2 with real coefficients. That is, $V=$ $\{a_{0}+a_{1} x+a_{2} x^{2}: a_{0}, a_{1}, a_{2} \in \mathbb{R}\}$. Show that this is a vector space (under the usual polynomial addition and scalar multiplication). Give a basis $B_{1}$ for $V$. Give another basis $B_{2}$ that shares exactly one element with $B_{1}$. Give a third basis $B_{3}$ that shares no elements with $B_{1}$ or $B_{2}$.
+
+\end{questions}
+
+
+
+\section*{Pudding}
+\begin{questions}
+
+\question%P1
+Consider $V$ the vector space of all real sequences. For $k \geqslant 1$, let $e^{(k)}$ be the sequence where all terms are 0 except for a 1 in position $k$. (So $e^{(1)}=(1,0,0, \ldots)$ and $e^{(2)}=(0,1,0, \ldots)$ for example.) Let $S=\left\{e^{(k)}: k \geqslant 1\right\}$. Is $S$ linearly independent in $V$? Does $S$ span $V$?
+
+
+
+\question%P2
+Let $V=\mathbb{R}^{4}$. Let $W=\left\{\left(x_{1}, x_{2}, x_{3}, x_{4}\right) \in V: x_{1}+2 x_{2}-x_{3}=0\right\}$. Show that $W$ is a subspace of $V$. What is the dimension of $W$? Find a basis $B_{W}$ of $W$. Consider the standard basis $B_{V}$ of $V$. Is there a subset of $B_{V}$ that is a basis for $W$? Can you add one or more vectors to your basis $B_{W}$ for $W$ to obtain a basis for $V$? Can you generalise?
+
+
+
+\question%P3
+A $3 \times 3$ magic square is a $3 \times 3$ matrix with real entries, with the property that the sum of each row, each column, and each of the two main diagonals is the same. Find three examples of $3 \times 3$ magic squares. Show that the set of $3 \times 3$ magic squares forms a subspace of $\mathcal{M}_{3 \times 3}(\mathbb{R})$. What is its dimension?
+
+\end{questions}
+
+\end{document}

@@ -1,0 +1,88 @@
+\documentclass[answers]{exam}
+\usepackage{../MT2023}
+
+\title{Geometry -- Sheet 1\\Vectors in $\mathbb R^n$}
+\author{YOUR NAME HERE :)}
+\date{Michaelmas Term 2023}
+
+
+\begin{document}
+\maketitle
+\begin{questions}
+
+\question%1
+\begin{parts}
+\part%1a
+Show that the distinct points $\mathbf{a}, \mathbf{b}, \mathbf{c}$ are collinear (i.e. lie on a line) in $\mathbb{R}^{n}$ if and only if the vectors $\mathbf{b}-\mathbf{a}$ and $\mathbf{c}-\mathbf{a}$ are linearly dependent.
+
+\part%1b
+Show that the vectors $\mathbf{u}=(1,2,-3)$ and $\mathbf{v}=(6,3,4)$ are perpendicular in $\mathbb{R}^{3}$. Verify directly Pythagoras' Theorem for the right-angled triangles with vertices $\mathbf{0}, \mathbf{u}, \mathbf{v}$ and vertices $\mathbf{0}, \mathbf{u}, \mathbf{u}+\mathbf{v}$.
+
+\part%1c
+Let $\mathbf{v}, \mathbf{w}$ be vectors in $\mathbb{R}^{n}$. Show that if $\mathbf{v} \cdot \mathbf{x}=\mathbf{w} \cdot \mathbf{x}$ for all $\mathbf{x}$ in $\mathbb{R}^{n}$ then $\mathbf{v}=\mathbf{w}$.
+\end{parts}
+
+
+
+\question%2
+\begin{parts}
+\part%2a
+Consider the two lines in $\mathbb{R}^{3}$ given parametrically by \[
+	\mathbf{r}(\lambda)=(1,3,0)+\lambda(2,3,2), \qquad \mathbf{s}(\mu)=(2,1,0)+\mu(0,2,1).
+\] Show that the shortest distance between these lines is $\sqrt{3 / 7}$ by solving the simultaneous equations \[
+	(\mathbf{r}(\lambda)-\mathbf{s}(\mu)) \cdot(2,3,2)=0, \qquad(\mathbf{r}(\lambda)-\mathbf{s}(\mu)) \cdot(0,2,1)=0.
+\] What geometry do these equations encode?
+
+\part%2b
+\emph{Optional} -- requires knowledge of partial derivatives. The shortest distance could also be found by solving the equations
+\[\frac{\partial}{\partial \lambda}\left(|\mathbf{r}(\lambda)-\mathbf{s}(\mu)|^{2}\right)=0, \qquad \frac{\partial}{\partial \mu}\left(|\mathbf{r}(\lambda)-\mathbf{s}(\mu)|^{2}\right)=0.\]
+Determine these equations and explain why they are (essentially) the same as the previous two.
+\end{parts}
+
+
+
+\question%3
+Let $(x, y, z)=(s+t+2,3 s-2 t+1,4 s-3 t)$. Show that, as $s, t$ vary, the point $(x, y, z)$ ranges over a plane with equation $a x+b y+c z=d$ which you should determine.
+
+
+
+\question%4
+Determine, in the form $\mathbf{r} \cdot \mathbf{n}=c$, the equations of each of the following planes in $\mathbb{R}^{3}$;
+\begin{parts}
+\part%4a
+the plane containing the points $(1,0,0),(1,1,0),(0,1,1)$;
+
+\part%4b
+the plane containing the point $(2,1,0)$ and the line $x=y=z$;
+
+\part%4c
+the two planes containing the points $(1,0,1),(0,1,1)$ and which are tangential to the unit sphere, centre $\mathbf{0}$.
+\end{parts}
+
+\question%5
+Given a vector $\mathbf{a} \in \mathbb{R}^{2}$ and a constant $0<\lambda<1$, define $\mathbf{b}=\mathbf{a} /(1-\lambda^{2})$ and prove that \[
+	\frac{|\mathbf{r}-\mathbf{a}|^{2}-\lambda^{2}|\mathbf{r}|^{2}}{1-\lambda^{2}}=|\mathbf{r}-\mathbf{b}|^{2}-\lambda^{2}|\mathbf{b}|^{2}.
+\] Deduce \emph{Apollonius' Theorem} which states that if $O$ and $A$ are fixed points in the plane, then the locus of all points $X$, such that $|A X|=\lambda|OX|$, is a circle. Find its centre and radius.
+
+
+
+\question%6
+\emph{(Optional)} A tetrahedron $A B C D$ has vertices with respective position vectors $\mathbf{a}, \mathbf{b}, \mathbf{c}, \mathbf{d}$ from an origin $O$ inside the tetrahedron. The lines $A O, B O, C O, D O$ meet the opposite faces in $E, F, G, H$.
+\begin{parts}
+\part%6a
+Show that a point lies in the plane $B C D$ if and only if it has position vector $\lambda \mathbf{b}+\mu \mathbf{c}+\nu \mathbf{d}$ where $\lambda+\mu+\nu=1$.
+
+\part%6b
+There are $\alpha,\beta,\gamma,\delta$, not all zero, such that $\alpha\mathbf a+\beta\mathbf b+\gamma\mathbf c+\delta\mathbf d=\mathbf0$. Show that $E$ has position vector \[
+	\frac{-\alpha\mathbf a}{\beta+\gamma+\delta}.
+\]
+
+\part%6c
+Deduce that \[
+	\frac{|A O|}{|A E|}+\frac{|B O|}{|B F|}+\frac{|C O|}{|C G|}+\frac{|D O|}{|D H|}=3.
+\]
+\end{parts}
+
+\end{questions}
+
+\end{document}

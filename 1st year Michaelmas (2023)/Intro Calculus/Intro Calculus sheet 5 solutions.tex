@@ -1,0 +1,65 @@
+\documentclass[answers]{exam}
+\usepackage{../MT2023}
+
+\title{Intro Calculus -- Sheet 5}
+\author{YOUR NAME HERE :)}
+\date{Michaelmas Term 2023}
+
+\newcommand*{\bump}{\vspace{1em}\phantom{}\vspace{-1.75em}}
+
+
+\begin{document}
+\maketitle
+\begin{questions}
+
+\question%1
+Calculate the Jacobians $\frac{\partial(u, v)}{\partial(x, y)}$ and $\frac{\partial(x, y)}{\partial(u, v)}$, and verify that $\frac{\partial(u, v)}{\partial(x, y)} \frac{\partial(x, y)}{\partial(u, v)}=1$, in each of the following cases:
+\begin{parts}
+\part%1a
+\bump \[
+	u=x+y, \quad v=\frac yx;
+\]
+
+\part%1b
+\bump \[
+	u=\frac{x^2}{y},\quad v=\frac{y^{2}}{x}.
+\]
+\end{parts}
+
+
+
+\question%2
+The variables $u$ and $v$ are given by \[ u=x^{2}-x y, \quad v=y^{2}+x y \] for all real $x$ and $y$. By finding an appropriate Jacobian matrix, calculate the partial derivatives $x_{u}, x_{v}, y_{u}$ and $y_{v}$ in terms of $x$ and $y$ only. State the values of $x$ and $y$ for which your results are valid.
+
+
+
+\question%3 You'll see Laplace's equation again in FSPDEs in Hilary
+Recall the definition of parabolic coordinates $(u, v)$ given by the relationships with the Cartesian coordinates $(x, y)$: \[
+	x=\frac12(u^2-v^2), \quad y=uv.
+\] Show that Laplace's equation in Cartesian coordinates, which is given by \[
+	\frac{\partial^2F}{\partial x^2}+\frac{\partial^2F}{\partial y^2}=0,
+\] transforms into the same equation in parabolic coordinates.
+
+
+
+\question%4
+Given the partial differential equation \[
+	\frac{\partial^2z}{\partial x^2}-5\frac{\partial^2z}{\partial x\partial y}+6\frac{\partial^2z}{\partial y^2}=0,
+\] make the change of variables $s=y+2 x, t=y+3 x$ and show that the PDE becomes \[
+	\frac{\partial^2z}{\partial s\partial t}=0.
+\] Hence find the general solution, $z(x, y)$, to the original PDE.
+
+
+
+\question%5 A complex function f(z)=f(x+iy)=u(x,y)+iv(x,y), where u and v are real functions, is *holomorphic* (i.e. complex differentiable) at a point if, at that point, the first order derivatives of u and v are continuous and satisfy the Cauchy-Riemann equations. This question is therefore having you prove that the real/imaginary parts of a complex differentiable function are *harmonic* (i.e. they satisfy Laplace's equation); a sort of converse is also true, in that if you have a harmonic function u(x,y), there is a unique *harmonic conjugate* v(x,y) such that u(x,y)+iv(x,y) is holomorphic.
+Given the pair of equations (called the Cauchy-Riemann equations, which are fundamental to complex analysis) \[
+	\frac{\partial u}{\partial x}=\frac{\partial v}{\partial y},\qquad
+	\frac{\partial u}{\partial y}=-\frac{\partial v}{\partial x},
+\] show that both $u$ and $v$ satisfy Laplace's equation $\frac{\partial^2f}{\partial x^2}+\frac{\partial^2f}{\partial y^2}=0$. If $x=r \cos \theta, y=r \sin \theta$ show that the Cauchy-Riemann equations become \[
+	\frac{\partial u}{\partial r}=\frac1r\frac{\partial v}{\partial\theta},\qquad
+	\frac{\partial v}{\partial r}=-\frac1r\frac{\partial u}{\partial\theta}.
+\]
+
+\end{questions}
+
+\end{document}

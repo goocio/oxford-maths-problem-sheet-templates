@@ -1,0 +1,114 @@
+\documentclass[answers]{exam}
+\usepackage{../MT2023}
+
+\title{Geometry -- Sheet 6\\Surfaces, Arc length}
+\author{YOUR NAME HERE :)}
+\date{Michaelmas Term 2023}
+
+
+\begin{document}
+\maketitle
+\begin{questions}
+
+\question%1
+Consider the hyperboloid of one sheet with equation $x^{2}+y^{2}=z^{2}+1$.
+\begin{parts}
+\part%1a
+Show that this hyperboloid can be parametrized as \[
+	\mathbf{r}(\theta, \lambda)=(\cos \theta, \sin \theta, 0)+\lambda(\sin \theta,-\cos \theta, 1) \quad 0 \leqslant \theta<2 \pi, \lambda \in \mathbb{R} .
+\]
+
+\part%1b
+Determine a normal vector at $\mathbf{r}(\theta, \lambda)$ by working out $\mathbf{r}_{\theta} \wedge \mathbf{r}_{\lambda}$.
+
+\part%1c
+Determine a normal vector at $\mathbf{r}(\theta, \lambda)$ by working the gradient vector of $f(x, y, z)=x^{2}+y^{2}-z^{2}$ at $\mathbf{r}(\theta, \lambda)$.
+
+\part%1d
+What is the tangent plane to the hyperboloid at $\mathbf{r}(\theta, \lambda)$?
+\end{parts}
+
+
+
+\question%2
+\begin{parts}
+\part%2a
+What is the shortest distance between $(0,1 / \sqrt{2}, 1 / \sqrt{2})$ and $(1 / 2,0, \sqrt{3} / 2)$ as measured on the unit sphere $x^{2}+y^{2}+z^{2}=1$?
+
+\part%2b
+Let $\gamma(t)=(\cos \theta(t), \sin \theta(t), z(t))$, where $a \leqslant t \leqslant b$, be a parametrized curve in the cylinder $x^2+y^2=1$.
+\begin{subparts}
+\subpart%2bi
+Show that the curve $\gamma$ has arc length \[
+	\int_{a}^{b} \sqrt{\dot{\theta}^{2}+\dot{z}^{2}} \mathrm{~d} t
+\]
+
+\subpart%2bii
+Deduce that the map $(\theta, z) \to(\cos \theta, \sin \theta, z)$ from $\mathbb{R}^{2}$ to the cylinder is an isometry (when distances are measured on the cylinder).
+
+\subpart%2biii
+Find the shortest distance from $(1,0,0)$ to $(0,1,1)$ when measured on the cylinder.
+\end{subparts}
+\end{parts}
+
+
+
+\question%3
+Consider the following parameterisation of the cone $x^{2}+y^{2}=z^{2}$: \[
+	\mathbf{r}(h, \theta)=(h \cos \theta, h \sin \theta, h) .
+\] Does this parameterisation represent an isometry? That is, does a curve in the $(h,\theta)$-plane have the same length when mapped to the cone?
+
+
+
+\question%4
+\begin{parts}
+\part%4a
+Consider the following construction of a torus: a circle of radius $a$ is situated in the $x-z$ plane with centre at the point $x=b, z=0$, where $b>a$; and this circle is then rotated about the $z$ axis. Obtain the following parameterisation: \[
+	\mathbf r(\theta,\phi)=((b+a\cos\theta)\cos\phi,(b+a\cos\theta)\sin\phi,a\sin\theta),
+\] and describe how the values of $\theta$ and $\phi$ relate to position on the torus.
+
+\part%4b
+The planar curve $(x(s), y(s)), s \in(0, l)$, for which $x(s)>0$, is rotated around the $y$-axis. Give a parameterisation for the resulting surface.
+
+\part%4c
+Bonus: if the curve in (b) were rotated around, say, the line $y=m x$ for some $m>0$, how might you go about constructing a parameterisation? (You needn't do this in detail, just outline the steps.)
+\end{parts}
+
+
+
+\question%5
+Consider two points on a torus with equal values of the angle $\theta$ (as defined in Q4(a)) and different values of $\phi$. Give an arc length parameterisation for the path connecting the points where $\theta$ remains fixed. Show that this is not a geodesic, except at two particular values of $\theta$, which you should determine.
+
+
+
+\question%6
+\begin{parts}
+\part%6a
+Let $\mathbf{r}(u, v)$ be a parametrized surface with unit normal $\mathbf{n}(u, v)$. By differentiating $\mathbf{n} \cdot \mathbf{n}=1$, show that $\mathbf{n}_{u}$ and $\mathbf{n}_{v}$ are tangent vectors to the surface. Deduce that \[
+	\mathbf{n}_{u} \wedge \mathbf{n}_{v}=K(u, v) \mathbf{r}_{u} \wedge \mathbf{r}_{v}
+\] for some scalar function $K(u, v)$, known as the Gaussian curvature.
+
+\part%6b
+When $\mathbf{r}(u, v)$ is the sphere of radius $R$ centred at $\mathbf{0}$, so that $\mathbf{r}=R \mathbf{n}$, what is $K(u, v)$?
+
+\part%6c
+Let $0<a<b$. Consider the torus parameterisation from Q4(a). Determine $\mathbf{n}(\theta, \phi)=\mathbf{r}_{\theta} \wedge \mathbf{r}_{\phi} /|\mathbf{r}_{\theta} \wedge \mathbf{r}_{\phi}|$ and hence find $K(\theta, \phi)$. Where is $K(\theta, \phi)$ positive, where negative? Can you think of a surface for which $K$ would be everywhere zero?
+\end{parts}
+
+
+
+\question%7
+(Optional) Let $S$ denote the unit sphere $x^{2}+y^{2}+z^{2}=1$. Every point $P=(r \cos \alpha, r \sin \alpha)$ in $\mathbb{R}^{2}$ can be identified with a point $Q$ on $S$ by drawing a line from $(r \cos \alpha, r \sin \alpha, 0)$ to the sphere's north pole $N=(0,0,1)$; this line intersects the sphere at two points $Q$ and $N$. We define a map $f$ from $\mathbb{R}^{2}$ to the sphere $S$ by setting $f(P)=Q$.
+\begin{parts}
+\part%7a
+Show that \[
+	Q=\left(\frac{2r\cos\alpha}{1+r^2},\frac{2r\sin\alpha}{1+r^2},\frac{r^2-1}{1+r^2}\right).
+\]
+
+\part%7b
+What are the spherical polar co-ordinates $\theta, \phi$ of the point $Q$?
+\end{parts}
+
+\end{questions}
+
+\end{document}

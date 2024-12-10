@@ -1,0 +1,104 @@
+\documentclass[answers]{exam}
+\usepackage{../MT2023}
+
+\title{Analysis I -- Sheet 5\\Cauchy sequences, Alternating series test}
+\author{YOUR NAME HERE :)}
+\date{Michaelmas Term 2023}
+
+
+\begin{document}
+\maketitle
+\begin{questions}
+
+\question%1
+For $n \in \mathbb{N}$ let $a_{n}=\int_{1}^{n} \frac{\cos x}{x^{2}} \mathrm{~d} x$. Prove that for $m \geqslant n \geqslant 1$ we have $\left|a_{m}-a_{n}\right| \leqslant n^{-1}$ and deduce that $\left(a_{n}\right)$ converges. By integration by parts, or otherwise, demonstrate the existence of $\lim _{n \to \infty} \int_{1}^{n} \frac{\sin x}{x} \mathrm{~d} x$.
+
+
+
+\question%2
+\begin{parts}
+\part%2a
+Let $p$ be a positive integer. By considering the partial sums, prove that $\sum_{k \geqslant 1} \frac{1}{k(k+p)}$ converges. What is $\sum_{k=1}^{\infty} \frac{1}{k(k+p)}$?
+
+\part%2b
+Evaluate the sum $\sum_{k=1}^{\infty} \frac{\cos k}{2^{k}}$.
+
+\part%2c
+Use the Comparison Test to prove that $\sum_{k \geqslant 1} \frac{2 k+1}{(k+1)(k+2)^{2}}$ converges.
+\end{parts}
+
+
+
+\question%3
+Let $\left(a_{n}\right)$ be a sequence of real or complex numbers, and assume that $\sum_{k=1}^{\infty}\left|a_{k}\right|$ converges. Let $s_{n}=a_{1}+\cdots+a_{n}$ and $S_{n}=\left|a_{1}\right|+\cdots+\left|a_{n}\right|$. By considering the partial sums $s_{n}$ and $S_{n}$, prove that \[
+\left|\sum_{k=1}^{\infty} a_{k}\right| \leqslant \sum_{k=1}^{\infty}\left|a_{k}\right|
+\] [\emph{You may assume the triangle inequality, and absolute convergence implies convergence.}]
+
+
+
+\question%4
+The number known as e is defined by \[
+e=\lim _{n \to \infty} s_{n}, \quad \text { where } s_{n}=\sum_{k=0}^{n} \frac{1}{k !}. \]
+\begin{parts}
+\part%4a
+Prove that $\left(s_{n}\right)$ is increasing and bounded above. Deduce that the limit defining $e$ exists. [\emph{Hint for getting an upper bound: compare $s_{n}$ with the sum of a geometric progression.}]
+
+\part%4b
+Show that, for $n \geqslant 1$, \[
+0<e-\sum_{k=0}^{n} \frac{1}{k !}<\frac{1}{n ! n}.
+\] Deduce that $\mathrm e$ is irrational.
+\end{parts}
+
+
+
+\question%5
+There is a real number $L$ such that $\left(1+\frac{1}{n}\right)^{n} \to L$ as $n \to \infty$ (see the example in Section 25 of the lecture notes). In fact $L=e$ (see the supplementary notes on Moodle). Assuming this fact, show that \[
+	\left(1-\frac{1}{n}\right)^{n} \to \frac{1}{\mathrm{e}} \quad \text { as } n \to \infty.
+\]
+
+
+
+\question%6
+\begin{parts}
+\part%6a
+Prove that $\sum_{k \geqslant 1}(-1)^{k-1}(\sqrt{k+1}-\sqrt{k})$ converges.
+
+\part%6b
+For $n \geqslant 1$, let \[
+s_{n}=1-\frac{1}{3}+\frac{1}{5}-\frac{1}{7}+\cdots+\frac{(-1)^{n+1}}{2 n-1}.
+\] Show that we can use the Alternating Series Test to prove that $(s_{n})$ converges to some limit $L$. By examining the proof of the AST, prove that $\frac{2}{3}<L<\frac{13}{15}$.
+\end{parts}
+
+
+
+\question%7
+Let $\sum a_{k}$ be a series of real numbers. Which of the following are true and which are false? Give a proof or counterexample as appropriate.
+\begin{parts}
+\part%7a
+$k^{2} a_{k} \to 0$ implies $\sum a_{k}$ converges.
+
+\part%7b
+If $\sum a_{k}$ converges, then $\sum(a_{k})^{2}$ converges.
+
+\part%7c
+If $\sum a_{k}$ converges absolutely, then $\sum(a_{k})^{2}$ converges.
+
+\part%7d
+$\sum(a_{k})^{2}$ convergent implies $\sum(a_{k})^{3}$ convergent.
+\end{parts}
+
+
+
+\question%8
+(\emph{Optional, and more challenging}) For each of the following statements, give a proof or a counterexample.
+\begin{parts}
+\part%8a
+For a divergent series $\sum a_{k}$ of positive terms, $\sum \frac{a_{k}}{1+a_{k}}$ is also divergent.
+
+\part%8b
+Assume that $a_{k}>0$, and write $s_{k}=a_{1}+\cdots+a_{k}$. Then $\sum a_{k}$ and $\sum \frac{a_{k}}{s_{k}}$ either both converge or both diverge.
+\end{parts}
+
+\end{questions}
+
+\end{document}

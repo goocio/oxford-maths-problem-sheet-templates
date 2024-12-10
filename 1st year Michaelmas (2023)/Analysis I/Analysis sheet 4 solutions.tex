@@ -1,0 +1,117 @@
+\documentclass[answers]{exam}
+\usepackage{../MT2023}
+
+\title{Analysis I -- Sheet 4\\Subsequences, Algebra of limits, Monotonic sequences}
+\author{YOUR NAME HERE :)}
+\date{Michaelmas Term 2023}
+
+
+\begin{document}
+\maketitle
+\begin{questions}
+
+\question%1
+\begin{parts}
+\part%1a
+Let the sequence $(a_{n})$ be defined by \[
+	a_{n}=\left(\frac{n^{2}-1}{n^{2}+1}\right) \cos \left(\frac{2 n \pi}{3}\right).
+\] By considering suitable subsequences, prove that $(a_{n})$ diverges.
+
+\part%1b
+Consider the sequence $(\cos n)$. Show that, for a suitable positive constant $K$, there exist subsequences $(b_{r})$ and $(c_{s})$ of $(\cos n)$ with $b_{r}>K$ for all $r$ and $c_{s}<-K$ for all $s$. Deduce that $(\cos n)$ diverges.
+\end{parts}
+
+
+
+\question%2
+\begin{parts}
+\part%2a
+Let $\left(a_{n}\right)$ be a sequence such that the subsequences $\left(a_{2 n}\right)$ and $\left(a_{2 n+1}\right)$ both converge to a real number $L$. Show that $\left(a_{n}\right)$ also converges to $L$.
+
+\part%2b
+Let $(b_{n})$ be a sequence such that each of the subsequences $(b_{2 n})$, $(b_{2 n+1})$, $(b_{3 n})$ converges. Need $(b_{n})$ converge? Give a proof or a counterexample.
+
+\part%2c
+Let $(c_{n})$ be a sequence such that the subsequence $(c_{k n})$ converges for each $k=$ $2,3,4, \ldots$ Need $(c_{n})$ converge? Give a proof or a counterexample.
+\end{parts}
+
+
+
+\question%3
+For each of the following choices of $a_{n}$, determine whether the sequence $\left(a_{n}\right)$ converges. Justify your answers, and find the value of the limit when it exists. [\emph{You may freely make use of standard limits and inequalities, Sandwiching, and the Algebra of Limits, as appropriate.}]
+\begin{parts}
+\part%3a
+$\dfrac{n^{2}}{n !}$;
+
+\part%3b
+$\dfrac{2^{n} n^{2}+3^{n}}{3^{n}(n+1)+n^{7}}$;
+
+\part%3c
+$\dfrac{(n !)^{2}}{(2 n) !}$;
+
+\part%3d
+$\dfrac{n^{4}+n^{3} \sin n+1}{5 n^{4}-n \log n}$.
+\end{parts}
+
+
+
+\question%4
+\begin{parts}
+\part%4a
+Let $(a_{n})$ be a real sequence, and assume that $a_{n} \geqslant 0$ and $a_{n} \to L$. Prove from the limit definition that $L \geqslant 0$. Prove further that $\sqrt{a_{n}} \to \sqrt{L}$.
+
+\part%4b
+Let $(a_{n}),(b_{n})$ and $(c_{n})$ be sequences of real numbers converging to $L_{1}, L_{2}, L_{3}$ respectively. Let $d_{n}=\max\{a_{n}, b_{n}, c_{n}\}$. Assuming any standard AOL results that you require, prove that $d_{n} \to \max \{L_{1}, L_{2}, L_{3}\}$.
+\end{parts}
+
+
+
+\question%5
+Let $r>0$. Let $a_{n}=\frac{r^{n}}{n!}$.
+\begin{parts}
+\part%5a
+By considering $\frac{a_{n+1}}{a_{n}}$ show that the tail $(a_{n})_{n \geqslant N}$ is monotonic decreasing if $N$ is sufficiently large. [\emph{You should specify a suitable value of $N$.}]
+
+\part%5b
+Show that $(a_{n})$ converges to a limit $L$ and find the value of $L$.
+\end{parts}
+
+
+
+\question%6
+The real sequence $\left(a_{n}\right)$ is defined by \[
+	a_{1}=c, \quad(\alpha+\beta) a_{n+1}=a_{n}^{2}+\alpha \beta
+\] where $0<\alpha<\beta$ and $c>\alpha$.
+\begin{parts}
+\part%6a
+Prove that if $(a_{n})$ converges to a limit $L$ then necessarily $L=\alpha$ or $L=\beta$.
+
+\part%6b
+Prove that $a_{n+1}-\gamma$ and $a_{n}-\gamma$ have the same sign, where $\gamma$ denotes either $\alpha$ or $\beta$.
+
+\part%6c
+Prove that if $c<\beta$, then $\left(a_{n}\right)$ converges monotonically to $\alpha$. Discuss the limiting behaviour of $\left(a_{n}\right)$ when $c \geqslant \beta$.
+
+\part%6d
+Prove that if $\alpha<c<\beta$, then \[
+	|a_{n}-\alpha| \leqslant\left(\frac{\alpha+c}{\alpha+\beta}\right)^{(n-1)}(c-\alpha).
+\]
+\end{parts}
+
+
+
+\question%7
+(\emph{Optional, to provide additional practice with sequences defined by recurrence relations.}) Let $(a_{n})$ be the sequence of real numbers given by \[
+	a_{1}=a, \quad a_{n+1}=\frac{2}{a_{n}+1} \quad(n \geqslant 1).
+\]
+\begin{parts}
+\part%7a
+Assume that $0<a<1$. Prove that the subsequences $(a_{2 n})$ and $(a_{2 n+1})$ are monotonic, one increasing and the other decreasing. Prove that each of these subsequences converges, and find their limits. Deduce that $(a_{n})$ converges.
+
+\part%7b
+What happens if $a>1$?
+\end{parts}
+
+\end{questions}
+
+\end{document}

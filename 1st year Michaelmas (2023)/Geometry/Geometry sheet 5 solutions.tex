@@ -1,0 +1,132 @@
+\documentclass[answers]{exam}
+\usepackage{../MT2023}
+
+\title{Geometry -- Sheet 5\\Orthogonal matrices, Rotating frames}
+\author{YOUR NAME HERE :)}
+\date{Michaelmas Term 2023}
+
+
+\begin{document}
+\maketitle
+\begin{questions}
+
+\question%1
+Consider the orthogonal matrices \[
+	A=\frac{1}{3}\begin{pmatrix}
+		2 & 2 & -1 \\
+		2 & -1 & 2 \\
+		-1 & 2 & 2
+	\end{pmatrix},\qquad
+	B=\frac{1}{2}\begin{pmatrix}
+		\sqrt{2} & \sqrt{2} & 0 \\
+		1 & -1 & \sqrt{2} \\
+		1 & -1 & -\sqrt{2}
+	\end{pmatrix}.
+\] Is either a rotation? - in which case find the axis and angle of rotation. Is either a reflection? - in which case find the plane of reflection.
+
+
+
+\question%2
+With $0 \leqslant \theta<2 \pi$, let \[
+	A_{\theta}=\begin{pmatrix}
+		1 & 0 & 0 \\
+		0 & \cos \theta & -\sin \theta \\
+		0 & \sin \theta & \cos \theta
+	\end{pmatrix}
+	\qquad\text{and}\qquad
+	B=\frac{1}{25}\begin{pmatrix}
+		15 & 0 & 20 \\
+		-16 & 15 & 12 \\
+		12 & 20 & -9
+	\end{pmatrix}.
+\]
+\begin{parts}
+\part%2a
+Show that $B$ is orthogonal and that $\det B=-1$. Show that $B$ does not represent a reflection.
+
+\part%2b
+Find a value of $\theta$ such that $A_{\theta} B$ represents a reflection. For this value of $\theta$, find the plane of reflection of $A_{\theta} B$.
+\end{parts}
+
+
+
+\question%3
+Let \[
+	B=\frac{1}{2}\begin{pmatrix}
+		\sqrt{2} & \sqrt{2} & 0 \\
+		1 & -1 & \sqrt{2} \\
+		1 & -1 & -\sqrt{2}
+	\end{pmatrix},\qquad
+	R(\mathbf{i}, \theta)=\begin{pmatrix}
+		1 & 0 & 0 \\
+		0 & \cos \theta & -\sin \theta \\
+		0 & \sin \theta & \cos \theta
+	\end{pmatrix},\qquad
+	R(\mathbf{j}, \theta)=\begin{pmatrix}
+		\cos \theta & 0 & -\sin \theta \\
+		0 & 1 & 0 \\
+		\sin \theta & 0 & \cos \theta
+	\end{pmatrix}
+\] where $\theta \in \mathbb{R}$. Find $\alpha, \beta, \gamma$ in the ranges $-\pi<\alpha \leqslant \pi, 0 \leqslant \beta \leqslant \pi$ and $-\pi<\gamma \leqslant \pi$ such that \[
+	B=R(\mathbf{i}, \alpha) R(\mathbf{j}, \beta) R(\mathbf{i}, \gamma)
+\] [\emph{Hint: note that $R(\mathbf{i},-\alpha) B \mathbf{i}$ must be a linear combination of $\mathbf{i}$ and $\mathbf{k}$.}]
+
+
+
+\question%4
+Let \[
+	A(t)=\frac{1}{9}\begin{pmatrix}
+		4+5 \cos t & -4+4 \cos t+3 \sin t & 2-2 \cos t+6 \sin t \\
+		-4+4 \cos t-3 \sin t & 4+5 \cos t & -2+2 \cos t+6 \sin t \\
+		2-2 \cos t-6 \sin t & -2+2 \cos t-6 \sin t & 1+8 \cos t
+	\end{pmatrix}
+\] Given that $A(t)$ is orthogonal for all $t$ [you do not need to verify this], find the angular velocity.
+
+
+
+\question%5 these spherical coordinate equations will come up again briefly in Dynamics, though the equations of far greater importance are the corresponding expressions in cylindrical coordinates
+Let \[
+	\mathbf{e}_{r}=(\sin \theta \cos \phi, \sin \theta \sin \phi, \cos \theta)
+\] where $\theta$ and $\phi$ are functions of time $t$.
+\begin{parts}
+\part%5a
+Show that $\mathbf{e}_{r}$ has unit length and that \[
+	\dot{\mathbf e}_r=\dot\theta\mathbf e_\theta+\dot\phi\sin\theta\mathbf e_\phi
+\] for two unit vectors $\mathbf{e}_{\theta}$ and $\mathbf{e}_{\phi}$ which you should determine. Find similar expressions for $\dot{\mathbf{e}}_{\theta}$ and $\dot{\mathbf{e}}_{\phi}$.
+
+\part%5b
+Show that $\mathbf{e}_{r}, \mathbf{e}_{\theta}, \mathbf{e}_{\phi}$ form a right-handed orthonormal basis.
+
+\part%5c
+Find the angular velocity $\omega$, in terms of $\mathbf{e}_{r}, \mathbf{e}_{\theta}, \mathbf{e}_{\phi}$, such that \[
+	\dot{\mathbf{e}}_{r}=\omega \wedge \mathbf{e}_{r},\qquad
+	\dot{\mathbf{e}}_{\theta}=\omega \wedge \mathbf{e}_{\theta},\qquad
+	\dot{\mathbf{e}}_{\phi}=\omega \wedge \mathbf{e}_{\phi}.
+\]
+\end{parts}
+
+
+
+\question%6
+(Optional) The matrix $A(t)$ below is orthogonal and has determinant 1. [You do not need to verify this.] \[
+	A(t)=\left(\begin{array}{cc}
+		\cos \omega t & -\sin \omega t \\
+		\sin \omega t & \cos \omega t
+	\end{array}\right)
+\]
+\begin{parts}
+\part%6a
+Show that $A'(t)=W A$ where $W$ is a constant matrix such that $W^{T}=-W$.
+
+\part%6b
+Determine $W^{2}$ and hence show that $A(t)=e^{W t}$ where the exponential of a square matrix is defined by \[
+	e^{X}=I+X+X^{2} / 2!+X^{3} / 3!+\cdots
+\]
+
+\part%6c
+Show, in general, that if $X$ is an anti-symmetric matrix (that is $X^{T}=-X$) then $e^{X}$ is an orthogonal matrix.
+\end{parts}
+
+\end{questions}
+
+\end{document}

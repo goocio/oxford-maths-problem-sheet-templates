@@ -1,0 +1,178 @@
+\documentclass[answers]{exam}
+\usepackage{../MT2023}
+
+\title{Linear Algebra -- Sheet 4\\Bases, Dimension formula}
+\author{YOUR NAME HERE :)}
+\date{Michaelmas Term 2023}
+
+\newcommand*{\bump}{\vspace{1em}\phantom{}\vspace{-1.75em}}
+
+
+\begin{document}
+\maketitle
+\section*{Main course}
+\begin{questions}
+
+\question%1
+Find the row rank of each of the following matrices:
+\begin{parts}
+\part%1a
+\bump \[
+	\begin{pmatrix}
+		2 & 4 & -3 & 0 \\
+		1 & -4 & 3 & 0 \\
+		3 & -5 & 2 & 1
+	\end{pmatrix}
+\]
+
+\part%1b
+\bump \[
+	\begin{pmatrix}
+		1 & 2 & 3 & 0 \\
+		2 & 3 & 4 & 1 \\
+		3 & 4 & 5 & 2
+	\end{pmatrix}
+\]
+
+\part%1c
+\bump \[
+	\begin{pmatrix}
+		1 & 2 & 3 & 0 \\
+		2 & 3 & 4 & 2 \\
+		3 & 4 & 5 & 2
+	\end{pmatrix}
+\]
+\end{parts}
+
+
+
+\question%2
+Let $V$ be a vector space and let $U, W$ be subspaces of $V$. Show that $U \backslash W$ is never a subspace. Find a necessary and sufficient condition for $U \cup W$ to be a subspace.
+
+
+
+\question%3
+Let $V=\mathbb{R}^{n}$ where $n \geqslant 2$, and let $U$ and $W$ be subspaces of $V$ of dimension $n-1$.
+\begin{parts}
+\part%3a
+Show that if $U \neq W$ then $\dim(U \cap W)=n-2$.
+
+\part%3b
+Now suppose that $n \geqslant 3$ and let $U_{1}, U_{2}, U_{3}$ be three distinct subspaces of dimension $n-1$. Must it be true that $\dim\left(U_{1} \cap U_{2} \cap U_{3}\right)=n-3$? Give a proof or find a counterexample.
+
+\part%3c
+Show that if $\dim U \leqslant n-2$ then there are infinitely many different subspaces $X$ such that $U \leqslant X \leqslant V$.
+\end{parts}
+
+
+
+\question%4
+Let $V=\mathbb{R}^{4}$, and let \begin{align*}
+	X &= \{(x_1,x_2,x_3,x_4) \in V: x_2+x_3+x_4=0\},\\
+	Y &= \{(x_1,x_2,x_3,x_4) \in V: x_1+x_2=0=x_3-2x_4\}.
+\end{align*} Find bases for $X, Y, X \cap Y$ and $X+Y$, and write down the dimensions of these subspaces.
+
+
+
+\question%5
+Let $V$ be an $n$-dimensional vector space.
+\begin{parts}
+\part%5a
+Prove that $V$ contains a subspace of dimension $r$ for each $r$ in the range $0 \leqslant r \leqslant n$.
+
+\part%5b
+Show that if $U_{0}<U_{1}<\cdots<U_{k} \leqslant V$ (strict containments of subspaces of $V$) then $k \leqslant n$. Show also that if $k=n$ then $\dim U_{r}=r$ for $0 \leqslant r \leqslant k$.
+
+\part%5c
+Let $U, W$ be subspaces of $V$ such that $U \leqslant W$. Show that there is a subspace $X$ of $V$ such that $W \cap X=U$ and $W+X=V$.
+\end{parts}
+
+
+
+\question%6
+\begin{parts}
+\part%6a
+Show that $V=U \oplus W$ if and only if every vector $v \in V$ can be expressed uniquely in the form $v=u+w$ with $u \in U$ and $w \in W$.
+
+\part%6b
+Let $V=\mathbb{R}^{3}$ and $U=\{(x_{1}, x_{2}, x_{3}) \in V: x_{1}+x_{2}+x_{3}=0\}$. For each of the following subspaces $W$, either prove that $V=U \oplus W$, or explain why this is not true:
+\begin{subparts}
+\subpart%6bi
+$W=\{(x, 0,-x): x \in \mathbb{R}\}$;
+
+\subpart%6bii
+$W=\{(x, 0, x): x \in \mathbb{R}\}$;
+
+\subpart%6biii
+$W=\{(x_{1}, x_{2}, x_{3}) \in V: x_{1}=x_{3}\}$.
+\end{subparts}
+\end{parts}
+
+\end{questions}
+
+
+
+\section*{Starter}
+\begin{questions}
+
+\question%S1
+For each of the following sets $S$ in a vector space $V$, find a basis for $\langle S\rangle$.
+\begin{parts}
+\part%S1a
+$S=\{(1,0,3),(-2,5,4)\} \subseteq \mathbb{R}^{3}$;
+
+\part%S1b
+$S=\{(6,2,0,-1),(3,5,9,-2),(-1,0,7,8),(5,5,-1,2)\} \subseteq \mathbb{R}^{4}$;
+
+\part%S1c
+$S=\{(7,-3,2,11,2),(0,4,9,-5,16),(20,-13,16,24,38),(1,12,8,-1,0)\} \subseteq \mathbb{R}^{5}$.
+\end{parts}
+
+
+
+\question%S2
+Let $U, W$ be subspaces of a finite-dimensional vector space $V$. Show the following are equivalent:
+\begin{parts}
+\part%S2a
+$V=U \oplus W$;
+
+\part%S2b
+every $v \in V$ has a unique expression as $u+w$ where $u \in U$ and $w \in W$;
+
+\part%S2c
+$\dim V=\dim U+\dim W$ and $V=U+W$;
+
+\part%S2d
+$\dim V=\dim U+\dim W$ and $U \cap W=\left\{0_{V}\right\}$;
+
+\part%S2e
+if $u_{1}, \ldots, u_{m}$ is a basis for $U$ and $w_{1}, \ldots, w_{n}$ is a basis for $W$, then $u_{1}, \ldots, u_{m}, w_{1}, \ldots, w_{n}$ is a basis for $V$.
+\end{parts}
+
+
+\question%S3
+Find an example to show that it is not the case that if $V=U \oplus W$ then every basis of $V$ is a union of a basis of $U$ and a basis of $W$.
+
+\end{questions}
+
+
+
+\section*{Pudding}
+\begin{questions}
+
+\question%P1
+Find the column rank of each of the matrices in Q1 on this sheet. What do you notice?
+
+
+
+\question%P2
+Taking $A$ as each of the three matrices in Q1 on this sheet, find all the solutions to $A \mathbf{x}=\mathbf{0}$ in each case. What do you notice?
+
+
+
+\question%P3
+Let $V=V_{1} \oplus V_{2}$. Take a subspace $U \leqslant V$. Must it be true that $U=U_{1} \oplus U_{2}$ where $U_{1} \leqslant V_{1}$ and $U_{2} \leqslant V_{2}$? (Find a proof or give a counterexample.)
+
+\end{questions}
+
+\end{document}
