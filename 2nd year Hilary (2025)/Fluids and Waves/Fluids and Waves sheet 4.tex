@@ -1,0 +1,107 @@
+\documentclass[answers]{exam}
+\usepackage{../HT2025}
+
+\title{Fluids and Waves -- Sheet 4\\Free surfaces, Perturbations}
+\author{YOUR NAME HERE :)}
+\date{Hilary Term 2025}
+
+
+\begin{document}
+\maketitle
+\begin{questions}
+
+\question%1
+\textbf{The kinematic boundary condition.} The free surface of a fluid moving in two dimensions is given parametrically by $\boldsymbol{r}(x, t)=(x, \eta(x, t))$.
+\begin{parts}
+\part%1a
+Show that a unit normal to the surface is \[
+	\boldsymbol{n}=\frac{1}{\sqrt{1+\eta_{x}^{2}}}(-\eta_{x}, 1)
+\] and deduce that the velocity of the surface normal to itself is given by \[
+	\frac{\partial \boldsymbol{r}}{\partial t} \cdot \boldsymbol{n}=\frac{\eta_{t}}{\sqrt{1+\eta_{x}^{2}}}
+\]
+
+\part%1b
+Hence show that the kinematic condition that \emph{the velocity of the fluid normal to the surface equals the velocity of the surface normal to itself} leads to the boundary condition \[
+	v=\frac{\partial \eta}{\partial t}+u \frac{\partial \eta}{\partial x} \quad \text{on } y=\eta.
+\] Deduce that \emph{fluid particles on the free surface stay on the free surface}.
+\end{parts}
+
+
+
+\question%2
+\textbf{Particle paths.} Consider small two-dimensional water waves on the free surface of an incompressible irrotational fluid with a velocity potential $\phi(x, y, t)$, which satisfies Laplace's equation. Suppose that the free surface has equation $y=\eta(x, t)$, the water has depth $h$, and the bottom is at $y=-h$.
+\begin{parts}
+\part%2a
+Show that we can choose $\phi$ such that the boundary conditions \[
+	\frac{\partial \phi}{\partial y}=\frac{\partial \eta}{\partial t}+\frac{\partial \phi}{\partial x} \frac{\partial \eta}{\partial x}, \qquad
+	\frac{\partial \phi}{\partial t}+\frac{1}{2}|\boldsymbol{\nabla} \phi|^{2}+g \eta=0
+\] are satisfied on the free surface $y=\eta$.
+
+\part%2b
+Show that, when the problem is linearized by neglecting quadratic terms, these boundary conditions are simplified to \[
+	\frac{\partial \phi}{\partial y}=\frac{\partial \eta}{\partial t}, \quad \frac{\partial \phi}{\partial t}+g \eta=0 \quad \text{on } y=0.
+\]
+
+\part%2c
+Show that travelling harmonic waves, with $\eta=A \cos (k x-\omega t)$ and $\phi=f(y) \sin (k x-\omega t)$, are possible provided $\omega^{2}=g k \tanh (k h)$.
+
+\part%2d
+Assume that a given material element of fluid performs only small excursions from its mean position $(\bar{x}, \bar{y})$, i.e. its position at time $t$ is $[\bar{x}+x'(t), \bar{y}+y'(t)]$ with $-h<\bar{y}<0$ and $()'$ denoting a small quantity, not time derivatives, so that $x' / \bar{x}, y' / \bar{y} \ll 1$. By linearizing the ordinary differential equations for the particle paths, show that these paths are elliptical and roughly sketch the particle paths for a variety of $\bar{y} / h$.
+\end{parts}
+
+
+
+\question%3
+\textbf{Gravity waves.} Inviscid incompressible fluid of density $\rho_{2}$ occupies the region $y>0$ and lies vertically above a similar fluid of greater density $\rho_{1}$ in $y<0$. Small amplitude waves perturb the interface between the fluids so that its equation becomes $y=\eta(x, t)$. Assuming $\eta$ and the fluid velocities to be small, derive three boundary conditions relating $\eta$ and the velocity potentials $\phi_{1}, \phi_{2}$ of the two fluids at $y=0$. If $\eta(x, t)=A \cos (k x-\omega t)$, with $k>0$, show that \[
+	\omega^{2}=\left(\frac{\rho_{1}-\rho_{2}}{\rho_{1}+\rho_{2}}\right) g k.
+\]
+
+
+
+\question%4
+\textbf{Rayleigh-Taylor instability with surface tension.} Suppose now that there is a surface tension $T$ between the two fluids of question 3 and that $\rho_{1}<\rho_{2}$.
+\begin{parts}
+\part%4a
+Derive the linearised boundary conditions to be satisfied at $y=0$. Show that the frequency $\omega$ is now related to the wavenumber $k$ by the equation \[
+	\left(\rho_{1}+\rho_{2}\right) \omega^{2}=k\left[T k^{2}-(\rho_{2}-\rho_{1}) g\right] .
+\]
+
+\part%4b
+Deduce that the waves are unstable if their wavelength $\lambda$ exceeds a critical value \[
+	\lambda_{\mathrm{c}}=2 \pi \sqrt{\frac{T}{(\rho_{2}-\rho_{1}) g}} .
+\]
+\end{parts}
+
+
+
+\question%5
+\textbf{Flow over a river bed.} Water flows steadily with speed $U$ over a corrugated bed $y=-h+\varepsilon \cos (k x)$, where $\varepsilon \ll h$, so that there is a time-independent disturbance $\eta(x)$ to the free surface, which would be at $y=0$ but for the corrugations.
+\begin{parts}
+\part%5a
+By writing the velocity components as \[
+	u=U+\frac{\partial \phi}{\partial x}, \qquad v=\frac{\partial \phi}{\partial y}
+\] where $\phi(x, y)$ denotes the velocity potential of the disturbance to the uniform flow, show that the linearized boundary conditions are \begin{align*}
+	\frac{\partial \phi}{\partial y}&=U \frac{\mathrm{d} \eta}{\mathrm{d} x}, & U \frac{\partial \phi}{\partial x}+g \eta&=0 & \text { on } y&=0 \\
+	\frac{\partial \phi}{\partial y}&=-U k \varepsilon \sin (k x) &&& \text { on } y&=-h
+\end{align*} and hence find $\eta(x)$.
+
+\part%5b
+Deduce that crests on the free surface occur immediately above troughs on the bed if \[
+	U^{2}<\frac{g}{k} \tanh (k h)
+\] but that crests on the surface overlie the crests on the bed if this inequality is reversed.
+\end{parts}
+
+
+
+\question%6 !!!!! might be optional, i'm not sure what * next to a question is meant to mean...
+\textbf{Sound waves.} Recall the full Euler equations derived at the beginning of the course, e.g. conservation of mass in the form \[
+	\frac{\mathrm{D} \rho}{\mathrm{D} t}+\rho \nabla \cdot \mathbf{u}=0
+\] (which applies also to compressible flows). Consider a barotropic fluid in which the pressure $p$ is a function only of the density, i.e. $p=P(\rho)$.\\ By linearizing both Euler equations around the state at rest $(\mathbf{u}=0)$ with uniform density, $\rho(\mathbf{x}, t)=\rho_{0}$, show that perturbations to the density $\rho'(\mathbf{x}, t)$ satisfy the wave equation: \[
+	\frac{\partial^{2} \rho'}{\partial t^{2}}=c^{2} \nabla^{2} \rho'
+\] where \[
+	c^{2}=\left.\frac{\mathrm{d} P}{\mathrm{d} \rho}\right|_{\rho=\rho_{0}}
+\] [\emph{Perturbations to the uniform density state therefore propagate at the speed $c$ - these are sound waves and are studied in more detail in the Part B course ``Waves and Compressible Flow".}]
+
+\end{questions}
+
+\end{document}

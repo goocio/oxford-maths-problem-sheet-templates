@@ -1,0 +1,110 @@
+\documentclass[answers]{exam}
+\usepackage{../HT2025}
+\usepackage{tensor}% for \tensor to get indices on the left
+
+\title{Numerical Analysis -- Sheet 2\\SVD, least-squares, and eigenvalues}
+\author{YOUR NAME HERE :)}
+\date{Hilary Term 2025}
+
+
+\begin{document}
+\maketitle
+
+\begin{questions}
+
+\question%1
+\begin{parts}
+\part%1a
+A $2 \times 2$ Givens rotation is a matrix of the form $J=\begin{bmatrix}c & s \\ -s & c\end{bmatrix}$, where $c=\cos \theta$, $s=\sin \theta$. Verify that $J$ is orthogonal, and show that for any $\begin{bmatrix}a \\ b\end{bmatrix} \in \mathbb{R}^{2}$, there exists $\theta$ such that $J\begin{bmatrix}a \\ b\end{bmatrix}=\begin{bmatrix}C \\ 0\end{bmatrix}$. What are the possible values of $C$?
+
+\part%1b
+A general $n \times n$ Givens rotation $J(i, j)$ is equal to the identity $I_{n}$ except for the $(i, i),(i, j),(j, i),(j, j)$ entries, which are equal to $c, s,-s, c$ respectively (so they form the same matrix $\begin{bmatrix}c & s \\ -s & c\end{bmatrix}$). Show that if $x \in \mathbb R^{n}$ then (denoting by $J(i, j)$ a Givens rotation) \[
+	J(1, n) J(1, n-1) \cdots J(1,3) J(1,2) x=\begin{bmatrix}
+		\beta \\
+		0 \\
+		\vdots \\
+		0
+	\end{bmatrix}
+\] for some $\beta$ and further prove that $\beta^{2}=x^{T} x$.
+\end{parts}
+
+
+
+\question%2
+Consider the least-squares problem \[
+	\min _{x}\|A x-b\|, \quad A \in \mathbb{R}^{m \times n},\ b \in \mathbb{R}^{m \times 1},\ m \geq n\tag{$\star$}
+\] Suppose that $\operatorname{rank}(A)=n$.
+\begin{parts}
+\part%2a
+Derive a solution $x$ based on the (full or thin) QR factorisation of $A$.
+
+\part%2b
+Show that $x=(A^{T} A)^{-1} A^{T} b$ is also the solution for ($\star$). (\emph{The first QR-based method has better numerical stability and hence is preferred.})
+\end{parts}
+
+
+
+\question%3
+Show that all the eigenvalues of a real symmetric matrix $A$ are real, and eigenvalues of an orthogonal matrix are on the unit circle.
+
+
+
+\question%4
+What is the SVD of a normal matrix $A$, with respect to the eigenvalues and eigenvectors? What if $A$ is symmetric? And unitary?
+
+
+
+\question%5
+If $A \in \mathbb{R}^{n \times n}$ is nonsingular, what is the SVD of $A^{-1}$ in terms of that of $A$?
+
+
+
+\question%6
+Give estimates based on Gershgorin's theorem for the eigenvalues of \[
+	A=\begin{bmatrix}
+		9 & 1 & 0 \\
+		1 & 4 & \varepsilon \\
+		0 & \varepsilon & 1
+	\end{bmatrix}, \qquad|\varepsilon|<1.
+\] Find a way to establish the tighter bound $|\lambda_{3}-1| \leq \varepsilon^{2}$ on the smallest eigenvalue of $A$. (\emph{Hint: consider diagonal similarity transformations.})
+
+
+
+\question%7
+We have seen how the QR algorithm computes the eigenvalue decomposition of symmetric matrices. Using QR, describe an algorithm that computes the SVD of $A \in \mathbb{R}^{m \times n}$ ($m \geq n$). You can assume that $\operatorname{rank}(A)=n$.
+
+
+
+\question%8
+The (unshifted) QR algorithm performs: $A_{1}=A$, and for $k=1,2, \ldots$ form the QR factorisation $A_{k}=Q_{k} R_{k}$, and set $A_{k+1}=R_{k} Q_{k}$. Let $A$ be a $10 \times 10$ symmetric matrix with eigenvalues $1,2, \ldots, 10$. Which (off-diagonal) elements of $A_{k}$ converge to 0 the fastest? (\emph{Recall the connection between the QR algorithm and power method.})
+
+
+
+\question%9
+(Computational) Implement the QR algorithm in MATLAB or Python, and explore the following. (This exercise should be doable in about 10 lines of code!)
+\begin{parts}
+\part%9a
+Verify the above problem in your code. (Take $A=Q \Lambda Q^{T}$, where $Q$ is a randomly generated orthogonal matrix, e.g. \verb|[Q,R]=qr (randn(n));|.)
+
+\part%9b
+What will happen if the QR algorithm (without shifts) is applied to an orthogonal matrix $A$? Explain why this is not a `counterexample' for the convergence of the QR algorithm. Modify the algorithm so that it computes an eigenvalue decomposition of $A$.
+\end{parts}
+
+
+
+\question%10
+(Optional) Let $A \in \mathbb{C}^{n \times n}$ and define \[
+	C_{i, j}=\left\{z \in \mathbb{C}: |a_{i i}-z| |a_{j j}-z| \leq \left(\sum_{\substack{k \neq i \\ k=1}}^{n}\left|a_{i k}\right|\right)\left(\sum_{\substack{k \neq j \\ k=1}}^{n}|a_{j k}|\right)\right\},\quad
+	1 \leq i<j \leq n
+\] These are called the \emph{ovals of Cassini}.
+\begin{parts}
+\part%10a
+Prove that all eigenvalues of $A$ lie in the union of the $\tensor[_n]{C}{_2}=\frac{n(n-1)}{2}$ regions $\bigcup_{i<j} C_{i, j}$.
+
+\part%10b
+Prove that $C\coloneqq\bigcup_{i<j} C_{i, j} \subseteq D$, that is, $C$ is a subset of the union of the Gerschgorin disks $D\coloneqq\bigcup_{i}\{z \in \mathbb{C}: |z-a_{i i}|\leq \sum_{j \neq i}|a_{i j}|\}$.
+\end{parts}
+
+\end{questions}
+
+\end{document}

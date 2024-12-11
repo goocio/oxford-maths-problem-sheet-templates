@@ -1,0 +1,55 @@
+\documentclass[answers]{exam}
+\usepackage{../HT2025}
+
+\title{Integration -- Sheet 0\\Practice integrals}
+\author{YOUR NAME HERE :)}
+\date{Hilary Term 2025}
+
+
+\begin{document}
+\maketitle
+
+This initial sheet has some integrals to practise, all of which can be done from prelims. Solutions are available. The point of questions 1, 3, and 4 (but not 2) is to illustrate various counter examples demonstrating the importance of the theorems in the course which will enable us to take integrals of limits, change the order of integration and differentiate under the integral.
+
+\begin{questions}
+
+\question%1
+Let $f_{n}:[0,1] \to \mathbb{R}$ be given by $f_{n}(x)=n^{2} x^{n}(1-x)$. Show that
+\begin{parts}
+\part%1a
+$\lim_{n \to \infty} f_{n}(x)=0$ for each $x \in[0,1]$.
+
+\part%1b
+$\lim_{n \to \infty} \int_{0}^{1} f_{n}(x) ~\mathrm dx=1$.
+\end{parts}
+
+
+
+\question%2
+Evaluate $\displaystyle\int_{0}^{1}\left(\int_{0}^{x} e^{-y} ~\mathrm dy\right)~\mathrm d x$ and $\displaystyle\int_{0}^{1}\left(\int_{0}^{x-x^{2}}(x+y) ~\mathrm d y\right)~\mathrm d x$
+\begin{parts}
+\part%2a
+directly;
+
+\part%2b
+by reversing the order of integration.
+\end{parts}
+
+
+
+\question%3
+Show that \[
+	\int_{0}^{1}\left(\int_{0}^{1} \frac{x-y}{(x+y)^{3}}~\mathrm d x\right)~\mathrm d y=-\frac{1}{2}.
+\] Deduce that \[
+	\int_{0}^{1}\left(\int_{0}^{1} \frac{x-y}{(x+y)^{3}}~\mathrm d y\right)~\mathrm d x \neq \int_{0}^{1}\left(\int_{0}^{1} \frac{x-y}{(x+y)^{3}}~\mathrm d x\right)~\mathrm d y
+\]
+
+
+
+\question%4
+Let $f(x, y)=y^{3} e^{-y^{2} x}$, $F(y)=\int_{0}^{\infty} f(x, y)~\mathrm d x$. Calculate $F'(0)$ and $\int_{0}^{\infty} \frac{\partial f}{\partial y}(x, 0)~\mathrm d x$.
+When you have completed the course (or at least finished section 7), think about how your answer relates to the differentiation theorem (Theorem 7.5).
+
+\end{questions}
+
+\end{document}

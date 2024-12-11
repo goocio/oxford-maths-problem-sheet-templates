@@ -1,0 +1,86 @@
+\documentclass[answers]{exam}
+\usepackage{../HT2025}
+
+\title{Differential Equations II -- Sheet 4\\Perturbations, Inner and outer expansions}
+\author{YOUR NAME HERE :)}
+\date{Hilary Term 2025}
+
+
+\begin{document}
+\maketitle
+\begin{questions}
+
+\question%1
+\textbf{Order relations.}
+\begin{parts}
+\part%1a
+Determine the order as $\varepsilon \to 0$ of \[
+	\frac{\sqrt{\varepsilon}}{1-\cos \varepsilon} .
+\]
+
+\part%1b
+Obtain an asymptotic expansion of $\exp (\tan \varepsilon)$ in integer powers of $\varepsilon$ up to $O(\varepsilon^4)$.
+
+\part%1c
+Show that $\log \varepsilon={\scriptstyle\mathcal{O}}(\varepsilon^{-p})$ as $\varepsilon \to 0^{+}$ for all $p>0$.
+\end{parts}
+
+
+
+\question%2
+\textbf{Approximating roots.}
+Find expansions for all roots of the equations below as $\varepsilon \to 0$ with two nonzero terms in each expansion:
+\begin{parts}
+\part%2a
+$\varepsilon x^{3}-x+1=0$,
+
+\part%2b
+$\tan x=\dfrac{\varepsilon}{x}$. [\emph{Hint: The roots are near $n \pi$ for integer $n$, but the root near zero must be treated separately (can you see why?).}]
+\end{parts}
+
+
+
+\question%3
+\textbf{Regular perturbation.}
+Find the first two terms in an asymptotic expansion in powers of the small parameter $\varepsilon$ of the solution to \[
+	x y'(x)+y(x)=\varepsilon y(x)^{1 / 2}, \qquad x>1, \qquad y(1)=1 .
+\] Explain why the expansion is not valid as $x \to \infty$. What form of rescaling would be necessary to examine the behaviour for large $x$? [\emph{You do not need to carry out the resulting analysis.}]
+
+
+
+\question%4
+\textbf{Inner and outer expansions.}
+\begin{parts}
+\part%4a
+Find inner and outer expansions, up to and including $\mathcal O(\varepsilon)$ terms, for the function \[
+	f(x ; \varepsilon)=\frac{e^{-x / \varepsilon}}{x}+\frac{\sin x}{x}-\operatorname{coth} x
+\] for $x>0$ and $0<\varepsilon \ll 1$.
+
+\part%4b
+Compare the inner and outer approximations with the exact function $f$ by plotting all three on the same graph for various small values of $\varepsilon$.
+\end{parts}
+
+
+
+\question%5
+\textbf{Singular perturbation.}
+\begin{parts}
+\part%5a
+Use matched asymptotic expansions to find leading-order outer and inner solutions to the boundary value problem \[
+	\varepsilon y''(x)+x y'(x)+y(x)=0, \qquad 1<x<2, \qquad y(1)=0, \qquad y(2)=1,
+\] where $0<\varepsilon \ll 1$. Construct the leading-order composite solution.
+
+\part%5b
+How would the analysis change if $\varepsilon$ were small and negative? [\emph{You do not need to find the solution in this case.}]
+\end{parts}
+
+
+
+\question%6
+\textbf{Boundary layer.} Construct leading-order inner and outer solutions to \[
+	\varepsilon u''(x)+u'(x)=\frac{u(x)+u(x)^{3}}{1+3 u(x)^{2}}, \qquad 0<x<1, \qquad u(0)=0, \qquad u(1)=1,
+\] where $0<\varepsilon \ll 1$. [\emph{You will only be able to determine the outer solution implicitly.}] Sketch a graph of the leading-order composite solution.
+
+\end{questions}
+
+\end{document}

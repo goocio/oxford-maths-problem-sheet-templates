@@ -1,0 +1,140 @@
+\documentclass[answers]{exam}
+\usepackage{../HT2025}
+
+\title{Fluids and Waves -- Sheet 1\\Streamlines, Vorticity}
+\author{YOUR NAME HERE :)}
+\date{Hilary Term 2025}
+
+
+\begin{document}
+\maketitle
+\begin{questions}
+
+\section*{A: Fundamental Principles}
+
+\question%1
+\textbf{Particle paths and streamlines.} Define the \emph{particle paths} and \emph{streamlines} for a velocity field $\boldsymbol{u}(\boldsymbol{x}, t)$. When do these coincide? Show that a quantity $f(\boldsymbol{x}, t)$ is preserved following the flow if \[
+	\frac{\mathrm{D} f}{\mathrm{D} t}=\frac{\partial f}{\partial t}+\boldsymbol{u} \cdot \boldsymbol{\nabla} f=0
+\] Show also that $f$ is constant along streamlines if $\boldsymbol{u} \cdot \boldsymbol{\nabla} f=0$.
+
+
+
+\question%2
+\textbf{The vorticity equation.} Consider an incompressible fluid, with constant density $\rho$, subject to a conservative body force (i.e. $\boldsymbol{g}=-\boldsymbol{\nabla} \chi$ for some potential function $\chi$). Starting from the Euler equations, show that the \emph{vorticity} $\boldsymbol{\omega}=\boldsymbol{\nabla} \times \boldsymbol{u}$ satisfies \[
+	\frac{\mathrm{D} \boldsymbol{\omega}}{\mathrm{D} t}=(\boldsymbol{\omega} \cdot \boldsymbol{\nabla}) \boldsymbol{u}.
+\] Deduce that, in two-dimensional incompressible flow, $\boldsymbol{\omega}$ is conserved following the flow.
+
+
+
+\question%3
+\textbf{Kelvin's Circulation Theorem: A second proof.} The \emph{circulation} $\Gamma$ around a closed curve $C(t)$ is defined by \[
+	\Gamma=\oint_{C} \boldsymbol{u} \cdot \mathrm{d} \boldsymbol{x} .
+\] By transforming to Lagrangian variables show that $\Gamma$ is independent of $t$. Deduce that a flow that is initially \emph{irrotational} (i.e. $\boldsymbol{\omega}=\mathbf{0}$ at $t=0$) remains irrotational for all time. [\emph{This is a key result for the rest of the course: if a flow is initially irrotational, it remains so indefinitely and we can introduce a velocity potential $\phi$ such that $\mathbf{u}=\boldsymbol{\nabla} \phi$.}]
+
+
+
+\question%4
+\textbf{Bernoulli's principle(s).} Consider an incompressible fluid, with constant density $\rho$, subject to a conservative body force with potential $\chi$.
+\begin{parts}
+\part%4a
+\begin{subparts}
+\subpart%4ai
+Show that the momentum equation may be written in the form \[
+	\frac{\partial \boldsymbol{u}}{\partial t}+(\boldsymbol{\nabla} \times \boldsymbol{u}) \times \boldsymbol{u}=\boldsymbol{\nabla} f
+\] for some function $f$ (which you should define).
+\subpart%4aii
+Deduce that $p+\rho \chi+\frac{1}{2} \rho|\boldsymbol{u}|^{2}$ is constant along a streamline in steady flow;
+
+\subpart%4aiii
+and that $p+\rho \chi+\frac{1}{2} \rho|\boldsymbol{u}|^{2}$ is constant everywhere in steady irrotational flow.
+\end{subparts}
+
+\part%4b
+Assuming the flow is irrotational, define a velocity potential $\phi$ such that $\boldsymbol{u}=\boldsymbol{\nabla} \phi$. Deduce \emph{Bernoulli's equation}, namely \[
+	\frac{\partial \phi}{\partial t}+\frac{1}{2}|\boldsymbol{\nabla} \phi|^{2}+\frac{p}{\rho}+\chi=F(t)
+\] Explain carefully how an appropriate definition of $\phi$ allows the function $F(t)$ to be chosen arbitrarily.
+\end{parts}
+
+
+
+\question%5
+\textbf{The streamfunction.}
+\begin{parts}
+\part%5a
+For two-dimensional incompressible flow, with velocity $\boldsymbol{u}=$ $(u(x, y, t), v(x, y, t), 0)$, show that there exists a \emph{streamfunction} $\psi(x, y, t)$ such that $u=\partial \psi / \partial y$ and $v=-\partial \psi / \partial x$.
+
+\part%5b
+Show that $\psi$ is constant along streamlines and that the difference between the values of $\psi$ on any two streamlines is equal to the net flux of fluid between them.
+
+\part%5c
+Explain why an impermeable boundary to a fluid flow is always a streamline.
+\end{parts}
+
+
+\section*{B: Applications}
+
+\question%6
+\textbf{Vorticity versus rotation.} A fluid moves in the region $r \geq a$ outside a circular cylinder, with velocity field given by \[
+	\boldsymbol{u}=\left(\frac{-\Omega y}{x^{2}+y^{2}}, \frac{\Omega x}{x^{2}+y^{2}}, 0\right),
+\] where $\Omega$ is constant.
+\begin{parts}
+\part%6a
+Show that the flow is irrotational. Deduce that \[
+	\Gamma=\oint_{C} \boldsymbol{u} \cdot \mathrm{d} \boldsymbol{x}=0,
+\] where $C$ is any simple closed curve that does not enclose the cylinder.
+
+\part%6b
+Show that all the streamlines of the flow are circular, and calculate $\Gamma$ when $C$ is a streamline. Deduce that $\Gamma=2 \pi \Omega$ whenever $C$ \emph{does} enclose the cylinder.
+\end{parts}
+
+
+
+\question%7
+\textbf{Newton's bucket.} An incompressible inviscid fluid is rotating under gravity $g$ with constant angular velocity $\Omega$ about the $z$-axis, which is vertical, so that $\boldsymbol{u}=(-\Omega y, \Omega x, 0)$ relative to fixed Cartesian axes. We wish to find the surfaces of constant pressure, and hence surface of a uniformly rotating bucket of water (which will be at atmospheric pressure).
+\begin{parts}
+\part%7a
+Bernoulli's equation would imply that $p / \rho+|\boldsymbol{u}|^{2} / 2+g z$ is constant, so the constant pressure surfaces are \[
+	z=\text{constant}-\frac{\Omega^{2}}{2 g}(x^{2}+y^{2}) .
+\] But this suggests that the surface of a rotating bucket of water is at its highest in the middle. What is wrong?
+
+\part%7b
+Write down the Euler equations in component form for this velocity field and integrate them to find the pressure $p$. Explaining carefully your reasoning, use this to obtain the correct shape for the free surface. [\emph{A thought experiment with a rotating bucket of water was used by Newton to argue that rotational motion is absolute, not relative - all observers would see the surface of the liquid is curved. Nowadays, the same idea, but with mercury as the liquid, is used to create liquid-mirror telescopes.}]
+\end{parts}
+
+
+
+\question%8
+\textbf{Using streamlines: The clepsydra.} One of the earliest means for measuring the passage of time, invented by the ancient Egyptians, was the \emph{clepsydra} (or `water thief'): a large jar with a hole in its base is filled with water. The shape of the jar was such that the interval of time taken for the water surface to pass two equally-spaced markers on the side of the jar is constant. In this question you will determine the shape of jar required to achieve this. In particular, we denote the (axisymmetric) jar's radius a height $z$ above the hole by $a(z)$. The radius of the hole, $a_{h} \neq a(0)$, in general.
+\begin{parts}
+\part%8a
+Explain why the curve $r=a(z)$ is a streamline.
+
+\part%8b
+If the surface of the water lies at $z=h(t)$, use an appropriate form of Bernoulli's principle to calculate the speed of liquid, $u$, leaving the jar at $z=0$. [\emph{You may assume that the desired surface speed $u_{S}=|\dot{h}| \ll u$.}]
+
+\part%8c
+Use the principle of conservation of mass to link $u_{S}, u, a_{h}$ and $a[h(t)]$; thereby determine the correct shape for a clepsydra.
+\end{parts}
+
+
+
+\question%9
+\relax[\emph{Optional, but easy}] \textbf{Wind and pressure on weather maps.} At the scale of earth's atmosphere, the Coriolis effect becomes important; conservation of momentum in the Euler equations then becomes: \[
+	\frac{\mathrm{Du}}{\mathrm{D} t}=-2 \boldsymbol{\Omega} \wedge \mathbf{u}-\frac{1}{\rho} \nabla p+\mathbf{g}
+\] where $\Omega$ is the angular velocity of the earth's surface.\\ `\emph{Geostrophic balance}' is used to describe the conditions under which the material derivatives in this equation may be neglected. We will work in a local Cartesian coordinate system, $(x, y, z)$, the velocity field $\mathbf{u}=(u, v, w)$, and we can write $\boldsymbol{\Omega}=\omega \sin \phi \mathbf{e}_{z}$ where $\phi$ is the latitude --- this is the 'tangent plane'.
+\begin{parts}
+\part%9a
+Show that in geostrophic balance \[
+	0=2 \omega \sin \phi v-\frac{1}{\rho} \frac{\partial p}{\partial x}, \qquad 0=-2 \omega \sin \phi u-\frac{1}{\rho} \frac{\partial p}{\partial y} .
+\]
+
+\part%9b
+Show that this `geostrophic wind' is incompressible. What plays the same role as the streamfunction here?
+
+\part%9c
+Explain why the wind direction is parallel to isobars (curves of constant pressure) on weather maps. [\emph{To see this in practice, use the BBC weather website and choose a location, like Oxford. (You can make the map fullscreen and then change the options to show wind and pressure.) You could also compare the relation between pressure and wind direction for an equatorial city like Kinshasa or Bogot\'a.}]
+\end{parts}
+
+\end{questions}
+
+\end{document}

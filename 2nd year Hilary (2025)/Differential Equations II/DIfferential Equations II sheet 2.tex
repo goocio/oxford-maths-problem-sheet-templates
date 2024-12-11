@@ -1,0 +1,130 @@
+\documentclass[answers]{exam}
+\usepackage{../HT2025}
+
+\title{Differential Equations II -- Sheet 2\\Green's functions, Eigenfunctions}
+\author{YOUR NAME HERE :)}
+\date{Hilary Term 2025}
+
+
+\begin{document}
+\maketitle
+\begin{questions}
+
+\question%1
+\textbf{Computing Green's functions.} Obtain the Green's function for the following operators using the delta-function construction:
+\begin{parts}
+\part%1a
+$\mathfrak{L} y=-y', \quad 0<x<1, \quad y(0)-y'(1)=0, \quad y(0)+y(1)=0$.
+
+\part%1b
+$\mathfrak{L} y=y'-y, \quad 0<x<2 \pi, \quad y(0)-y(2 \pi)=0, \quad y'(0)-y'(2 \pi)=0$.
+
+\part%1c
+In (b), what goes wrong if we change the operator to $\mathfrak{L} y=y'+y$ (for the same boundary conditions)?
+\end{parts}
+
+
+
+\question%2
+\textbf{Green's functions for an Initial Value Problem.} Reconsider the IVP from Sheet 1 Q3, \[
+	\mathfrak{L} y(x) \equiv P_{2}(x) y'(x)+P_{1}(x) y'(x)+P_{0}(x) y(x)=f(x)
+\] for $x>0$, subject to initial conditions $y(0)=y'(0)=0$. Recall that $y_{1}$ and $y_{2}$ are linearly independent solutions to the homogeneous problem $\mathfrak{L} y=0$ satisfying $y_{1}(0)=0$ and $y_{2}'(0)=0$. State the ODE and initial conditions satisfied by the Green's function $g(x, \xi)$ in terms of a delta function, solve this problem for $g$, and show that this approach reproduces the expression found by variation of parameters on Sheet 1.
+
+
+
+\question%3
+\textbf{Eigenfunction expansion.}
+\begin{parts}
+\part%3a
+Find the general solution of the Cauchy-Euler equation \[
+	x^{2} y'(x)+3 x y'(x)+(1+\alpha) y(x)=0,
+\] where $\alpha$ is a given positive constant.
+
+\part%3b
+Use (a) to determine the eigenvalues $\lambda_{j}$ and eigenfunctions $y_{j}$ of the self-adjoint problem \[
+	-(x^{3} y'(x))'=\lambda x y, \qquad y(1)=0, \qquad y(e)=0 .
+\]
+
+\part%3c
+Obtain the eigenfunction expansion for the solution of the inhomogeneous problem \[
+	(x^{3} y'(x))'=x, \qquad y(1)=0, \qquad y(e)=0,
+\] giving the coefficients explicitly (i.e. compute the integrals).
+\end{parts}
+
+
+
+\question%4
+\textbf{Eigenvalue expansion - two routes.}
+\begin{parts}
+\part%4a
+Consider the following eigenvalue problem on $0 \leq x \leq 1$: \[
+	\mathfrak{L} y \equiv y'+2 y'+y=\lambda y, \qquad y'(0)+y(0)=0, \qquad y'(1)+y(1)=0 .
+\] Compute the eigenvalues $\lambda_{k}$, eigenfunctions $y_{k}$, and the adjoint eigenfunctions $w_{k}$.
+
+\part%4b
+Under what condition on $f$ does a solution exist for the inhomogeneous problem \[
+	\mathfrak{L} y(x)=f(x) \quad(0<x<1), \qquad y'(0)+y(0)=0, \qquad y'(1)+y(1)=0 ?
+\]
+
+\part%4c
+Assuming that the condition in (b) is satisfied, obtain the coefficients in an eigenfunction expansion $y(x)=\sum_{k}^{\infty} c_{k} y_{k}(x)$.
+
+\part%4d
+Convert the problem in (b) to the equivalent Sturm-Liouville problem and show that the eigenfunction expansion of the solution to that problem matches what you found in part (c).
+\end{parts}
+
+
+
+\question%5
+\textbf{Legendre's equation and the Fredholm Alternative.} Consider bounded solutions of the eigenvalue problem \[
+	\mathfrak{L} y(x) \equiv\left(1-x^{2}\right) y'(x)-2 x y'(x)=\lambda y(x), \qquad-1<x<1 \tag{$\star$}
+\]
+\begin{parts}
+\part%5a
+Use the inner product relation to compute $\mathfrak{L}^{*}$ and show that the boundary terms vanish identically. Why are no boundary conditions given for $(\star)$?
+
+\part%5b
+Convert $(\star)$ to Sturm-Liouville form. What orthogonality relation do the eigenfunctions satisfy?
+
+\part%5c
+ Verify that $y_{0}(x)=1$ is an eigenfunction for $\lambda_{0}=0$. For the inhomogeneous problem $\mathfrak{L} y(x)=f(x)$ to be solvable for $y$, what condition must $f$ satisfy?
+
+\part%5d
+Consider the equation $\mathfrak{L} y(x)=-2 x$. Explain via the Fredholm Alternative why this problem should have a non-unique solution. Show that \[
+	y=x+A \log \left(\frac{1+x}{1-x}\right)+B
+\] is a solution for any values of $A$ and $B$. What can you conclude about the constant $A$?
+
+\part%5e
+Find the general solution of $\mathfrak{L} y=1$. Does this match your reasoning in (c)?
+\end{parts}
+
+
+
+\question%6
+(Optional) \textbf{Green's function and eigenfunctions for Sturm-Liouville.} Consider the Sturm-Liouville problem \[
+	\mathfrak{L} y \equiv-(p y')'+q y=f, \qquad a<x<b
+\] where $p(x) \neq 0$ on $a<x<b$, with the boundary conditions \[
+	\mathfrak{B}_{\ell} y \equiv y(a)=0, \qquad \mathfrak{B}_{r} y \equiv y(b)=0
+\] Let $y_{\ell}$ and $y_{r}$ satisfy $\mathfrak{L} y_{\ell}=0, \mathfrak{B}_{\ell} y_{\ell}=0$, and $\mathfrak{L} y_{r}=0, \mathfrak{B}_{r} y_{r}=0$, respectively, and let $y_{k}$ be eigenfunctions that satisfy $\mathfrak{L} y_{k}=\lambda_{k} y_{k}$ with $\mathfrak{B}_{\ell} y_{k}=\mathfrak{B}_{r} y_{k}=0$.
+\begin{parts}
+\part%6a
+Use variation of parameters to derive the following expression for the Green's function: \[
+	g(x, \xi)= \begin{cases}
+		\displaystyle\frac{-y_{\ell}(x) y_{r}(\xi)}{W(\xi) p(\xi)} & a<x<\xi<b \\[1em]
+		\displaystyle\frac{-y_{\ell}(\xi) y_{r}(x)}{W(\xi) p(\xi)} & a<\xi<x<b
+	\end{cases}\tag{$\star$}
+\] where $W=y_{\ell} y_{r}'-y_{\ell}' y_{r}$ is the Wronskian.
+
+\part%6b
+Re-derive equation $(\star)$ by constructing the Green's function satisfying $\mathfrak{L}_{x} g(x, \xi)=\delta(x-\xi)$.
+
+\part%6c
+Find an alternative expression for the Green's function in terms of an eigenfunction expansion $g(x, \xi)=\sum_{k} c_{k}(\xi) y_{k}(x)$.
+
+\part%6d
+Show that the two expressions agree by expanding $(\star)$ directly in an eigenfunction expansion and showing that the coefficients match, i.e. write the expression in $(\star)$ as $\sum_{k} d_{k}(\xi) y_{k}(x)$ and show that $d_{k}=c_{k}$.
+\end{parts}
+
+\end{questions}
+
+\end{document}

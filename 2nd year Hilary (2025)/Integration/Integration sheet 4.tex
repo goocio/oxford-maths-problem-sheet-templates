@@ -1,0 +1,174 @@
+\documentclass[answers]{exam}
+\usepackage{../HT2025}
+
+\title{Integration -- Sheet 4\\Fubini's theorem, $L^p$-spaces}
+\author{YOUR NAME HERE :)}
+\date{Hilary Term 2025}
+
+
+\begin{document}
+\maketitle
+
+\begin{questions}
+
+\question%1
+In each of the following cases, is $f$ integrable over the given region? [\emph{Give careful justification.}]
+\begin{parts}
+\part%1a
+$f(x, y)=e^{-x y}$ over $[0, \infty) \times[0, \infty)$;
+
+\part%1b
+$f(x, y)=e^{-x y}$ over $\left\{(x, y): 0<x<y<x+x^{2}\right\}$;
+
+\part%1c
+$f(x, y)=\dfrac{(\sin x)(\sin y)}{x^2+y^2}$ over $\left(-\frac{\pi}{2}, \frac{\pi}{2}\right) \times\left(-\frac{\pi}{2}, \frac{\pi}{2}\right)$.
+\end{parts}
+
+
+
+\question%2
+\relax[\emph{Applications of Tonelli or Fubini should be carefully justified.}]
+\begin{parts}
+\part%2a
+Let $J_{0}(x)=\frac{2}{\pi} \int_{0}^{\pi / 2} \cos (x \cos \theta)~\mathrm d \theta$. Show that $\int_{0}^{\infty} J_{0}(x) e^{-a x}~\mathrm d x=\dfrac{1}{\sqrt{1+a^{2}}}$ if $a>0$.
+
+\part%2b
+Take $b>a>1$. By considering $x^{-y}$ over $(1, \infty) \times(a, b)$, show that $\int_{1}^{\infty} \dfrac{x^{-a}-x^{-b}}{\log x}~\mathrm d x$ exists, and find its value.
+\end{parts}
+
+
+
+\question%3
+Let $f: \mathbb{R} \to \mathbb{R}$ be non-negative, and let \[
+	E=\{(x, y) \in \mathbb{R}^{2}: 0 \leq y \leq f(x)\}
+\]
+\begin{parts}
+\part%3a
+Show that $f$ is measurable if and only if $E$ is measurable. [\emph{Recall from the end of section 2 that if $E_{1}, E_{2}$ are measurable subsets of $\mathbb{R}$, then $E_{1} \times E_{2}$ is measurable in $\mathbb{R}^{2}$.}]
+
+\part%3b
+If $f$ (and hence by (a), $E$) is measurable show that $m(E)=\int_{\mathbb{R}} f(x)~\mathrm d x$.
+\end{parts}
+
+
+
+\question%4
+Let $f \in \mathcal{L}^{1}(\mathbb{R})$ be non-negative with $\int_{-\infty}^{\infty} f(x)~\mathrm d x=1$, and let $F(x)=\int_{-\infty}^{x} f(y)~\mathrm d y$. Assume that $x f(x) \in \mathcal{L}^{1}(\mathbb{R})$.
+\begin{parts}
+\part%4a
+Use Fubini's Theorem to prove that \[
+	\int_{0}^{\infty}(1-F(x))~\mathrm d x=\int_{0}^{\infty} x f(x)~\mathrm d x, \quad \int_{-\infty}^{0} F(x)~\mathrm d x=-\int_{-\infty}^{0} x f(x)~\mathrm d x .
+\]
+
+\part%4b
+Now let $g$ be a bounded measurable function, and let \[
+	G(y)=\int_{\{g(x) \leq y\}} f(x)~\mathrm d x.
+\] Prove that \[
+	\int_{0}^{\infty}(1-G(y)-G(-y))~\mathrm d y=\int_{-\infty}^{\infty} f(x) g(x)~\mathrm d x.
+\] [\emph{Remark (not a hint): Imagine that $f$ is the probability density function of a random variable $X$. The first part of the question then says that $\mathbb{E}(X)=\int_{0}^{\infty}(\mathbb{P}[X>x]-\mathbb{P}[X \leq-x])~\mathrm d x$. This formula holds for all random variables (discrete, continuous, etc) with $\mathbb{E}(|X|)<\infty$. In particular it holds for $g(X)$. Then the last part proves that $\mathbb{E}[g(X)]=$ $\int_{-\infty}^{\infty} f(x) g(x) d x$, a fact sometimes known as the Law of the Unconscious Statistician.}]
+\end{parts}
+
+
+
+\question%5
+\begin{parts}
+\part%5a
+Let $\alpha>1$ and $f(x, y)=(x^{2}+y^{2})^{-\alpha}$ and $g(x, y)=(1+x^{2}+y^{2})^{-\alpha}$. Show that $f$ is integrable over $[1, \infty) \times[0, \infty)$. [\emph{Hint: Change of variables $y=u x$ may help.}] Deduce that $f$ is integrable over $[0,1] \times[1, \infty)$, and that $g$ is integrable over $\mathbb{R}^{2}$.
+
+\part%5b
+Use polar coordinates to show that $g$ is integrable over $\mathbb{R}^{2}$.
+\end{parts}
+
+
+
+\question%6
+\begin{parts}
+\part%6a
+For $p>0$, calculate $\|f\|_{p}$ when $f$ is (i) $\chi_{(0,1)}$, (ii) $\chi_{(1,2)}$, (iii) $\chi_{(0,2)}$.
+
+\part%6b
+Now assume that $0<p<1$.
+\begin{subparts}
+\subpart%6bi
+Is $\|\cdot\|_{p}$ a norm on $L^{p}$?
+
+\subpart%6bii
+For $f, g \in L^{p}(\mathbb{R})$, let $d_{p}(f, g)=\int|f-g|^{p}$. Show that $d_{p}$ is a metric on $L^{p}(\mathbb{R})$.
+\end{subparts}
+\end{parts}
+
+
+
+\question%7
+Consider the relation $\sim$ on the space of measurable functions $f: \mathbb{R} \to \mathbb{R}$ given by: $f \sim g \iff f=g\text{ a.e.}$.
+\begin{parts}
+\part%7a
+State which properties of null sets are used to prove each of the following true statements ($f, g, h$, etc are measurable functions):
+\begin{subparts}
+\subpart%7ai
+$f \sim f$,
+
+\subpart%7aii
+$f \sim g \implies g \sim f$,
+
+\subpart%7aiii
+$f \sim g, g \sim h \implies f \sim h$,
+
+\subpart%7aiv
+If $f_{n} \sim g_{n}$ for all $n \in \mathbb{N}$, then $\sup f_{n} \sim \sup g_{n}$,
+
+\subpart%7av
+If $f \sim g$, then $h \circ f \sim h \circ g$.
+\end{subparts}
+
+\part%7b
+Give an example where $h$ is injective, $f \sim g$, but $f \circ h \not\sim g \circ h$.
+\end{parts}
+
+
+
+\question%8
+Let $p>1$.
+\begin{parts}
+\part%8a
+Give an example of a sequence $(f_{n})$ in $L^{p}(0,1)$ such that $\lim_{n \to \infty} f_{n}(x)=0$ a.e. but $\lim_{n \to \infty}\|f_{n}\|_{p} \neq 0$. For each $\varepsilon>0$ find a measurable subset $E_{\varepsilon}$ of $[0,1]$ such that $m(E_{\varepsilon})<\varepsilon$ and $f_{n}(x) \to 0$ uniformly on $[0,1] \setminus E_{\varepsilon}$.
+
+\part%8b
+Give an example of a sequence $(g_{n})$ in $L^{p}(0,1)$ such that $\lim_{n \to \infty}\|g_{n}\|_{p}=0$ but $\lim _{n \to \infty} g_{n}(x)$ does not exist for any $x \in(0,1)$. Find a subsequence $\left(g_{n_{r}}\right)$ such that $\lim_{r \to \infty} g_{n_{r}}(x)=0$ a.e..
+\end{parts}
+
+
+
+\question%9
+(Optional) Let $E \subset \mathbb{R}$ be measurable.
+\begin{parts}
+\part%9a
+Show that $\|\cdot\|_{\infty}$ gives a norm on $L^{\infty}(E)$.
+
+\part%9b
+Show that $(L^{\infty}(E),\|\cdot\|_{\infty})$ is complete.
+\end{parts}
+
+
+
+\question%10
+(Optional) A function $g:[0, \infty) \to \mathbb{R}$ is \emph{convex} if \[
+	g(x)=\sup \{\alpha x+\beta: \alpha y+\beta \leq g(y) \text{ for all } y \in[0, \infty)\}.
+\] [\emph{If $g$ is continuous on $[0, \infty)$ with non-negative second derivative on $(0, \infty)$, then $g$ is convex.}]\\ Let $f:[0,1] \to[0, \infty)$ be bounded, measurable, and $M_{n}=\int_{0}^{1} f^{n}~\mathrm d x=\|f\|_{L^{n}}^{n}$. Show that:
+\begin{parts}
+\part%10a
+$g\left(\int_{0}^{1} f(x)~\mathrm d x\right) \leq \int_{0}^{1} g(f(x))~\mathrm d x$ for every convex function $g$;
+
+\part%10b
+$M_{n}^{2} \leq M_{n+1} M_{n-1}$;
+
+\part%10c
+$\|f\|_{L^{n}} \leq M_{n+1} / M_{n} \leq\|f\|_{L^{\infty}}$;
+
+\part%10d
+$\lim_{n \to \infty} M_{n+1} / M_{n}=\|f\|_{L^{\infty}}$.
+\end{parts}
+
+\end{questions}
+
+\end{document}

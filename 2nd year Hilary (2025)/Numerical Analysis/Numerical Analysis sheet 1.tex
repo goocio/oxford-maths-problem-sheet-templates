@@ -1,0 +1,118 @@
+\documentclass[answers]{exam}
+\usepackage{../HT2025}
+\usepackage{mathdots}% for \iddots
+
+\title{Numerical Analysis -- Sheet 1\\Lagrange interpolation, LU, QR}
+\author{YOUR NAME HERE :)}
+\date{Hilary Term 2025}
+
+
+\begin{document}
+\maketitle
+
+\begin{questions}
+
+\question%1
+Construct the Lagrange interpolating polynomial for the data \begin{tabular}{c|ccc}
+	$x$ & 0 & 1 & 3 \\\hline
+	$f$ & 3 & 2 & 6 \\
+\end{tabular}.
+
+
+
+\question%2
+If $p_{n} \in \Pi_{n}$ interpolates $f$ at $x_{0}, x_{1}, \ldots, x_{n}$, prove that $p_{n}+q$ is the Lagrange interpolating polynomial to $f+q$ at $x_{0}, x_{1}, \ldots, x_{n}$ whenever $q \in \Pi_{n}$.
+
+
+
+\question%3
+Consider interpolating $1 / x$ by $p_{n} \in \Pi_{n}$ (i.e. at $n+1$ points) on [1,2]. If $e(x)$ is the error, show that $|e(x)| \leqslant 1$ for $x \in[1,2]$ with arbitrarily distributed points, but $|e(x)| \leqslant$ $1 / 2^{(n+1) / 2}$ for all $x \in[1,2]$ if $n+1$ is even and half of the interpolation points are in $\left[1, \frac{3}{2}\right]$ and half in $\left(\frac{3}{2}, 2\right]$. In this latter situation, how many points would be needed to guarantee $|e(x)| \leqslant 10^{-3}$?
+
+
+
+\question%4
+Show that $\sum_{k=0}^{n} q(x_{k}) L_{n, k}(x)=q(x)$ whenever $q \in \Pi_{n}$. (\emph{Optional: How many ways can you prove this?}) Also, show that $\sum_{k=0}^{n} x_{k}^{l} L_{n, k}(x)=x^{l}$ for nonnegative integers $l \leqslant n$.
+
+
+
+\question%5
+\begin{parts}
+\part%5a
+By performing Gauss Elimination (without pivoting), solve \[
+	\begin{bmatrix}
+		2 & 1 & 1 & 0 \\
+		4 & 3 & 3 & 1 \\
+		8 & 7 & 9 & 5 \\
+		6 & 7 & 9 & 8
+	\end{bmatrix}\begin{bmatrix}
+		a \\
+		b \\
+		c \\
+		d
+	\end{bmatrix}=\begin{bmatrix}
+		3 \\
+		8 \\
+		24 \\
+		25
+	\end{bmatrix}.
+\]
+
+\part%5b
+From your calculations, write down an LU factorisation of the matrix $A$ above, and verify that $L U=A$. Then by successive back and forwards substitutions (and without further factorisation) solve $A x=b_{2}$ where $b_{2}=[4\ 7\ 9\ 2]^T$.
+\end{parts}
+
+
+
+\question%6
+What is the determinant of the matrix $A$ in the question above? (\emph{Note one of the few algebraic properties of the determinant is that $\det(B C)=\det(B) \det(C)$ and you might also want to consider what is the determinant of a triangular matrix.})
+
+
+
+\question%7
+\begin{parts}
+\part%7a
+Suppose $A$ is a real $n \times n$ matrix with $n \geqslant 2$ and that the permutation matrix \[
+	P=\begin{bmatrix}
+		0 & \cdots & 0 & 1 \\
+		0 & \cdots & 1 & 0 \\
+		\vdots & \iddots & \vdots & \vdots \\
+		1 & \cdots & 0 & 0
+	\end{bmatrix}.
+\] Show that pre-multiplication of $A$ by $P$ reverses the order of the rows of $A$.
+
+\part%7b
+If $A=L U$ is an $L U$ factorisation of $A$ (without pivoting), what is the structure of $P L P$? Hence describe how to calculate a factorisation $A=\hat{U} \hat{L}$ where $\hat{U}$ is unit upper triangular and $\hat{L}$ is lower triangular.
+\end{parts}
+
+
+
+\question%8
+Suppose that $A$ is a square nonsingular matrix. Prove that the factors $Q$ and $R$ featuring in the QR factorisation of $A$ are unique if the diagonal entries of $R$ are all positive. How many possibilities are there if this restriction is removed?
+
+
+
+\question%9
+By considering the QR factorisation in which the diagonal entries of $R$ are all positive as in the question above (or otherwise), prove that any orthogonal matrix may be expressed as the product of Householder matrices.
+
+
+
+\question%10
+Prove that the product of two lower triangular matrices is lower triangular and that the inverse of a non-singular lower triangular matrix is lower triangular. Deduce similar results for upper triangular matrices.
+
+
+
+\question%11
+(MATLAB/Python exercise) Using a loop and tic and toc compare the time it takes to do (pivoted) LU and QR factorisations. For example, for random matrices of dimension $2^{5}$ to $2^{10}$ \vspace{-1em}\begin{verbatim}
+for k=5:10, A=randn(2^k); tic, [L,U,P]=lu(A); toc,...
+tic, [Q,R]=qr(A); toc, end
+\end{verbatim}\vspace{-1em}
+should give some timings. What do you think the computational work is for QR factorisation given that LU is to leading order $\frac{2}{3} n^{3}$? Note \verb|qr| uses Householder matrices as described in lectures to compute the QR factorisation.
+
+
+
+\question%12
+(\emph{Optional:}) Given an LU factorisation of a matrix $A$, how might one calculate a column of the inverse of $A$? Estimate the computational work in calculating $A^{-1}$ and hence in solving $A x=b$ via explicit computation of $A^{-1}$ and multiplication by $b$.\\ Are you now convinced that this is \emph{not} the way to solve linear systems of equations in practice?!\\ An even worse technique would be to apply GE separately for each column: what would the computational cost be then?
+
+\end{questions}
+
+\end{document}

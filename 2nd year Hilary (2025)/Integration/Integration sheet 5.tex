@@ -1,0 +1,132 @@
+\documentclass[answers]{exam}
+\usepackage{../HT2025}
+
+\title{Integration -- Sheet 5\\Bonus problems}
+\author{YOUR NAME HERE :)}
+\date{Hilary Term 2025}
+
+
+\begin{document}
+\maketitle
+
+This is an optional set of additional questions for the vacation. The first three questions are some integrals extracted from past exams (question 3 isn't really an extract --- it's pretty much the entire question). Solutions will be provided in week 1 of TT --- there's no expectation that tutors will support this sheet.
+
+\begin{questions}
+
+\question%1
+A function $f: \mathbb{R} \to \mathbb{R}$ is defined by \[
+	f(t)=\int_{0}^{\infty} e^{-x^{2}} \cos(2 x t^{2})~\mathrm d x.
+\] You may assume that this integral exists for all $t \in \mathbb{R}$ and that $f(0)=\sqrt{\pi} / 2$. Find an explicit formula for $f(t)$ for all $t \in \mathbb{R}$. You should justify your arguments carefully, making clear statements of any standard results that you use.
+
+
+
+\question%2
+For $x>0$ and $y>0$, let \[
+	f(x, y)=\frac1{(1+y)(1+x^4y)}.
+\]
+\begin{parts}
+\part%2a
+Show carefully that $f$ is integrable over $(0, \infty) \times(0, \infty)$.
+
+\part%2b
+Hence or otherwise show that the following integral exists, and find its value: \[
+	\int_{0}^{\infty} \frac{\log x}{x^4-1}~\mathrm d x
+\] [\emph{The formula \[
+	f(x, y)=\frac1{x^4-1}\left(\frac{x^4}{1+x^4y}-\frac1{1+y}\right)\qquad(x\neq1)
+\] may be useful.}]
+\end{parts}
+
+
+
+\question%3
+\begin{parts}
+\part%3a
+Let $f$ be an integrable function on $(0, \infty)$ with $f(x)>0$ for all $x>0$, and let $a>1$. For $x>0$ and $y>0$, let \[
+	g(x, y)=f(x y)-a f(a x y).
+\] Show that \[
+	\int_{0}^{1} g(x, y)~\mathrm d x=-\frac1y\int_{y}^{a y} f(t)~\mathrm d t<0 \quad \text{whenever } y>0
+\] and \[
+	\int_{1}^{\infty} g(x, y) d y>0\quad \text{whenever } x>0.
+\] Deduce that $g$ is not integrable over $(0,1) \times(1, \infty)$.
+
+\part%3b
+\relax[\emph{In this part of the question, you may assume that $e^{-x^{2}} x^{3}$ is integrable over $(0, \infty)$ with integral 1/2.}] For $x>0$ and $y>0$, let \[
+	h(x, y)=e^{-\left(x^{2}+y^{2}\right)} x^{3 / 2} y^{1 / 2}.
+\] Show that $h$ is integrable over $(0, \infty) \times(0, \infty)$. Hence, or otherwise, show that \[
+	\int_{0}^{\pi / 2}(\cos \theta)^{3 / 2}(\sin \theta)^{1 / 2}~\mathrm d \theta=\frac{1}{2}\left(\int_{0}^{\infty} e^{-u} u^{1 / 4}~\mathrm d u\right)\left(\int_{0}^{\infty} e^{-v} v^{-1 / 4}~\mathrm d v\right).
+\]
+\end{parts}
+
+
+
+\question%4
+\begin{parts}
+\part%4a
+Let $E_{n}$ be measurable subsets of $\mathbb{R}$ with $m(E_{n}) \leq 2^{-n}$ for $n=1,2, \ldots$. Show that $\lim_{n \to \infty} \chi_{E_{n}}(x)=0$ a.e..
+
+\part%4b
+Let $f \in \mathcal{L}^{1}(\mathbb{R})$. Show that $\lim_{n \to \infty} \int_{E_{n}}|f|=0$. Deduce that for any $\epsilon>0$ there exists $\delta>0$ such that $\int_{E}|f|<\epsilon$ for all measurable sets $E$ with $m(E)<\delta$.
+
+\part%4c
+Let $F(x)=\int_{-\infty}^{x} f(y)~\mathrm d y$. Show that $F$ is absolutely continuous.
+\end{parts}
+
+
+
+\question%5
+\begin{parts}
+\part%5a
+Let $(\Omega, \mathcal{F}, \mu)$ be a measure space and $E \in \mathcal{F}$ have $\mu(E)<\infty$. Suppose that $(f_{n})_{n=1}^{\infty}$ is a sequence of measurable functions on $E$ converging pointwise almost everywhere to $f$.
+\begin{subparts}
+\subpart%5ai
+For each $n \in \mathbb{N}$, show there is a measurable subset $E_{n} \subset E$, and $i_{n} \in \mathbb{N}$ such that $\mu(E \setminus E_{n})<2^{-n}$ and $|f_{i}(x)-f(x)|<1 / n$ for $i \geq i_{n}$ and $x \in E_{n}$.
+
+\subpart%5aii
+Fix $\epsilon>0$. Show that there exists a measurable subset $F$ of $E$ with $\mu(E \setminus F)<\epsilon$ and $f_{i} \to f$ uniformly on $F$.
+\end{subparts}
+
+\part%5b
+Now let $E \subset \mathbb{R}$ have $m(E)<\infty$ and let $f: E \to \mathbb{R}$ be measurable. Using the fact that there is a sequence $(f_{n})_{n=1}^{\infty}$ of step functions such that $f_{n} \to f$ a.e. on $E$ (which we have not proved), show that there is a measurable subset $F$ of $E$ with $m(E \setminus F)<\epsilon$ such that $f|_{F}$ is continuous. [\emph{Hint: Start out by establishing the result for a step function.}]
+\end{parts}
+
+
+
+\question%6
+\begin{parts}
+\part%6a
+Let $g: \mathbb{R} \to \mathbb{R}$ and $h: \mathbb{R} \to[0, \infty)$ be Borel-measurable functions, and $\mu$ be a measure on $(\mathbb{R}, \mathcal{M}_{\mathrm{Bor}})$. For $B \in \mathcal{M}_{\mathrm{Bor}}$, let \[
+	(g_{*} \mu)(B)=\mu(g^{-1}(B)), \qquad
+	(h \cdot \mu)(B)=\int_{B} h~\mathrm d \mu .
+\] Recall from Sheet 2 Q5 that $g_{*} \mu$ is a measure on $(\mathbb{R}, \mathcal{M}_{\mathrm{Bor}})$. Show that $h \cdot \mu$ is a measure on $(\mathbb{R}, \mathcal{M}_{\mathrm{Bor}})$.
+
+\part%6b
+Let $f: \mathbb{R} \to[0, \infty]$ be Borel-measurable. Show that \[
+	\int_{\mathbb{R}}(f \circ g)~\mathrm d \mu=\int_{\mathbb{R}} f~\mathrm d(g_{*} \mu), \qquad
+	\int_{\mathbb{R}} f h~\mathrm d \mu=\int_{\mathbb{R}} f~\mathrm d(h \cdot \mu) .
+\] [\emph{Consider first $f=\chi_{B}$, then consider simple functions, and then apply the MCT.}]
+
+\part%6c
+Let $g: \mathbb{R} \to \mathbb{R}$ be an increasing bijection with a continuous derivative.
+\begin{subparts}
+\subpart%6ci
+Show that the measure $g_{*}(g'\cdot m)$ is Lebesgue measure $m$ on $\mathcal{M}_{\mathrm{Bor}}$. [\emph{You may assume that $m$ is the unique measure $\mu$ on $(\mathbb{R}, \mathcal{M}_{\mathrm{Bor}})$ such that $\mu(I)=b-a$ whenever $I$ is an interval with endpoints $a, b$.}]
+
+\subpart%6cii
+Let $f: \mathbb{R} \to[-\infty, \infty]$ be Borel-measurable. Show that $f$ is integrable (with respect to $m$) if and only if $(f \circ g) g'$ is integrable, and then their integrals are equal.
+\end{subparts}
+\end{parts}
+
+
+\question%7
+One equivalent formulation of the axiom of choice is the \emph{well ordering principle}: every set can be \emph{well ordered}, i.e. given a set $A$ there is a total order $<$ on $A$ such that every non-empty subset of $\mathbb{A}$ has a least element. The \emph{continuum hypothesis} states that any subset $A$ of the real numbers is either finite, countably infinite, or has the cardinality of $\mathbb{R}$ (i.e. there is a bijection from $A$ onto $\mathbb{R}$). Assuming the well ordering principle and continuum hypothesis:
+\begin{parts}
+\part%7a
+Show there is an ordering $\prec$ on $\mathbb{R}$ with the property that for each $y \in \mathbb{R},\{x \in \mathbb{R}:x \prec y\}$ is countable. [\emph{Start with a well ordering $<$ of $\mathbb{R}$ and consider $\{y \in \mathbb{R}:\{x:x<y\}\text{ is not countable }\}$.}]
+
+\part%7b
+Show that there is a subset $E \subset[0,1] \times[0,1]$ such that the slices $E^{y}=\{x \in[0,1]:(x, y) \in E\}$ and $E_{x}=\{y \in[0,1]:(x, y) \in E\}$ are measurable and have $m(E^{y})=0$ and $m(E_{x})=1$ for all $x, y \in[0,1]$. Why is $E$ necessarily not measurable?
+\end{parts}
+
+\end{questions}
+
+\end{document}

@@ -1,0 +1,96 @@
+\documentclass[answers]{exam}
+\usepackage{../HT2025}
+
+\title{Differential Equations II -- Sheet 3\\Bessel functions, Legendre functions}
+\author{YOUR NAME HERE :)}
+\date{Hilary Term 2025}
+
+
+\begin{document}
+\maketitle
+\begin{questions}
+
+\question%1
+\textbf{Frobenius method.} Consider the differential equation \[
+	(x-1) y''(x)-x y'(x)+y(x)=0 .
+\] Show that $x=1$ is a regular singular point, and determine the appropriate from of the series expansions about $x=1$ for two linearly independent solutions. By explicitly computing the coefficients in the series, find closed from expressions for the two linearly independent solutions.
+
+
+
+\question%2
+\textbf{The point $x=\infty$.} Consider the differential equation \[
+	x^{3} y''(x)+y(x)=0 .\tag{$\star$}
+\]
+\begin{parts}
+\part%2a
+Use the transformation of variables $x=1 / t$ to show that $(\star)$ has a regular singular point at $x=\infty$ and determine the indicial exponents.
+
+\part%2b
+Obtain the first Frobenius solution in the form of an infinite series in powers of $t$, solving explicitly for the coefficients.
+
+\part%2c
+Find the form of the second Frobenius solution and obtain (but do not attempt to solve) a recurrence relation for the coefficients in the series.
+
+\part%2d
+(Optional) Suppose we seek a particular solution to $(\star)$ with the leading behaviour $y(x) \sim x$ as $x \to \infty$. By considering the magnitude of the various terms in the two series solutions found above, determine the next largest term in the expansion of $y(x)$ for large positive $x$.
+\end{parts}
+
+
+
+\question%3
+\textbf{Bessel functions.} Consider \emph{Bessel's equation} (of order $n$): \[
+	x^{2} y''(x)+x y'(x)+(x^{2}-n^{2}) y(x)=0,\tag{$\star$}
+\] for integer $n \geq 0$.
+\begin{parts}
+\part%3a
+Find the indicial exponents $\alpha_{1}, \alpha_{2}$ (with $\operatorname{Re} \alpha_{1}>\operatorname{Re} \alpha_{2}$) for the local series expansion of $(\star)$ about $x=0$.
+
+\part%3b
+Determine the series $y(x)=\sum_{k=0}^{\infty} a_{k} x^{k+\alpha_{1}}$ that solves $(\star)$, giving the coefficients $a_{k}$ in closed form. Find $a_{0}$ such that the series is the expansion of the Bessel functions of first kind, \[
+	J_{n}(x)=\left(\frac{x}{2}\right)^{n} \sum_{k=0}^{\infty} \frac{\left(-x^{2} / 4\right)^{k}}{k!(k+n)!}.\tag{$\#$}
+\]
+
+\part%3c
+Using $(\#)$, show that the following recursion relation is true for all integers $n \geq 0$: \[
+	J_{n+1}(x)=\frac{2 n}{x} J_{n}(x)-J_{n-1}(x) .
+\]
+
+\part%3d
+For any integer $n \geq 0$, show that \[
+	\int_{0}^{1} x[J_{n}(\alpha x)]^{2} \mathrm{~d} x=\frac{1}{2}[J_{n}'(\alpha)]^{2},
+\] where $\alpha$ is any zero of $J_{n}$. [\emph{Hint: Substitute $z=\alpha x$, integrate by parts, and use the fact that $J_{n}$ satisfies Bessel's equation.}]
+\end{parts}
+
+
+
+\question%4
+\textbf{Bessel functions in a Sturm-Liouville problem.}
+\begin{parts}
+\part%4a
+Determine the bounded eigenfunctions $y_{k}$ and eigenvalues $\lambda_{k}$ of the following singular Sturm=Liouville problem on $0 \leq x \leq 1$: \[
+	-(x y'(x))'=\lambda x y(x), \qquad y(1)=0.
+\] [\emph{Hint: Use a change of variables of the form $r=\beta x$.}]
+
+\part%4b
+Use (a) to obtain the eigenfunction expansion for the bounded solution of the following inhomogeneous problem on $0 \leq x \leq 1$: \[
+	(x y'(x))'=x, \qquad y(1)=0 .
+\] [\emph{You may leave the coefficients $c_{k}$ in your final answer in terms of integrals containing Bessel functions.}]
+\end{parts}
+
+
+
+\question%5
+\textbf{Legendre functions and associated Legendre functions.} Consider Legendre's equation \[
+	(1-x^{2}) y''(x)-2 x y'(x)+\left(\ell(\ell+1)-\frac{m^{2}}{1-x^{2}}\right) y(x)=0
+\] and let $P_{\ell}^{m}(x)$ denote the solution for integers $0 \leq m \leq \ell$. Show that \[
+	\int_{-1}^{1} P_{k}^{m}(x) P_{\ell}^{m}(x) ~\mathrm{d} x= \begin{cases}
+		0 & \text { if } \ell \neq k \\[1em]
+		\displaystyle\frac{2}{(2 k+1)} \frac{(k+m)!}{(k-m)!} & \text { if } \ell=k
+	\end{cases}
+\] [\emph{You may use without proof Rodrigues' formula for $P_{\ell}^{m}(x)$ given in lectures, and also the identity \[
+	\int_{-1}^{1}\left(1-x^{2}\right)^{\ell} ~\mathrm{d} x=\frac{2^{2 \ell+1}(\ell!)^{2}}{(2 \ell+1)!}
+\] (or for extra fun try to show this as well).}]
+
+\end{questions}
+
+\end{document}

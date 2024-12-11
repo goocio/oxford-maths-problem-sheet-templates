@@ -1,0 +1,116 @@
+\documentclass[answers]{exam}
+\usepackage{../HT2025}
+
+\title{Integral Transforms -- Sheet 1\\Distributions, Laplace transform}
+\author{YOUR NAME HERE :)}
+\date{Hilary Term 2025}
+
+
+\begin{document}
+\maketitle
+\begin{questions}
+
+\question%1
+Let $\phi(x)$ be a test function. Show that the following are test functions:
+\begin{parts}
+\part%1a
+$\phi(a x+b)$ where $a>0$ and $b \in \mathbb{R}$;
+
+\part%1b
+$f(x) \phi(x)$ where $f(x)$ is an arbitrary smooth function;
+
+\part%1c
+$\phi^{(k)}(x)$ where $k \in \mathbb{N}$.
+\end{parts}
+
+
+
+\question%2
+\begin{parts}
+\part%2a
+Let $0<a<1$. Solve the boundary-value problem: \[
+	f''(x)=\delta(x-a), \qquad f(0)=f(1)=0.
+\]
+
+\part%2b
+Let $a>0$ and $k \in \mathbb{R}$. Solve directly the initial value problem \[
+	f''(x)-3 f'(x)+2 f(x)=k \delta(x-a) \qquad f(0)=f'(0)=1
+\]
+\end{parts}
+
+
+
+\question%3
+(\emph{Kick Stop}) Consider a mass on a spring where the extension of the spring $x(t)$ satisfies \[
+	m \ddot{x}+k x=I \delta(t-T),
+\] where $m$ is the mass, and $k>0$ is the spring constant. Suppose initially $x(0)=a$ and $\dot{x}(0)=0$ and that at time $t=T$ an instantaneous impulse $I$ is applied to the mass. Obtain the motion of the mass for $t>0$, and find conditions on $I$ and $T$ such that the impulse completely stops the motion. Explain the result physically.
+
+
+
+\question%4
+Show that, for $a \neq 0$, \[
+	\delta(a x)=\frac{1}{|a|} \delta(x)
+\] [\emph{Hint: use the approximating functions $\delta_{n}$ from lectures.}] What is $\delta(x^{2}-a^{2})$?
+
+
+
+\question%5
+Solve the following IVPs using the Laplace transform:
+\begin{parts}
+\part%5a
+$f'(x)+f(x)=x, \qquad f(0)=0$;
+
+\part%5b
+$f''(x)-f(x)=4 e^{x}, \qquad f(0)=f'(0)=1$.
+\end{parts}
+
+
+
+\question%6
+\begin{parts}
+\part%6a
+Show that the Laplace transform of $x^{a}$, where $a>-1$ is a real number, is $\Gamma(a+1) / p^{a+1}$ where the Gamma Function is defined as $\Gamma(s)=\int_{0}^{\infty} t^{s-1} e^{-t} \mathrm{~d} t$.
+
+\part%6b
+Find the Laplace transform of $(1-\cos (a x)) / x$.
+
+\part%6c
+Find the Laplace transform of $\int_{0}^{x} \frac{\sin t}{t} \mathrm{~d} t$.
+\end{parts}
+
+
+
+\question%7
+\begin{parts}
+\part%7a
+Solve the IVP in Exercise 2(b) using the Laplace transform.
+
+\part%7b
+Use the Laplace transform to find a solution of \[
+	x f''(x)+2 f'(x)+x f(x)=0.
+\] Find a second independent solution of the equation. Why was this solution not found using the Laplace transform?
+\end{parts}
+
+
+
+\question%8
+A sequence of distributions $(F_{n})$ converges to a distribution $F$ if $\langle F_{n}, \phi\rangle \to\langle F, \phi\rangle$ for all test functions $\phi$.
+\begin{parts}
+\part%8a
+Show that if $F_{n} \to F$ then $F_{n}' \to F'$.
+
+\part%8b
+This limiting process applies to the partial sums ($n$ terms) of a series. Define $F(x)=x$ for $-\pi<x<\pi$, extended periodically to $\mathbb{R}$. Show that its Fourier series is \[
+	F(x)=2 \sum_{k=1}^{\infty} \frac{(-1)^{k+1}}{k} \sin k x.
+\] Differentiate [the partial sums of] both sides to find an expression for $\sum_{k=1}^{\infty}(-1)^{k+1} \cos k x$; remember the discontinuities in $F(x)$. (Such a result has no counterpart in 'ordinary' analysis.)
+
+\part%8c
+Suppose that the integrable function $F(x)$ satisfies $\int_{-\infty}^{\infty} F(x) ~\mathrm{d} x=1$. (This implies that $\lim_{X \to \infty} \int_{X}^{\infty} F(x) ~\mathrm{d} x=0$.) Define $F_{n}(x)=n F(n x)$. Draw a sketch to show how $F_{n}$ is related to $F$. Show that $\left\langle F_{n}, \phi\right\rangle \to \phi(0)$ as $n \to \infty$. [\emph{Hint: split the range of integration into $(-\infty,-1 / \sqrt{n}),(-1 / \sqrt{n}, 1 / \sqrt{n}),(1 / \sqrt{n}, \infty)$; use the note above on the outer intervals and the MVT for integrals on the inner one.}] Deduce that $F_{n} \to \delta$.
+
+\part%8d
+Suppose the random variable $X \sim N\left(0, \sigma^{2}\right)$ and write $G_{\sigma}(x)$ for its density function. Let $F_{\sigma}(x)=2 G_{2 \sigma}(x)-G_{\sigma}(x)$. Show that $F_{\sigma}$ satisfies the conditions of part (c). What is $\lim _{\sigma \to 0^{+}} F_{\sigma}$? Roughly sketch $F_{\sigma}(x)$ for small $\sigma$ and comment on your graph [\emph{Hint: evaluate $F_{\sigma}(0)$}]. Repeat for $F_{\sigma}(x)=2 G_{3 \sigma}(x)-G_{\sigma}(x)$. What do you notice?
+\end{parts}
+
+\end{questions}
+
+\end{document}

@@ -1,0 +1,87 @@
+\documentclass[answers]{exam}
+\usepackage{../HT2025}
+
+\title{Rings and Modules -- Sheet 1\\Rings, Ideals}
+\author{YOUR NAME HERE :)}
+\date{Hilary Term 2025}
+
+
+\begin{document}
+\maketitle
+
+\begin{questions}
+
+\question%1
+Let $C(\mathbb{R})$ denote the set of continuous functions $\mathbb{R} \to \mathbb{R}$.
+\begin{parts}
+\part%1a
+Show that it is a ring with the usual operations of addition and multiplication of functions. What are the zero-divisors?
+
+\part%1b
+How do your answers change if we consider instead the ring $\mathcal{O}$ of holomorphic functions $\mathbb{C} \to \mathbb{C}$?
+\end{parts}
+
+
+
+\question%2
+Show that the set of rational numbers with an odd denominator is a subring of $\mathbb{Q}$. What are the units? What are the ideals?
+
+
+
+\question%3
+Show that a finite integral domain is a field.
+
+
+
+\question%4
+Which of the following $I_{k}$ are ideals in the polynomial ring $\mathbb{R}[x]$? If $I_{k}$ is an ideal, find a generator, i.e. an element $p_{k}$ such that $I_{k}=\left\langle p_{k}\right\rangle$.
+\begin{parts}
+\part%4a
+$I_{1}=\{f(x) \in \mathbb{R}[x]: f(2)=0\}$,
+
+\part%4b
+$I_{2}=\{f(x) \in \mathbb{R}[x]: f'(2)=0\}$,
+
+\part%4c
+$I_{3}=\{f(x) \in \mathbb{R}[x]: f(2)=f(3)=0\}$,
+
+\part%4d
+$I_{4}=\{f(x) \in \mathbb{R}[x]: f(2)=f'(2)=0\}$.
+\end{parts}
+
+
+
+\question%5
+Let $R$ be a commutative ring with 1 such that the only ideals are $\{0\}$ and $R$ itself. Show that $R$ is a field.
+
+
+
+\question%6
+Let $I$ and $J$ be ideals in a commutative ring $R$. Show that $I J \subseteq I \cap J$ and that we have equality if $I+J=R$ (i.e. if $I, J$ are coprime). Does equality hold in general?
+
+
+
+\question%7
+Define \[
+	\mathbb{H}=\left\{\begin{pmatrix}
+		x & y \\
+		-\bar{y} & \bar{x}
+	\end{pmatrix}: x, y \in \mathbb{C}\right\}.
+\] Show that $\mathbb{H}$ is a ring, with usual matrix addition and multiplication. Is it commutative? Show that every nonzero element has a multiplicative inverse.
+
+
+
+\question%8
+\begin{parts}
+\part%8a
+Find all solutions $x \in \mathbb{Z}$ to the simultaneous congruences $x \equiv 8 \bmod 17$ and $x \equiv 3 \bmod 9$.
+
+\part%8b
+Find a general formula for solving the simultaneous congruences \[
+	x \equiv a_{i} \bmod n_{i} \quad: \quad i=1, \ldots r
+\] where $\left(n_{i}, n_{j}\right)=1$ for $i \neq j$.
+\end{parts}
+
+\end{questions}
+
+\end{document}

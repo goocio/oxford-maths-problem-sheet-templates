@@ -1,0 +1,37 @@
+\documentclass[answers]{exam}
+\usepackage{../HT2025}
+
+\title{Integration -- Sheet 3A\\Some more integrals}
+\author{YOUR NAME HERE :)}
+\date{Hilary Term 2025}
+
+
+\begin{document}
+\maketitle
+
+Here are some additional optional questions related to the material of sheet 3. Solutions will be provided at the end of HT. There's no expectation that tutors will support this sheet.
+
+\begin{questions}
+
+\question%1
+Use the binomial expansion of $(1-x)^{-k}$ to show that $\left(1-\frac{u}{n}\right)^{-n} \geqslant\left(1-\frac{u}{n+1}\right)^{-(n+1)}$ for $n \geqslant 2$ and $0 \leqslant u<n$. Hence, or otherwise, prove that \[
+	\lim_{n \to \infty} n^{\alpha} \int_{0}^{1} x^{\alpha-1} e^{-n \beta x}(1-x)^{n}~\mathrm d x=(\beta+1)^{-\alpha} \Gamma(\alpha)
+\] where $\alpha>0, \beta>-1$, and $\Gamma(\alpha)=\int_{0}^{\infty} e^{-u} u^{\alpha-1}~\mathrm d u$.
+
+
+
+\question%2
+Prove that \[
+	\lim_{n\to\infty}\int_0^{n^2}n\left(\sin\frac xn\right)e^{-x^2}~\mathrm d x=\frac12.
+\]
+
+
+
+\question%3
+Let $a \in(0,1)$. Prove that $\dfrac{e^{-a x}-e^{(a-1) x}}{1-e^{-x}}$ is an integrable function on $\mathbb{R}$, and that \[
+	\frac12\int_{-\infty}^\infty\frac{e^{-ax}-e^{(a-1)x}}{1-e^{-x}}~\mathrm dx=\frac1a+\frac1{a-1}+\frac1{a+1}+\frac1{a-2}+\frac1{a+2}+\frac1{a-3}+\cdots.
+\]
+
+\end{questions}
+
+\end{document}

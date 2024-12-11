@@ -1,0 +1,138 @@
+\documentclass[answers]{exam}
+\usepackage{../HT2025}
+
+\title{Integration -- Sheet 3\\Convergence theorems}
+\author{YOUR NAME HERE :)}
+\date{Hilary Term 2025}
+
+
+\begin{document}
+\maketitle
+
+\begin{questions}
+
+\question%1
+In each of the following cases, decide whether the function $f$ is Lebesgue integrable over the interval $I$. Justify your answers by using comparison, MCT, DCT, etc and calculate $\int_{I} f$ in those cases where this is feasible.
+\begin{parts}
+\part%1a
+$I=\mathbb{R}$, $f(x)=x$ if $x$ is rational, $f(x)=0$ if $x$ is irrational;
+
+\part%1b
+$I=(0, \pi / 2)$, $f(x)=\tan x$;
+
+\part%1c
+$I=[1, \infty)$, $f(x)=(-1)^{n} / n$ if $n \leq x<n+1$, $n=1,2,3,...$;
+
+\part%1d
+$I=(0,1]$, $f(x)=\sin (1 / x)$;
+
+\part%1e
+$I=[0, \infty)$, $f(x)=x^{n} e^{-x}$ where $n$ is a positive integer;
+
+\part%1f
+$I=(0, \infty)$, $f(x)=(\log x) e^{-x}$;
+
+\part%1g
+$I=[1, \infty)$, $f(x)=x^{\alpha} \log x$ where $\alpha \in \mathbb{R}$;
+
+\part%1h
+$I=(0, \pi)$, $f(x)=(\operatorname{cosec} x)^{1 / 2}$;
+
+\part%1i
+$I=(0, \infty)$, $f(x)=(1+x)^{-1} \cos x$;
+
+\part%1j
+$I=[1, \infty)$, $f(x)=\sin (1 / x)$.
+\end{parts}
+
+
+
+\question%2
+We know that $\dfrac{\sin x}{x}$ is not integrable over $(1, \infty)$. Deduce, or prove otherwise, that neither of the following functions is integrable over the given intervals:
+\begin{parts}
+\part%2a
+$\dfrac{\sin (x^{2})}{x}$ over $(1, \infty)$;
+
+\part%2b
+$\dfrac{1}{x} \sin \dfrac{1}{x^{2}}$ over $(0,1)$.
+\end{parts}
+
+
+
+\question%3
+Show that \[
+	\lim_{n \to \infty} \int_{1}^{2}\left(1+\frac{x}{n}\right)^{-n} ~\mathrm d x=e^{-1}-e^{-2}.
+\]
+
+
+
+\question%4
+Show that $0 \leq \dfrac{x}{1+x^{\alpha}} \leq 1$ for $\alpha>1$, $x \geq 0$, and deduce that \[
+	\lim_{n \to \infty} \int_{0}^{2 \pi} \frac{n x \sin x}{1+n^{\alpha} x^{\alpha}}~\mathrm d x=0.
+\]
+
+
+
+\question%5
+Let $\alpha>-1$.
+\begin{parts}
+\part%5a
+Show that $x^{\alpha} \log x$ is integrable over $(0,1)$, and \[
+	\int_{0}^{1} x^{\alpha} \log x~\mathrm d x=-(1+\alpha)^{-2}.
+\]
+
+\part%5b
+Deduce that for $\beta>-1$, $x^{\beta}(1-x)^{-1} \log x$ is integrable over $(0,1)$, and \[
+	\int_{0}^{1} x^{\beta}(1-x)^{-1} \log x~\mathrm d x=-\sum_{n=1}^{\infty}(n+\beta)^{-2}.
+\]
+\end{parts}
+
+
+
+\question%6
+\begin{parts}
+\part%6a
+Show that for $n>0$, $e^{-n x} \sin x$ is integrable over $[0, \infty)$, and \[
+	\int_{0}^{\infty} e^{-n x} \sin x~\mathrm d x=\frac{1}{1+n^{2}}.
+\]
+
+\part%6b
+Deduce that for $0 \leq a \leq 1$, $(e^{x}-a)^{-1} \sin x$ is integrable over $[0, \infty)$, and \[
+	\int_{0}^{\infty}(e^{x}-a)^{-1} \sin x~\mathrm d x=\sum_{n=1}^{\infty} \frac{a^{n-1}}{1+n^{2}}.
+\]
+\end{parts}
+
+
+
+\question%7
+Prove that $\int_{0}^{\infty} \cos x \arctan (\lambda x) e^{-x}~\mathrm d x \to \dfrac{\pi}{4}$ as $\lambda \to \infty$.
+
+
+
+\question%8
+\begin{parts}
+\part%8a
+Let $\alpha \in(0, \infty)$. Show that $\Gamma(\alpha):=\int_{0}^{\infty} x^{\alpha-1} e^{-x}~\mathrm d x$ exists as a Lebesgue integral, and that $\Gamma(\alpha+1)=\alpha \Gamma(\alpha)$.
+
+\part%8b
+Now show that $\Gamma:(0, \infty) \to \mathbb{R}$ is differentiable.
+\end{parts}
+
+
+
+\question%9
+By differentiating through the integral sign, evaluate $\int_{0}^{\infty} \dfrac{e^{-x} \sin t x}{x}~\mathrm d x$.
+
+
+
+\question%10
+(Optional) By differentiating through the integral sign, evaluate $\int_{0}^{\pi / 2} \log(a^{2} \cos ^{2} x+b^{2} \sin ^{2} x)~\mathrm d x$, where $a, b>0$.
+
+
+
+\question%11
+(Optional) Let $K(t)=\int_{1}^{\infty} \dfrac{\cos (t x)}{x^{2}}~\mathrm d x$. Show carefully that $K'(t)=\dfrac{K(t)-\cos t}{t}$ for $t>0$.
+
+\end{questions}
+
+\end{document}

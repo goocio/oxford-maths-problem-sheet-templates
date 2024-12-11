@@ -1,0 +1,156 @@
+\documentclass[answers]{exam}
+\usepackage{../HT2025}
+
+\title{Integration -- Sheet 1\\Lebesgue measure}
+\author{YOUR NAME HERE :)}
+\date{Hilary Term 2025}
+
+
+\begin{document}
+\maketitle
+
+\begin{questions}
+
+\question%1
+Find $\liminf_{n \to \infty} a_n$ and $\limsup_{n \to \infty} a_n$ when
+\begin{parts}
+\part%1a
+$a_n=\exp (-\cos n)$,
+
+\part%1b
+$a_n=\exp \left(n \sin \left(\frac{n \pi}{2}\right)\right)+\exp \left(\frac{1}n \cos \left(\frac{n \pi}{2}\right)\right)$,
+
+\part%1c
+$a_n=\cosh \left(n \sin \left(\left(\frac{n^{2}+1}n\right) \frac{\pi}{2}\right)\right)$.
+\end{parts}
+
+
+
+\question%2
+Let $(a_n)$ and $(b_n)$ be bounded real sequences. Prove that:
+\begin{parts}
+\part%2a
+If $a_n \leqslant b_n$ for all $n$ then $\limsup_{n \to \infty} a_n \leqslant \limsup_{n \to \infty} b_n$;
+
+\part%2b
+$\limsup_{n \to \infty}(a_n+b_n) \leqslant \limsup_{n \to \infty} a_n+\limsup_{n \to \infty} b_n$;
+
+\part%2c
+There is a subsequence $\left(a_{n_{r}}\right)_{r \geqslant 1}$ of $(a_n)$ such that $\lim_{r \to \infty} a_{n_{r}}=\limsup_{n \to \infty} a_n$;
+
+\part%2d
+If $\left(a_{k_{r}}\right)_{r \geqslant 1}$ is any convergent subsequence of $(a_n)$, then $\lim_{r \to \infty} a_{k_{r}} \leqslant \limsup_{n \to \infty} a_n$.
+\end{parts}
+
+
+
+\question%3
+\begin{parts}
+\part%3a
+Let $E=\mathbb{Q} \cap[0,1]$. Show that there exists a sequence $(x_n)_{n \geqslant 1}$ in $[0,1]$ such that the sets $E+x_n\coloneqq\left\{y+x_n: y \in E\right\}$ $(n=1,2, \ldots)$ are disjoint. Show that \[
+	0 \leqslant \sum_{n=1}^{k} \chi_{E}(x-x_n) \leqslant \chi_{[0,2]}(x), \quad x \in \mathbb{R},\ k \in \mathbb{N}.
+\]
+
+\part%3b
+Let $V$ be a vector space of functions from $\mathbb{R}$ to $\mathbb{R}$, and $\phi: V \to \mathbb{R}$ be a linear functional with the following properties: \begin{itemize}
+  \item For any bounded interval $I \subset \mathbb{R}$ with endpoints $a$ and $b, \chi_{I} \in V$ and $\phi(\chi_{I})=b-a$.
+  \item If $f \in V$ and $f(x) \geqslant 0$ for all $x \in \mathbb{R}$, then $\phi(f) \geqslant 0$.
+  \item If $f \in V, a \in \mathbb{R}$ and $f_{a}(x)=f(x-a)$, then $f_{a} \in V$ and $\phi(f_{a})=\phi(f)$.
+\end{itemize} If $\chi_{E} \in V$, show that $\phi\left(\chi_{E}\right)=0$.
+\end{parts}
+
+
+
+\question%4
+Let $C$ be the Cantor set.
+\begin{parts}
+\part%4a
+Explain, in as much detail as you think is appropriate, why \[
+	C=\left\{\sum_{n=1}^{\infty} a_n 3^{-n}: a_n=0 \text{ or } 2\right\}.
+\]
+
+\part%4b
+Prove that $C$ is uncountable, for example by either (or all) of the following methods:
+\begin{subparts}
+\subpart%4bi
+Adapting Cantor's proof, via decimal expansions, that $[0,1]$ is uncountable;
+
+\subpart%4bii
+Constructing a surjection of $C$ onto $[0,1]$ --- think about binary expansions in $[0,1]$;
+
+\subpart%4biii
+Prove that $C+C=[0,2]$ and deduce that $C$ is uncountable.
+\end{subparts}
+\end{parts}
+
+
+
+\question%5
+\begin{parts}
+\part%5a
+Show that the set of all real numbers which have a decimal expansion not containing the digit 4 is null. [\emph{Consider first numbers between 0 and 1.}]
+
+\part%5b
+Show that if $A$ is null and $B$ is countable, then $A+B$ is null.
+
+\part%5c
+Show that if $A$ is null and $f: \mathbb{R} \to \mathbb{R}$ has a continuous derivative, then $f(A)$ is null. [\emph{You may wish to first consider the case when $A \subset[0,1]$ and use the fact that $f'$ is bounded on $[0,1]$.}]
+\end{parts}
+
+
+
+\question%6
+Let $A, B$ and $A_n$ be subsets of $\mathbb{R}$, and $x, \alpha \in \mathbb{R}$. Prove the following:
+\begin{parts}
+\part%6a
+$m^{*}(A+x)=m^{*}(A)$;
+
+\part%6b
+$m^{*}(\alpha A)=|\alpha| m^{*}(A)$;
+
+\part%6c
+$m^{*}(A \cup B) \leqslant m^{*}(A)+m^{*}(B)$;
+
+\part%6d
+$m^{*}\left(\bigcup_{n=1}^{\infty} A_n\right) \leqslant \sum_{n=1}^{\infty} m^{*}\left(A_n\right)$.
+\end{parts}
+
+
+
+\question%7
+Prove the following:
+\begin{parts}
+\part%7a
+Any null set is (Lebesgue) measurable;
+
+\part%7b
+Any interval is measurable;
+
+\part%7c
+If $E$ and $F$ are measurable and $x, \alpha \in \mathbb{R}$, then $E+x, \alpha E$ and $E \cup F$ are measurable;
+
+\part%7d
+If $E_n$ are disjoint measurable subsets of $\mathbb{R}$, then $\bigcup_{n=1}^{\infty} E_n$ is measurable and $m^{*}\left(\bigcup_{n=1}^{\infty} E_n\right)=\sum_{n=1}^{\infty} m^{*}\left(E_n\right)$. [\emph{Hint: first use the previous part to show that for each $n$, we have $m^{*}(A) \geqslant \sum_{r=1}^n m^{*}\left(A \cap E_{r}\right)+m^{*}\left(A \setminus \bigcup_{r=1}^{\infty} E_{r}\right)$.}]
+\end{parts}
+
+
+
+\question%8
+(Optional) Let $G$ be an open subset of $\mathbb{R}$. For $x, y \in G$, let $I_{x, y}$ be the closed (or open, if you prefer) interval between $x$ and $y$, so $I_{x, x}=\{x\}$ (or $\emptyset$). Define a relation $\sim$ on $G$ by $x \sim y$ if and only if $I_{x, y} \subset G$.
+\begin{parts}
+\part%8a
+Show that $\sim$ is an equivalence relation on $G$.
+
+\part%8b
+Show that each equivalence class is an open interval. [\emph{To show that $A$ is an interval, it is sufficient to check that, if $x, y \in A$ then $I_{x, y} \subset A$.}]
+
+\part%8c
+Show that there are (at most) countably many equivalence classes.
+
+\part%8d
+Deduce that $G$ is the union of (at most) countably many, disjoint open intervals, and in particular $G$ is measurable.
+\end{parts}
+
+\end{questions}
+
+\end{document}
