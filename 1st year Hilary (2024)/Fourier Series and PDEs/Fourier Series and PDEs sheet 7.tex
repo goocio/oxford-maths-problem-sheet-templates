@@ -1,0 +1,96 @@
+\documentclass[answers]{exam}
+\usepackage{../HT2024}
+
+\title{Fourier Series and PDEs -- Sheet 7}
+\author{YOUR NAME HERE :)}
+\date{Hilary Term 2024}
+% Accurate as of 05/07/2024
+
+
+\begin{document}
+\maketitle
+\begin{questions}
+
+\question%1
+At time $t=0$ an elastic string is stretched to a line density $\rho$ and a tension $T$ between the lines at $x=0$ and $x=L$ in the $(x, y)$-plane, where $\rho, T$ and $L$ are positive constants. The small transverse displacement $y(x, t)$ satisfies the wave equation \[
+	\frac{\partial^{2} y}{\partial t^{2}}=c^{2} \frac{\partial^{2} y}{\partial x^{2}} \quad \text { for } \quad 0<x<L, t>0
+\] where the wave speed $c=\sqrt{T / \rho}$. The end of the string at $x=L$ is fixed so that $y(L, t)=0$ for $t>0$. The other end is attached to a small ring of mass $M$ which can move freely on a smooth wire lying along the $y$-axis.
+\begin{parts}
+\part%1a
+Assuming that the effects of gravity and air resistance are negligible, write down the $y$ component of Newton's Second Law for the ring and deduce that, to a first approximation for $\left|y_{x}\right| \ll 1$, \[
+	M \frac{\partial^{2} y}{\partial t^{2}}(0, t)=T y_{x}(0, t) \quad \text { for } t>0.
+\]
+
+\part%1b
+Let $\omega$ be a positive constant and $\varepsilon$ a constant. Show that there is a non-trivial separable solution of the form $y(x, t)=F(x) \sin (\omega c t+\varepsilon)$ only if $\omega$ is a root of the equation \[
+	\tan (\omega L)=\frac{\alpha}{\omega L}
+\] where $\alpha$ is a dimensionless parameter that you should determine.
+
+\part%1c
+The energy of the system is given by \[
+	E(t)=\frac{\rho}{2} \int_{0}^{L}\left(\frac{\partial y}{\partial t}\right)^{2} \mathrm{~d} x+\frac{T}{2} \int_{0}^{L}\left(\frac{\partial y}{\partial x}\right)^{2} \mathrm{~d} x+\frac{M}{2}\left(\frac{\partial y}{\partial t}(0, t)\right)^{2}.
+\]
+\begin{subparts}
+\subpart%1ci
+State the physical significance of each of the three terms on the right-hand side of this equality and show that $E$ is constant.
+
+\subpart%1cii
+Deduce that there is at most one solution of the initial boundary value problem for $y(x, t)$ given by the wave equation and boundary conditions above, subject to the given initial conditions $y(x, 0)=f(x)$ and $y_{t}(x, 0)=g(x)$ for $0<x<L$.
+\end{subparts}
+\end{parts}
+
+
+
+\question%2
+\begin{parts}
+\part%2a
+By introducing new independent variables $\xi=x-c t$ and $\eta=x+c t$, show that if $y(x, t)$ is a solution of the wave equation \[
+	\frac{\partial^{2} y}{\partial t^{2}}=c^{2} \frac{\partial^{2} y}{\partial x^{2}} \quad \text { for } \quad-\infty<x<\infty, t>0,
+\] in which the wave speed $c$ is a positive constant, then there are functions $F$ and $G$ such that \[
+	y(x, t)=F(x-c t)+G(x+c t) .
+\]
+
+\part%2b
+Deduce that, if $y$ satisfies the given initial conditions \[
+	y(x, 0)=f(x), \quad \frac{\partial y}{\partial t}(x, 0)=g(x) \quad \text { for }-\infty<x<\infty,
+\] then the solution is given by \emph{D'Alembert's formula} \[
+	y(x, t)=\frac{1}{2}(f(x-c t)+f(x+c t))+\frac{1}{2 c} \int_{x-c t}^{x+c t} g(s) \mathrm{~d} s.
+\]
+\end{parts}
+
+
+
+\question%3
+Consider the initial value problem for the wave equation from question 2a subject to the initial conditions from question 2b. In each of the following cases you may assume that the solution is given by D'Alembert's formula from question 2 and, where appropriate, you should apply it with the aid of a characteristic diagram.
+\begin{parts}
+\part%3a
+Suppose that \[
+	f(x)=0 \quad \text { and } \quad g(x)=\frac{v \ell}{\ell+|x|},
+\] where $v$ and $\ell$ are positive constants. Show that if $0<c t<x$ then the solution is given by \[
+	y(x, t)=\frac{v \ell}{2 c} \ln \left(\frac{\ell+x+c t}{\ell+x-c t}\right) .
+\] Find the solution if $0<x<c t$. Hence, write down the solution if $x<0$ and $t>0$.
+
+\part%3b
+Suppose that \[
+	f(x)=\begin{cases}
+		\varepsilon(a-|x|) & \text { for }|x| \leqslant a, \\
+		0 & \text { for }|x|>a,
+	\end{cases} \qquad g(x)=0,
+\] where $\varepsilon$ and $a$ are positive constants. Find the solution $y(x, t)$ at every time $t>0$ and sketch the graph of $y$ versus $x$ at the times $t=0, t=a / 2 c, t=a / c$ and $t=3 a / 2 c$.
+
+\part%3c
+Suppose that \[
+	f(x)=0, \qquad g(x)= \begin{cases}v & \text { for }|x| \leqslant a, \\ 0 & \text { for }|x|>a,\end{cases}
+\] where $v$ and $a$ are positive constants. Find the solution $y(x, t)$ at every time $t>0$ and sketch the graph of $y$ versus $x$ at the times $t=0, t=a / 2 c, t=a / c$ and $t=3 a / 2 c$.
+
+\part%3d
+Suppose that \[
+	f(x)=0 \text { for }-\infty<x<\infty,
+\] and \[
+	g(x)= \begin{cases}v x / a & \text { for } a<x<2 a, \\ -v x / a & \text { for }-2 a<x<-a,\end{cases}
+\] but $g(x)$ is \emph{not prescribed} for other values of $x$, where $v$ and $a$ are positive constants. Label in a sketch the parts of the $(x, t)$-plane where $y(x, t)$ can be determined for $t>0$, and obtain an expression for $y(x, t)$ in each such region.
+\end{parts}
+
+\end{questions}
+
+\end{document}

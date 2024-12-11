@@ -1,0 +1,92 @@
+\documentclass[answers]{exam}
+\usepackage{../HT2024}
+
+\title{Analysis II -- Sheet 2\\Continuity, Boundedness theorem}
+\author{YOUR NAME HERE :)}
+\date{Hilary Term 2024}
+% Accurate as of 05/07/2024
+
+
+\begin{document}
+\maketitle
+\begin{questions}
+
+\question%1
+Define the function $f:[0,1] \to \mathbb{R}$ by \[
+	f(x):= \begin{cases}\frac{1}{q}, & \text { if } x=\frac{p}{q} \in \mathbb{Q} \text { in lowest terms; } \\ 0, & \text { if } x \text { is irrational }\end{cases}
+\] (\emph{Thomae's function}). For which values of $x$ is $f(x)$ continuous? Justify your answer.
+
+
+
+\question%2
+\begin{parts}
+\part%2a
+Find a function $f: \mathbb{R} \to \mathbb{R}$ which is discontinuous at all the points of the set $\left\{\frac{1}{n}: n \in \mathbb{N}\right\} \cup\{0\}$ but is continuous everywhere else.
+
+\part%2b
+Find a function $g: \mathbb{R} \to \mathbb{R}$ which is discontinuous at all the points of the set $\left\{\frac{1}{n}: n \in \mathbb{N}\right\}$ but is continuous everywhere else.
+\end{parts}
+
+
+
+\question%3
+\begin{parts}
+\part%3a
+Prove directly from the definition of continuity that if $f$ is continuous at $x_{0}$, then $|f|$ is continuous at $x_{0}$.
+
+\part%3b
+Is the converse statement to (a) also true? That is, if $|f|$ is continuous at $x_{0}$, is $f$ necessarily continuous at $x_{0}$?
+
+\part%3c
+Prove that if $f$ and $g$ are continuous at $x_{0}$, then $\max \{f, g\}$ and $\min \{f, g\}$ are continuous at $x_{0}$. [\emph{Hint: you can write max and min in terms of $|\cdot|$ and use AOL.}]
+\end{parts}
+
+
+
+\question%4
+Give an example of a continuous function $h:[0,1) \to \mathbb{R}$ which is bounded but does not attain either its infimum or its supremum.
+
+
+
+\question%5
+Assuming the Boundedness Theorem, prove that if $f: \mathbb{R} \to \mathbb{R}$ is continuous and $f(x) \to$ $+\infty$ as $x \to \pm \infty$ then there exists some $x_{0} \in \mathbb{R}$ such that $f(x) \geq f\left(x_{0}\right)$ for all $x \in \mathbb{R}$.
+
+
+
+\question%6
+Let $f: \mathbb{R} \to \mathbb{R}$ be a continuous function satisfying \[
+	f(x+y)=f(x)+f(y) \quad \text { for any } x, y \in \mathbb{R}.
+\] Prove that there exists a constant $c$ such that $f(x)=c x$ (for every $x \in \mathbb{R}$). [\emph{Hint: First show that $f(n x)=n f(x)$ for $n \in \mathbb{Z}$, then $f(r x)=r f(x)$ for $r \in \mathbb{Q}$.}]
+
+
+
+\section*{Bonus Questions (optional, for the enthusiasts)}
+
+\question%7
+Suppose $f: \mathbb{R} \to \mathbb{R}$ is such that $g(p):=\lim _{x \to p} f(x)$ exists and is finite for all $p \in \mathbb{R}$. Show that $g(x)$ is continuous. [\emph{Hint: given $p_{n} \to p$, show $g\left(p_{n}\right) \to g(p)$ by approximating $g\left(p_{n}\right)$ by a suitable $f\left(q_{n}\right)$.}] Does $f$ have to be continuous?
+
+
+
+\question%8
+Recall that a set $S \subseteq \mathbb{R}$ is called closed if it contains all its limit points.
+\begin{parts}
+\part%8a
+If $f: \mathbb{R} \to \mathbb{R}$ is continuous, show that the set $S=\{x: f(x)=0\}$ is closed.
+
+\part%8b
+If $S$ is a closed set, show that there exists a continuous function $f: \mathbb{R} \to \mathbb{R}$ such that $S=\{x: f(x)=0\}$. [\emph{Hint: try to construct a function that gives the `distance' of a point $x \in \mathbb{R}$ to $S$.}]
+\end{parts}
+
+
+
+\question%9
+(Hard) We say that a function $f$ from $\mathbb{R}$ to $\mathbb{R}$ crosses the axis at a point $x$ if $f(x)=0$ but for any $\delta>0$ there exist $y$ and $z$ in $(x-\delta, x+\delta)$ with $f(y)>0$ and $f(z)<0$. Can a continuous function cross the axis at uncountably many places?
+
+
+
+\question%10
+(Extreme) Suppose $f: \mathbb{R} \to \mathbb{R}$ is continuous at every rational number. Show that there is also some irrational number where $f$ is continuous.
+
+\end{questions}
+
+\end{document}

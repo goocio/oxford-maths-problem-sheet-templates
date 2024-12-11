@@ -1,0 +1,87 @@
+\documentclass[answers]{exam}
+\usepackage{../HT2024}
+
+\title{Fourier Series and PDEs -- Sheet 2}
+\author{YOUR NAME HERE :)}
+\date{Hilary Term 2024}
+% Accurate as of 05/07/2024
+
+
+\begin{document}
+\maketitle
+\begin{questions}
+\question%1
+\begin{parts}
+\part%1a
+Establish the orthogonality relations given by \[
+	\begin{array}{rcl}
+		\displaystyle\int_{-\pi}^{\pi} \cos (m x) \cos (n x) \mathrm{~d} x&=&\pi \delta_{m n}, \\[.5cm]
+		\displaystyle\int_{-\pi}^{\pi} \sin (m x) \cos (n x) \mathrm{~d} x&=&0, \\[.5cm]
+		\displaystyle\int_{-\pi}^{\pi} \sin (m x) \sin (n x) \mathrm{~d} x&=&\pi \delta_{m n},
+	\end{array}
+\] where $m$ and $n$ are positive integers and $\delta_{m n}$ is Kronecker's delta. [\emph{You may find it helpful to use the identities $\cos (A \pm B)=\cos A \cos B \mp \sin A \sin B$.}]
+
+\part%1b
+Let $f$ be a continuous periodic function of period $2 \pi$. Suppose that $f$ may be expressed in the form of the Fourier series \[
+	f(x)=\frac{a_{0}}{2}+\sum_{n=1}^{\infty}\left(a_{n} \cos (n x)+b_{n} \sin (n x)\right).
+\] Assuming that the orders of summation and integration may be interchanged, derive
+\begin{subparts}
+\subpart%1bi
+integral expressions over $[-\pi, \pi]$ for the Fourier coefficients $a_{n}$ and $b_{n}$;
+
+\subpart%1bii
+Parseval's identity in the form \[
+	\frac{1}{\pi} \int_{-\pi}^{\pi} f(x)^{2} \mathrm{~d} x=\frac{1}{2} a_{0}^{2}+\sum_{n=1}^{\infty}\left(a_{n}^{2}+b_{n}^{2}\right)
+\] [\emph{You may find it helpful to integrate the product of $f$ and the Fourier series for $f$.}]
+\end{subparts}
+\end{parts}
+
+
+
+\question%2
+The periodic function $f$ of period $2 \pi$ is defined by \[
+	f(x)=x \sin (p x) \text { for }-\pi<x \leq \pi
+\] where $p$ is a positive integer.
+\begin{parts}
+\part%2a
+Is $f$ even or odd? Use integration by parts to show that if $m$ is a non-zero integer then \[
+	\int_{0}^{\pi} x \sin (m x) \mathrm{~d} x=\frac{\pi(-1)^{m+1}}{m}.
+\] Hence, or otherwise, show that the Fourier series for $f$ is given by \[
+	f(x) \sim \frac{(-1)^{p+1}}{p}-\frac{\cos (p x)}{2 p}+\sum_{\substack{n=1 \\ n \neq p}}^{\infty} \frac{2 p(-1)^{n+p}}{n^{2}-p^{2}} \cos (n x).
+\] [\emph{You may find it helpful to use the identity $2 \sin A \cos B=\sin (A+B)+\sin (A-B)$.}]
+
+\part%2b
+Use the Fourier convergence theorem to deduce that \[
+	\sum_{n=2}^{\infty} \frac{(-1)^{n}}{n^{2}-1}=\frac{1}{4} \qquad \text{and} \qquad \sum_{n=3}^{\infty} \frac{1}{n^{2}-4}=\frac{25}{48}.
+\]
+
+\part%2c
+Given that Parseval's identity holds for $f$, evaluate the sum \[
+	\sum_{\substack{n=1 \\ n \neq p}}^{\infty} \frac{1}{\left(n^{2}-p^{2}\right)^{2}}.
+\]
+\end{parts}
+
+
+
+\question%3
+The even periodic function $f$ of period $2 \pi$ is defined by \[
+	f(x)=\frac{x^{3}}{6}-\frac{\pi x^{2}}{4}+\frac{\pi^{3}}{24} \quad \text { for } 0 \leq x \leqslant \pi.
+\]
+\begin{parts}
+\part%3a
+Determine $f'(x)$ and $f''(x)$ for $x \in \mathbb{R}$. Sketch on separate axes the graphs of $f''(x), f'(x)$ and $f(x)$ for $x \in(-2 \pi, 2 \pi]$.
+
+\part%3b
+Use integration by parts to show that if $n$ is a positive integer then \[
+	\int_0^\pi f(x)\cos(n x)\mathrm{~d}x=-\frac1n\int_0^\pi f'(x)\sin(n x)\mathrm{~d} x=-\frac{1}{n^{2}} \int_{0}^{\pi} f''(x) \cos (n x) \mathrm{~d} x.
+\]
+
+\part%3c
+Show that the Fourier series for $f''$ is given by \[
+	f''(x) \sim-\frac{4}{\pi} \sum_{m=0}^{\infty} \frac{\cos ((2 m+1) x)}{(2 m+1)^{2}}.
+\] and find the Fourier series for $f'$ and $f$. What is the link between the smoothness of each function and the rate of convergence of its Fourier series?
+\end{parts}
+
+\end{questions}
+
+\end{document}

@@ -1,0 +1,170 @@
+\documentclass[answers]{exam}
+\usepackage{../HT2024}
+
+\title{Groups and Group Actions -- Sheet 1\\Binary operations, Group axioms}
+\author{YOUR NAME HERE :)}
+\date{Hilary Term 2024}
+% Accurate as of 05/07/2024
+
+
+\begin{document}
+\maketitle
+\section*{Main course}
+\begin{questions}
+
+\question%1
+For each of the following sets $S$ and binary operations $*$ on $S$, state whether (i) $*$ is associative, (ii) $*$ is commutative, (iii) an identity exists, (iv) inverses exist.
+\begin{parts}
+\part%1a
+$S=\mathbb{N}$, $m * n=\max \{m, n\}$.
+
+\part%1b
+$S=\mathbb{Z}$, $m * n=m+n+1$.
+
+\part%1c
+$S=M_{n}(\mathbb{R})$ where $n \geqslant 2$ and $A * B=\frac{1}{2}(A B+B A)$.
+
+\part%1d
+$S=\{f: \mathbb{R} \to \mathbb{R}\}$, $f * g=f \circ g$.
+\end{parts}
+
+
+
+\question%2
+There are 56 different Latin squares of size $5 \times 5$ whose first row and first column are both $(e, a, b, c, d)$. Construct one such square which is a group table, justifying your reasons for it representing a group, and one such square that does not represent a group, again saying why.
+
+
+
+\question%3
+Let $A$ and $B$ be complex $n \times n$ matrices. If $A=\left(a_{i j}\right)$ then we define its complex conjugate as $\overline{A}=(\overline{a_{i j}})$. Show that \[
+	\overline{A+B}=\overline{A}+\overline{B}, \qquad \overline{A B}=\overline{A} \overline{B}
+\] Show that $U(n)$ is a group. Show further that $U(1)$ is Abelian and that $U(n)$ is non-Abelian for $n \geqslant 2$.
+
+
+
+\question%4
+An affine transformation of $\mathbb{R}^{2}$ is one of the form \[
+	\begin{pmatrix}
+		x \\
+		y
+	\end{pmatrix} \mapsto A\begin{pmatrix}
+		x \\
+		y
+	\end{pmatrix}+\mathbf{b}
+\] where $A$ is an invertible $2 \times 2$ matrix and $\mathbf{b}$ is a $2 \times 1$ column vector. Let $g_{1}$ and $g_{2}$ be affine transformations of $\mathbb{R}^{2}$. Show that their composition $g_{2} \circ g_{1}$ is an affine transformation. Show further that the affine transformations of $\mathbb{R}^{2}$ form a group $A G L(2, \mathbb{R})$ under composition.
+
+
+
+\question%5
+The following Cayley table describes a group $G$. (You are not asked to prove this.)
+\begin{center}\begin{tabular}{|c||c|c|c|c|c|c|c|c|}
+	\hline
+	$*$ & $e$ & $a$ & $b$ & $c$ & $d$ & $f$ & $g$ & $h$ \\
+	\hline\hline
+	$e$ & $e$ & $a$ & $b$ & $c$ & $d$ & $f$ & $g$ & $h$ \\
+	\hline
+	$a$ & $a$ & $e$ & $h$ & $g$ & $f$ & $d$ & $c$ & $b$ \\
+	\hline
+	$b$ & $b$ & $c$ & $d$ & $f$ & $g$ & $h$ & $e$ & $a$ \\
+	\hline
+	$c$ & $c$ & $b$ & $a$ & $e$ & $h$ & $g$ & $f$ & $d$ \\
+	\hline
+	$d$ & $d$ & $f$ & $g$ & $h$ & $e$ & $a$ & $b$ & $c$ \\
+	\hline
+	$f$ & $f$ & $d$ & $c$ & $b$ & $a$ & $e$ & $h$ & $g$ \\
+	\hline
+	$g$ & $g$ & $h$ & $e$ & $a$ & $b$ & $c$ & $d$ & $f$ \\
+	\hline
+	$h$ & $h$ & $g$ & $f$ & $d$ & $c$ & $b$ & $a$ & $e$ \\
+	\hline
+\end{tabular}\end{center}
+\begin{parts}
+\part%5a
+Find the inverse of each element of $G$.
+
+\part%5b
+Are there any elements of $G$, other than $e$, which commute with every element of $G$?
+
+\part%5c
+Determine the order of each element of $G$.
+
+\part%5d
+Show that $G=\left\{e, b, b^{2}, b^{3}, a, b a, b^{2} a, b^{3} a\right\}$ and that $a b=b^{3} a$.
+
+\part%5e
+In all, $G$ has ten subgroups, of orders $1,2,2,2,2,2,4,4,4,8$. List the subgroups of $G$.
+\end{parts}
+
+
+
+\question%6
+\begin{parts}
+\part%6a
+Let $G, H$ be groups. Show that $G \times H$ is Abelian if and only if $G, H$ are both Abelian.
+
+\part%6b
+Show that the map \[
+	\phi: \mathbb{C}^{*} \to(0, \infty) \times S^{1} \quad \text { given by } \quad \phi(z)=(|z|, z /|z|)
+\] is an isomorphism.
+
+\part%6c
+Show that $S^{1}$ is isomorphic to $S O(2)$ but that $S^{1} \times\{ \pm 1\}$ is not isomorphic to $O(2)$.
+\end{parts}
+
+\end{questions}
+
+
+
+\section*{Starter}
+\begin{questions}
+
+\question%S1
+Show that the general linear group $G L_{n}(\mathbb{R})$ (of invertible $n \times n$ real matrices) does indeed form a group under matrix multiplication.
+
+
+
+\question%S2
+Using the notation from the lecture notes, show that $e, r, r^{2}, r^{3}, s, r s, r^{2} s, r^{3} s$ are 8 distinct symmetries of the square.
+
+
+
+\question%S3
+Show that the product operation $*$ on $G \times H$ is associative.
+
+\end{questions}
+
+
+
+\section*{Pudding}
+\begin{questions}
+
+\question%P1
+Let $G$ be a finite group of even order. Must it contain an element of order 2?
+
+
+
+\question%P2
+\begin{parts}
+\part%P2a
+Is there a group in which no non-identity element is its own inverse?
+
+\part%P2b
+Is there a group in which every non-identity element is its own inverse?
+\end{parts}
+
+
+
+\question%P3
+How many ways are there to complete the following grid so that it is the Cayley table of a group?
+\begin{center}\begin{tabular}{c|cccc}
+	$*$ & $e$ & $a$ & $b$ & $c$\\
+	\hline
+	$e$\\
+	$a$\\
+	$b$\\
+	$c$\\
+\end{tabular}\end{center}
+
+\end{questions}
+
+\end{document}

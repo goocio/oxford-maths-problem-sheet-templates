@@ -1,0 +1,110 @@
+\documentclass[answers]{exam}
+\usepackage{../HT2024}
+
+\title{Fourier Series and PDEs -- Sheet 6}
+\author{YOUR NAME HERE :)}
+\date{Hilary Term 2024}
+% Accurate as of 05/07/2024
+
+
+\begin{document}
+\maketitle
+\begin{questions}
+
+\question%1
+Consider the small transverse vibrations of a homogeneous extensible elastic string stretched initially along the $x$-axis to a constant line density $\rho$. A point initially at $x \boldsymbol{i}$ is displaced transversely at time $t$ to the point $\boldsymbol{r}(x, t)=x \boldsymbol{i}+y(x, t) \boldsymbol{j}$, where the slope $y_{x}$ is everywhere small. The string offers no resistance to bending in the sense that the string to the right of the point $\boldsymbol{r}(x, t)$ exerts at that point a tangential force $T(x, t) \boldsymbol{\tau}(x, t)$ on the string to the left, where $T(x, t)$ is the tension and $\boldsymbol{\tau}(x, t)=\boldsymbol{r}_{x} /\left|\boldsymbol{r}_{x}\right|$ is the unit tangent vector pointing in the positive $x$-direction. The string is subject to a gravitational field $-g \boldsymbol{j}$ and air resistance exerts a force $-\gamma \boldsymbol{r}_{t}$ per unit length, where the acceleration due to gravity $g$ and the drag coefficient $\gamma$ are positive constants. You may assume that Newton's second law for the piece of string in the fixed region $a \leq x \leq a+h$ is given by \[
+	\frac{\mathrm{d}}{\mathrm{d} t}\left(\int_{a}^{a+h} \rho \boldsymbol{r}_{t} \mathrm{~d} x\right)=T(a+h, t) \boldsymbol{\tau}(a+h, t)-T(a, t) \boldsymbol{\tau}(a, t)-\int_{a}^{a+h} \rho g \boldsymbol{j} \mathrm{~d} x-\int_{a}^{a+h} \gamma \boldsymbol{r}_{\boldsymbol{t}} \mathrm{~d} x.
+\]
+\begin{parts}
+\part%1a
+State the physical significance of each of the terms in this equality, illustrating your answer with a sketch showing the forces acting on the piece of string in $a \leq x \leq a+h$.
+
+\part%1b
+Stating any assumptions that you make concerning the smoothness of $T$ and $y$, show that, to a first approximation for $\left|y_{x}\right| \ll 1$:
+\begin{subparts}
+\subpart%1bi
+the tension $T$ is spatially uniform in the sense that \[
+	\frac{\partial T}{\partial x}=0;
+\]
+
+\subpart%1bii
+the transverse displacement $y(x, t)$ satisfies the forced and damped wave equation \[
+	\rho \frac{\partial^{2} y}{\partial t^{2}}=T(t) \frac{\partial^{2} y}{\partial x^{2}}-\rho g-\gamma \frac{\partial y}{\partial t}.
+\] 
+\end{subparts}
+
+\part%1c
+Suppose that $T$ is constant and let the wave speed $c=\sqrt{T / \rho}$. If the wave equation is nondimensionalized by scaling $x=L \widehat{x}, t=L \widehat{t} / c$ and $y(x, t)=H \widehat{y}(\widehat{x}, \widehat{t})$, where $L$ and $H$ are typical horizontal and transverse length scales, show that \[
+	\frac{\partial^{2} \widehat{y}}{\partial \widehat{t}^{2}}=\frac{\partial^{2} \widehat{y}}{\partial \widehat{x}^{2}}-\alpha-\beta \frac{\partial \widehat{y}}{\partial \widehat{t}}
+\] where $\alpha$ and $\beta$ are dimensionless parameters that you should determine. Under what conditions are the effects of gravity and air resistance negligible?
+\end{parts}
+
+
+
+\question%2
+Consider the transverse displacement $y(x, t)$ defined by \[
+	y(x, t)=\frac{1}{2}(h(x+c t)+h(x-c t))+\frac{1}{2 c} \int_{x-c t}^{x+c t} u(s) \mathrm{~d} s\qquad(*)
+\] where the wave speed $c$ is a positive constant, the given function $h$ is twice differentiable and the given function $u$ is differentiable.
+\begin{parts}
+\part%2a
+Show that $y(x, t)$ satisfies the wave equation \[
+	\frac{\partial^{2} y}{\partial t^{2}}=c^{2} \frac{\partial^{2} y}{\partial x^{2}} \quad \text { for } \quad-\infty<x<\infty, t>0.
+\] and the initial conditions $y(x, 0)=h(x)$ and $y_{t}(x, 0)=u(x)$ for $-\infty<x<\infty$.
+
+\part%2b
+Consider the case in which \[
+	h(x)= \begin{cases}H\left(1-\frac{x^{2}}{L^{2}}\right)^{4} & \text { for }|x| \leq L,\\ 0 & \text { for }|x|>L,\end{cases} \qquad u(x)=0 \quad \text {for}-\infty<x<\infty,
+\] where $H$ and $L$ are positive constants.
+\begin{subparts}
+\subpart%2bi
+Sketch the graphs of $h(x-c t)$ and $h(x+c t)$ versus $x$ for $t=0, t=L / c$ and $t=2 L / c$.
+
+\subpart%2bii
+Hence sketch the graph of $y(x, t)$ verses $x$ for $t=0, t=L / c$ and $t=2 L / c$.
+\end{subparts}
+\end{parts}
+
+
+
+\question%3
+Consider the initial boundary value problem for the small transverse displacement $y(x, t)$ of an elastic string given by the wave equation \[
+	\frac{\partial^{2} y}{\partial t^{2}}=c^{2} \frac{\partial^{2} y}{\partial x^{2}} \quad \text { for } \quad 0<x<L,~ t>0
+\] with the boundary conditions $y(0, t)=0$ and $y(L, t)=0$ for $t>0$ and the initial conditions $y(x, 0)=f(x)$ and $y_{t}(x, 0)=g(x)$ for $0<x<L$, where the wave speed $c$ and length $L$ are positive constants and the functions $f$ and $g$ are given.
+\begin{parts}
+\part%3a
+Use the method of separation of variables to show that the normal modes are given for positive integers $n$ by \[
+	y_{n}(x, t)=\sin \left(\frac{n \pi x}{L}\right)\left(a_{n} \cos \left(\frac{n \pi c t}{L}\right)+b_{n} \sin \left(\frac{n \pi c t}{L}\right)\right),
+\] where $a_{n}$ and $b_{n}$ are constants. Write down integral expressions over $[0, L]$ for the constants $a_{n}$ and $b_{n}$ for which the initial conditions are satisfied by the series solution \[
+	y(x, t)=\sum_{n=1}^{\infty} y_{n}(x, t)
+\] [\emph{You may quote the formulae for the Fourier coefficients of a sine series.}]
+
+\part%3b
+Let $a, \ell$ and $v$ be real constants with $0<\ell<L$. Find the series solution for $y(x, t)$ for:
+\begin{subparts}
+\subpart%3bi
+a plucked string for which \[
+	f(x)=\begin{cases}
+		a x / \ell & \text{for } 0<x<\ell, \\
+		a(L-x) /(L-\ell) & \text {for } \ell<x<L,
+	\end{cases} \qquad g(x)=0 ;
+\]
+
+\subpart%3bii
+a flicked string for which \[
+	f(x)=0, \qquad g(x)= \begin{cases}
+		v & \text {for }|x-L / 2| \leq \ell / 2, \\
+		0 & \text {otherwise}.
+	\end{cases}
+\]
+\end{subparts}
+
+\part%3c
+Suppose now $f$ and $g$ are continuous on $[0, L]$ and have piecewise continuous derivatives on $(0, L)$, with $f(0)=f(L)=g(0)=g(L)=0$. Use the Fourier Convergence theorem to show that the series solution in part (a) may be written in the form $(\star)$ of question 2 for suitable functions $h$ and $u$ that you should determine. [\emph{You may quote the identities \begin{align*}
+	\sin\left(\frac{n\pi x}L\right)\cos\left(\frac{n pi ct}L\right)&=\frac12\left(\sin\left(\frac{n\pi}L(x+ct)\right)+\sin\left(\frac{n\pi}L(x-c t)\right)\right)\\
+	\sin\left(\frac{n\pi x}L\right)\sin\left(\frac{n\pi ct}L\right)&=\frac{n\pi}{2L}\int_{x-c t}^{x+c t}\sin\left(\frac{n\pi s}L\right)\mathrm{~d}s,
+\end{align*} and you may assume that the orders of summation and integration may be interchanged as necessary.}]
+\end{parts}
+
+\end{questions}
+
+\end{document}

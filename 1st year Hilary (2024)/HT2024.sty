@@ -1,0 +1,229 @@
+% keep the packages, but put whatever macros you want here,
+% I've made sure none of the sheets are dependent on them
+
+% see sample.tex and sample.pdf for an example of the class
+
+\RequirePackage{amssymb} % essential
+\RequirePackage{amsmath} % essential
+\RequirePackage{stmaryrd} % lots of extra symbols like \trianglelefteqslant
+\RequirePackage{pifont} % \ding, for \tick and \cross below
+\RequirePackage{mathrsfs} % \mathscr
+\RequirePackage{mathtools} % essential
+\RequirePackage{leftindex} % for super-/sub-script on the left
+\RequirePackage{cancel} % \cancel and \cancelto
+\RequirePackage{xcolor} % generally useful
+\RequirePackage{array} % for \newcolumntype macro
+\RequirePackage[a4paper, left = 1.7cm, right = 1.7cm, top = 2.5cm, bottom = 2.5cm]{geometry} % page shape
+\renewcommand{\baselinestretch}{1.25} % space between lines *= 1.25
+\footer{}{\thepage}{} % put page number in footer
+\parindent0pt % no paragraph indent
+
+
+
+% GENERAL
+
+% overrides
+% make default \geq and \leq be slanted \geqslant \leqslant
+\let\geqflat\geq
+\let\geq\geqslant
+\let\leqflat\leq
+\let\leq\leqslant
+% i hate regular epsilon
+\let\tempepsilon\epsilon
+\let\epsilon\varepsilon
+\let\varepsilon\epsilon
+% \emptyset is bad
+\let\thinemptyset\emptyset
+\let\emptyset\varnothing
+% make colour of cancellation (\cancel, \bcancel, \cancelto) blue for clarity
+\renewcommand\CancelColor{\color{blue}}
+
+% shorthand
+\let\ds\displaystyle
+\let\mb\mathbf
+\let\bb\mathbb
+\let\mf\mathfrak
+\let\ms\mathscr
+\let\mc\mathcal
+\let\mr\mathrm
+\let\bs\boldsymbol
+\let\on\operatorname
+\let\en\ensuremath
+\let\q\quad
+\let\qq\qquad
+\let\f\frac
+\let\x\times
+\let\op\oplus
+\let\ox\otimes
+\let\oo\infty % taken from typst (which you should try if you haven't already!!)
+\let\so\implies
+\let\by\impliedby
+\let\wh\widehat
+\let\ol\overline
+\let\seq\subseteq
+\newcommand*{\inv}{^{-1}}
+\newcommand*{\func}[3]{#1\!\!\!\: :#2\to #3}
+\newcommand*{\bvec}[1]{\vec{\mathbf{#1}}} % bold *and* overset ->
+\newcommand*{\unit}[1]{\frac{#1}{\left|#1\right|}} % x / |x|
+\newcommand*{\deq}{\coloneqq} % :=, doesn't work as \let for some reason
+\newcommand*{\eqd}{\eqqcolon} % =:, doesn't work as \let for some reason
+\newcommand*{\sumn}[1][i]{\sum_{#1=1}^n}
+\newcommand*{\prodn}[1][i]{\prod_{#1=1}^n}
+\newcommand*{\noo}{{-\infty}} % negative infinity, helps with integrals \int_{-\infty}...
+\newcommand*{\bigo}[1]{\mathcal{O}\left(#1\right)}
+\newcommand*{\ub}[2]{\underbrace{#1}_{#2}}
+\newcommand*{\ct}[2][0]{\cancelto{#1}{#2}}
+
+% brackets
+\newcommand*{\lb}{\left(} \newcommand*{\rb}{\right)} % bracket
+\newcommand*{\ls}{\left[} \newcommand*{\rs}{\right]} % square
+\newcommand*{\lc}{\left\{} \newcommand*{\rc}{\right\}} % curly
+\newcommand*{\lv}{\left|} \newcommand*{\rv}{\right|} % vertical
+\newcommand*{\la}{\left\langle} \newcommand*{\ra}{\right\rangle} % angle
+\newcommand*{\ceil}[1]{\left\lceil #1\right\rceil}
+\newcommand*{\floor}[1]{\left\lfloor #1\right\rfloor}
+\newcommand*{\round}[1]{\left\lfloor #1\right\rceil}
+\newcommand*{\ang}[1]{\left\langle#1\right\rangle}
+\newcommand*{\set}[2]{\left\{#1~\middle|~#2\right\}}
+\newcommand*{\abs}[1]{\left|#1\right|} % i don't like how the | symbols look in code
+
+% functions/operators
+\newcommand*{\sech}{\operatorname{sech}}
+\newcommand*{\csch}{\operatorname{csch}}
+\newcommand*{\arcsec}{\operatorname{arcsec}}
+\newcommand*{\arccot}{\operatorname{arccot}}
+\newcommand*{\arccsc}{\operatorname{arccsc}}
+\newcommand*{\arcosh}{\operatorname{arcosh}}
+\newcommand*{\arsinh}{\operatorname{arsinh}}
+\newcommand*{\artanh}{\operatorname{artanh}}
+\newcommand*{\arsech}{\operatorname{arsech}}
+\newcommand*{\arcsch}{\operatorname{arcsch}}
+\newcommand*{\arcoth}{\operatorname{arcoth}}
+\newcommand*{\im}{\operatorname{Im}}
+\newcommand*{\re}{\operatorname{Re}}
+\newcommand*{\lcm}{\operatorname{lcm}}
+\newcommand*{\hcf}{\operatorname{hcf}}
+\newcommand*{\sgn}{\operatorname{sgn}}
+
+% typesetting
+\newcommand{\note}[1]{{\color{blue}\textbf{Note:} #1}}
+\newcommand{\shift}[2]{\makebox[0pt][l]{\makebox[#1][r]{#2}}} % very hack-y, avoid
+\newcommand{\up}[1]{\vspace{-#1\baselineskip}} % squeezing in some extra room
+\newcolumntype{L}{>{$}l<{$}} % left align table math
+\newcolumntype{C}{>{$}c<{$}} % centre align table math
+\newcolumntype{R}{>{$}r<{$}} % right align table math
+
+% proofs & workings
+\newcommand*{\via}[2]{\underset{\text{#1}}{#2}} % e.g. = with underset "q4a"
+\newcommand*{\st}{(\ensuremath{\ast}) } % referring to starred equation
+\newcommand*{\qed}{\ensuremath{\qquad_\blacksquare}}
+\newcommand*{\cont}{~\ensuremath{\lightning}} % contradiction
+\newcommand*{\tick}{\text{~\ding{51}}} % tick mark
+\newcommand*{\cross}{\text{~\ding{55}}} % cross mark
+
+% letters
+\let\ga\alpha %no Alpha
+\let\gb\beta %no Beta
+\let\gc\gamma\let\gC\Gamma %c because gg already taken, and gamma is the 3rd letter after all
+\let\gd\delta\let\gD\Delta
+\let\ge\epsilon %no Epsilon ; technically there is \ge already, but it's synonymous with \geq
+\let\ve\varepsilon
+\let\gz\zeta %no Zeta
+%no eta, Eta
+\let\gt\theta\let\gT\Theta
+\let\vt\vartheta
+\let\gi\iota%no Iota
+\let\gk\kappa%no Kappa
+\let\gl\lambda\let\gL\Lambda
+%no mu, Mu
+%no nu, Nu
+%no omicron, Omicron
+%no xi, Xi
+%no pi, Pi
+\let\vp\varpi
+%no rho, Rho
+\let\vr\varrho
+\let\gs\sigma\let\gS\Sigma
+\let\vs\varsigma
+%no tau, Tau
+\let\gu\upsilon\let\gU\Upsilon
+%no phi, Phi
+\let\vf\varphi
+%no chi, Chi
+%no psi, Psi
+\let\go\omega\let\gO\Omega
+
+\newcommand*{\bA}{\mathbb{A}}\newcommand*{\bB}{\mathbb{B}}
+\newcommand*{\bC}{\mathbb{C}}\newcommand*{\bD}{\mathbb{D}}
+\newcommand*{\bE}{\mathbb{E}}\newcommand*{\bF}{\mathbb{F}}
+\newcommand*{\bG}{\mathbb{G}}\newcommand*{\bH}{\mathbb{H}}
+\newcommand*{\bI}{\mathbb{I}}\newcommand*{\bJ}{\mathbb{J}}
+\newcommand*{\bK}{\mathbb{K}}\newcommand*{\bL}{\mathbb{L}}
+\newcommand*{\bM}{\mathbb{M}}\newcommand*{\bN}{\mathbb{N}}
+\newcommand*{\bO}{\mathbb{O}}\newcommand*{\bP}{\mathbb{P}}
+\newcommand*{\bQ}{\mathbb{Q}}\newcommand*{\bR}{\mathbb{R}}
+\newcommand*{\bS}{\mathbb{S}}\newcommand*{\bT}{\mathbb{T}}
+\newcommand*{\bU}{\mathbb{U}}\newcommand*{\bV}{\mathbb{V}}
+\newcommand*{\bW}{\mathbb{W}}\newcommand*{\bX}{\mathbb{X}}
+\newcommand*{\bY}{\mathbb{Y}}\newcommand*{\bZ}{\mathbb{Z}}
+
+\newcommand*{\cA}{\mathcal{A}}\newcommand*{\cB}{\mathcal{B}}
+\newcommand*{\cC}{\mathcal{C}}\newcommand*{\cD}{\mathcal{D}}
+\newcommand*{\cE}{\mathcal{E}}\newcommand*{\cF}{\mathcal{F}}
+\newcommand*{\cG}{\mathcal{G}}\newcommand*{\cH}{\mathcal{H}}
+\newcommand*{\cI}{\mathcal{I}}\newcommand*{\cJ}{\mathcal{J}}
+\newcommand*{\cK}{\mathcal{K}}\newcommand*{\cL}{\mathcal{L}}
+\newcommand*{\cM}{\mathcal{M}}\newcommand*{\cN}{\mathcal{N}}
+\newcommand*{\cO}{\mathcal{O}}\newcommand*{\cP}{\mathcal{P}}
+\newcommand*{\cQ}{\mathcal{Q}}\newcommand*{\cR}{\mathcal{R}}
+\newcommand*{\cS}{\mathcal{S}}\newcommand*{\cT}{\mathcal{T}}
+\newcommand*{\cU}{\mathcal{U}}\newcommand*{\cV}{\mathcal{V}}
+\newcommand*{\cW}{\mathcal{W}}\newcommand*{\cX}{\mathcal{X}}
+\newcommand*{\cY}{\mathcal{Y}}\newcommand*{\cZ}{\mathcal{Z}}
+
+
+% LINEAR ALGEBRA
+\newcommand*{\spn}{\operatorname{span}}% unfortunately \span already exists
+\newcommand*{\nll}{\operatorname{null}}% unfortunately \null already exists
+\newcommand*{\rank}{\operatorname{rank}}
+\newcommand*{\rrank}{\operatorname{rowrank}}
+\newcommand*{\crank}{\operatorname{colrank}}
+\newcommand*{\id}{\operatorname{id}} % identity element
+\newcommand*{\tr}{\operatorname{tr}} % trace
+\newcommand*{\ip}[2]{\left\langle#1,#2\right\rangle} % inner product <x,y>
+\newcommand*{\vect}[3]{\begin{pmatrix}#1\\#2\\#3\end{pmatrix}}
+\newcommand*{\diag}{\operatorname{diag}}
+\newcommand*{\norm}[1]{\left\|#1\right\|}
+% tight matrices
+\newcommand*{\bbm}[1]{\left(\begin{matrix}#1\end{matrix}\right)}
+\newcommand*{\bsm}[1]{\left[\begin{matrix}#1\end{matrix}\right]}
+\newcommand*{\bcm}[1]{\left\{\begin{matrix}#1\end{matrix}\right\}}
+\newcommand*{\bvm}[1]{\left|\begin{matrix}#1\end{matrix}\right|}
+\newcommand*{\bam}[1]{\left\langle\begin{matrix}#1\end{matrix}\right\rangle}
+% padded matrices
+\newcommand*{\bbM}[1]{\left(~\begin{matrix}#1\end{matrix}~\right)}
+\newcommand*{\bsM}[1]{\left[~\begin{matrix}#1\end{matrix}~\right]}
+\newcommand*{\bcM}[1]{\left\{~\begin{matrix}#1\end{matrix}~\right\}}
+\newcommand*{\bvM}[1]{\left|~\begin{matrix}#1\end{matrix}~\right|}
+\newcommand*{\baM}[1]{\left\langle~\begin{matrix}#1\end{matrix}~\right\rangle}
+
+
+% CALCULUS
+\let\pt\partial
+\newcommand*{\md}{\mathrm d}
+\newcommand*{\dd}{~\mathrm d} % in integrals i like the extra spacing before the dx
+\newcommand*{\dx}{~\mathrm dx} % ditto
+\newcommand*{\dv}[2]{\frac{\mathrm d#1}{\mathrm d#2}} % derivative
+\newcommand*{\ddv}[3][2]{\frac{\mathrm d^{#1}#2}{\mathrm d#3^{#1}}} % multiple derivative
+\newcommand*{\pdv}[2]{\frac{\partial #1}{\partial #2}} % partial derivative
+\newcommand*{\pddv}[3][2]{\frac{\partial^{#1}#2}{\partial #3^{#1}}} % multiple partial
+\newcommand*{\jac}[4]{\frac{\partial(#1,#2)}{\partial(#3,#4)}} %jacobian
+\newcommand*{\del}{\boldsymbol{\nabla}} % grad operator
+\newcommand*{\eval}{\Bigr|} % big right | for evaluation of expression at certain value
+\newcommand*{\ftc}[1]{\Bigl[#1\Bigr]} % inputting integral bounds using FTC
+\newcommand*{\vol}{\operatorname{Vol}} % volume
+\newcommand*{\iil}{\iint\limits} % \iint with region typeset below integrals
+\newcommand*{\iiil}{\iiint\limits} % \iiint with region typeset below integrals
+\newcommand*{\db}[1]{\dot{\mathbf{#1}}} % dot and bold (really for dynamics)
+\newcommand*{\ddb}[1]{\ddot{\mathbf{#1}}} % ddot and bold (really for dynamics)
+\newcommand*{\lt}[2][x]{\lim_{#1\to#2}} % limit to

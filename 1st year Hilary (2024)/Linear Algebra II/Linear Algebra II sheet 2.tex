@@ -1,0 +1,213 @@
+\documentclass[answers]{exam}
+\usepackage{../HT2024}
+
+\title{Linear Algebra II -- Sheet 2\\Determinants, Eigenvalues, Eigenvectors}
+\author{YOUR NAME HERE :)}
+\date{Hilary Term 2024}
+% Accurate as of 05/07/2024
+
+
+\begin{document}
+\maketitle
+\section*{Main course}
+\begin{questions}
+
+\question%1
+Evaluate the $n \times n$ determinant \[
+	\begin{vmatrix}
+		2 & -1 & 0 & 0 & \cdots & 0 \\
+		-1 & 2 & -1 & 0 & \cdots & 0 \\
+		0 & -1 & 2 & -1 & \ddots & \vdots \\
+		0 & 0 & -1 & \ddots & \ddots & 0 \\
+		\vdots & \vdots & \ddots & \ddots & 2 & -1 \\
+		0 & 0 & \cdots & 0 & -1 & 2
+	\end{vmatrix}.
+\]
+
+
+
+\question%2
+Let $J$ be the $n \times n$ matrix all of whose entries are 1.
+\begin{parts}
+\part%2a
+Determine $\chi_{J}$ and show that there are two eigenvalues, 0 and $n$.
+
+\part%2b
+Find the corresponding eigenspaces. Is $J$ diagonalizable?
+\end{parts}
+
+
+
+\question%3
+Let $S: V \to V$ be a linear map on a vector space $V$ such that $S^{2}=I$.
+\begin{parts}
+\part%3a
+Show that the only possible eigenvalues of $S$ are 1 and $-1$. Let $U$ denote the 1-eigenspace and $W$ denote the $-1$-eigenspace.
+
+\part%3b
+Suppose that $v \in V$ and $v=u+w$ where $u \in U$ and $w \in W$. Determine $u$ and $w$ in terms of $v$ and $S v$.
+
+\part%3c
+Verify that $u \in U$ and $w \in W$ for the $u, w$ found in (b) and deduce that $V=U \oplus W$.
+
+\part%3d
+If $\mathcal{B}_{U}$ and $\mathcal{B}_{W}$ are bases for $U, W$ what is the matrix for $S$ with respect to $\mathcal{B}_{U} \cup \mathcal{B}_{W}$?
+
+\part%3e
+Let $V=M_{n \times n}(\mathbb{R})$ and $S(A)=A^{T}$. Describe $U$ and $W$ and find an eigenbasis for $S$.
+\end{parts}
+
+
+
+\question%4
+Find the characteristic polynomials of the following matrices. Are any of the matrices similar? [\emph{Hint: for no case do you need to construct a change of basis matrix that transforms one matrix into another.}]
+\begin{parts}
+\part%4a
+\vspace{2em}\phantom{}\vspace{-3em}\[
+	\begin{pmatrix}
+		2 & 6 & 0 \\
+		1 & 1 & 0 \\
+		1 & -2 & 3
+	\end{pmatrix},
+\]
+
+\part%4b
+\vspace{2em}\phantom{}\vspace{-3em}\[
+	\begin{pmatrix}
+		1 & 0 & 0 \\
+		0 & 1 & 0 \\
+		0 & 0 & -1
+	\end{pmatrix},
+\]
+
+\part%4c
+\vspace{2em}\phantom{}\vspace{-3em}\[
+	\begin{pmatrix}
+		0 & 1 & 0 \\
+		0 & 0 & 1 \\
+		-1 & 1 & 1
+	\end{pmatrix},
+\]
+
+\part%4d
+\vspace{2em}\phantom{}\vspace{-3em}\[
+	\begin{pmatrix}
+		-1 & 1 & 1 \\
+		0 & 3 & 0 \\
+		0 & 0 & 4
+	\end{pmatrix}.
+\]
+\end{parts}
+
+
+
+\question%5
+Let $m, n$ be real numbers and let $a, b, c$ be the roots of the cubic $z^{3}+m z+n=0$. The discriminant $\Delta$ of the cubic is given by \[
+	\Delta=(a-b)^{2}(a-c)^{2}(b-c)^{2}.
+\]
+\begin{parts}
+\part%5a
+Explain why $\Delta$ is a real number. What can be said about the roots of the cubic when $\Delta>0, \Delta=0, \Delta<0$?
+
+\part%5b
+By considering the identity $(z-a)(z-b)(z-c)=z^{3}+m z+n$, show that $a+b+c=0$ and find expressions for $m$ and $n$ in terms of $a, b, c$.
+
+\part%5c
+Let $S_{k}=a^{k}+b^{k}+c^{k}$ for $k \geqslant 0$. Find expressions for $S_{0}, S_{1}, S_{2}$ in terms of $m, n$.
+
+\part%5d
+Explain why $S_{k+3}+m S_{k+1}+n S_{k}=0$ for $k \geqslant 0$ and hence find expressions for $S_{3}$ and $S_{4}$ in terms of $m$ and $n$.
+
+\part%5e
+Write down $\operatorname{det} A$ where \[
+	A=\begin{pmatrix}
+		1 & a & a^{2} \\
+		1 & b & b^{2} \\
+		1 & c & c^{2}
+	\end{pmatrix}
+\] Determine the matrix $A^{T} A$ and deduce that $\Delta=-4 m^{3}-27 n^{2}$.
+\end{parts}
+
+\end{questions}
+
+
+
+\section*{Starter}
+\begin{questions}
+
+\question%S1
+\begin{parts}
+\part%S1a
+Show that a square matrix is singular if and only if 0 is an eigenvalue.
+
+\part%S1b
+Show that a square matrix has the same eigenvalues as its transpose.
+
+\part%S1c
+If $A$ is an invertible matrix, how are the eigenvalues of $A^{-1}$ related to those of $A$?
+\end{parts}
+
+
+
+\question%S2
+\begin{parts}
+\part%S2a
+Show that the product of two $n \times n$ permutation matrices is a permutation matrix.
+
+\part%S2b
+Show that the inverse of a permutation matrix is a permutation matrix.
+
+\part%S2c
+Show that a permutation matrix is orthogonal.
+\end{parts}
+
+
+
+\question%S3
+(\emph{Parity is well-defined}) Any permutation matrix can be written as a product of transposition matrices $S_{i j}$. For a given permutation matrix, show that this product always involves an even number of transpositions, or always an odd number. List the even $3 \times 3$ permutation matrices.
+
+\end{questions}
+
+
+
+\section*{Pudding}
+\begin{questions}
+
+\question%P1
+Let $a_{1}, \ldots, a_{n}$ be real numbers. By repeated differentiation, or otherwise, show that each $a_{i}$ must be zero if \[
+	a_{1} \sin x+a_{2} \sin 2 x+\cdots+a_{n} \sin n x=0 \quad \text { for all real } x.
+\]
+
+
+
+\question%P2
+Let $A$ be an $m \times n$ matrix. A submatrix of $A$ is any matrix formed by deleting certain rows and columns of $A$. The determinantal rank of $A$ is the greatest value of $r$ such that there is an invertible $r \times r$ submatrix.
+\begin{parts}
+\part%P2a
+For each matrix below, find its determinantal rank. \[
+	\begin{pmatrix}
+		1 & 1 & 1 \\
+		2 & 2 & 2 \\
+		3 & 3 & 3
+	\end{pmatrix}, \quad\begin{pmatrix}
+		1 & 0 & 1 \\
+		2 & 1 & 2
+	\end{pmatrix}, \quad\begin{pmatrix}
+		1 & 1 & -1 & 1 \\
+		2 & 3 & 0 & 2 \\
+		1 & 2 & 1 & 1
+	\end{pmatrix}.
+\]
+
+\part%2b
+Show that determinantal rank of a matrix equals its rank.
+\end{parts}
+
+
+
+\question%S3
+Let $A=\left(a_{i j}\right)$ be an $n \times n$ matrix where $n \geqslant 2$. Show that the adjugate $\operatorname{adj} A=0$ if and only if $\operatorname{rank} A \leqslant n-2$. What is the $\operatorname{rank}$ of $\operatorname{adj} A$ if $\operatorname{rank} A=n-1$?
+
+\end{questions}
+
+\end{document}

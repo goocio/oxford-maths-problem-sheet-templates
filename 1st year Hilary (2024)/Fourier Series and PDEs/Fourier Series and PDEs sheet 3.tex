@@ -1,0 +1,104 @@
+\documentclass[answers]{exam}
+\usepackage{../HT2024}
+
+\title{Fourier Series and PDEs -- Sheet 3}
+\author{YOUR NAME HERE :)}
+\date{Hilary Term 2024}
+% Accurate as of 05/07/2024
+
+
+\begin{document}
+\maketitle
+\begin{questions}
+
+\question%1
+Let $f$ be a continuous periodic function of period $2 L$. For positive integers $N$, denote by \[
+	S_{N}(x)=\frac{a_{0}}{2}+\sum_{n=1}^{N}\left(a_{n} \cos \left(\frac{n \pi x}{L}\right)+b_{n} \sin \left(\frac{n \pi x}{L}\right)\right)
+\] the partial sums of the Fourier series for $f$, and let $T_{N}$ be the sum defined by \[
+	T_{N}(x)=\frac{A_{0}}{2}+\sum_{n=1}^{N}\left(A_{n} \cos \left(\frac{n \pi x}{L}\right)+B_{n} \sin \left(\frac{n \pi x}{L}\right)\right),
+\] where $A_{n}$ and $B_{n}$ are arbitrary real constants.
+\begin{parts}
+\part%1a
+State integral expressions over $[-L, L]$ for the Fourier coefficients $a_{n}$ and $b_{n}$.
+
+\part%1b
+Show that \[
+	\frac{1}{L} \int_{-L}^{L} f(x) T_{N}(x) \mathrm{~d} x=\frac{a_{0} A_{0}}{2}+\sum_{n=1}^{N}\left(a_{n} A_{n}+b_{n} B_{n}\right)
+\] Hence write down similar expressions for \[
+	\frac1L\int_{-L}^LT_N(x)^2\mathrm{~d}x,\qquad\frac1L\int_{-L}^Lf(x)S_N(x)\mathrm{~d}x.\qquad\text{and}\qquad\frac1L\int_{-L}^LS_N(x)^2\mathrm{~d}x.
+\] [\emph{You may find it helpful to note that (i) if $f=T_{N}$ then $a_{n}=A_{n}$ and $b_{n}=B_{n}$ for $n \leq N$ and (ii) if $T_{N}=S_{N}$ then $A_{n}=a_{n}$ and $B_{n}=b_{n}$ for $n \leq N$.}]
+
+\part%1c
+Deduce that \[
+	\mathcal{E}(T_{N})-\mathcal{E}(S_{N})=\frac{(A_{0}-a_{0})^{2}}{2}+\sum_{n=1}^{N}\left((A_{n}-a_{n})^{2}+(B_{n}-b_{n})^{2}\right),
+\] where the \emph{mean-squared error} in the approximation of $f$ by $T_{N}$ is defined by \[
+	\mathcal{E}(T_{N})=\frac{1}{L} \int_{-L}^{L}(T_{N}(x)-f(x))^{2} \mathrm{~d} x.
+\] Hence write down the values of the constants $A_{n}$ and $B_{n}$ for which $\mathcal{E}(T_{N})$ is minimized for each positive integer $N$.
+\end{parts}
+
+
+
+\question%2
+The periodic function $f$ of period $2 L$ is defined by \[
+	f(x)=\begin{cases}
+		1+x / L & \text{for }-L<x \leqslant 0, \\
+		0 & \text{for } 0<x \leqslant L.
+	\end{cases}
+\]
+\begin{parts}
+\part%2a
+Sketch the graph of $f(x)$ for $x \in(-2 L, 2 L]$, indicating any point $x$ at which the Fourier series for $f$ does not converge to $f(x)$ and showing the values to which the Fourier series does converge at these points.
+
+\part%2b
+Show that the Fourier series for $f$ is given by \[	
+	f(x) \sim \frac{1}{4}+\sum_{m=1}^{\infty}\left(\frac{2}{(2 m-1)^{2} \pi^{2}} \cos \left(\frac{(2 m-1) \pi x}{L}\right)-\frac{1}{m \pi} \sin \left(\frac{m \pi x}{L}\right)\right) .
+\]
+
+\part%2c
+By considering the value of the series at $x=L / 2$ and at $x=0$, deduce that \[
+	\sum_{k=0}^{\infty} \frac{(-1)^{k}}{2 k+1}=\frac{\pi}{4} \qquad \text{and} \qquad \sum_{k=0}^{\infty} \frac{1}{(2 k+1)^{2}}=\frac{\pi^{2}}{8}.
+\]
+\end{parts}
+
+
+
+\question%3
+\begin{parts}
+\part%3a
+The function $f$ is defined by \[
+	f(x)=\exp (x / L) \quad \text { for } 0 \leq x \leq L.
+\]
+\begin{subparts}
+\subpart%3ai
+Evaluate the Fourier cosine and sine series for $f$ on $[0,L]$.
+
+\subpart%3aii
+For each series sketch the graph of the function to which it converges on $(-2L,2L]$.
+
+\subpart%3aiii
+Describe three ways in which the truncated cosine series for $f$ is a better approximation of $f$ on $[0,L]$ than the truncated sine series for $f$.
+\end{subparts}
+
+\part%3b
+Give, with justification, an example of a polynomial that is better approximated on $[0,L]$ by its truncated sine series than its truncated cosine series.
+\end{parts}
+
+
+
+\question%4
+The function $f$ is continuous on $[0, L]$ and has piecewise continuous derivative on $(0, L)$, where $L$ is a positive constant.
+\begin{parts}
+\part%4a
+Suppose that $f$ may be expressed in the form of the generalized Fourier series \[
+	f(x)=\sum_{n=0}^{\infty} c_{n} \sin \left(\frac{(2 n+1) \pi x}{2 L}\right) \quad \text{for} \quad 0<x<L.
+\] Assuming that the orders of summation and integration may be interchanged, derive integral expressions over $[0, L]$ for the Fourier coefficients $c_{n}$.[\emph{You may assume without proof the orthogonality relations \[
+	\int_{0}^{L} \sin\left(\frac{(2 m+1) \pi x}{2 L}\right)\sin \left(\frac{(2 n+1) \pi x}{2 L}\right) \mathrm{~d} x=\frac{L}{2} \delta_{m n}
+\] where $m$ and $n$ are non-negative integers and $\delta_{m n}$ is Kronecker's delta.}]
+
+\part%4b
+To which function does the series in part (a) converge for $x \in \mathbb{R}$? Justify your answer by applying the Fourier Convergence Theorem to a suitable $4 L$-periodic extension for $f$.
+\end{parts}
+
+\end{questions}
+
+\end{document}

@@ -1,0 +1,96 @@
+\documentclass[answers]{exam}
+\usepackage{../HT2024}
+
+\title{Fourier Series and PDEs -- Sheet 1}
+\author{YOUR NAME HERE :)}
+\date{Hilary Term 2024}
+% Accurate as of 05/07/2024
+
+
+\begin{document}
+\maketitle
+\begin{questions}
+
+\question%1
+\begin{parts}
+\part%1a
+Consider the boundary value problem for $y(x)$ given by \[
+	\frac{\mathrm{d}^{2} y}{\mathrm{~d} x^{2}}+y=0 \quad \text { for } \quad 0<x<L
+\] with $y(0)=0$ and $y(L)=0$, where $L$ is a positive constant. The function $y(x)=0$ is a solution. Is this solution unique, or not? How does the answer depend on $L$?
+
+\part%1b
+Consider the initial value problem for $y(t)$ given by \[
+	\frac{\mathrm{d} y}{\mathrm{~d} t}=2 y^{1 / 2} \quad \text { for } \quad t>0
+\] with $y(0)=0$. The function $y(t)=0$ is a solution. Use separation of variables to find a nontrivial solution. Hence, write down a solution that vanishes if and only if $t \leq a$, where $a$ is a positive constant.
+\end{parts}
+
+
+
+\question%2
+\begin{parts}
+\part%2a
+Use the power series representation of the function $1 /(1-z)$ with $z=R \mathrm{e}^{\mathrm{i} \theta}$, where $R \in[0,1)$ and $\theta \in \mathbb{R}$, to establish an example of a convergent Fourier sine series.
+
+\part%2b
+Assuming that the real constants $a_{1}, a_{2}, \ldots$ and $b_{1}, b_{2}, \ldots$ are such that the orders of summation and differentiation may be interchanged, show that \[
+	y(x, t)=\sum_{n=1}^{\infty}\left(a_{n} \cos (n t)+b_{n} \sin (n t)\right) \sin (n x)
+\] satisfies the wave equation \[
+	\frac{\partial^{2} y}{\partial t^{2}}=\frac{\partial^{2} y}{\partial x^{2}} \quad \text { for } \quad 0<x<\pi, t>0
+\] and the boundary conditions $y(0, t)=0$ and $y(\pi, t)=0$ for $t>0$. Hence, write down an infinite series solution for $y(x, t)$ that also satisfies the initial conditions \[
+	y(x, 0)=\frac{R \sin x}{1-2 R \cos x+R^{2}}, \quad \frac{\partial y}{\partial t}(x, 0)=0 \quad \text { for } 0<x<\pi.
+\]
+\end{parts}
+
+
+
+\question%3
+\begin{parts}
+\part%3a
+Let $f$ be a periodic function of period $2 \pi$. By making the substitution $s=2 \pi+t$ in one of the integrals in the identity \[
+	\int_{\alpha}^{\alpha+2 \pi} f(s) \mathrm{~d} s=\int_{\alpha}^{\pi} f(s) \mathrm{~d} s+\int_{\pi}^{\alpha+2 \pi} f(s) \mathrm{~d} s,
+\] show that, for any real $\alpha$, \[
+	\int_{\alpha}^{\alpha+2 \pi} f(s) \mathrm{~d} s=\int_{-\pi}^{\pi} f(s) \mathrm{~d} s.
+\]
+
+\part%3b
+Let $g$ be an even function with derivative $g'$ and let \[
+	G(x)=\int_{0}^{x} g(s) \mathrm{~d} s.
+\]
+\begin{subparts}
+\subpart%3bi
+Use the chain rule to show that $g'$ is an odd function.
+
+\subpart%3bii
+By making the substitution $s=-t$, show that $G$ is an odd function.
+
+\subpart%3biii
+Deduce that, for any real $\alpha$, \[
+	\int_{-\alpha}^{\alpha} g(s) \mathrm{~d} s=2 \int_{0}^{\alpha} g(s) \mathrm{~d} s
+\]
+\end{subparts}
+
+\part%3c
+Show that if $h$ is an odd function then, for any real $\alpha$, \[
+	\int_{-\alpha}^{\alpha} h(s) \mathrm{~d} s=0.
+\]
+\end{parts}
+
+
+
+\question%4
+Let $f:[0, \pi] \to \mathbb{R}$.
+\begin{parts}
+\part%4a
+Let $f_{e}$ be a periodic function of period $2 \pi$ satisfying \[
+	f_{e}(x)= \begin{cases}f(x) & \text { for } 0 \leqslant x \leqslant \pi; \\ f(-x) & \text { for }-\pi<x<0.\end{cases}
+\] Show that $f_{e}$ is an even function.
+
+\part%4b
+Let $f_{o}$ be a periodic function of period $2 \pi$ satisfying \[
+	f_{o}(x)= \begin{cases}f(x) & \text { for } 0 \leqslant x \leqslant \pi; \\ -f(-x) & \text { for }-\pi<x<0.\end{cases}
+\] Under what conditions on $f$ is $f_{o}$ an odd function? Justify your answer.
+\end{parts}
+
+\end{questions}
+
+\end{document}

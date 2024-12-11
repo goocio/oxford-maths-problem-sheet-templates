@@ -1,0 +1,96 @@
+\documentclass[answers]{exam}
+\usepackage{../HT2024}
+
+\title{Fourier Series and PDEs -- Sheet 8}
+\author{YOUR NAME HERE :)}
+\date{Hilary Term 2024}
+% Accurate as of 05/07/2024
+
+
+\begin{document}
+\maketitle
+\begin{questions}
+
+\question%1
+An infinite straight metal rod has a square cross-section whose sides are of length $L$. The temperature $T(x, y)$ in each cross-section satisfies the boundary value problem given by Laplace's equation \[
+	\frac{\partial^{2} T}{\partial x^{2}}+\frac{\partial^{2} T}{\partial y^{2}}=0 \quad \text { for } \quad 0<x<L,~0<y<L,
+\] with the boundary conditions \[
+	\begin{array}{clcl}
+		T(0, y)&\!\!\!\!=0 &\quad \text {for} &\quad 0<y<L, \\
+		T(L, y)&\!\!\!\!=0 &\quad \text {for} &\quad 0<y<L, \\
+		T(x, 0)&\!\!\!\!=0 &\quad \text {for} &\quad 0<x<L, \\
+		T(x, L)&\!\!\!\!=T^{*} &\quad \text {for} &\quad 0<x<L,
+	\end{array}
+\] where $T^{*}$ is a positive constant.
+\begin{parts}
+\part%1a
+Use the method of separation of variables and the principle of superposition to derive the general series solution satisfying Laplace's equation and first two the boundary conditions given by \[
+	T(x,y)=\sum_{n=1}^\infty\sin\left(\frac{n\pi x}L\right)\left(A_n\cosh\left(\frac{n\pi y}L\right)+B_{n} \sinh \left(\frac{n \pi y}{L}\right)\right),
+\] where $A_{n}$ and $B_{n}$ are constants. Determine the constants $A_{n}$ and $B_{n}$ for which the general series solution satisfies the last two boundary conditions. [\emph{You may quote the formulae for the Fourier coefficients of a sine series.}]
+
+\part%1b
+By considering three similar problems, show that $T=T^{*} / 4$ at the centre of the square.
+\end{parts}
+
+
+
+\question%2
+An infinite straight metal rod of constant thermal conductivity $k$ has cross-section that is a path-connected region $S$ bounded by a simple closed curve $C$. The temperature $T(x, y)$ in each cross-section satisfies Poisson's equation \[
+	-k\left(\frac{\partial^{2} T}{\partial x^{2}}+\frac{\partial^{2} T}{\partial y^{2}}\right)=Q(x, y) \quad \text { for } \quad(x, y) \in S,
+\] with Newton's law of cooling giving the boundary condition \[
+	-k \frac{\partial T}{\partial n}=h\left(T-T_{a}\right) \quad \text { for } \quad(x, y) \in C,
+\] where $Q$ is the given volumetric heat source, $h$ is the constant heat transfer coefficient, $T_{a}$ is the constant ambient temperature and $\partial T / \partial n$ denotes the outward normal derivative of $T$ on $C$.
+\begin{parts}
+\part%2a
+Use Green's Theorem to show that there is at most one solution if $h>0$, and that if $h=0$ then any two solutions differ by a constant.
+
+\part%2b
+Now take the region $S$ to be the disc of radius $a$ with centre at the origin $(0,0)$.
+\begin{subparts}
+\subpart%2bi
+Find the cylindrically symmetric solution if $Q$ is constant and $h>0$.
+
+\subpart%2bii
+Give an example to show that there exists a $h<0$ for which the solution is not unique if $Q=0$ and $T_{a}=0$.
+\end{subparts}
+\end{parts}
+
+
+
+\question%3
+\begin{parts}
+\part%3a
+Suppose that the temperature $T(r, \theta)$ satisfies Laplace's equation \[
+	\frac{\partial^2T}{\partial r^2}+\frac1r\frac{\partial T}{\partial r}+\frac1{r^2}\frac{\partial^2T}{\partial\theta^2}=0\quad\text { for }\quad r>0,
+\] where $(r, \theta)$ are plane polar coordinates. Use the method of separation of variables and the principle of superposition to derive the general series solution given by \[
+	T(r, \theta)=A_{0}+B_{0} \log (r)+\sum_{n=1}^{\infty}\left(\left(A_{n} r^{n}+\frac{B_{n}}{r^{n}}\right) \cos (n \theta)+\left(C_{n} r^{n}+\frac{D_{n}}{r^{n}}\right) \sin (n \theta)\right)
+\] where $A_{n}, B_{n}, C_{n}$ and $D_{n}$ are constants. You should state where you impose the constraint that the solution is periodic in $\theta$ with period $2 \pi$.
+
+\part%3b
+Let $a, b, T^{*}$ and $q^{*}$ be positive constants, with $a<b$, and let $k$ be the constant thermal conductivity. Derive the solution $T(r, \theta)$ of Laplace's equation in the region
+\begin{subparts}
+\subpart%3bi
+$r>a$ with the boundary conditions \[
+	T(a,\theta)=T^*\cos^2\theta\quad\text{ and }\quad\lim_{r\to\infty}r\frac{\partial T}{\partial r}(r,\theta)=0\quad\text{ for }\quad-\pi<\theta\leq\pi;
+\]
+
+\subpart%3bii
+$a<r<b$ with the boundary conditions \[
+	T(a, \theta)=T^{*}\cos(\theta)\quad \text{ and }\quad-k \frac{\partial T}{\partial r}(b,\theta)=q^{*}\quad \text { for } \quad-\pi<\theta \leq \pi;
+\]
+
+\subpart%3biii
+$r<a$ with the boundary conditions \[
+	T(a, \theta)= \begin{cases}0 & \text { for }-\pi<\theta \leq 0, \\ T^{*} & \text { for } 0<\theta \leq \pi.\end{cases}
+\] [\emph{You may quote the formulae for the Fourier coefficients of a Fourier series.}]
+\end{subparts}
+
+\part%3c
+Find the heat flux $\mathbf{q} \cdot \mathbf{n}$ out of each region in part (b) through the boundary at $r=a$, where the heat flux vector $\mathbf{q}=-k \boldsymbol{\nabla} T$ according to Fourier's Law and in each case $\mathbf{n}$ is the outward pointing unit normal to $r=a$. [\emph{Before taking the limit $r \to a-$ in case (iii), you may find it helpful to sum the series solution for $T_{r}(r, \theta)$ by making a suitable choice for $z$ in the identity \[
+	\frac{z}{1-z^{2}}=\sum_{m=0}^{\infty} z^{2 m+1},
+\] which is valid for $z \in \mathbb{C}$ such that $|z|<1$.}]
+\end{parts}
+
+\end{questions}
+
+\end{document}

@@ -1,0 +1,117 @@
+\documentclass[answers]{exam}
+\usepackage{../HT2024}
+
+\title{Analysis II -- Sheet 1\\Limit points, Limits}
+\author{YOUR NAME HERE :)}
+\date{Hilary Term 2024}
+% Accurate as of 05/07/2024
+
+
+\begin{document}
+\maketitle
+\begin{questions}
+
+\question%1
+Suppose that $E \subseteq \mathbb{R}$ is bounded and non-empty, and suppose that $E$ possesses the \emph{interval property}: if $x, y \in E$ and $z \in \mathbb{R}$ is between $x$ and $y$ (that is $x \leq z \leq y$ or $y \leq z \leq x$), then $z \in E$. Show carefully that there are two real numbers $a \leq b$ such that $E=(a, b),(a, b],[a, b)$ or $[a, b]$.
+
+
+
+\question%2
+\begin{parts}
+\part%2a
+Give an example of an infinite set $E \subseteq \mathbb{R}$ with no limit points.
+
+\part%2b
+Give an example of a set $E \subseteq \mathbb{R}$ with a countably infinite number of limit points.
+
+\part%2c
+Give an example of a countable set $E \subseteq \mathbb{R}$ with uncountably many limit points.
+
+\part%2d
+Prove that if $E \subseteq \mathbb{R}$ is infinite and bounded, then it has a limit point. [\emph{Hint: Bolzano-Weierstrass.}]
+
+\part%2e
+Prove that if $E \subseteq \mathbb{R}$ is uncountable, then there is a subset of $E$ that is uncountable and bounded. Deduce that $E$ has a limit point.
+\end{parts}
+
+
+
+\question%3
+\begin{parts}
+\part%3a
+Prove carefully from the definitions that if $f(x) \to \ell$ as $x \to x_{0}$ and $\ell \neq 0$ then $1 / f(x) \to 1 / \ell$ as $x \to x_{0}$. [\emph{Do not assume results about sequences from Analysis I.}]
+
+\part%3b
+Prove carefully from the definitions that if $\lim _{x \to x_{0}} f(x)=y_{0}, \lim _{y \to y_{0}} g(y)=\ell$ and $g\left(y_{0}\right)=\ell$, then $\lim _{x \to x_{0}} g(f(x))=\ell$.
+
+\part%3c
+Give an example to show that the condition $g\left(y_{0}\right)=\ell$ in part (b) is necessary.
+\end{parts}
+
+
+
+\question%4
+Either prove or give a counterexample to each of the following statements.
+\begin{parts}
+\part%4a
+If $f(x) \to \infty$ and $f(x) g(x) \to 0$ as $x \to 0$ then $g(x) \to 0$ as $x \to 0$.
+
+\part%4b
+If $f(x) \to \infty$ and $g(x) \to 0$ as $x \to 0$ then $f(x) g(x) \to 1$ as $x \to 0$.
+
+\part%4c
+If $f(x) \to 0$ as $x \to 0$ then $1 / f(x) \to \infty$ as $x \to 0$.
+
+\part%4d
+If $f(x) \to 0$ as $x \to 0$ then $1 / f(x)$ does not converge as $x \to 0$.
+
+\part%4e
+If $f(x) \nrightarrow 0$ as $x \to 0$ then $1 / f(x)$ is bounded in some region $\{x: 0<|x|<\delta\}$.
+
+\part%4f
+If $f(x) \to \ell \neq 0$ as $x \to 0$ then $1 / f(x)$ is bounded in some region $\{x: 0<|x|<\delta\}$.
+\end{parts}
+
+
+
+\question%5
+Let $f: E \to \mathbb{R}$ and assume $p$ is a limit point of $E$. Suppose $f(x)$ does not converge as $x \to p$. Show that there exists a sequence $\left(p_{n}\right)$ with $p_{n} \in E, p_{n} \neq p$ and $p_{n} \to p$, such that $f\left(p_{n}\right)$ does not converge as $n \to \infty$. [\emph{Hint: it may help to review question 2 on Problem Sheet 4 of Analysis I.}]
+
+
+
+\section*{Bonus Questions (optional, for the enthusiasts)}
+
+\question%6
+Let $C_{0}=[0,1]$ and inductively define $C_{k+1}$ as the result of taking out the middle (open) third of every interval making up $C_{k}$, so $C_{1}=\left[0, \frac{1}{3}\right] \cup\left[\frac{2}{3}, 1\right], C_{2}=\left[0, \frac{1}{9}\right] \cup\left[\frac{2}{9}, \frac{1}{3}\right] \cup\left[\frac{2}{3}, \frac{7}{9}\right] \cup$ $\left[\frac{8}{9}, 1\right]$, etc. (You may assume that $C_{k}$ is a union of $2^{k}$ closed intervals each of length $3^{-k}$, separated from each other by a distance of at least $3^{-k}$.) Define the \emph{Cantor set} as $C:=\bigcap_{k=0}^{\infty} C_{k}$.
+\begin{parts}
+\part%6a
+Show that $C$ is a closed set, i.e., it contains all its limit points.
+
+\part%6b
+Show that $C$ contains no isolated points, i.e., all points of $C$ are limit points.
+
+\part%6c
+Show that $C$ is uncountable.
+
+\part%6d
+Show that $C$ does not contain any non-trivial interval as a subset.
+\end{parts}
+
+
+
+\question%7
+Let $E$ be a subset of $\mathbb{R}$. Show that $E$ can contain only countably many isolated points.
+
+
+
+\question%8
+Suppose $I_{n}$ are non-empty intervals and $I_{1} \supseteq I_{2} \supseteq \cdots$. Can it be possible that $\bigcap_{n=1}^{\infty} I_{n}$ is empty? What if the $I_{n}$ are closed and bounded intervals?
+
+
+
+\question%9
+(Hard) Suppose $[a_n,b_n]$, $n=1,2,...,$ is a sequence of intervals such that $[0,1]\subseteq\bigcup_{n=1}^\infty[a_n,b_n]$. Show that $\sum_{n=1}^\infty(b_n-a_n)\geq1$.
+
+\end{questions}
+
+\end{document}

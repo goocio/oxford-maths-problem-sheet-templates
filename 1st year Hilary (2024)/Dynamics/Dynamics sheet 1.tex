@@ -1,0 +1,65 @@
+\documentclass[answers]{exam}
+\usepackage{../HT2024}
+
+\title{Dynamics -- Sheet 1}
+\author{YOUR NAME HERE :)}
+\date{Hilary Term 2024}
+% Accurate as of 05/07/2024
+
+
+\begin{document}
+\maketitle
+\begin{questions}
+
+\question%1
+Consider the following model for jumping vertically. While in contact with the ground your legs provide a constant force $F_{0}$. Suppose that in a crouched position you lower your centre of mass by $L$ metres. Thus if $x$ is the height of your centre of mass in metres from the standing position, and $m$ is your mass, the vertical force acting is \[
+	F(x)=\begin{cases}
+		F_{0}-m g & -L<x<0, \\
+		-m g & x>0.
+	\end{cases}
+\]
+\begin{parts}
+\part%1a
+Suppose that you start at rest in the crouched position $(\dot{x}(0)=0, x(0)=-L)$. By solving Newton's second law $m \ddot{x}=F(x)$, show that your vertical velocity at the time your feet leave the ground, i.e. when $x=0$, is \[
+	v=\sqrt{2 L\left(\frac{F_{0}}{m}-g\right)}.
+\]
+
+\part%1b
+Show that you reach a maximum height at a time \[
+	t=\sqrt{\frac{2 L}{\frac{F_{0}}{m}-g}}+\frac{\sqrt{2 L\left(\frac{F_{0}}{m}-g\right)}}{g},
+\] and that this height is $x=L\left(\frac{F_{0}}{m g}-1\right)$.
+\end{parts}
+
+
+
+\question%2
+A cannon at the origin $O$ fires a shell with speed $V$ at an angle $\alpha$ to the horizontal.
+\begin{parts}
+\part%2a
+Write down Newton's second law for the shell, with suitable initial conditions. Solve this differential equation to show that the trajectory of the shell is given by \[
+	x(t)=tV\cos\alpha, \qquad z(t)=-\frac12gt^{2}+tV\sin\alpha.
+\]
+
+\part%2b
+Obtain the equation for the path of the shell, expressing the height $z$ as a function of $x$.
+
+\part%2c
+Suppose now that $V$ is fixed but the angle $\alpha$ may be varied. Find the upper boundary curve $z=z(x)$ of the set of points in the $(x, z)$ plane which it is possible to hit with a shell.
+\end{parts}
+
+
+
+\question%3
+\begin{parts}
+\part%3a
+Find the dimensions of kinetic energy $\left(\frac{1}{2} m|\dot{\mathbf{r}}|^{2}\right)$ and linear momentum $(\mathbf{p}=m \dot{\mathbf{r}})$ in terms of the fundamental dimensions $\mathrm{L}, \mathrm{M}$ and $\mathrm{T}$.
+
+\part%3b
+(The atomic bomb): An essentially instantaneous release of an amount of energy $E$ from a very small volume creates a rapidly expanding high pressure fireball, bounded by a very strong thin spherical shock wave across which the pressure drops abruptly to atmospheric. The pressure inside the fireball is so great that the ambient atmospheric pressure is negligible by comparison, and the only property of the air that determines the radius $r(t)$ of the fireball is its density $\rho$ (the mass of air per unit volume). Show dimensionally, by identifying the only possible combination of $E, t$ and $\rho$, that \[
+	r(t) \sim E^{1 / 5} t^{2 / 5} \rho^{-1 / 5} .
+\] This result, due to G. I. Taylor, can be used to deduce $E$ from observations of $r(t)$. Taylor's publication of this apparently caused considerable embarrassment in US military scientific circles, where it was regarded as top secret.
+\end{parts}
+
+\end{questions}
+
+\end{document}

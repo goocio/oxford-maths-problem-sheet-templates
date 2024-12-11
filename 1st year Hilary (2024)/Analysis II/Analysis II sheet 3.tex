@@ -1,0 +1,109 @@
+\documentclass[answers]{exam}
+\usepackage{../HT2024}
+
+\title{Analysis II -- Sheet 3\\IVT, Continuous IFT}
+\author{YOUR NAME HERE :)}
+\date{Hilary Term 2024}
+% Accurate as of 05/07/2024
+
+
+\begin{document}
+\maketitle
+\begin{questions}
+
+\question%1
+\begin{parts}
+\part%1a
+Suppose $f:[0,1] \to[0,1]$ is continuous. Show that there is some $x \in[0,1]$ such that $f(x)=x$. [\emph{Hint: consider $g(x):=f(x)-x$.}]
+
+\part%1b
+Suppose $f:[0,1] \to \mathbb{R}$ is continuous and $f([0,1]) \supseteq[0,1]$. Show that there is some $x \in[0,1]$ such that $f(x)=x$.
+
+\part%1c
+Give an example of a continuous function $f:[0,1) \to[0,1)$ such that $f(x) \neq x$ for all $x \in[0,1)$.
+\end{parts}
+
+
+
+\question%2
+How many continuous functions $f: \mathbb{R} \to \mathbb{R}$ are there such that \[
+	(f(x))^{2}=x^{2}
+\] for all $x \in \mathbb{R}$? Justify your answer.
+
+
+
+\question%3
+Show that $[0,1]$ is not the disjoint union of two non-empty closed sets. [\emph{Hint: consider the function that is 0 on one of the sets and 1 on the other.}]
+
+
+
+\question%4
+Let $I$ be an interval and let $f: I \to \mathbb{R}$ be a continuous and injective function. Suppose that $f(a)<f(b)$ for some $a<b, a, b \in I$ (where $a$ and $b$ are not necessarily endpoints of $I$).
+\begin{parts}
+\part%4a
+Use the Intermediate Value Theorem to show that $f(x)>f(a)$ for all $x>a, x \in I$; and $f(x)<f(b)$ for all $x<b, x \in I$.
+
+\part%4b
+Deduce that $f$ is strictly increasing on $I$. [\emph{Hint: if $c<d$ show $f(c)<f(d)$ by applying (a) twice.}]
+\end{parts}
+
+
+
+\question%5
+\begin{parts}
+\part%5a
+For each $\lambda \geq e$ show that there is a unique $x \in[0,1]$ satisfying $e^{x}=\lambda x$.% You're almost certainly allowed differentiation on this question even though the course hasn't gotten to it yet ("the theory of differentiation does not depend on sheet 3 question 5" - Aurelio Carlucci)
+
+\part%5b
+Show that the map that takes $\lambda$ to $x$ above is a continuous function on $[e, \infty)$.
+\end{parts}
+
+
+
+\question%6
+For each of the following functions $f:(-1,1) \to \mathbb{R}$, determine the image $S=f((-1,1))$ and state whether or not (i) $S$ is an interval, (ii) $f$ has an inverse defined on $S$, and (iii) $f$ has a continuous inverse defined on $S$.
+\begin{parts}
+\part%6a
+$f(x)=x^{2}$;
+
+\part%6b
+$f(x)= \begin{cases}x, & x \in(-1,0] \\ x+1, & x \in(0,1) ;\end{cases}$
+
+\part%6c
+$f(x)=\dfrac{x}{1-|x|}$.
+\end{parts}
+
+
+
+\section*{Bonus Questions (optional, for the enthusiasts)}
+
+\question%7
+Suppose $f$ is a continuous function and $f([a, b]) \supseteq[c, d]$. Show that there is a subinterval $\left[a_{0}, b_{0}\right] \subseteq[a, b]$ with $f\left(\left[a_{0}, b_{0}\right]\right)=[c, d]$.
+
+
+
+\question%8
+Suppose $f:[0,1] \to[0,1]$ is continuous, $0<a_{1}<a_{2}<a_{3}<1$, and $f\left(a_{1}\right)=a_{2}$, $f\left(a_{2}\right)=a_{3}, f\left(a_{3}\right)=a_{1}$. For $k \geq 0$ write $f^{k}(x)$ for the $k$-fold iteration of $f$, i.e., $f^{0}(x)=x$ and $f^{k+1}(x)=f\left(f^{k}(x)\right)$. Fix $n \geq 4$.
+\begin{parts}
+\part%8a
+Use the previous question to show that there exists a closed interval $I \subseteq\left[a_{1}, a_{2}\right]$ such that for each $k, 0<k<n$ we have $f^{k}(I) \subseteq\left[a_{2}, a_{3}\right]$ and $f^{n}(I)=\left[a_{1}, a_{2}\right]$.
+
+\part%8b
+Deduce that there is some $x_{0} \in[0,1]$ such that $f^{n}\left(x_{0}\right)=x_{0}$ but $f^{k}\left(x_{0}\right) \neq x_{0}$ for $0<k<n$.
+\end{parts}
+
+
+
+\question%9
+(Hard)
+\begin{parts}
+\part%9a
+If $f$ continuous and $f(n c) \to 0$ for all $c>0$, show that $f(x) \to 0$ as $x \to \infty$. [\emph{Hint: question 8 on problem sheet 1 is relevant.}]
+
+\part%9b
+Does this remain true if $f$ is not assumed continuous?
+\end{parts}
+
+\end{questions}
+
+\end{document}

@@ -1,0 +1,95 @@
+\documentclass[answers]{exam}
+\usepackage{../HT2024}
+
+\title{Analysis II -- Sheet 5\\Differentiability}
+\author{YOUR NAME HERE :)}
+\date{Hilary Term 2024}
+% Accurate as of 05/07/2024
+
+
+\begin{document}
+\maketitle
+\begin{questions}
+
+\question%1
+\begin{parts}
+\part%1a
+Show that the function \[
+	f(x):= \begin{cases}x^{3} \sin (1 / x), & \text { if } x>0; \\ 0, & \text { if } x \leq 0\end{cases}
+\] is differentiable for all $x \in \mathbb{R}$ and find its derivative.
+
+\part%1b
+Calculate $f''(x)$ for $x \neq 0$, and show that $f''(0)$ does not exist.
+\end{parts}
+
+
+
+\question%2
+Suppose $f: \mathbb{R} \to \mathbb{R}$ and $a \in \mathbb{R}$.
+\begin{parts}
+\part%2a
+If $f$ is differentiable at $a$, show that \[
+	\lim _{h \to 0} \frac{f(a+h)-f(a-h)}{2 h}=f'(a).
+\]
+
+\part%2b
+If the above limit exists, does it imply that $f$ is differentiable at $a$? Justify your answer.
+\end{parts}
+
+
+
+\question%3
+The functions $f, g$ and $h$ are defined for $x \in \mathbb{R}$ by \[
+	f(x)=x^{3}+1, \quad g(x)=1-(x-1)^{3}, \quad h(x)=\arctan x.
+\] Give explicit formulae for the inverse functions of $f$ and $g$. Sketch the graphs of $f, g$ and $h$ and of their inverses. Determine the points at which these inverses are differentiable.
+
+
+
+\question%4
+Suppose that $f:(a, b) \to \mathbb{R}$ is a strictly increasing continuous function which is twice differentiable at $x_{0} \in(a, b)$, with $f'\left(x_{0}\right) \neq 0$. Show that the second derivative of the inverse function $g$ at $f\left(x_{0}\right)$ exists and find a formula for it.
+
+
+
+\question%5
+\begin{parts}
+\part%5a
+Suppose that $f:\mathbb R\to\mathbb R$ is differentiable at $a$ with $f'(a)>0$. Show that there exists some $\delta>0$ such that, for all $x\in(a,a+\delta)$, $f(x)>f(a)$.
+
+\part%5b
+Let $g(x)=|f(x)|$ and suppose that $f(a)=0$. Prove that $g$ is differentiable at $x=a$ if and only if $f'(a)=0$.
+\end{parts}
+
+
+
+\question%6
+Evaluate $\sum_{n=0}^\infty n^33^{-n}$. [\emph{Hint: consider $\sum n^3x^n=x\frac{\mathrm d}{\mathrm dx}(...)$.}]
+
+
+
+\section*{Bonus Questions (optional, for the enthusiasts)}
+
+\question%7
+Give an example of a continuous function $f: \mathbb{R} \to \mathbb{R}$ such that $f'(0)>0$ but $f$ is not monotonic in any interval of the form $(-\delta, \delta), \delta>0$.
+
+
+
+\question%8
+We say a function $f:(a, b) \to \mathbb{R}$ is uniformly differentiable if it is differentiable on $(a, b)$ and for each $\varepsilon>0$ there exists a $\delta>0$ such that for all $x, y \in(a, b)$ with $0<|x-y|<\delta$ we have $\left|\frac{f(x)-f(y)}{x-y}-f'(x)\right|<\varepsilon$.
+\begin{parts}
+\part%8a
+Prove that if $f$ is uniformly differentiable then $f'$ is uniformly continuous.
+
+\part%8b
+Give an example of a function that is differentiable but not uniformly differentiable.
+\end{parts}
+
+
+
+\question%9
+Suppose that $f:(-1,1) \to \mathbb{R}$ is continuous at $x=0$ and for some $\alpha \in(0,1)$ the limit \[
+	\lim _{x \to 0} \frac{f(x)-f(\alpha x)}{x}=\ell
+\] exists. Show that $f$ is differentiable at $x=0$. What is $f'(0)$?
+
+\end{questions}
+
+\end{document}

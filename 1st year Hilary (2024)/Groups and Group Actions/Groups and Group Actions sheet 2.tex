@@ -1,0 +1,184 @@
+\documentclass[answers]{exam}
+\usepackage{../HT2024}
+
+\title{Groups and Group Actions -- Sheet 2\\Permutations, Transpositions, Conjugacy}
+\author{YOUR NAME HERE :)}
+\date{Hilary Term 2024}
+% Accurate as of 05/07/2024
+
+\setcounter{MaxMatrixCols}{12}% the matrices in q1 were too big for the usual limit
+
+\begin{document}
+\maketitle
+\section*{Main course}
+\begin{questions}
+
+\question%1
+Three permutations $\alpha, \beta, \gamma$ of $\{1,2,\ldots,11,12\}$ are given below.  \[
+	\begin{aligned}
+		\alpha &=\begin{pmatrix}
+			 1 & 2 & 3 & 4 & 5 & 6 &  7 & 8 & 9 & 10 & 11 & 12 \\
+			12 & 6 & 5 & 7 & 4 & 8 & 11 & 2 & 3 &  9 & 10 &  1
+		\end{pmatrix} \\
+		\beta &=\begin{pmatrix}
+			 1 &  2 &  3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 & 12 \\
+			12 & 11 & 10 & 9 & 8 & 7 & 6 & 5 & 4 &  3 &  2 &  1
+		\end{pmatrix} \\
+		\gamma &=\begin{pmatrix}
+			1 & 2 & 3 & 4 & 5 & 6 & 7 &  8 & 9 & 10 & 11 & 12 \\
+			2 & 3 & 4 & 5 & 6 & 1 & 9 & 10 & 8 & 12 &  7 & 11
+		\end{pmatrix}
+	\end{aligned}
+\]
+\begin{parts}
+\part%1a
+In each case express the permutation as a product of disjoint cycles.
+
+\part%1b
+What is the order of each permutation? Which are even and which are odd permutations? Write $\alpha^2$, $\alpha \beta$, $\gamma^{-1}$ as products of disjoint cycles.
+\end{parts}
+
+
+
+\question%2
+\begin{parts}
+\part%2a
+There are five different types of cycle decomposition of $\{1,2,3,4\}$: the identity permutation, 2-cycles (e.g. $(1\; 2)$), 3-cycles (e.g. $(1\; 2\; 3)$), 4-cycles (e.g. $(1\; 2\; 3\; 4)$) and double transpositions (e.g. $(1\; 2)(3\; 4)$). How many are there of each type in $S_{4}$? (You should have $4!=24$ permutations in all.)
+
+\part%2b
+What types of cycle decomposition arise among even permutations of $\{1,2,3,4,5\}$ and how many are there of each type? (Note that $|A_{5}|=60$.)
+\end{parts}
+
+
+
+\question%3
+\begin{parts}
+\part%3a
+Let $\sigma$ be a permutation of $\{1, \ldots, n\}$ and let $k \in\{1, \ldots, n\}$. Show that \[
+	\sigma^{-1}(1\; 2\; 3\; \ldots\; k) \sigma=(1\sigma\; 2\sigma\; \ldots\; k\sigma).
+\]
+
+\part%3b
+The permutations $\alpha, \beta, \gamma \in S_{5}$ are given by \[
+	\alpha=(1\; 2\; 3)(4\; 5), \quad \beta=(1\; 2\; 3\; 4), \quad \gamma=(2\; 3).
+\] Find $(\alpha \beta^{5} \gamma^{3} \alpha^{2} \gamma \beta^{3} \alpha^{5})^{3}$.
+\end{parts}
+
+
+
+\question%4
+\begin{parts}
+\part%4a
+Let $\operatorname{sgn}(\sigma)$ denote the sign of a permutation $\sigma \in S_{n}$ (that is, $\operatorname{sgn}(\sigma)=1$ if $\sigma$ is even and -1 if $\sigma$ is odd). Show for $\sigma, \tau \in S_{n}$ that \[
+	\operatorname{sgn}(\sigma \tau)=\operatorname{sgn}(\sigma) \operatorname{sgn}(\tau) .
+\]
+
+\part%4b
+Show that a permutation with odd order must be even. Does the converse hold?
+
+\part%4c
+The vertices of a regular pentagon are labelled clockwise 1 to 5. Show that every symmetry of the pentagon corresponds to an even permutation. How will the situation vary if the vertices are now arbitrarily labelled with the numbers 1 to 5?
+\end{parts}
+
+
+
+\question%5
+\begin{parts}
+\part%5a
+Show that $V_{4}=\{e,(1\; 2)(3\; 4),(1\; 3)(2\; 4),(1\; 4)(2\; 3)\}$ is an Abelian group.
+
+\part%5b
+Show that $V_{4}$ is isomorphic to $C_{2} \times C_{2}$.
+
+\part%5c
+How many isomorphisms are there from $V_{4}$ to $C_{2} \times C_{2}$?
+\end{parts}
+
+
+
+\question%6
+\begin{parts}
+\part%6a
+Find a permutation $\alpha \in S_{7}$ such that $\alpha^{4}=(2\; 1\; 4\; 3\; 5\; 6\; 7)$. Is $\alpha$ unique?
+
+\part%6b
+Find all permutations $\alpha \in S_{7}$ such that $\alpha^{3}=(1\; 2\; 3\; 4)$.
+
+\part%6c
+Find permutations $\alpha, \beta \in S_{5}$ both with order 3 such that $\alpha \beta$ has order 5.
+
+\part%6d
+Let $n \geqslant 3$. Find permutations $\alpha, \beta \in S_{n}$ both with order 2 such that $\alpha \beta$ has order $n$.
+\end{parts}
+
+\end{questions}
+
+
+
+\section*{Starter}
+\begin{questions}
+
+\question%S1
+Here are two permutations in $S_{10}$. \[
+	\begin{aligned}
+		\alpha&=\begin{pmatrix}
+			1 & 2 & 3 &  4 & 5 & 6 & 7 & 8 & 9 & 10 \\
+			1 & 3 & 6 & 10 & 2 & 7 & 8 & 9 & 4 &  5
+		\end{pmatrix} \\
+		\beta&=\begin{pmatrix}
+			1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\
+			4 & 8 & 5 & 3 & 2 & 9 & 6 & 1 & 7 & 10
+		\end{pmatrix}
+	\end{aligned}
+\]
+\begin{parts}
+\part%S1a
+Write each as a product of disjoint cycles.
+
+\part%S1b
+What is the order of each? Find each of the following products (using disjoint cycle notation): $\alpha \beta$, $\beta \alpha$, $\alpha^2 \beta$, $\alpha^{-7} \beta^{-5}$, $\alpha \beta^{3}$.
+\end{parts}
+
+
+
+\question%S2
+Which permutations in $S_{4}$ are even?
+
+
+
+\question%S3
+How many permutations in $S_{6}$ have order 6?
+
+\end{questions}
+
+
+
+\section*{Pudding}
+\begin{questions}
+
+\question%P1
+What is the largest possible order of an element in $S_{5}$? In $S_{9}$? What is the smallest $n$ for which an element of largest order in $S_{n}$ must have three cycles (in disjoint cycle notation)?
+
+
+
+\question%P2
+For each of the following sets $X_{i}$, determine whether every permutation in $S_{n}$ can be written as a product of elements of $X_{i}$.
+\begin{parts}
+\part%P2a
+$X_{1}=\{(j\; j+1): 1 \leqslant j<n\}$;
+
+\part%P2b
+$X_{2}=\{(1\; k): 1<k \leqslant n\}$;
+
+\part%P2c
+$X_{3}=\{(1\; 2),(1\; 2\; \ldots\; n)\}$.
+\end{parts}
+
+
+
+\question%P3
+If we choose a permutation in $S_{n}$ at random, with all permutations being equally likely, what is the probability that our chosen permutation has exactly one 1-cycle?
+
+\end{questions}
+
+\end{document}

@@ -1,0 +1,77 @@
+\documentclass[answers]{exam}
+\usepackage{../HT2024}
+
+\title{Dynamics -- Sheet 5}
+\author{YOUR NAME HERE :)}
+\date{Hilary Term 2024}
+% Accurate as of 05/07/2024
+
+
+\begin{document}
+\maketitle
+\begin{questions}
+
+\question%1
+A particle moves on the inside surface of a smooth cone with its axis vertical, defined by the equation $z=r$ in cylindrical polar coordinates $(r, \theta, z)$. Initially the particle is at height $z=a$, and its velocity is horizontal, speed $v$, in the $\mathbf{e}_{\theta}$ direction. Starting from Newton's second law show that $r^{2} \dot{\theta}$ is constant. Explain why the total energy is conserved, and deduce that \[
+	\dot{z}^{2}+\frac{1}{2} \frac{a^{2} v^{2}}{z^{2}}+g z=\frac{1}{2} v^{2}+g a.
+\] Hence show that the particle remains at all times between two heights, which should be determined.
+
+
+
+\question%2
+A particle of mass $m$, moving under gravity, is disturbed from rest at the highest point on the outside of a smooth sphere of radius $a$.
+\begin{parts}
+\part%2a
+Explain why the particle subsequently moves on a great circle.
+
+\part%2b
+By introducing plane polar coordinates in the vertical plane of this circle (or otherwise), show that \[
+	\ddot{\theta}=\frac{g}{a} \sin \theta, \qquad N=m g \cos \theta-m a \dot{\theta}^{2}.
+\] Here $\theta(t)$ denotes the angle between the upward vertical axis of the sphere and the straight line from the particle to the centre of the sphere (the usual polar angle for a sphere), and $N$ is the magnitude of the normal reaction.
+\part Show that the normal reaction is given by \[
+	N=m g\left(\frac{3 z}{a}-2\right)
+\] where $z$ is the height of the particle above the centre of the sphere. At what height does the particle lose contact with the sphere?
+\end{parts}
+
+
+
+\question%3
+A bead of mass $m$ is free to slide on a smooth wire that is made to rotate at constant angular velocity $\omega$ about the vertical axis through a fixed point $O$ on the wire. The wire is bent into the shape of a parabola, $z=r^{2} / 2 a$, where $z$ is measured vertically upwards from $O$, and $r$ is the horizontal distance from $O$.
+\begin{parts}
+\part%3a
+Show that if $z(t)$ and $r(t)$ are the vertical and horizontal distances of the bead from $O$, then \[
+	m\left[\left(\ddot{r}-r \omega^{2}\right) \mathbf{e}_{r}+2 \omega \dot{r} \mathbf{e}_{\theta}+\ddot{z} \mathbf{e}_{z}\right]=-m g \mathbf{e}_{z}+\mathbf{N},
+\] where $\mathbf{N}$ is the normal reaction.
+
+\part%3b
+Hence deduce that \[
+	\left(a^{2}+r^{2}\right) \ddot{r}+r \dot{r}^{2}=\left(a^{2} \omega^{2}-g a\right) r.
+\]
+
+\part%3c
+Show that $r=0$ is an equilibrium point. The linearised equation of motion about $r=0$ is \[
+	a^{2} \ddot{\xi}=\left(a^{2} \omega^{2}-g a\right) \xi
+\] where we have written $r=\xi$, and kept only the linear terms in $\xi, \dot{\xi}$ in equation $(*)$, in a Taylor expansion around $\xi=0$. Discuss the stability of the equilibrium point.
+\end{parts}
+
+
+
+\question%4
+(\emph{Optional}) A particle of mass $m$ is released from rest at a very large height $z=z_{0}$ above the Earth. The Newtonian gravitational potential energy of the particle is \[
+	V(z)=-\frac{G_{N} M m}{z},
+\] where $M$ is the mass of the Earth, and $G_{N}$ is Newton's gravitational constant.
+\begin{parts}
+\part%4a
+Using conservation of energy show that the trajectory $z(t)$ satisfies \[
+	\sqrt{2 G_{N} M} t=-\int_{z_{0}}^{z}\left(\frac{1}{s}-\frac{1}{z_{0}}\right)^{-1 / 2} \mathrm{~d} s.
+\]
+
+\part%4b
+Using the substitution $s=z_{0} \sin ^{2} \theta$, show $z(t)$ satisfies the unlikely looking equation \[
+	\frac{\pi}{2}-\sin ^{-1}\left(\sqrt{\frac{z(t)}{z_{0}}}\right)+\frac{1}{2} \sin \left[2 \sin ^{-1}\left(\sqrt{\frac{z(t)}{z_{0}}}\right)\right]=\sqrt{\frac{2 G_{N} M}{z_{0}^{3}}} t.
+\] This is a radial Kepler trajectory (c.f. section 6.2 of the lecture notes).
+\end{parts}
+
+\end{questions}
+
+\end{document}

@@ -1,0 +1,184 @@
+\documentclass[answers]{exam}
+\usepackage{../HT2024}
+
+\title{Linear Algebra II -- Sheet 4\\Spectral theorem}
+\author{YOUR NAME HERE :)}
+\date{Hilary Term 2024}
+% Accurate as of 05/07/2024
+
+
+\begin{document}
+\maketitle
+\section*{Main course}
+\begin{questions}
+
+\question%1
+Show that every real symmetric matrix has a real symmetric cube root.
+
+
+
+\question%2
+For $i=1,2$, find an orthogonal matrix $P$ such that $P^{T} A_{i} P$ is diagonal where \[
+	A_{1}=\begin{pmatrix}
+		3 & 2 \\
+		2 & 0
+	\end{pmatrix}, \quad A_{2}=\begin{pmatrix}
+		1 & 1 & 1 \\
+		1 & 1 & 1 \\
+		1 & 1 & 1
+	\end{pmatrix}.
+\] Hence sketch the conic \[
+	3 x^{2}+4 x y=1
+\] carefully labelling the eigenvectors of $A_{1}$.
+
+
+
+\question%3
+Let \[
+	X=\begin{pmatrix}
+		1 & 2 & -1 \\
+		0 & 3 & 4 \\
+		1 & 2 & 7
+	\end{pmatrix}
+\] and let $\mathbf{v}_{1}, \mathbf{v}_{2}, \mathbf{v}_{3}$ denote the columns of $X$ in order.
+\begin{parts}
+\part%3a
+Apply the GSOP to $\mathbf{v}_{1}, \mathbf{v}_{2}, \mathbf{v}_{3}$ to produce an orthonormal basis $\mathbf{w}_{1}, \mathbf{w}_{2}, \mathbf{w}_{3}$.
+
+\part%3b
+Hence write $X=P U$ where $P$ is an orthogonal matrix and $U$ is upper triangular.
+
+\part%3c
+Show that there are 8 upper triangular orthogonal $3 \times 3$ matrices.
+
+\part%3d
+Deduce that there are 8 ways to write $X=P U$ as in (b).
+\end{parts}
+
+
+
+\question%4
+\begin{parts}
+\part%4a
+Say that $M=A^{T} A$ where $A$ is a square matrix. Show that $M$ is symmetric and that the eigenvalues of $M$ are non-negative. [\emph{Hint: consider $|A \mathbf{v}|^{2}$ where $\mathbf{v}$ is an eigenvector of M.}]
+
+\part%4b
+Say that $N$ is a symmetric matrix with non-negative eigenvalues. Show that there exists $A$ such that $N=A^{T} A$.
+
+\part%4c
+Find such $A$ when \[
+	N=\begin{pmatrix}
+		2 & 1 \\
+		1 & 2
+	\end{pmatrix}.
+\]
+\end{parts}
+
+
+
+\question%5
+\begin{parts}
+\part%5a
+Let $A$ be a symmetric $n \times n$ matrix with maximum eigenvalue $\lambda_{\max }$ and minimum eigenvalue $\lambda_{\min }$. By making an orthogonal change of variable $\mathbf{x}=P \mathbf{y}$, show that \[
+	\lambda_{\min }|\mathbf{x}|^{2} \leqslant \mathbf{x}^{T} A \mathbf{x} \leqslant \lambda_{\max }|\mathbf{x}|^{2}
+\] for all $\mathbf{x} \in \mathbb{R}_{\mathrm{col}}^{n}$.
+
+\part%5b
+Let \[
+	A=\begin{pmatrix}
+		1 & 2 & 2 \\
+		2 & 1 & 2 \\
+		2 & 2 & 1
+	\end{pmatrix}.
+\] Sketch the quadric $\mathbf{x}^{T} A \mathbf{x}=1$. What is the minimum value of $|\mathbf{x}|$ on this surface and where is it attained?
+\end{parts}
+
+\end{questions}
+
+
+
+\section*{Starter}
+\begin{questions}
+
+\question%S1 This is the defining property of a matrix (or indeed the map it represents) being *Hermitian*, i.e. here we prove that for real matrices, Hermitian is equivalent to symmetric. The spectral theorem in fact applies to all Hermitian maps, not just those with real symmetric matrix forms, and this version with Hermitian maps is the version shown on the wikipedia page.
+Let $A$ be an $n \times n$ matrix. Show that $A \mathbf{x} \cdot \mathbf{y}=\mathbf{x} \cdot A \mathbf{y}$ for all $\mathbf{x}, \mathbf{y} \in \mathbb{R}_{\text {col }}^{n}$ if and only if $A$ is symmetric.
+
+
+
+\question%S2
+Show that the volume of the ellipsoid $x^{2} / a^{2}+y^{2} / b^{2}+z^{2} / c^{2}=1$ is $4 \pi a b c / 3$.
+
+
+
+\question%S3
+Let $A$ be an $m \times n$ matrix and $\mathbf{v} \in \mathbb{R}_{\text {col }}^{n}$. Show that $A^{T} A \mathbf{v}=\mathbf{0}$ if and only if $A \mathbf{v}=\mathbf{0}$. Deduce that the rank of $A^{T} A$ equals the rank of $A$.
+
+\end{questions}
+
+
+
+\section*{Pudding}
+\begin{questions}
+
+\question%P1 see the section on "singular value decomposition" at the end of the notes
+Let \[
+	A=\begin{pmatrix}
+		1 & 0 \\
+		0 & 1 \\
+		1 & -1
+	\end{pmatrix}.
+\] Find a $3 \times 3$ orthogonal matrix $P$ and a $2 \times 2$ orthogonal matrix $Q$ such that \[
+	P A Q=\begin{pmatrix}
+		\lambda_{1} & 0 \\
+		0 & \lambda_{2} \\
+		0 & 0
+	\end{pmatrix}
+\] where $\lambda_{1} \geqslant \lambda_{2}>0$.
+
+
+
+\question%P2
+With notation as in $\mathrm{P} 1$, the pseudoinverse of $A$ is \[
+	A^{+}=Q\begin{pmatrix}
+		\lambda_{1}^{-1} & 0 & 0 \\
+		0 & \lambda_{2}^{-1} & 0
+	\end{pmatrix} P.
+\]
+\begin{parts}
+\part%P2a
+Determine $A^{+}$where $A$ is the matrix in $\mathrm{P} 1$.
+
+\part%P2b
+Verify that $A^{+}=\left(A^{T} A\right)^{-1} A^{T}$.
+
+\part%P2c
+Let $\mathbf{b}=(1,1,1)^{T} \in \mathbb{R}_{\text {col }}^{3}$. Show that the equation $A \mathbf{x}=\mathbf{b}$ is inconsistent. Verify that $\mathbf{x}_{0}=A^{+} \mathbf{b}$ satisfies \[
+	|A \mathbf{x}-\mathbf{b}| \geqslant\left|A \mathbf{x}_{0}-\mathbf{b}\right|
+\] for all $\mathbf{x} \in \mathbb{R}_{\text{col}}^{2}$.
+\end{parts}
+
+
+
+\question%P3
+\begin{parts}
+\part%P3a
+Let $\mathbb{R}[x]$ denote the space of polynomials with real coefficients. Show that \[
+	\langle f, g\rangle=\int_{-1}^{1} f(x) g(x) d x
+\] is an inner product on $\mathbb{R}[x]$.
+
+\part%P3b
+Show that the linear map $L: \mathbb{R}[x] \rightarrow \mathbb{R}[x]$ given by \[
+	L(f)=\frac{\mathrm{d}}{\mathrm{d} x}\left[\left(1-x^{2}\right) \frac{\mathrm{d} f}{\mathrm{~d} x}\right]
+\] satisfies $\langle L f, g\rangle=\langle f, L g\rangle$.
+
+\part%P3c
+Show that there is a sequence of polynomials $P_{0}, P_{1}, P_{2}, \ldots$ such that \begin{itemize}
+  \item $\operatorname{deg} P_{n}=n$;
+  \item The $P_{n}$ are orthonormal with respect to the inner product given in (a);
+  \item The $P_{n}$ are eigenvectors of $L$.
+\end{itemize}
+\end{parts}
+
+\end{questions}
+
+\end{document}

@@ -1,0 +1,108 @@
+\documentclass[answers]{exam}
+\usepackage{../HT2024}
+\usepackage{wasysym}
+
+\title{Dynamics -- Sheet 4}
+\author{YOUR NAME HERE :)}
+\date{Hilary Term 2024}
+% Accurate as of 05/07/2024
+
+
+\begin{document}
+\maketitle
+\begin{questions}
+
+\question%1
+Consider the following system of coupled second order ODEs for $x(t), y(t)$: \[
+	\begin{aligned}
+		\ddot{x} & =1+\sin y-e^{3 x} \\
+		\ddot{y} & =e^{x-3 y}-1 .
+	\end{aligned}
+\]
+\begin{parts}
+\part%1a
+Show that $(x, y)=(0,0)$ is an equilibrium configuration, and that the linearized equations of motion about this point are \[
+	\begin{pmatrix}
+		\ddot{x} \\
+		\ddot{y}
+	\end{pmatrix}=M\begin{pmatrix}
+	x \\
+	y
+	\end{pmatrix}, \qquad \text{where } M=\begin{pmatrix}
+		-3 & 1 \\
+		1 & -3
+	\end{pmatrix}.
+\]
+
+\part%1b
+By determining the eigenvalues and eigenvectors of $M$, hence show that the normal mode solutions to the equations in part (a) are \[
+	\begin{pmatrix}
+		x(t) \\
+		y(t)
+	\end{pmatrix}=A\begin{pmatrix}
+		1 \\
+		1
+	\end{pmatrix} \cos (\sqrt{2} t+\phi), \qquad\begin{pmatrix}
+		x(t) \\
+		y(t)
+	\end{pmatrix}=B\begin{pmatrix}
+		1 \\
+		-1
+	\end{pmatrix} \cos (2 t+\psi),
+\] where $A, B, \phi$ and $\psi$ are constants.
+\end{parts}
+
+
+
+\question%2
+A particle of mass $m$ moves in $\mathbb{R}^{3}$ under the influence of a force $\mathbf{F}=-k \mathbf{r}$, where $\mathbf{r}$ is the position vector of the particle and $k>0$ is constant.
+\begin{parts}
+\part%2a
+Explain why $\mathbf{F}$ is both a conservative force, and a central force, where a choice of potential energy function is $V(\mathbf{r})=\frac{1}{2} k|\mathbf{r}|^{2}$. Hence deduce that the particle moves in a plane through the origin.
+
+\part%2b
+Taking the plane of motion to be the $(x, y)$ plane, the solution to the equation of motion may be written as \[
+	\mathbf{r}(t)=a \sin (\omega t+\phi) \mathbf{i}+b \cos (\omega t+\phi) \mathbf{j}
+\] where $\omega=\sqrt{k / m}$, and $a, b$ and $\phi$ are constant. (This solution was found on Problem Sheet 2, question 2.) Assuming this solution, compute the total energy $E$ and total angular momentum $\mathbf{L}$ about the origin, thus confirming that both are indeed constant. Show in particular that the specific angular momentum $|\mathbf{L}| / m=2 A / T$, where $A$ is the area of the ellipse traced out by the solution, and $T$ is the period of the solution.
+\end{parts}
+
+
+
+\question%3
+At a given instant of time, a particle of mass $m$ has position vector $\mathbf{r}$, measured from the origin $O$ of an inertial frame, and velocity $\mathbf{v}$. Let $\mathcal{L}$ be the straight line through $\mathbf{r}$ with tangent vector $\mathbf{v}$. Show that the angular momentum $\mathbf{L}_{O}$ of the particle about $O$ has magnitude $\left|\mathbf{L}_{O}\right|=d|\mathbf{p}|$, where $d$ is the perpendicular distance between $O$ and $\mathcal{L}$, and $\mathbf{p}$ is the (linear) momentum of the particle. When is $\mathbf{L}_{O}=\mathbf{0}$?
+
+
+
+\question%4
+A point particle moves on a circle of radius $l$ in the $(z, x)$ plane, centred on the origin.
+\begin{parts}
+\part%4a
+\begin{subparts}
+\subpart%4ai
+By introducing polar coordinates $(z, x)=(-r \cos \theta, r \sin \theta)$, show that the particle has acceleration \[
+	\ddot{\mathbf{r}}=-l \dot{\theta}^{2} \mathbf{e}_{r}+l \ddot{\theta} \mathbf{e}_{\theta},
+\] where $\mathbf{e}_{r}=-\cos \theta \mathbf{k}+\sin \theta \mathbf{i}, \mathbf{e}_{\theta}=\sin \theta \mathbf{k}+\cos \theta \mathbf{i}$.
+
+\subpart%4aii
+Suppose that the particle has mass $m$, and that the acceleration in part (i) arises from Newton's second law with a total force \[
+	\mathbf{F}=-m g \mathbf{k}+\mathbf{T}.
+\] Show that \[
+	\mathbf{T} \cdot \mathbf{e}_{r}=-m l \dot{\theta}^{2}-m g \cos \theta.
+\]
+\end{subparts}
+
+\part%4b
+\begin{subparts}
+\subpart%4bi
+Consider swinging on a swing with a chain of length $l$. Explain why the chain never becomes slack provided \[
+	-\cos \theta<\frac{l \dot{\theta}^{2}}{g}
+\] holds throughout the motion, where $\theta$ is the angle the chain makes with the downward vertical.
+
+\subpart%4bii
+The swing initially hangs downwards, and a friend gives you a push in the horizontal direction with initial speed $v$. Using conservation of energy, show that provided $v>\sqrt{5 g l}$ you'll swing all the way over the top without the chain ever becoming slack. [\emph{Please don't try this! \smiley}]
+\end{subparts}
+\end{parts}
+
+\end{questions}
+
+\end{document}

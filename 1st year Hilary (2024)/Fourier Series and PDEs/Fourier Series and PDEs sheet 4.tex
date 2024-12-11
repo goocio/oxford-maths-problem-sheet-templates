@@ -1,0 +1,79 @@
+\documentclass[answers]{exam}
+\usepackage{../HT2024}
+
+\title{Fourier Series and PDEs -- Sheet 4}
+\author{YOUR NAME HERE :)}
+\date{Hilary Term 2024}
+% Accurate as of 05/07/2024
+
+
+\begin{document}
+\maketitle
+\begin{questions}
+
+\question%1
+Consider an isotropic conducting rod of constant cross-sectional area $A$ lying along the $x$-axis. The rod has density $\rho$, specific heat $c$, thermal conductivity $k$ and thermal diffusivity $\kappa=k /(\rho c)$, all of these material parameters being constant. Let $T(x, t)$ denote the temperature and $q(x, t)$ the heat flux in the positive $x$-direction, where $t$ is time. The lateral surfaces of the rod are insulated and heat is supplied at a prescribed rate $Q(x, t)$ per unit volume per unit time. You may assume that conservation of energy in a fixed section $a \leq x \leq a+h$ of the rod is given by \[
+	\frac{\mathrm{d}}{\mathrm{d} t}\left(A \int_{a}^{a+h} \rho c T(x, t) \mathrm{~d} x\right)=A q(a, t)-A q(a+h, t)+A \int_{a}^{a+h} Q(x, t) \mathrm{~d} x.
+\]
+\begin{parts}
+\part%1a
+What is the physical significance of each of the four terms in this equality?
+
+\part%1b
+Write down Fourier's law and deduce that $T(x, t)$ satisfies the inhomogeneous heat equation \[
+	\rho c \frac{\partial T}{\partial t}=k \frac{\partial^{2} T}{\partial x^{2}}+Q(x, t)
+\] stating any assumptions that you make concerning the smoothness of $T$ and $Q$.
+
+\part%1c
+Write down the dimensions of each of $A, \rho, c, x, t, T$ and $q$ in terms of the SI or SI derived units $\mathrm{m}, \mathrm{s}, \mathrm{Kg}, \mathrm{K}$ and $\mathrm{J}$. Deduce that the dimensions of $Q, k$ and $\kappa$ are given by \[
+	[Q]=\mathrm{Jm}^{-3} \mathrm{s}^{-1}, \quad[k]=\mathrm{JK}^{-1} \mathrm{~m}^{-1} \mathrm{~s}^{-1}, \quad[\kappa]=\mathrm{m}^{2} \mathrm{~s}^{-1}.
+\]
+\end{parts}
+
+
+
+\question%2
+Consider the temperature $T(x, t)$ defined by \[
+	T(x, t)=\frac{T^{*} L}{\sqrt{4 \pi \kappa t}} \exp \left(-\frac{x^{2}}{4 \kappa t}\right) \text { for }-\infty<x<\infty, t>0,
+\] where the thermal diffusivity $\kappa$, temperature $T^{*}$ and length scale $L$ are positive constants.
+\begin{parts}
+\part%2a
+Verify that the expression for $T(x, t)$ is dimensionally correct and show that it satisfies the heat equation \[
+	\frac{\partial T}{\partial t}=\kappa \frac{\partial^{2} T}{\partial x^{2}} \quad \text { for }-\infty<x<\infty, t>0.
+\]
+
+\part%2b
+By making the change of variable $x=\sqrt{4 \kappa t} \eta$, show that \[
+	\int_{-\infty}^{\infty} T(x, t) \mathrm{~d} x=T^{*} L \text { for } t>0.
+\] [\emph{You may quote the fact that $\int_{-\infty}^{\infty} e^{-\eta^{2}} \mathrm{~d} \eta=\sqrt{\pi}$.}]
+
+\part%2c
+Sketch the graph of $T$ versus $x$, at fixed $t$, for (i) $t \ll L^{2} / \kappa$ and (ii) $t \gg L^{2} / \kappa$. Use the same axes for each graph.
+\end{parts}
+
+
+
+\question%3
+Consider the initial boundary value problem for the temperature $T(x, t)$ in a rod of length $L$ given by the heat equation \[
+	\frac{\partial T}{\partial t}=\kappa \frac{\partial^{2} T}{\partial x^{2}} \quad \text { for } \quad 0<x<L, t>0,
+\] with the boundary conditions $T(0, t)=0$ and $T(L, t)=0$ for $t>0$ and the initial condition $T(x, 0)=f(x)=T^{*} x(L-x) / L^{2}$ for $0<x<L$, where the thermal diffusivity $\kappa$ and temperature $T^{*}$ are positive constants.
+\begin{parts}
+\part%3a
+Use the method of separation of variables to show that, if $T(x, t)=F(x) G(t)$ is a nontrivial solution of the heat equation satisfying the boundary conditions, then for some constant $\lambda$ \[
+	-F''=\lambda F \quad \text { for } \quad 0<x<L \quad \text { with } \quad F(0)=0, F(L)=0.
+\] Determine all real values of $\lambda$ for which there is a nontrivial solution of the boundary value problem for $F$ and the corresponding separable solutions for $T$.
+
+\part%3b
+Use the principle of superposition and the theory of Fourier series to derive the series solution for $T(x, t)$ given by \[
+	T(x, t)=\sum_{m=0}^\infty\frac{8 T^{*}}{(2 m+1)^3\pi^3}\sin\left(\frac{(2 m+1)\pi x}L\right)\exp\left(-\frac{(2 m+1)^2\pi^2\kappa t}{L^2}\right).
+\] [\emph{You may assume that the orders of summation and integration may be interchanged as necessary and the orthogonality relations \[
+	\int_{0}^{L} \sin \left(\frac{m \pi x}{L}\right) \sin \left(\frac{n \pi x}{L}\right) \mathrm{~d} x=\frac{L}{2} \delta_{m n},
+\] where $m$ and $n$ are positive integers and $\delta_{m n}$ is Kronecker's delta.}]
+
+\part%3c
+Verify that the series solution is dimensionally correct. Explain why the smoothness of the odd $2 L$-periodic extension of $f$ is consistent with the rate of convergence of its Fourier sine series.
+\end{parts}
+
+\end{questions}
+
+\end{document}

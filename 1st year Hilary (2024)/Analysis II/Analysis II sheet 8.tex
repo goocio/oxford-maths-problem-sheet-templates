@@ -1,0 +1,148 @@
+\documentclass[answers]{exam}
+\usepackage{../HT2024}
+
+\title{Analysis II -- Sheet 8\\Limits, L'H\^opital's rule}
+\author{YOUR NAME HERE :)}
+\date{Hilary Term 2024}
+% Accurate as of 05/07/2024
+
+
+\begin{document}
+\maketitle
+
+[\emph{Every time you use L'Hôpital's rule you should explain why it is applicable.}]
+
+\begin{questions}
+
+\question%1
+Evaluate the following limits. In each case discuss possible alternative methods to evaluate the limits.% Note: you do not have to use lhopital's to do each of them, and indeed the question seems to be intentionally driving home that using lhopital's when you have to fully justify everything is pretty much invariably slower unless it's the simple form, so the "speed" of lhopital's only comes from not bothering to explicitly check the conditions.
+\begin{parts}
+\part%1a
+$\displaystyle\lim _{x \to 0} \frac{\log (1+x)}{x}$,
+
+\part%1b
+$\displaystyle\lim _{x \to 0} \frac{\log \cos x}{x^{2}}$,
+
+\part%1c
+$\displaystyle\lim _{x \to 0} \frac{x^{4}}{\sinh ^{3} x}$,
+
+\part%1d
+$\displaystyle\lim _{x \to 0}\left(\frac{1}{x^{2}}-\frac{1}{x \sin x}\right)$,
+
+\part%1e
+$\displaystyle\lim _{x \to \infty} \frac{x^{2}}{\sinh x}$,
+
+\part%1f
+$\displaystyle\lim _{x \to \infty}\left(1+\frac{1}{\sqrt{x}}\right)^{\sqrt{x}}$,
+
+\part%1g
+$\displaystyle\lim _{x \to-\infty}\left(1+\frac{1}{x}\right)^{x^{2}}$,
+
+\part%1h
+$\displaystyle\lim _{x \to 1}\left(\frac{\sin x}{\sin 1}\right)^{1 /(x-1)}$.
+\end{parts}
+
+
+
+\question%2
+For $a \in \mathbb{R}$ calculate (carefully) the following limits.
+\begin{parts}
+\part%2a
+$\displaystyle\lim _{x \to 0} \frac{1}{x} \log \frac{e^{a x}-1}{a(e^{x}-1)}$.
+
+\part%2b
+$\displaystyle\lim _{x \to \infty} x\left(e^{a}-\left(1+\frac{a}{x}\right)^{x}\right)$.
+\end{parts}
+
+
+
+\question%3
+Prove L'Hôpital's rule at $\infty$: suppose $f, g:(a, \infty) \to \mathbb{R}$ are differentiable, with $f(x) \to 0$ and $g(x) \to 0$ as $x \to \infty$. If $g'(x) \neq 0$ on $(a, \infty)$ and $f'(x) / g'(x) \to \ell$ as $x \to \infty$, then \[
+	\lim _{x \to \infty} \frac{f(x)}{g(x)}=\ell.
+\]
+
+
+
+\question%4
+Let $f: \mathbb{R} \to \mathbb{R}$ be twice differentiable on $\mathbb{R}$ and assume that $f'''(0)$ exists. Prove that \[
+	\lim _{h \to 0} \frac{4\left(f(h)-f(-h)-2\left(f\left(\frac{h}{2}\right)-f\left(-\frac{h}{2}\right)\right)\right)}{h^{3}}=f'''(0).
+\]
+
+
+
+\question%5 "the secant approaches the tangent at the midpoint as the interval shrinks"
+Assume that the conditions for the Mean Value Theorem hold for the function $f:[a, a+$ $h] \to \mathbb{R}$, so that for some $\theta \in(0,1)$ we have \[
+	f(a+h)-f(a)=h f'(a+\theta h) .
+\] Fix $f$ and $a$, and for each non-zero $h$ write $\theta(h)$ for a corresponding value of $\theta$. Prove that if $f''(a)$ exists and is non-zero then \[
+	\lim _{h \to 0} \theta(h)=\frac{1}{2}.
+\]
+
+
+
+\question%6
+Let $f(x)=x+\cos x \sin x$ and $g(x)=e^{\sin x} f(x)$.
+\begin{parts}
+\part%6a
+Show that $f(x), g(x) \to \infty$ as $x \to \infty$.
+
+\part%6b
+Show that $f'(x) / g'(x) \to 0$ as $x \to \infty$.
+
+\part%6c
+Show that $f(x) / g(x)$ does not converge as $x \to \infty$.
+
+\part%6d
+Why does this not contradict L'Hôpital's rule?
+\end{parts}
+
+
+
+\section*{Bonus Questions (optional, for the enthusiasts)}
+
+\question%7
+(Hard) Calculate the limit \[
+	\lim _{x \to \infty} e^{-2 \sqrt{x}} \sum_{n=0}^{\infty} \frac{x^{n}}{(n !)^{2}}.
+\]
+
+
+
+\question%8
+Let $f:[-\pi,\pi]\to[-1,1]$ be defined by $f(x):=\sin\frac x2$, and write $f^n(x)$ for the $n$th iterate of $f$, i.e. $f^0(x):=x$ and $f^{n+1}(x):=f(f^n(x))$ for $n\geq0$.
+\begin{parts}
+\part%8a
+Show that, for $x\in[-\pi,\pi]$, \[
+	g(x):=\lim_{n\to\infty}2^nf^n(x)
+\] exists and that $g(x)=2g(\sin\frac x2)$ for all $x\in[-\pi,\pi]$.
+
+\part%8b
+(Hard) Show that $g(x)$ is differentiable and strictly increasing on $[-\pi,\pi]$.
+
+\part%8c
+Construct a strictly increasing differentiable function $h:[-\pi,\pi]\to\mathbb R$ such that \[
+	h(h(x))=\sin\frac x2
+\] for all $x\in[-\pi,\pi]$. What is $h'(0)$?
+\end{parts}
+
+
+
+\question%9 - Weierstrass product for the gamma function !!
+Define \[ f_{n}(x)=\frac{n ! n^{x}}{x(x+1) \cdots(x+n)}. \]
+\begin{parts}
+\part%9a
+Show that $\Gamma(x)=\lim _{n \to \infty} f_{n}(x)$ exists and is continuous for all $x \notin\{0,-1,-2, \ldots\}$.
+
+\part%9b
+Show that $\Gamma(1)=1$ and $\Gamma(x+1)=x \Gamma(x)$ for all $x \notin\{0,-1,-2, \ldots\}$.
+
+\part%9c
+Prove that \[
+	\Gamma(x)=\frac{e^{-\gamma x}}{x}\prod_{k=1}^\infty\left(1+\frac xk\right)^{-1} e^{x/k}.
+\]
+
+\part%9d
+(Hard) Show that $\Gamma(x)$ is differentiable for $x \notin\{0,-1,-2, \ldots\}$. [\emph{Hint: consider $f(x)=\log (x \Gamma(x))$ and estimate $(f(x+h)-f(x)) / h$.}]
+\end{parts}
+
+\end{questions}
+
+\end{document}

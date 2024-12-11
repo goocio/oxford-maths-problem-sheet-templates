@@ -1,0 +1,72 @@
+\documentclass[answers]{exam}
+\usepackage{../HT2024}
+
+\title{Dynamics -- Sheet 7}
+\author{YOUR NAME HERE :)}
+\date{Hilary Term 2024}
+% Accurate as of 05/07/2024
+
+
+\begin{document}
+\maketitle
+\begin{questions}
+
+\question%1
+Consider a system of particles with masses $m_{I}$ and position vectors $\mathbf{r}_{I}(t)$, where $I=$ $1, \ldots, N$ labels the particles. Particle $I$ is acted on by internal forces $\mathbf{F}_{I J}$, due to particles $J \neq I$, together with an external force $\mathbf{F}_{I}^{\text {ext }}$.
+\begin{parts}
+\part%1a
+Define the centre of mass $G$ of the system of particles, and the total angular momentum $\mathbf{L}$ about $G$. Assuming that the internal forces satisfy the strong form of Newton's third law, using Newton's laws of motion show that \[
+	\dot{\mathbf{L}}=\boldsymbol\tau^{\mathrm{ext}}
+\] where $\boldsymbol{\tau}^{\mathrm{ext}}$ is the total external torque about $G$, which you should define.
+
+\part%1b
+Suppose now that all the masses are equal, $m_{I}=m$ for all $I=1, \ldots, N$, and that the external force on particle $I$ is $\mathbf{F}_{I}^{\text {ext }}=-b \dot{\mathbf{r}}_{I}$, for each $I=1, \ldots, N$, where $b>0$ is a constant. Show that \[
+	\mathbf{L}(t)=\mathrm{e}^{-b t / m} \mathbf{L}(0)
+\]
+\end{parts}
+
+
+
+\question%2
+Consider a binary star system, with stars of mass $m_{1}, m_{2}$. Recall from section 7.3 of the lectures that the position of each star in the centre of mass frame is \[
+	\mathbf{r}_{1}=\frac{m_{2}}{m_{1}+m_{2}} \mathbf{r}, \qquad \mathbf{r}_{2}=-\frac{m_{1}}{m_{1}+m_{2}} \mathbf{r},
+\] where $\mathbf{r}(t)$ satisfies the equation of motion \[
+	\frac{m_{1} m_{2}}{m_{1}+m_{2}} \ddot{\mathbf{r}}=-\frac{\kappa}{r^{2}} \frac{\mathbf{r}}{r}, \qquad \text {where } \kappa=G_{N} m_{1} m_{2}.
+\]
+\begin{parts}
+\part%2a
+Suppose that the orbit of each star in the centre of mass frame is circular, with angular velocity $\Omega$. Show that \[
+	r_{1}=\frac{G_{N}^{1 / 3} m_{2}}{\left(m_{1}+m_{2}\right)^{2 / 3} \Omega^{2 / 3}}, \qquad r_{2}=\frac{G_{N}^{1 / 3} m_{1}}{\left(m_{1}+m_{2}\right)^{2 / 3} \Omega^{2 / 3}},
+\] where $r_{1}$ and $r_{2}$ are the radii of the stars' orbits.
+
+\part%2b
+Now introduce a small planet into the system, with mass small enough that it does not affect the orbits of the stars. Suppose also that the planet orbits the centre of mass of the stars in a circle of radius $R$ with the same angular velocity $\Omega$ as the stars, so that the whole configuration is stationary in a rotating frame, with the stars and planet collinear. By writing down the equation of motion of the planet, show that \[
+	\begin{aligned}
+		\text{either } &\qquad -R \Omega^{2}~=~\operatorname{sign}\left(r_{1}-R\right) \frac{G_{N} m_{1}}{\left(r_{1}-R\right)^{2}}-\frac{G_{N} m_{2}}{\left(r_{2}+R\right)^{2}}, \\
+		\text {or } &\qquad -R \Omega^{2}~=~-\frac{G_{N} m_{1}}{\left(r_{1}+R\right)^{2}}+\operatorname{sign}\left(r_{2}-R\right) \frac{G_{N} m_{2}}{\left(r_{2}-R\right)^{2}} .
+	\end{aligned}
+\] [There are three positive solutions to these equations for $R$, known as \emph{Lagrange points}. There are two other Lagrange points in which the planet is not collinear with the stars.]
+\end{parts}
+
+
+
+\question%3
+\begin{parts}
+\part%3a
+Show that the inertia tensor $\mathcal{I}^{(G)}$ of a uniform circular cylinder of length $l$, radius $a$ and mass $M$, about its centre of mass $G$, is \[
+	\mathcal{I}^{(G)}=\begin{pmatrix}
+		\frac{1}{12} M l^{2}+\frac{1}{4} M a^{2} & 0 & 0 \\
+		0 & \frac{1}{12} M l^{2}+\frac{1}{4} M a^{2} & 0 \\
+		0 & 0 & \frac{1}{2} M a^{2}
+	\end{pmatrix}
+\] Here we have taken the $z$ direction along the axis of the cylinder. [\emph{Hint}: Use cylindrical polar coordinates.]
+
+\part%3b
+The cylinder rotates with angular velocity $\omega$ about its axis. Show that the angular momentum of the cylinder about its centre of mass is \[
+	\mathbf{L}_{G}=(0,0, \frac{1}{2} M a^{2} \omega)
+\]
+\end{parts}
+
+\end{questions}
+
+\end{document}

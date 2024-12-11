@@ -1,0 +1,97 @@
+\documentclass[answers]{exam}
+\usepackage{../HT2024}
+
+\title{Fourier Series and PDEs -- Sheet 5}
+\author{YOUR NAME HERE :)}
+\date{Hilary Term 2024}
+% Accurate as of 05/07/2024
+
+
+\begin{document}
+\maketitle
+\begin{questions}
+
+\question%1
+Consider the initial boundary value problem for the temperature $T(x, t)$ in a rod of length $L$ and thermal diffusivity $\kappa$ given by the heat equation \[
+	\frac{\partial T}{\partial t}=\kappa \frac{\partial^{2} T}{\partial x^{2}} \quad \text { for } \quad 0<x<L, t>0
+\] with the boundary conditions $T_{x}(0, t)=0$ and $T_{x}(L, t)=0$ for $t>0$ and the initial condition $T(x, 0)=T^{*} x(L-x) / L^{2}$ for $0<x<L$, where $T^{*}$ is a positive constant.
+\begin{parts}
+\part%1a
+Show that the solution $T(x, t)$ is uniquely determined.
+
+\part%1b
+Use the method of separation of variables, the principle of superposition and the theory of Fourier series to derive the series solution given by \[
+	T(x, t)=\frac{T^{*}}{6}-\sum_{m=1}^\infty\frac{T^{*}}{m^2\pi^2}\cos\left(\frac{2m\pi x}L\right)\exp\left(-\frac{4m^2\pi^2\kappa t}{L^{2}}\right).
+\][\emph{You may assume that the orders of summation and integration may be interchanged as necessary and the identities \[
+	\int_{0}^{L} \cos \left(\frac{m \pi x}{L}\right) \cos \left(\frac{n \pi x}{L}\right) \mathrm{d} x=\frac{L}{2} \delta_{m n}, \quad \int_{0}^{L} x(L-x) \cos \left(\frac{n \pi x}{L}\right) \mathrm{d} x \mathrm{~d} x=-\frac{L^{3}\left(1+(-1)^{n}\right)}{n^{2} \pi^{2}}
+\] where $m$ and $n$ are positive integers and $\delta_{m n}$ is Kronecker's delta.}]
+
+\part%1c
+What is the behaviour of the temperature $T(x, t)$ in the limit as $t \to \infty$?
+\end{parts}
+
+
+
+\question%2
+\begin{parts}
+\part%2a
+Let $\kappa$ and $\omega$ be positive constants. Show that the heat equation \[
+	\frac{\partial T}{\partial t}=\kappa \frac{\partial^{2} T}{\partial x^{2}}
+\] has complex-valued solutions of the form $F(x) \mathrm{e}^{\mathrm{i} \omega t}$ provided \[
+	\kappa F''=\mathrm{i} \omega F.
+\] Hence find $F$ if $F'(x) \to 0$ as $x \to \infty$ and $F(0)=T_{1}$, where $T_{1}$ is a positive constant. [\emph{You may assume that the roots of $\lambda^{2}=\mathrm{i} \omega / \kappa$ are $\lambda= \pm(1+\mathrm{i}) \sqrt{\omega / 2 \kappa}$.}]
+
+\part%2b
+Now let $T(x, t)=T_{0}+\operatorname{Re}\left(F(x) \mathrm{e}^{\mathrm{i} \omega t}\right)$, where $T_{0}$ is a real constant. Verify that \[
+	T(x, t)=T_{0}+T_{1} \exp \left(-\sqrt{\frac{\omega}{2 \kappa}} x\right) \cos \left(\omega t-\sqrt{\frac{\omega}{2 \kappa}} x\right),
+\] and explain why $T(x, t)$ is a solution of the heat equation for which $T_{x}(x, t)\to0$ as $x\to\infty$ and $T(0, t)=T_{0}+T_{1} \cos (\omega t)$.
+
+\part%2c
+A root cellar is used to store crops, ideally by keeping them as cool as possible in the summer, but as warm as possible in the winter. Consider a root cellar buried in soil of thermal diffusivity $\kappa=10^{-6} \mathrm{~m}^{2} \mathrm{~s}^{-1}$. Use the temperature profile in part (b) to predict:
+\begin{subparts}
+\subpart%2ci
+the shallowest ideal depth of the root cellar;
+
+\subpart%2cii
+the factor by which the amplitude of the temperature oscillations at ground level are reduced at the shallowest ideal depth.
+\end{subparts}
+\end{parts}
+
+
+
+\question%3
+Consider the initial boundary value problem for the temperature $T(x, t)$ in a rod of length $L$ given by the inhomogeneous heat equation \[
+	\rho c \frac{\partial T}{\partial t}=k \frac{\partial^{2} T}{\partial x^{2}}+Q(x, t) \quad \text { for } \quad 0<x<L, t>0
+\] with the boundary conditions $T(0, t)=\phi(t)$ and $T(L, t)=\psi(t)$ for $t>0$ and the initial condition $T(x, 0)=f(x)$ for $0<x<L$, where $\rho, c$ and $k$ are positive constants and the functions $Q(x, t)$, $\phi(t), \psi(\mathrm{t})$ and $f(x)$ are given.
+\begin{parts}
+\part%3a
+Let \[
+	T(x, t)=\phi(t)\left(1-\frac{x}{L}\right)+\psi(t) \frac{x}{L}+U(x, t) .
+\] Determine the functions $\widetilde{Q}$ and $\widetilde{f}$ for which $U$ satisfies the initial boundary value problem given by \[
+	\rho c \frac{\partial U}{\partial t}=k \frac{\partial^{2} U}{\partial x^{2}}+\widetilde{Q}(x, t) \quad \text { for } \quad 0<x<L, t>0
+\] with $U(0, t)=U(L, t)=0$ for $t>0$ and $U(x, 0)=\widetilde{f}(x)$ for $0<x<L$.
+
+\part%3b
+By considering your answer to question 3 of sheet 4, write down the solution for $U(x, t)$ in the special case in which $\widetilde{Q}(x, t)=0$ for $0<x<L, t>0$.
+
+\part%3c
+Consider now the case in which $\widetilde{Q}$ is not identically zero. Suppose that $U(x, t)$ and $\widetilde{Q}(x, t)$ may be expanded as the Fourier sine series \[
+	U(x, t)=\sum_{n=1}^{\infty} U_{n}(t) \sin \left(\frac{n \pi x}{L}\right), \quad \widetilde{Q}(x, t)=\sum_{n=1}^{\infty} \widetilde{Q}_{n}(t) \sin \left(\frac{n \pi x}{L}\right),
+\] where the Fourier coefficients are given by \[
+	U_{n}(t)=\frac{2}{L} \int_{0}^{L} U(x, t) \sin \left(\frac{n \pi x}{L}\right) \mathrm{d} x, \qquad \widetilde{Q}_{n}(t)=\frac{2}{L} \int_{0}^{L} \widetilde{Q}(x, t) \sin \left(\frac{n \pi x}{L}\right) \mathrm{d} x
+\]
+\begin{subparts}
+\subpart%3ci
+By differentiating $U_{n}(t)$ under the integral sign, using the heat equation and integrating by parts, derive an ordinary differential equation for $U_{n}(t)$. What is the initial condition?
+
+\subpart%3cii
+Explain without any further calculations how to determine the temperature $T(x, t)$ given the functions $Q(x, t), \phi(t), \psi(t)$ and $f(x)$.
+
+\subpart%3ciii
+What are the advantages of expanding $U$ as a Fourier sine series rather than $T$?
+\end{subparts}
+\end{parts}
+
+\end{questions}
+
+\end{document}

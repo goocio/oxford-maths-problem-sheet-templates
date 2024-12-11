@@ -1,0 +1,97 @@
+\documentclass[answers]{exam}
+\usepackage{../HT2024}
+
+\title{Dynamics -- Sheet 2}
+\author{YOUR NAME HERE :)}
+\date{Hilary Term 2024}
+% Accurate as of 05/07/2024
+
+
+\begin{document}
+\maketitle
+\begin{questions}
+
+\question%1
+Consider a particle of mass $m$ moving vertically in a fluid with quadratic drag force $D v^{2}$, where $v$ is its velocity and $D>0$ is a constant. The particle is also acted on by gravity, with acceleration due to gravity $g$.
+\begin{parts}
+\part%1a
+Consider dropping the particle from rest through the fluid, so that its velocity is $v=\dot{z} \leq 0$, with $z$ measured upwards. Show that the equation of motion may be written as \[
+	m \dot{v}=-m g+D v^{2}.
+\] Show that this may be integrated to \[
+	t=-\int_{0}^{v} \frac{\mathrm{d} u}{g-\frac{D u^{2}}{m}}.
+\] By evaluating the integral, hence show that the solution is \[
+	v(t)=-\sqrt{\frac{m g}{D}} \tanh \left(\sqrt{\frac{D g}{m}} t\right).
+\] What is the terminal velocity?
+
+\part%1b
+Now consider projecting the particle upwards through the fluid, starting at $z=0$ with speed $u$. Show that the equation of motion may be written as \[
+	\frac{\mathrm{d}\left(v^{2}\right)}{\mathrm{d} z}=2 \dot{v}=-2 g-\frac{2 D v^{2}}{m}.
+\] Regarding this as an equation for $v^{2}(z)$, by integrating it show that the maximum height reached is \[
+	z_{\max }=\frac{m}{2 D} \log \left(1+\frac{D u^{2}}{m g}\right).
+\] What happens as $D \to 0$?
+\end{parts}
+
+
+
+\question%2
+A particle of mass $m$ moves along the $x$ axis with one end attached to a spring of spring constant $k>0$, and is subjected to an additional force $F_{0} \cos \Omega t$.
+\begin{parts}
+\part%2a
+Show that the equation of motion is \[
+	\ddot{x}+\omega^{2} x=A \cos \Omega t,
+\] where $x=0$ corresponds to the unstretched position of the spring, $\omega=\sqrt{k / m}$, and $A=F_{0} / m$.
+
+\part%2b
+Suppose that $x=\dot{x}=0$ at time $t=0$. Verify that if $\Omega \neq \omega$ then \[
+	x(t)=\frac{A}{\omega^{2}-\Omega^{2}}(\cos \Omega t-\cos \omega t)
+\] satisfies the equation of motion and initial conditions, while when $\Omega=\omega$ then \[
+	x(t)=\frac{A}{2 \omega} t \sin \omega t
+\] does. What is the qualitative difference between the two solutions?
+\end{parts}
+
+
+
+\question%3
+Consider a particle of charge $q$ moving in a constant electromagnetic field. Without loss of generality we take the magnetic field $\mathbf{B}=(0,0, B) \neq 0$ to point along the $z$ axis, while the electric field $\mathbf{E}=\left(E_{1}, E_{2}, E_{3}\right)$ is constant, but arbitrary.
+\begin{parts}
+\part%3a
+Assuming the particle has mass $m$, but ignoring gravity, show that Newton's second law implies the coupled ODEs \[
+	\begin{aligned}
+		m \ddot{x} & =q E_{1}+q B \dot{y}, \\
+		m \ddot{y} & =q E_{2}-q B \dot{x}, \\
+		m \ddot{z} & =q E_{3},
+	\end{aligned}
+\] for the position $\mathbf{r}=(x, y, z)$ of the particle.
+
+\part%3b
+Verify that \[
+	\begin{aligned}
+		x(t)&=x_{0}+\frac{E_{2}}{B} t+R \cos (\omega t+\phi), \\
+		y(t)&=y_{0}-\frac{E_{1}}{B} t-R \sin (\omega t+\phi), \\
+		z(t)&=z_{0}+u t+\frac{q}{2 m} E_{3} t^{2}
+	\end{aligned}
+\] solves the equations of motion in part (a), where $\omega=q B / m$ is the cyclotron frequency, $\left(x_{0}, y_{0}, z_{0}\right)$ is a constant vector, and $u, R$ and $\phi$ are also constants. [\emph{Optional: For a more challenging version of this question, rather than verifying the solution, instead derive it, hence showing it is the general solution.}]
+\end{parts}
+
+
+
+\question%4
+Consider a particle of mass $m$ moving in a plane with position vector $\mathbf{r}=(x, y)$, subject to a force $\mathbf{F}=-k \mathbf{r}$, where $k>0$ is constant.
+\begin{parts}
+\part%4a
+Show that the general solution to the equation of motion is \[
+	\mathbf{r}(t)=\mathbf{A} \sin \omega t+\mathbf{B} \cos \omega t,
+\] where $\mathbf{A}$ and $\mathbf{B}$ are constant vectors, and $\omega=\sqrt{k / m}$. (\emph{You might find it helpful to write out the vector equation of motion in terms of its components.})
+
+\part%4b
+Show that the solution in part (a) may be rewritten as \[
+	\mathbf{r}(t)=\mathbf{a} \sin (\omega t+\phi)+\mathbf{b} \cos (\omega t+\phi),
+\] where now $\mathbf{a}$ and $\mathbf{b}$ are constant orthogonal vectors, and $\phi$ is a constant phase.
+
+\part%4c
+Hence show that the trajectory of the particle traces out an ellipse, with centre the origin.
+\end{parts}
+
+\end{questions}
+
+\end{document}

@@ -1,0 +1,128 @@
+\documentclass[answers]{exam}
+\usepackage{../HT2024}
+
+\title{Analysis II -- Sheet 4\\Uniform continuity, Uniform convergence}
+\author{YOUR NAME HERE :)}
+\date{Hilary Term 2024}
+% Accurate as of 05/07/2024
+
+
+\begin{document}
+\maketitle
+\begin{questions}
+
+\question%1
+Which of the following are uniformly continuous on $(0, \infty)$? Justify your answers.
+\begin{parts}
+\part%1a
+$x^{2}$,
+
+\part%1b
+$\sqrt{x}$,
+
+\part%1c
+$\sin x$,
+
+\part%1d
+$1 / x$.
+\end{parts}
+
+
+
+\question%2
+Suppose $f: \mathbb{R} \to \mathbb{R}$ is uniformly continuous. Show that $f(x+1)-f(x)$ is bounded.
+
+
+
+\question%3
+\begin{parts}
+\part%3a
+Let $a<b$ be two real numbers. Suppose that $f:(a, b] \to \mathbb{R}$ is continuous and suppose that the limit of $f$ as $x \to a$ exists. Show that $f$ is uniformly continuous on $(a, b]$.
+
+\part%3b
+Suppose now $g:(a, b] \to \mathbb{R}$ is uniformly continuous and $\left(p_{n}\right), p_{n} \in(a, b]$, is a Cauchy sequence. Show that $\left(g\left(p_{n}\right)\right)$ is also a Cauchy sequence.
+
+\part%3c
+Deduce that if $g:(a, b] \to \mathbb{R}$ is uniformly continuous then $g(x)$ has a limit as $x \to a$. [\emph{Hint: see problem sheet 1, question 5.}]
+\end{parts}
+
+
+
+\question%4
+Consider the following choices of sequence $\left(f_{n}\right)$ of functions on the interval $[0,1]$ whose $n^{\text {th }}$ term $f_{n}(x)$ is defined as shown. For each sequence, (i) determine the pointwise limit or show that it fails to exist, and (ii) for each sequence which does converge pointwise, establish whether or not convergence is uniform on $[0,1]$.
+\begin{parts}
+\part%4a
+$\left(\frac{x}{2}\right)^{n}$,
+
+\part%4b
+$\sin (n x)$,
+
+\part%4c
+$\frac{x}{1+n x^{2}}$,
+
+\part%4d
+$n^{2}(1-x) x^{n}$,
+
+\part%4e
+$\sqrt{n}(1-x) x^{n}$,
+
+\part%4f
+$\min \left\{x^{-1}, n\right\}$ for $x \in(0,1]$ and 0 for $x=0$.
+\end{parts}
+
+
+
+\question%5
+\begin{parts}
+\part%5a
+Prove that the series \[
+	\sum_{k=0}^{\infty} \frac{\sin ^{2}(k x)}{1+k^{2} x^{2}}
+\] converges for each $x \in \mathbb{R}$ and let $f(x)$ be its sum.
+
+\part%5b
+Prove that the series converges uniformly on $\{x \in \mathbb{R}:|x| \geq \delta\}$ for any given $\delta>0$. Deduce that $f$ is continuous on $\mathbb{R} \backslash\{0\}$.
+
+\part%5c
+Show that $f$ is not continuous at $x=0$.
+\end{parts}
+
+
+
+\question%6
+Suppose that the real power series $\sum_{k=0}^{\infty} c_{k} x^{k}$ converges for every $x \in \mathbb{R}$. Prove that the series converges uniformly on $\mathbb{R}$ if and only if there exists $N \in \mathbb{N}$ such that $c_{k}=0$ for all $k>N$.
+
+
+
+\section*{Bonus Questions (optional, for the enthusiasts)}
+
+\question%7
+Suppose $f, g: \mathbb{R} \to \mathbb{R}$ are uniformly continuous. Which of the following functions are necessarily uniformly continuous? Give proof or counterexample.
+\begin{parts}
+\part%7a
+$f(x) g(x)$,
+
+\part%7b
+$f(x)+g(x)$,
+
+\part%7c
+$f(g(x))$.
+\end{parts}
+
+
+
+\question%8
+Give an example of a sequence of functions $u_{k}:[0,1] \to \mathbb{R}$ for which $\sum u_{k}$ converges uniformly, but for which the $M$-test fails: if $M_{k}=\sup _{x \in[0,1]}\left|u_{k}(x)\right|$ then $\sum M_{k}$ diverges.
+
+
+
+\question%9
+Prove that if $\left(f_{n}\right)$ is uniformly convergent on all countable subsets of $E$, then it is uniformly convergent on $E$.
+
+
+
+\question%10
+Given a countable set $\left\{s_{1}, s_{2}, \ldots\right\} \subseteq \mathbb{R}$, construct an increasing function $f: \mathbb{R} \to \mathbb{R}$ that is discontinuous at each $s_{i}$, but continuous everywhere else.
+
+\end{questions}
+
+\end{document}

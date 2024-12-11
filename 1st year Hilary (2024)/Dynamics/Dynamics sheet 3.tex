@@ -1,0 +1,77 @@
+\documentclass[answers]{exam}
+\usepackage{../HT2024}
+
+\title{Dynamics -- Sheet 3}
+\author{YOUR NAME HERE :)}
+\date{Hilary Term 2024}
+% Accurate as of 05/07/2024
+
+
+\begin{document}
+\maketitle
+\begin{questions}
+
+\question%1
+A bead of mass $m$ is attached to the end of a straight spring, where the spring has natural length $a$ and spring constant $k$. The other end of the spring is fixed at the origin $O$. The bead and spring hang directly below $O$, with the spring lying along the vertical line through $O$.
+\begin{parts}
+\part%1a
+Explain why a potential energy function for the bead is \[
+	V(x)=\frac{1}{2} k(x-a)^{2}-m g x,
+\] where $x$ is the distance of the bead beneath $O$. Find the equilibrium position of the bead.
+
+\part%1b
+The bead is released from rest, with the spring at its natural length. Using conservation of energy, find the position of the bead when it is next at rest.
+\end{parts}
+
+
+
+\question%2
+\begin{parts}
+\part%2a
+A particle moves on the $x$ axis under the influence of a force $F_{a}(x)$ that is inversely proportional to the square of the distance of the particle from the point $x=a>0$. Given that this force is also repulsive, show that a potential energy function is \[
+	V_{a}(x)=\frac{\kappa}{|x-a|},
+\] where the constant $\kappa>0$.
+
+\part%2b
+Suppose now that the particle experiences two such repulsive forces, one from $x=a$ and the other from $x=-a$, so that the total potential energy function is \[
+	V(x)=V_{a}(x)+V_{-a}(x).
+\] Show that the origin $x=0$ is a stable equilibrium, with the (angular) frequency of small oscillations given by $\omega=2 \sqrt{\kappa / m a^{3}}$.
+\end{parts}
+
+
+
+\question%3
+Consider a unit mass $(m=1)$ particle moving in the potential \[
+	V(x)=-\frac{2}{3} x^{3}-2 x^{2} .
+\]
+\begin{parts}
+\part%3a
+Show that $x=-2$ is a stable equilibrium, while $x=0$ is an unstable equilibrium.
+
+\part%3b
+By sketching the potential argue that there are bounded solutions for energies $E=$ $\frac{1}{2} \dot{x}^{2}+V$ in the range $-\frac{8}{3} \leq E<0$.
+
+\part%3c
+Verify that $x(t)=-3 \operatorname{sech}^{2}\left(t-t_{0}\right)$ is a solution with energy $E=0$. Does the particle ever reach $x=0$?
+
+\part%3d
+{}[\emph{Optional}] Compare the behaviour of the solution in part (c), near to $x=0$, with the general linearised solution about the unstable equilibrium point $x=0$.
+\end{parts}
+
+
+
+\question%4
+Consider the following differential equation for $\varphi(t)$: \[
+	\ddot{\varphi}+\left(\frac{g}{a}-\omega^{2} \cos \varphi\right) \sin \varphi=0 \qquad(*).
+\] Here $\varphi$ is a periodic variable, with period $2 \pi$, while $g, a$ and $\omega$ are all positive constants.
+\begin{parts}
+\part%4a
+Find the equilibrium positions for $\varphi$ (i.e. find the constant solutions to ($*$)), and determine their stability as a function of the parameter $s=g / a \omega^{2}$.
+
+\part%4b
+Sketch the stable equilibrium values of $\varphi$ as a function of $s>0$.
+\end{parts}
+
+\end{questions}
+
+\end{document}
