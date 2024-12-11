@@ -1,0 +1,89 @@
+\documentclass[answers]{exam}
+\usepackage{../MT2024}
+
+\title{Differential Equations I -- Sheet 2\\Maximal existence intervals, Systems of ODEs}
+\author{YOUR NAME HERE :)}
+\date{Michaelmas Term 2024}
+% accurate as of 02/10/2024
+
+
+\begin{document}
+\maketitle
+\begin{questions}
+
+\question%1
+For each $k\in\mathbb N$ we consider the initial value problem \[
+	y'(x)=\frac{y(x)^k}{1+y(x)^2}+e^{-x},\quad
+	\text{with }y(0)=1
+\] and let $(T_-,T_+)$ be the maximal interval on which its solution is defined.
+\begin{parts}
+\part%1a
+Explain why $y(x)\geq1$ for all $x\geq0$ for which $y(x)$ is defined.
+
+\part%1b
+Show that for $k\geq4$ the maximal existence time is bounded from above by $T_+<\frac2{k-3}$ and $y(x)\to+\infty$ as $x\nearrow T_+$. [\emph{Hint: Compare with a solution of $z'=\frac12z^{k-2}$.}] Can you give a similar lower bound on $T_+$?
+
+\part%1c
+Show that for $k\in\{0,1,2,3\}$ the solution exists for all $x\geq0$ and is so that $y(x)\to\infty$ as $x\to\infty$. What can you say about the rate at which $y(x)$ tends to infinity?
+\end{parts}
+
+
+
+\question%2
+\begin{parts}
+\part%2a
+Show that the initial value problem \begin{align*}
+	y_1'(x)&=y_1(x)\sin(y_2(x))+1 & y_1(0)&=0\\
+	y_2'(x)&=y_1(x)^2 & y_2(0)&=0
+\end{align*} has a unique solution at least on some interval $[-h,h]$, $h>0$.
+
+\part%2b
+Let $p,q,r,s:[c,d]\to\mathbb R$ be continuous functions so that $p(x)\neq0$. Rewrite the second order linear differential equation for $y(x)$ \[
+	p(x)y''+q(x)y'+r(x)y=s(x)
+\] as a first order system \[
+	\underline y'(x)=\underline f(x,\underline y(x))
+\] and use Picard's theorem to show that for every $a\in(c,d)$ and every $b_1,b_2\in\mathbb R$ you can choose $h>0$ so that this problem has a unique solution with $y(a)=b_1$, $y'(a)=b_2$ on $[a-h,a+h]$. Does the solution exist on all of $[c,d]$? Justify your answer.
+\end{parts}
+
+
+
+\question%3
+Consider the plane autonomous system \[
+	\frac{\mathrm{d} x}{\mathrm{d} t}=x(1-2 x-y),\quad
+	\frac{\mathrm{d} y}{\mathrm{d} t}=y(1-x-2 y).
+\]
+\begin{parts}
+\part%3a
+By showing that the axes of the phase plane and the line $x=y$ are solution trajectories explain why a solution starting in the octant $x>0, x<y$ must remain in this region for all time.
+
+\part%3b
+Find all the critical points and analyse them to determine their local behaviour including the local direction of the trajectories and whether the points are stable.
+
+\part%3c
+Sketch the phase plane. In an application, when suitably scaled, $x$ and $y$ represent species populations which are in competition for resources. Use the phase plane to interpret what happens to the populations in the long term.
+\end{parts}
+
+
+
+\question%4
+\begin{parts}
+\part%4a
+Find and classify the types of all critical points of the system \[
+	\frac{\mathrm{d} x}{\mathrm{d} t}=\left(a-x^{2}\right) y,\quad
+	\frac{\mathrm{d} y}{\mathrm{d} t}=x-y
+\] in each of the cases \[
+	\text{(i)}\quad a<-\frac{1}{4} \qquad
+	\text{(ii)}\quad-\frac{1}{4}<a<0, \qquad
+	\text{(iii)}\quad a>0.
+\]
+
+\part%4b
+Consider the case $a=-1 / 4$ and analyse in detail the behaviour at all the critical points. Hence sketch the phase plane in this case. Can you say anything about the trajectories for $|x|$ large?
+
+\part%4c
+(Optional.) Consider the case $a=1 / 2$ and analyse in detail the behaviour at all the critical points. Hence sketch the phase plane in this case.
+\end{parts}
+
+\end{questions}
+
+\end{document}

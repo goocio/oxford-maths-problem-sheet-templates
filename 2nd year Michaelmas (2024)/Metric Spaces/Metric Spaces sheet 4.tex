@@ -1,0 +1,129 @@
+\documentclass[answers]{exam}
+\usepackage{../MT2024}
+
+\title{Metric Spaces -- Sheet 4\\Connectedness, Sequential compactness, Compactness}
+\author{YOUR NAME HERE :)}
+\date{Michaelmas Term 2024}
+% accurate as of 02/10/2024
+
+
+\begin{document}
+\maketitle
+\begin{questions}
+
+\question%1
+Let $X=C[0,1]$, with the usual distance coming from the $\|\cdot\|_{\infty}$-norm. Is $X$ connected?
+
+
+
+\question%2
+Let $X$ be a metric space and $A_{1}, A_{2}, \ldots$ an infinite collection of subsets of $X$. For each of the following statements, give a proof or counterexample.
+\begin{parts}
+\part%2a
+If $A_{1}, A_{2}, \ldots, A_{k}$ are sequentially compact then so is $A_{1} \cup A_{2} \cup \ldots \cup A_{k}$.
+
+\part%2b
+If $A_{1}, A_{2}, \ldots, A_{k}$ are connected then $A_{1} \cap A_{2} \cap \ldots \cap A_{k}$ is connected.
+
+\part%2c
+If $A_{1}, A_{2}, \ldots$ are sequentially compact then $\bigcup_{k \geqslant 1} A_{k}$ is sequentially compact.
+
+\part%2d
+If $A_{1}, A_{2}, \ldots$ are connected and $A_{j} \cap A_{j+1} \neq \emptyset$ then $\bigcup_{k \geqslant 1} A_{k}$ is connected.
+\end{parts}
+
+
+
+\question%3
+Suppose that $X$ is connected and that $f: X \to \mathbb{R}$ is \emph{locally constant}, meaning that every $x \in X$ lies in some open set $U$ on which $f$ is constant. Show that $f$ is constant.
+
+
+
+\question%4
+Let $(V,\|\cdot\|)$ be a normed vector space whose unit sphere $S=\{v \in V:\|v\|=1\}$ is sequentially compact. Show that any closed ball $B=\{v \in V:\|v\| \leqslant R\}$ is sequentially compact. Show that $V$ is complete.
+
+
+
+\question%5
+Let $X$ be a subset of $\mathbb{R}^{n}$ such that every continuous function $f: X \to \mathbb{R}$ is bounded. Show that $X$ is sequentially compact.
+
+
+
+\question%6
+Let $\|\cdot\|$ be an arbitrary norm on $\mathbb{R}^{n}$. Show that there is some constant $C$ such that $\|v\| \leqslant C\|v\|_{1}$ for all $v \in \mathbb{R}^{n}$. Using this, show that there is some constant $c>0$ such that $\|v\| \geqslant c\|v\|_{1}$ for all $v \in \mathbb{R}^{n}$. [\emph{Hint: Consider $\|\cdot\|: \mathbb{R}^{n} \to \mathbb{R}$ as a function on the normed space $\mathbb{R}^{n}$ with the $\|\cdot\|_{1}$-norm, and first show that it is continuous.}]
+
+
+
+\question%7
+Write down an infinite compact subset of $\mathbb{Q}$ and prove that it is compact directly from the open cover definition of compactness.
+
+
+
+\question%8
+Consider the space $\Omega$ of all sequences $\mathbf{x}=\left(x_{n}\right)_{n=1}^{\infty}$ with $x_{n} \in[0,1]$ for all $n$, together with the metric $d(\mathbf{x}, \mathbf{y})=\sum_{k=1}^{\infty} 2^{-k}\left|x_{k}-y_{k}\right|$. Show that $\Omega$ is sequentially compact. [\emph{Hint: You might wish to use a diagonal argument.}]
+
+
+
+\question%9
+In each of the following cases find a conformal mapping from the given region $G$ onto the open unit disc $\mathbb D = B(0,1)$.
+\begin{parts}
+\part%9a
+$G = \{z\in\mathbb C:\operatorname{Im}z>0\}$,
+
+\part%9b
+$G=\{z\in\mathbb C:z\neq0\text{ and }-\pi/4<\arg z<\pi/4\}$,
+
+\part%9c
+$G=\{z\in\mathbb C:|z-i|<\sqrt2\text{ and }|z+i|>\sqrt2\}$.
+\end{parts}
+
+
+
+\question%10
+Let \[
+	A=\{z\in\mathbb C:|z-2|<2\text{ and }|z-1|>1\};\qquad
+	B=\{z\in\mathbb C:0<\operatorname{Re}z<\pi\}.
+\]
+\begin{parts}
+\part%10a
+Find the image of $A$ under the map $z\mapsto1/z$ and the image of $B$ under the map $z\mapsto\exp(iz)$.
+
+\part%10b
+Let $H=\{z\in\mathbb C:\operatorname{Im}z>0\}$. Given $a,b\in H$ find a conformal bijection $H\to H$ of the form $z\mapsto\lambda z+\mu$ which maps $a$ to $b$.
+
+\part%10c
+Deduce that for any two points $a,b\in A$ there is a conformal bijection $f:A\to A$ such that $f(a)=b$.
+\end{parts}
+
+
+
+\question%11
+Let $\mathbb R_\infty=\mathbb R\cup\{\infty\}\subset\mathbb C_\infty$.
+\begin{parts}
+\part%11a
+Show that the group $\Gamma$ of M\"obius transformations $T$ for which $T(\mathbb R_\infty)=\mathbb R_\infty$ consists of those of the form $T(z)=(az+b)/(cz+d)$, where $a,b,c,d$ can be chosen to be real.
+
+\part%11b
+Calculate the group $\Gamma_1$ of M\"obius transformations which preserve $\mathbb H=\{z\in\mathbb C:\operatorname{Im}z>0\}$. [\emph{Hint: Why must $\Gamma_1$ be a subgroup of $\Gamma$?}]
+\end{parts}
+
+
+
+\question%12
+(Optional.) Let $f:\mathbb D\to\mathbb D$ be a holomorphic function, where $\mathbb D=B(0,1)$.
+\begin{parts}
+\part%12a
+Show that if $f(0)=0$ then $|f(z)|\leq|z|$ for all $z\in\mathbb D$. [\emph{Hint: show that $|f(z)/z|\leq1/r$ if $|z|\leq r$, for any $r<1$.}] Show that if, moreover, $|f(z_0)|=|z_0|$ for some $z_0\in\mathbb D\setminus\{0\}$, then $f$ is a rotation.
+
+\part%12b
+Show that if $a\in\mathbb D$ the function \[
+	g_a(z)=\frac{a-z}{1-\bar az}
+\] maps $\mathbb D$ to $\mathbb D$.
+
+\part%12c
+Show that if $f:\mathbb D\to\mathbb D$ is holomorphic and bijective then there is some $\theta\in\mathbb R$ and $a\in\mathbb D$ such that $f(z)=e^{i\theta}g_a(z)$.
+\end{parts}
+
+\end{questions}
+
+\end{document}

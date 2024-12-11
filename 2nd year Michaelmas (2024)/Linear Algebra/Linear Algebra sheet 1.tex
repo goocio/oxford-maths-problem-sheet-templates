@@ -1,0 +1,100 @@
+\documentclass[answers]{exam}
+\usepackage{../MT2024}
+
+\title{Linear Algebra -- Sheet 1\\Linear maps, Minimal and characteristic polynomials}
+\author{YOUR NAME HERE :)}
+\date{Michaelmas Term 2024}
+% accurate as of 02/10/2024
+
+
+\begin{document}
+\maketitle
+
+\emph{In Q1-7 you may assume the vector spaces are finite-dimensional.}
+
+\begin{questions}
+
+\question%1
+Let $F$ be a field and $f(x)$ an irreducible polynomial in $F[x]$. Show that the quotient ring $F[x] /\langle f(x)\rangle$ is a field.
+
+
+
+\question%2
+A rational function over a field $F$ is a quotient $\frac{f(t)}{g(t)}$ where $f, g$ are polynomials over $F$ and $g$ is not identically zero. (Obviously we identify $\frac{f_{1}}{g_{1}}$ and $\frac{f_{2}}{g_{2}}$ if $f_{1} g_{2}=f_{2} g_{1}$ as polynomials). Show that the set $F(t)$ of rational functions form a field and use this to produce an example of an infinite field of positive characteristic.
+
+
+
+\question%3
+Show that $\mathbb{Z}$ is a principal ideal domain, i.e. every ideal is of the form $\langle m\rangle=m \mathbb{Z}$ for some $m \in \mathbb{Z}$. Discuss how to prove this result for $F[x]$, the ring of polynomials with coefficients in a field $F$.
+
+
+
+\question%4
+Let $P: V \to V$ be a \emph{projection}, that is, $P^{2}=P$. Show that $V=\operatorname{im} P \oplus \ker P$, and deduce that there is a basis in which $P$ is a block matrix \[
+	P=\begin{pmatrix}
+		I_{r} & 0 \\
+		0 & 0
+	\end{pmatrix},
+\] where $r$ is the rank of $P$. What are the minimum and characteristic polynomials of $P$?
+
+
+
+\question%5
+Show that a block triangular matrix \[
+	X=\begin{pmatrix}
+		A & B \\
+		0 & D
+	\end{pmatrix}
+\] has determinant \[
+	\det X=\det A \det D.
+\] [\emph{Hint: One way to do this is to look for a factorisation $X=X_{1} X_{2} X_{3}$ where $X_{2}$ is block triangular and $X_{1}, X_{3}$ are block diagonal, and some of the diagonal blocks are the identity.}] Deduce the equality of characteristic polynomials \[
+	\chi_{X}(t)=\chi_{A}(t) \chi_{D}(t).
+\]
+
+
+
+\question%6
+Prove that $T: V \to V$ is invertible if and only if $x$ does not divide the minimal polynomial $m_{T}(x)$.
+
+
+
+\question%7
+Let $T: V \to V$ be a linear transformation. Assume that $v, T v, T^{2} v, ...$ span $V$ for some $v \in V$. Show that:
+\begin{parts}
+\part%7a
+there exists a $k$ such that $v, T v, ..., T^{k-1} v$ are linearly independent and for some $a_{i}$ \[
+	T^{k} v=a_{0} v+a_{1} T v+...+a_{k-1} T^{k-1} v;
+\]
+
+\part%7b
+the set $v, T v, \ldots, T^{k-1} v$ forms a basis for $V$;
+
+\part%7c
+its minimal polynomial is given by $m_{T}(x)=x^{k}-a_{k-1} x^{k-1}-...-a_{0}$. What is the characteristic polynomial $\chi_{T}(x)$?
+\end{parts}
+
+
+
+\question%8
+Let $\mathcal{P}=F[x]$ be the vector space of polynomials over the field $F$. Determine whether or not $\mathcal{P} / \mathcal{M}$ is finite dimensional when $\mathcal{M}$ is:
+\begin{parts}
+\part%8a
+the subspace $\mathcal{P}_{n}$ of polynomial of degree less or equal $n$;
+
+\part%8b
+the subspace $\mathcal{E}$ of even polynomials;
+
+\part%8c
+the subspace $x^{n} \mathcal{P}$ of all polynomials divisible by $x^{n}$.
+\end{parts}
+
+
+
+\question%9
+Let $L: \mathcal{P} \to \mathcal{P}$ be given by \[
+	L: f(x) \mapsto x^{2} f(x)
+\] In each of the examples of the preceding question, decide whether $L$ induces a map of quotients $\bar{L}: \mathcal{P} / \mathcal{M} \to \mathcal{P} / \mathcal{M}$. When it does, find a matrix representation of $\bar{L}$ with respect to a convenient basis of the quotient space.
+
+\end{questions}
+
+\end{document}

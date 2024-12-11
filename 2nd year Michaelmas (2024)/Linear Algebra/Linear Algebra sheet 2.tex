@@ -1,0 +1,108 @@
+\documentclass[answers]{exam}
+\usepackage{../MT2024}
+
+\title{Linear Algebra -- Sheet 2\\Minimal and characteristic polynomials, Diagonalisation}
+\author{YOUR NAME HERE :)}
+\date{Michaelmas Term 2024}
+% accurate as of 02/10/2024
+
+
+\begin{document}
+\maketitle
+
+\begin{questions}
+
+\question%1
+Let $A$ be an $n \times n$ matrix over $\mathbb{C}$. Use triangular form to show that the trace of $A$ equals the sum of the eigenvalues, where a multiplicity $m$ eigenvalue is counted $m$ times. Show also that an analogous statement holds for the determinant and the product of the eigenvalues.
+
+
+
+\question%2
+Calculate the minimum and characteristic polynomials of the following matrices:
+\begin{parts}
+\part%2a
+$\begin{pmatrix}
+	1 & 1 & 0 \\
+	-9 & -4 & 1 \\
+	-3 & 3 & 2
+\end{pmatrix}$,
+
+\part%2b
+$\begin{pmatrix}
+	-2 & -3 & -3 \\
+	-1 & 0 & -1 \\
+	0 & 1 & -1
+\end{pmatrix}$,
+
+\part%2c
+$\begin{pmatrix}
+	2 & 1 & 0 \\
+	0 & 2 & 0 \\
+	0 & 0 & 2
+\end{pmatrix}$
+\end{parts}
+
+
+
+\question%3
+\begin{parts}
+\part%3a
+Find two $2 \times 2$ matrices which have the same characteristic polynomial but which are not conjugate.
+
+\part%3b
+Find two $3 \times 3$ matrices which have the same minimal polynomial but which are not conjugate.
+
+\part%3c
+Find two $4 \times 4$ matrices which have the same minimal polynomial and the same characteristic polynomial, but which are not conjugate.
+
+\part%3d
+What is the smallest value of $n$ for which there are two non-conjugate $n \times n$ matrices which have the same minimum and characteristic polynomials and eigenspaces of equal dimension?
+\end{parts}
+
+
+
+\question%4
+Let $T: V \to V$ have minimum polynomial $m_{T}(x)=x^{m}$. Show that we have strict inclusions \[
+	0 \subset \ker T \subset \ker(T^2) \subset ... \subset \ker(T^{m-1}) \subset \ker(T^m)=V.
+\]
+
+
+
+\question%5
+Decide whether or not the matrix \[
+	\begin{pmatrix}
+		1 & 6 \\
+		3 & 5
+	\end{pmatrix}
+\] can be diagonalised over the field:
+\begin{parts}
+\part%5a
+$\mathbb{R}$
+
+\part%5b
+$\mathbb{C}$
+
+\part%5c
+$\mathbb{Q}$
+
+\part%5d
+a field of characteristic 2 (i.e. $1+1=0$)
+
+\part%5e
+the field $\mathbb{F}_{7}$ of integers modulo 7.
+\end{parts}
+
+
+
+\question%6
+Is the matrix \[
+	B=\begin{pmatrix}
+		0 & 0 & -1 \\
+		0 & -1 & 0 \\
+		1 & 0 & 1
+	\end{pmatrix}
+\] diagonalisable over $\mathbb{C}, \mathbb{R}$, or $\mathbb{F}_{3}$?
+
+\end{questions}
+
+\end{document}

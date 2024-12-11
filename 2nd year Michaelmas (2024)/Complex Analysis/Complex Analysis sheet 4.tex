@@ -1,0 +1,118 @@
+\documentclass[answers]{exam}
+\usepackage{../MT2024}
+
+\title{Complex Analysis -- Sheet 4\\Residue theorem, Rouch\'e's theorem, Argument principle}
+\author{YOUR NAME HERE :)}
+\date{Michaelmas Term 2024}
+% accurate as of 26/11/2024
+
+
+\begin{document}
+\maketitle
+\begin{questions}
+
+\question%1
+Identify and classify the isolated singularities of the following functions; calculate the residues at each isolated singularity.
+\begin{parts}
+\part%1a
+$\displaystyle\frac{\sin2\pi z}{z^2(2z-1)}$;
+
+\part%1b
+$\displaystyle\frac1{\exp\frac1z+2}$;
+
+\part%1c
+$\displaystyle\sin^2\frac1z$.
+\end{parts}
+
+
+
+\question%2
+(Extra practice) Identify and classify the isolated singularities of the following functions; calculate the residues at each isolated singularity.
+\begin{parts}
+\part%2a
+$\displaystyle\frac\pi{\tan\pi z}$;
+
+\part%2b
+$\displaystyle\frac{z^2-z}{1-\sin z}$;
+
+\part%2c
+$\displaystyle\frac{\cos z-1}{(e^z-1)^2}$.
+\end{parts}
+
+
+
+\question%3
+Let $f$ be a function holomorphic in the entire complex plane except for a finite number of singular points. We assume that all singularities are inside a positively oriented curve $\gamma$. Show that \[
+	\int_\gamma f(z)~\mathrm dz=2\pi i\operatorname{Res}_{z=0}\frac{f(1/z)}{z^2}.
+\] [\emph{Hint: Write the Laurent expansion in a sufficiently large annulus.}]
+
+
+
+\question%4
+Use the argument principle to compute the number of roots in the right half-plane of the polynomial \[
+	p(z)=z^4+8z^3+3z^2+8z+3.
+\]
+
+
+
+\question%5
+(Extra challenge) We say that a function $f$ is \emph{univalent} if it is injective and holomorphic. Let $f_n:U\to\mathbb C$ be a sequence of univalent functions such that $f_n\to f$ uniformly on $K$ for every compact $K\subseteq U$. Show that the limit function $f$ is either univalent or constant. [\emph{Hint: use Rouch\'e's theorem.}]
+
+
+
+\question%6
+(Extra challenge)
+\begin{parts}
+\part%6a
+Show that if $f$ is an entire function such that $\lim_{z\to\infty}f(z)=\infty$ then $f$ is a polynomial. [\emph{Hint: consider $g(z)=f(1/z)$.}]
+
+\part%6b
+Show that if $f$ is a meromorphic function such that $\lim_{z\to\infty}f(z)=\infty$ then $f$ is a rational function.
+\end{parts}
+
+
+
+\question%7
+Evaluate, using a keyhole contour cut along the positive real axis, or otherwise, \[
+	\int_{0}^{\infty} \frac{x^{1 / 2} \log x}{(1+x)^{2}} \mathrm{~d} x.
+\]
+
+
+
+\question%8
+By considering the integral \[
+	\int_{\Gamma_{n}} \frac{\pi}{w^{2} \sin \pi w} \mathrm{~d} w
+\] where $\Gamma_{n}$ is the square in $\mathbb{C}$ with vertices $\pm(n+1 / 2)(1 \pm i)$ show that \[
+	\frac{\pi^{2}}{12}=1-\frac{1}{4}+\frac{1}{9}-\frac{1}{16}+\cdots
+\] (\emph{You may assume that there exists $C$ such that $|\csc \pi w| \leqslant C$ on $\Gamma_{n}$ for all $n$ and all $w$.})
+
+
+
+\question%9
+Evaluate the principal value of the integral \[
+	\int_{-\infty}^\infty\frac{(x+1)\cos x}{x^2+1}~\mathrm dx.
+\]
+
+
+
+\question%10
+Let $n \geqslant 2$. By using the contour comprising $[0, R]$, the circular arc from $R$ to $R e^{2 \pi i / n}$, and $[0, R e^{2 \pi i / n}]$, show that \[
+	\int_{0}^{\infty}\frac{\mathrm{d}x}{1+x^{n}}=\frac{\pi}{n}\csc\left(\frac{\pi}{n}\right).
+\]
+
+
+
+\question%11
+Let $f$ be meromorphic in a domain $U$ and $\gamma$ be a simple closed curve inside $U$. Assume that $f$ has no poles or zeros on $\gamma^*$. Show that $f$ has finitely many zeros inside $\gamma$. Is it true that $f$ has finitely many roots inside $U$?
+
+
+
+\question%12
+(Extra challenge)
+Let $f$ be holomorphic and bounded in the unit disc $\mathbb D$. Show that for every $\zeta\in\mathbb D$ we have \[
+	f(\zeta)=\frac1\pi\iint\limits_{\mathbb D}\frac{f(z)\:\mathrm dx\:\mathrm dy}{(1-\bar z\zeta)^2}.
+\] [\emph{Hint: Rewrite the integral in polar coordinates and compute it using residues.}]
+
+\end{questions}
+
+\end{document}

@@ -1,0 +1,70 @@
+\documentclass[answers]{exam}
+\usepackage{../MT2024}
+
+\title{Metric Spaces -- Sheet 2\\Continuity, 2-adic metric}
+\author{YOUR NAME HERE :)}
+\date{Michaelmas Term 2024}
+% accurate as of 02/10/2024
+
+
+\begin{document}
+\maketitle
+\begin{questions}
+
+\question%1
+Let $\Sigma=\{0,1\}^{\mathbb{N}}$ be the set of all sequences of 0s and 1s. If $\sigma=\left(a_{n}\right)_{n=1}^{\infty}, \sigma'=\left(b_{n}\right)_{n=1}^{\infty} \in \Sigma$ define \[
+	d\left(\sigma, \sigma'\right)=\frac{1}{\min \left\{n: a_{n} \neq b_{n}\right\}}
+\] where the right-hand side is to be interpreted as zero when $a_{n}=b_{n}$ for all $n$. Show that $(\Sigma, d)$ is a metric space.
+
+
+
+\question%2
+Let $\Omega=\mathbb{R}^{\mathbb{N}}$ be the space of all real sequences. If $\mathbf{x}=\left(x_{n}\right)_{n=1}^{\infty}, \mathbf{y}=\left(y_{n}\right)_{n=1}^{\infty} \in \Omega$, define \[
+	d(\mathbf{x}, \mathbf{y})=\sum_{n=1}^{\infty} \frac{1}{2^{n}} \frac{\left|x_{n}-y_{n}\right|}{1+\left|x_{n}-y_{n}\right|}
+\] Show that this defines a metric on $\Omega$.
+
+
+
+\question%3
+Let $X=\mathbb{R}^{n}$ and suppose that $d$ is one of $d_{1}, d_{2}, d_{\infty}$. Suppose we have two balls $B\left(x_{1}, 0.9\right), B\left(x_{2}, 0.9\right)$, both contained in $B(0,1)$. Show that they intersect. Is the same true in a general metric space $(X, d)$?
+
+
+
+\question%4
+Let $(X, d)$ be a metric space, and let $\|\cdot\|$ be a norm on $\mathbb{R}^{2}$. Define $\tilde{d}$ by \[
+	\tilde{d}\left(\left(x_{1}, x_{2}\right),\left(y_{1}, y_{2}\right)\right)=\left\|\left(d\left(x_{1}, y_{1}\right), d\left(x_{2}, y_{2}\right)\right)\right\|
+\] Show that $\tilde{d}$ is a metric on $X \times X$ if $\|\cdot\|$ is the $\ell^{1}$-norm or the $\ell^{\infty}$-norm. Is this in fact true for an arbitrary norm $\|\cdot\|$?
+
+
+
+\question%5
+Consider the 2-adic metric on the integers defined in the lecture notes. Show that the sequence 9, 99, 999, ... converges.
+
+
+
+\question%6
+Let $X$ be a metric space and suppose $f: X \to \mathbb{R}$ is continuous. Show that if $f(a) \neq 0$, then there is an $\varepsilon>0$ such that $1 / f$ is defined and is continuous on $B(a, \varepsilon)$.
+
+
+
+\question%7
+Suppose that $(X, d)$ is a metric space and that $X \times X$ is endowed with the product metric defined in lectures. Show that the metric $d$, viewed as a map from $X \times X$ to $\mathbb{R}$, is continuous.
+
+
+
+\question%8
+Show that the map $f:\mathbb Z\to\mathbb Z$ defined by $f(n)=n^2$ is continuous in the 2-adic metric.
+
+
+
+\question%9
+Let $X, Y$ and $Z$ be metric spaces and equip $Y \times Z$ with the product metric defined in lectures. If $F: X \to Y \times Z$ is a function and we write $F(x)=\left(f_{1}(x), f_{2}(x)\right)$, show that $F$ is continuous if and only if $f_{1}$ and $f_{2}$ are continuous.
+
+
+
+\question%10
+Let $X$ denote the vector space of sequences $\mathbf{x}=\left(x_{n}\right)_{n=1}^{\infty}$ with $x_{n} \in \mathbb{R}$ and $\sum_{n=1}^{\infty} x_{n}^{2}<\infty$. Explain why $\|\mathbf{x}\|_{\infty}:=\sup _{n}\left|x_{n}\right|$ is a well-defined norm on $X$. Is the metric induced by this norm equivalent to the metric induced by the $\ell^{2}$-norm?
+
+\end{questions}
+
+\end{document}

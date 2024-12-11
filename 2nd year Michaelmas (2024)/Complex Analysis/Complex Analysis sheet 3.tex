@@ -1,0 +1,162 @@
+\documentclass[answers]{exam}
+\usepackage{../MT2024}
+
+\title{Complex Analysis -- Sheet 3\\Cauchy's integral formula, Entire functions, Series expansions}
+\author{YOUR NAME HERE :)}
+\date{Michaelmas Term 2024}
+% accurate as of 15/11/2024
+
+
+\begin{document}
+\maketitle
+\begin{questions}
+
+\question%1
+Let $\gamma$ be the positively oriented unit circle. Use Cauchy integral formulas to evaluate:
+\begin{parts}
+\part%1a
+$\displaystyle\int_\gamma\frac{e^z\cos z}z~\mathrm dz$;
+
+\part%1b
+$\displaystyle\int_\gamma\frac{e^z\cos z}{z^3}~\mathrm dz$.
+\end{parts}
+
+
+
+\question%2
+(Part (a) is known as the \emph{Mean value property}; parts (b) and (c) are known as the \emph{maximum modulus principle}.) Suppose that $f: U \to \mathbb{C}$ is a holomorphic function on a domain $U$.
+\begin{parts}
+\part%2a
+Show that, if $\bar{B}(a, r) \subseteq U$ then \[
+	f(a)=\frac{1}{2 \pi} \int_{0}^{2 \pi} f(a+r e^{i t}) \mathrm{~d} t.
+\]
+
+\part%2b
+Suppose that $a \in U$ is such that $|f(a)|$ is a maximum for $|f|: U \to \mathbb{R}$. Show that $|f|$ must in fact be constant near $a$.
+
+\part%2c
+Deduce that $f$ is constant on all of $U$. [\emph{Hint: Consider the set $S=\{z \in U:|f(z)|=|f(a)|\}$.}]
+\end{parts}
+
+
+
+\question%3
+(Extra practice) Suppose $w_1,...,w_n$ are points on the unit circle. Show that there is a point $z$ on the unit circle such that $\prod|z-w_k|\geqslant1$.
+
+
+
+\question%4
+Suppose that $f$ is holomorphic on $\mathbb{C}$ and that $\Re f(z) \geqslant 0$ for all $z$. Show that $f$ is constant. [\emph{Hint: consider $\exp (-f(z))$.}]
+
+
+
+\question%5
+Let $f$ be an entire function.
+\begin{parts}
+\part%5a
+Prove that $f$ is a polynomial of degree at most $k$ if and only if there exist real constants $M, R>0$ and an integer $k$ such that \[
+	|f(z)| \leqslant M|z|^{k} \quad \text { for }|z|>R.
+\]
+
+\part%5b
+Let $g(z)$ be an entire function such that $|f(z)| \leqslant|g(z)|$ for all $z \in \mathbb{C}$. Show that that there is some $c \in \mathbb{C}$ so that $f(z)=c g(z)$ for all $z \in \mathbb{C}$. [\emph{Hint: consider $f/g$.}]
+\end{parts}
+
+
+
+\question%6
+(Extra challenge)
+Let $f=u+iv$ be a function holomorphic in some domain containing the closed unit disc $\mathbb D$.
+\begin{parts}
+\part%6a
+Show that \[
+	u(0)=\frac1{2\pi}\int_0^{2\pi}u(e^{it})~\mathrm dt.
+\]
+
+\part%6b
+In this question you can assume that for every $z_0\in\mathbb D$ \[
+	h_{z_0}(z)\coloneqq\frac{z+z_0}{1+z\overline{z_0}}
+\] is a bijection from $\mathbb D$ to itself. Using this map show that \[
+	u(z)=\frac1{2\pi}\int_0^{2\pi}u(e^{it})\frac{1-|z|^2}{|e^{it}-z|^2}~\mathrm dt,\qquad
+	z\in\mathbb D.
+\]
+
+\part%6c
+Using the fact that \[
+	\frac{|w|^2-|z|^2}{|z-w|^2}=\operatorname{Re}\left(\frac{w+z}{w-z}\right),
+\] show that \[
+	f(z)=\frac1{2\pi}\int_0^{2\pi}u(e^{it})\frac{e^{it}+z}{e^{it}-z}~\mathrm dt+iv(0).
+\]
+\end{parts}
+
+
+\question%7
+Suppose that $f:\mathbb C\to\mathbb C$ is \emph{entire} (i.e. holomorphic on the whole complex plane).
+\begin{parts}
+\part%7a
+If $f(1/n)=1/n$ for all $n\in\mathbb N$ must $f(z)=z$ for all $z\in\mathbb C$?
+
+\part%7b
+If $f(n)=n$ for all $n\in\mathbb N$ must $f(z)=z$ for all $z\in\mathbb C$?
+
+\part%7c
+Show that there must be some $n\in\mathbb N$ such that $f(1/n)\neq1/(n+1)$.
+\end{parts}
+
+
+
+\question%8
+(Extra challenge) Suppose that $f: \mathbb{C} \to \mathbb{C}$ is an entire function, and for each $z_{0} \in \mathbb{C}$ the power series expansion $f(z)=\sum_{n=0}^{\infty} c_{n}(z-z_{0})^{n}$ has at least one $c_{n}$ equal to zero. Prove that $f(z)$ is a polynomial. [\emph{Hint: Note that $n!c_{n}=f^{(n)}(z_{0})$ and that $\mathbb{C}$ is uncountable.}]
+
+
+
+\question%9
+\begin{parts}
+\part%9a
+Let $c_{n}$ be a bounded sequence of complex numbers. Show that \[
+	\sum_{n=1}^{\infty} c_{n} \frac{z^{n}}{1+z^{n}}
+\] is holomorphic at any $z \in \mathbb{C}$ with $|z|<1$. [\emph{Hint: Does the series converge uniformly on some sets?}]
+
+\part%9b
+(Extra practice) Show that \[
+	\sum_{n=1}^{\infty} \frac{1}{(n-z)^{2}}
+\] is holomorphic on $\mathbb{C} \setminus \mathbb{N}$.
+\end{parts}
+
+
+
+\question%10
+Let \[
+	F(z)=\frac{2z^2-1}{z^2(z-1)}.
+\] Find Laurent expansions for $F$ in:
+\begin{parts}
+\part%10a
+$A_1=\{z:|z-2|<1\}$;
+
+\part%10b
+$A_2=\{z:1<|z-2|<2\}$;
+
+\part%10c
+$A_3=\{z:|z-2|>2\}$.
+\end{parts}
+
+
+
+\question%11
+(Extra challenge) (The result of this question is known as the \emph{Schwarz reflection principle}.) Let $U$ be a domain in $\mathbb C$ that is symmetric with respect to the real line. Namely, $z\in U$ if and only if $\overline z\in U$. You may assume that its intersection with $\mathbb R$ is a finite disjoint union of intervals. Let $f$ be a function that is holomorphic in $U\cap\{z:\operatorname{Im}z>0\}$, continuous in $U\cap\{z:\operatorname{Im}z\geq0\}$, and its values on the real line are real.
+\begin{parts}
+\part%11a
+Define a function $g$ in $U$ by \[
+	g(z)\coloneqq\begin{cases}
+		f(z)&z\in U\cap\{z:\operatorname{Im}z\geq0\},\\
+		f(\overline z)&z\in U\cap\{z:\operatorname{Im}z<0\}.
+	\end{cases}
+\] Show that $g$ is holomorphic in $U$.
+
+\part%11b
+Formulae a similar reflection principle for reflection with respect to a circle. [\emph{Hint: can you write the reflection with respect to a circle as a complex transformation?}]
+\end{parts}
+
+\end{questions}
+
+\end{document}

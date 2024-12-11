@@ -1,0 +1,86 @@
+\documentclass[answers]{exam}
+\usepackage{../MT2024}
+
+\title{Differential Equations I -- Sheet 3\\Plane autonomous systems, Semilinear PDEs}
+\author{YOUR NAME HERE :)}
+\date{Michaelmas Term 2024}
+% accurate as of 02/10/2024
+
+
+\begin{document}
+\maketitle
+\begin{questions}
+
+\question%1
+\begin{parts}
+\part%1a
+Write the second-order ODE \[
+	\ddot{x}-\dot{x}^{2}+x^{2}-x=0
+\] as a plane autonomous system. Find and classify the critical points of this system. Analyse each critical point in detail and hence sketch the phase plane including the arrows for the trajectories.
+
+\part%1b
+Show that there are periodic orbits of the original ODE. [\emph{Hint: Either: make the transformation $u=x+y, v=x-y$ and solve the resulting equation for $d u / d v$ to write the characteristics as level sets of a function and then argue graphically that these level sets are closed curves; or exploit the symmetry of the phase plane about the $x$ axis to prove the claim.}]
+\end{parts}
+
+
+
+\question%2
+\begin{parts}
+\part%2a
+Show that the system \[
+	\frac{\mathrm{d} x}{\mathrm{d} t}=-y-x(x^{2}+y^{2}),\qquad
+	\frac{\mathrm{d} y}{\mathrm{d} t}=x-y(x^{2}+y^{2})
+\] has no closed trajectories. Show that in polar coordinates the system becomes \[
+	\frac{\mathrm{d} r}{\mathrm{d} t}=-r^{3}, \quad
+	\frac{\mathrm{d} \theta}{\mathrm{d} t}=1
+\] and sketch the trajectories (you can solve this system explicitly).
+
+\part%2b
+Show that the only critical point is the origin. Consider a linear approximation to the $(x, y)$ system in a neighbourhood of the origin and determine its type. Comment on any differences between the approximation and the exact behaviour.
+\end{parts}
+
+
+
+\question%3
+Find $z(x, y)$ explicitly if \[
+	-y z_{x}+x z_{y}=\frac{x z}{\sqrt{x^{2}+y^{2}}}
+\] and \[
+	z(x, 0)=1 \quad \text{for } x \geq 1.
+\] Describe the projections of the characteristic curves upon the $(x, y)$-plane. In what region of the plane is $z(x, y)$ determined uniquely?
+
+
+
+\question%4
+Find in parametric form the characteristics of the differential equation \[
+	x z_{x}+y z_{y}=2 z
+\] and describe the characteristic projections into the $(x, y)$-plane. Find in explicit form the solution satisfying $z=x^{3}$ on $x+y=1$. In what region of the plane is the solution uniquely determined by the data?
+
+
+
+\question%5
+Consider the differential equation \[
+	z_{x}-y z_{y}=-z
+\] with data $z(0, y)=\min (1, y)$ for $-\infty<y<\infty$. (Here $\min (1, y)$ means the lesser of 1 and $y$, so the data is not smooth; draw its graph.) Show that the solution of this problem is the following: \[
+	z=\min\{y,e^{-x}\}=\begin{cases}
+		e^{-x}&y\geq e^{-x},\\
+		y&y<e^{-x}.
+	\end{cases}
+\] Try to sketch the solution surface.
+
+
+
+\question%6
+Consider the differential equation \[
+	x z_{x}+y z_{y}=(x+y) z
+\] with $z=1$ on $y=x^{2}+1 / 4$ for $x \geq 0$.
+\begin{parts}
+\part%6a
+Parametrise the initial curve as $\left(s, s^{2}+1 / 4,1\right), s \geq 0$, and find the characteristics of the differential equation, $x=x(s, t), y=y(s, t), z=z(s, t)$.
+
+\part%6b
+Identify the two separate segments of the data curve where the data is Cauchy. Find the domain of definition for each segment. On a sketch show the initial curve with these domains. For each segment solve the first two equations for $s$, and find $z$ explicitly for each segment. Comment on why we need to consider the segments separately.
+\end{parts}
+
+\end{questions}
+
+\end{document}

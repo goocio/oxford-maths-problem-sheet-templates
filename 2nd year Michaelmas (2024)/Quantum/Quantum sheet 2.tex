@@ -1,0 +1,89 @@
+\documentclass[answers]{exam}
+\usepackage{../MT2024}
+
+\title{Quantum -- Sheet 2\\Harmonic oscillators}
+\author{YOUR NAME HERE :)}
+\date{Michaelmas Term 2024}
+% accurate as of 15/10/2024
+
+
+\begin{document}
+\maketitle
+
+\begin{questions}
+
+\question%1
+A particle of mass $m$ moves freely in the interval $[0, a]$ on the $x$-axis, with potential $V=0$ inside the interval. Initially the wave function is \[
+	\frac{1}{\sqrt{a}} \sin \left(\frac{\pi x}{a}\right)\left[1+2 \cos \left(\frac{\pi x}{a}\right)\right].
+\]
+\begin{parts}
+\part%1a
+Show that at a later time $t$ the wave function is \[
+	\Psi(x, t)=\frac{1}{\sqrt{a}} \mathrm{e}^{-\mathrm{i} \pi^{2} \hbar t / 2 m a^{2}} \sin \left(\frac{\pi x}{a}\right)\left[1+2 \mathrm{e}^{-3 \mathrm{i} \pi^{2} \hbar t / 2 m a^{2}} \cos \left(\frac{\pi x}{a}\right)\right].
+\] [\emph{Formulae for the normalized wave functions $\Psi_{n}(x, t)$ and energy levels $E_{n}$ may be quoted from lectures.}]
+
+\part%1b
+Hence find the probability that at time $t$ the particle lies within the interval $[0, \frac{1}{2} a]$.
+\end{parts}
+
+
+
+\question%2
+Consider the particle in a box $[0, a]$, where the particle is initially in the ground state. At time $t=0$ the edge of the box at $x=0$ is suddenly moved to the position $x=-a$, doubling the width of the box. The change occurs so rapidly that at that instant the wave function does not change. Calculate the probability that if the energy is measured one finds the particle in the ground state of the new system. [\emph{You might find your results for question 2 of Problem Sheet 1 helpful.}]
+
+
+
+\question%3
+The normalized first excited state wave function for the harmonic oscillator of angular frequency $\omega$ is \[
+	\psi_{1}(x)=\frac{1}{\sqrt{2}}\left(\frac{m \omega}{\pi \hbar}\right)^{1 / 4} 2 \xi \mathrm{e}^{-\xi^{2} / 2},
+\] where $\xi=\sqrt{\frac{m \omega}{\hbar}} x$. Compute the expected values of $x$ and $|x|$ in the state $\psi_{1}$.
+
+
+
+\question%4
+A particle of mass $m$ and charge $q$ moves on the $x$-axis under the influence of a harmonic oscillator potential of angular frequency $\omega$, and a constant electric field $\mathcal{E}$. The potential is \[
+	V(x)=\frac{1}{2} m \omega^{2} x^{2}-q \mathcal{E} x.
+\] Show that the energy levels are \[
+	E_{n}=\left(n+\frac{1}{2}\right) \hbar \omega-\frac{q^{2} \mathcal{E}^{2}}{2 m \omega^{2}}
+\] where $n$ is a non-negative integer. [\emph{Hint: change the space variable, and you may use results for the quantum harmonic oscillator from lectures.}]
+
+
+
+\question%5
+A one-dimensional harmonic oscillator with mass $m$ and potential $V(x)=\frac{1}{2} m \omega_{0}^{2} x^{2}$ is its ground state for $t<0$. At $t=0$ we suddenly change its angular frequency from $\omega_{0}$ to $\omega$. The wave function cannot jump in time, therefore the old ground state becomes the initial condition for the time-dependent Schrödinger equation: \[
+	i \hbar \partial_{t} \Psi(t, x)=-\frac{\hbar^{2}}{2 m} \partial_{x x} \Psi(t, x)+\frac{1}{2} m \omega^{2} x^{2} \Psi(t, x)
+\] Plug in the Ansatz \[
+	\Psi(t, x)=N(t) \exp \left[-\frac{m \omega}{2 \hbar} \mu(t) x^{2}\right]
+\] into the time-dependent Schrödinger equation and reduce the problem to two ODEs for the unknown functions $N(t)$ and $\mu(t)$, and determine the initial conditions for them at $t=0$. Solve for $\mu(t)$ explicitly and argue that a solution for $N(t)$ also exists, which however you do not have to determine. Finally, write down a compact expression for the probability density for the particle at time $t$.
+
+
+
+\question%6
+A particle moves in two dimensions under the influence of the potential \[
+	V(x, y)=\frac{1}{2} m \omega^{2}\left(10 x^{2}+12 x y+10 y^{2}\right)
+\] By considering $V$ in the rotated coordinates $u=(x+y) / \sqrt{2}, v=(-x+y) / \sqrt{2}$, find the energy levels and the associated degeneracy of each level.
+
+
+
+\question%7
+Consider the equation \[
+	H \psi=E \psi
+\] where $H$ is the differential operator \[
+	H=\frac{\hbar^{2}}{2 m}\left(-\frac{\mathrm{d}}{\mathrm{d} x}+W(x)\right)\left(\frac{\mathrm{d}}{\mathrm{d} x}+W(x)\right),
+\] $W(x)$ is a real function, and $E$ is a constant.
+\begin{parts}
+\part%7a
+Show that this is the stationary state Schrödinger equation with potential $V(x)=$ $\frac{\hbar^{2}}{2 m}\left(W^{2}-\frac{\mathrm{d} W}{\mathrm{~d} x}\right)$.
+
+\part%7b
+By integrating by parts and assuming that the wave function $\psi$ tends to zero sufficiently rapidly at infinity that boundary terms are zero, show that \[
+	\int_{-\infty}^{\infty} \bar{\psi} H \psi \mathrm{~d} x=\frac{\hbar^{2}}{2 m} \int_{-\infty}^{\infty}\left|\frac{\mathrm{d} \psi}{\mathrm{d} x}+W \psi\right|^{2} \mathrm{~d} x
+\] Deduce that $E \geq 0$, with equality if and only if $\psi$ satisfies a first order equation.
+
+\part%7c
+By taking $W=\lambda x$, use your results to find the ground state energy, and corresponding ground state wave function, for the one-dimensional harmonic oscillator with potential $V(x)=\frac{1}{2} m \omega^{2} x^{2}$.
+\end{parts}
+
+\end{questions}
+
+\end{document}

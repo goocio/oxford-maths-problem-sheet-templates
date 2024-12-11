@@ -1,0 +1,114 @@
+\documentclass[answers]{exam}
+\usepackage{../MT2024}
+
+\title{Probability -- Sheet 1\\Convergence, Limit theorems}
+\author{YOUR NAME HERE :)}
+\date{Michaelmas Term 2024}
+% accurate as of 02/10/2024
+
+
+\begin{document}
+\maketitle
+
+\begin{questions}
+
+\question%1
+A company sells lottery scratch-cards for $\pounds 1$ each. $1 \%$ of cards win the grand prize of $\pounds 50$, a further $20 \%$ win a small prize of $\pounds 2$, and the rest win no prize at all. Estimate how many cards the company needs to sell to be $99 \%$ sure of making an overall profit. [$\Phi(2.3263)=0.99$]
+
+
+
+\question%2
+A list consists of 1000 non-negative numbers. The sum of the entries is 9000 and the sum of the squares of the entries of 91000. Let $X$ represent an entry picked at random from the list. Find the mean of $X$, the mean of $X^{2}$, and the variance of $X$. Using Markov's inequality, show that the number of entries in the list greater than or equal to 50 is at most 180. What is the corresponding bound from applying Markov's inequality to the random variable $X^{2}$? What is the corresponding bound using Chebyshev's inequality?
+
+
+
+\question%3
+Let $Y_{n}$ be uniform on $\{1,2, ..., n\}$ (i.e. taking each value with probability $1 / n$). Draw the distribution function of $Y_{n} / n$. Show that the sequence $Y_{n} / n$ converges in distribution as $n \to \infty$. What is the limit?
+
+
+
+\question%4
+Let $X_{i}, i \geq 1$ be i.i.d. uniform on $[0,1]$. Let $M_{n}=\max\{X_{1}, ..., X_{n}\}$.
+\begin{parts}
+\part%4a
+Show that $M_{n} \to 1$ in probability as $n \to \infty$.
+
+\part%4b
+Show that $n(1-M_{n})$ converges in distribution as $n \to \infty$. What is the limit?
+\end{parts}
+
+
+
+\question%5
+\begin{parts}
+\part%5a
+What is the distribution of the sum of $n$ independent Poisson random variables each of mean 1? Use the central limit theorem to deduce that \[
+	e^{-n}\left(1+n+\frac{n^{2}}{2!}+\cdots+\frac{n^{n}}{n!}\right) \to \frac{1}{2} \text { as } n \to \infty
+\]
+
+\part%5b
+Let $p \in(0,1)$. What is the distribution of the sum of $n$ independent Bernoulli random variables with parameter $p$? Let $0 \leq a<b \leq 1$. Use appropriate limit theorems to determine how the value of \[
+	\lim _{n \to \infty} \sum_{r=\lfloor a n\rfloor}^{\lfloor b n\rfloor}\binom{n}{r} p^{r}(1-p)^{n-r}
+\] depends on $a$ and $b$. (\emph{$\lfloor x\rfloor$ is the integer part of $x$.})
+\end{parts}
+
+
+
+\question%6
+\begin{parts}
+\part%6a
+Let $X_{n}$, $n \geq 1$ be a sequence of random variables defined on the same probability space. Show that if $X_{n} \to c$ in distribution, where $c$ is a constant, then also $X_{n} \to c$ in probability.
+
+\part%6b
+Show that if $\mathbb{E}|X_{n}-X| \to 0$ as $n \to \infty$, then $X_{n} \to X$ in probability. Is the converse true?
+\end{parts}
+
+
+
+\question%7
+A gambler makes a long sequence of bets against a rich friend. The gambler has initial capital $C$. On each round, a coin is tossed; if the coin comes up tails, he loses $30 \%$ of his current capital, but if the coin comes up heads, he instead wins $35 \%$ of his current capital.
+\begin{parts}
+\part%7a
+Let $C_{n}$ be the gambler's capital after $n$ rounds. Write $C_{n}$ as a product $C Y_{1} Y_{2} ... Y_{n}$ where $Y_{i}$ are i.i.d. random variables. Find $\mathbb{E} C_{n}$.
+
+\part%7b
+Find the median of the distribution of $C_{10}$ and compare it to $\mathbb{E} C_{10}$.
+
+\part%7c
+Consider $\log C_{n}$. What does the law of large numbers tell us about the behaviour of $C_{n}$ as $n \to \infty$? How is this consistent with the behaviour of $\mathbb{E} C_{n}$?
+\end{parts}
+
+
+
+\question%8
+Let $\mathbb{H}_{n}$ be the $n$-dimensional cube $[-1,1]^{n}$. For fixed $x \in \mathbb{R}$, show that the proportion of the volume of $\mathbb{H}_{n}$ within distance $(n / 3)^{1 / 2}+x$ of the origin converges as $n \to \infty$, and find the limit. [\emph{Hint: Consider a random point whose $n$ coordinates are i.i.d. with Uniform $[-1,1]$ distribution. If $A \subset \mathbb{H}_{n}$, then $\operatorname{vol}(A) / \operatorname{vol}\left(\mathbb{H}_{n}\right)$ is the probability that such a point falls in the set $A$. Let $D_{n}$ represent the distance of such a point from the origin; apply an appropriate limit theorem to $D_{n}^{2}$.}]
+
+
+
+\question%9
+Let $Y_{1}, Y_{2}, \ldots$ be i.i.d. and uniformly distributed on the set $\{1,2, \ldots, n\}$. Define $X^{(n)}=\min\{k: Y_{k}=Y_{j} \text{ for some } j<k\}$, the first time that we see a repetition in the sequence $Y_{i}$. (Interpret the case $n=365$). Prove that $X^{(n)} / \sqrt{n}$ converges in distribution to a limit with distribution function $F(x)=1-\exp(-x^{2} / 2)$ for $x>0$. [\emph{Hint: Observe that \[
+	\mathbb{P}\left(X^{(n)}>m\right)=\left(1-\frac{1}{n}\right)\left(1-\frac{2}{n}\right) \ldots\left(1-\frac{m-1}{n}\right).
+\] You may find it useful to use bounds such as $-h-h^{2}<\log (1-h)<-h$ for sufficiently small positive $h$.}]
+
+
+
+\section*{Additional problems:}
+
+\question%10
+Let $X_{i}, i \geq 1$ be i.i.d. random variables with $\mathbb{P}(X_{i}=0)=\mathbb{P}(X_{i}=1)=1 / 2$.
+\begin{parts}
+\part%10a
+Define $S_{n}=\sum_{i=1}^{n} X_{i} 2^{-i}$. What is the distribution of $S_{n}$? Show that the sequence $S_{n}$ converges almost surely as $n \to \infty$ [\emph{Hint: Cauchy sequences converge}]. What is the distribution of the limit?
+
+\part%10b
+Define $R_{n}=\sum_{i=1}^{n} 2 X_{i} 3^{-i}$. Show again that the sequence $R_{n}$ converges almost surely. Is the limit a discrete random variable? Is it a continuous random variable? [\emph{Hint: Consider its expansion in base 3.}]
+\end{parts}
+
+
+
+\question%11
+Let $A_{n}$ be the median of $2 n+1$ i.i.d. random variables which are uniform on $[0,1]$. Find the probability density function of $A_{n}$. [\emph{Hint: consider the probability that $A_{n}$ lies in a small interval $(x, x+d x)$.}] How does the density at the point $\left(\frac{1}{2}+\frac{a}{\sqrt{n}}\right)$ behave as $n \to \infty$? (\emph{Stirling's formula may be useful.}) Deduce a convergence in distribution result for the median (appropriately rescaled) as $n \to \infty$ (feel free to argue informally if you like!).
+
+\end{questions}
+
+\end{document}

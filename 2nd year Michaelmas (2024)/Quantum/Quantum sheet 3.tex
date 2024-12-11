@@ -1,0 +1,168 @@
+\documentclass[answers]{exam}
+\usepackage{../MT2024}
+\usepackage{bbm} % for \mathbbm{1} since \mathbb{1} outputs garbage
+
+\title{Quantum -- Sheet 3\\Harmonic oscillators, Hamiltonians}
+\author{YOUR NAME HERE :)}
+\date{Michaelmas Term 2024}
+% accurate as of 15/10/2024
+
+
+\begin{document}
+\maketitle
+
+\begin{questions}
+
+\question%1
+Define a linear operator $R$ acting on wave functions $\psi$ on the $x$-axis by \[
+	(R \psi)(x)=\psi(-x)
+\] This is called the \emph{parity operator}.
+\begin{parts}
+\part%1a
+Show that $R$ is self-adjoint, and $R^{2}=\mathbbm{1}$.
+
+\part%1b
+What are the possible eigenvalues of $R$, and how can its eigenspaces be characterized?
+
+\part%1c
+Suppose now that a particle of mass $m$ moves under an even potential $V(x)$, so that $V(x)=V(-x)$.
+\begin{subparts}
+\subpart%1ci
+Show that $R$ commutes with the Hamiltonian $H$, i.e. $(R H-H R) \psi=0$ for all $\psi(x)$.
+
+\subpart%1cii
+Show that $R \psi$ is an eigenstate of $H$ with energy $E$ if and only if $\psi$ is. By considering $\psi \pm R \psi$, deduce that there is either an even or an odd eigenstate (or both) with energy $E$.
+\end{subparts}
+\end{parts}
+
+
+
+\question%2
+Show that for any infinitely differentiable function $\psi(x)$ whose Taylor series converges to $\psi(x)$, one has for all real $s$ \[
+	\left(\mathrm{e}^{-\mathrm{i} s P / \hbar} \psi\right)(x)=\psi(x-s)
+\] where $P$ is the momentum operator. Deduce that on the subspace of such functions one has the equality of operators \[
+	\mathrm{e}^{-\mathrm{i} s P / \hbar} X \mathrm{e}^{\mathrm{i} s P / \hbar}=X-s \mathbbm{1}
+\] where $X$ is the position operator and $\mathbbm{1}$ is the identity operator.
+
+
+
+\question%3
+\begin{parts}
+\part%3a
+Show that the expectation value $\mathbb{E}_{\psi}(A)=\langle\psi \mid A \psi\rangle$ of an observable $A$ in a state $\psi$ is necessarily real.
+
+\part%3b
+Show the converse result: if $\langle\psi \mid A \psi\rangle$ is real for all $\psi$ then $A$ satisfies \[
+	\langle\psi_{1} \mid A \psi_{2}\rangle=\langle A \psi_{1} \mid \psi_{2}\rangle
+\] for all $\psi_{1}, \psi_{2}$, implying that $A$ is self-adjoint. [\emph{Hint: look at $\psi=\psi_{1} \pm \psi_{2}$ and $\psi=\psi_{1} \pm \mathrm{i} \psi_{2}$.}]
+\end{parts}
+
+
+
+\question%4
+Consider the state space $\mathcal{H}=\mathbb{C}^{3}$, so that a wave function is a three-component column vector $\psi=\left(\psi_{1}(t), \psi_{2}(t), \psi_{3}(t)\right)^{T}$. The Hamiltonian is \[
+	H=\hbar \omega\begin{pmatrix}
+		1 & 2 & 0 \\
+		2 & 0 & 2 \\
+		0 & 2 & -1
+	\end{pmatrix}
+\] with Schrödinger equation $\mathrm{i} \hbar \frac{\mathrm{d} \psi}{\mathrm{d} t}=H \psi$, and stationary state equation $H \psi=E \psi$.
+\begin{parts}
+\part%4a
+Find the stationary states of this quantum system.
+
+\part%4b
+Consider the observable \[
+	A=\begin{pmatrix}
+		1 & 0 & 0 \\
+		0 & 0 & 0 \\
+		0 & 0 & -1
+	\end{pmatrix}
+\] and suppose that at time $t=0$ the eigenvalue 1 has just been measured.
+\begin{subparts}
+\subpart%4bi
+Find $\psi(t)$ at subsequent times $t$ by solving the Schrödinger equation.
+
+\subpart%4bii
+What is the probability that when $A$ is measured at time $t$ one again obtains the eigenvalue 1?
+\end{subparts}
+\end{parts}
+
+
+
+\question%5
+\begin{parts}
+\part%5a
+Prove Ehrenfest's Theorem: for any observable $A$, \[
+	\frac{\mathrm{d}}{\mathrm{d} t}\langle A\rangle=-\frac{\mathrm{i}}{\hbar}\langle[A, H]\rangle+\left\langle\frac{\partial A}{\partial t}\right\rangle
+\] where we have denoted expectation value $\langle A\rangle \equiv \mathbb{E}_{\psi}(A)$, and $\psi$ is arbitrary. Note here that $A$ might potentially depend explicitly on time $t$, hence the last term.
+
+\part%5b
+Hence show that for the Hamiltonian $H=P^{2} / 2 m+V(X)$ we have \[
+	\frac{\mathrm{d}}{\mathrm{d} t}\langle X\rangle=\frac{1}{m}\langle P\rangle, \quad \frac{\mathrm{d}}{\mathrm{d} t}\langle P\rangle=-\left\langle V'(X)\right\rangle
+\] and deduce that $m \frac{\mathrm{d}^{2}}{\mathrm{~d} t^{2}}\langle X\rangle=-\left\langle V^{\prime}(X)\right\rangle$. Do you recognize this equation?
+\end{parts}
+
+
+
+\question%6
+The state $\psi=\psi_{n}$ is a normalized eigenvector for the energy level $E=E_{n}=\left(n+\frac{1}{2}\right) \hbar \omega$ of the harmonic oscillator with Hamiltonian $H=P^{2} / 2 m+\frac{1}{2} m \omega^{2} X^{2}$.
+\begin{parts}
+\part%6a
+Show that \[
+	E=\frac{1}{2 m} \mathbb{E}_{\psi}(P^{2})+\frac{1}{2}m\omega^{2}\mathbb{E}_{\psi}(X^{2}).
+\]
+
+\part%6b
+By considering $\left\langle\psi \mid(P \pm \mathrm{i} m \omega X)^{k} \psi\right\rangle$ for $k=1,2$, and using orthogonality of eigenstates, or otherwise, show that \[
+	\mathbb{E}_{\psi}(P)=0=\mathbb{E}_{\psi}(X), \quad \mathbb{E}_{\psi}(P^{2})=m^{2} \omega^{2} \mathbb{E}_{\psi}(X^{2})=m E
+\]
+
+\part%6c
+Deduce that $\Delta_{\psi}(X) \Delta_{\psi}(P)=E / \omega$, and discuss how this relates to Heisenberg's uncertainty principle.
+\end{parts}
+
+
+
+\question%7
+This question analyses the two-dimensional harmonic oscillator, with Hamiltonian \[
+	H=\frac{P_{1}^{2}}{2 m}+\frac{P_{2}^{2}}{2 m}+\frac{m \omega_{1}^{2}}{2} X_{1}^{2}+\frac{m \omega_{2}^{2}}{2} X_{2}^{2}.
+\] Throughout this problem you do not have to normalize energy eigenstates.
+\begin{parts}
+\part%7a
+Assuming $1 \leq \frac{\omega_{2}}{\omega_{1}}<\frac{3}{2}$ write down the first six energy eigenvalues and eigenstate wave functions of the system. Determine the degeneracy of energy levels when $\omega_{2}=\omega_{1}$.
+
+\part%7b
+For a one-dimensional harmonic oscillator the raising and lowering operators are defined as \[
+	a_{ \pm}=c_{ \pm} X+\mathrm{i} d_{ \pm} P
+\] where $c_{ \pm}$ and $d_{ \pm}$ are real parameters. These operators satisfy the following properties: \[
+	[a_{-}, a_{+}]=\mathbbm{1}, \qquad a_{-}^{*}=a_{+}, \qquad H=\hbar \omega(a_{+} a_{-}+\lambda \mathbbm{1})
+\] where $\lambda$ is a real number. Determine the parameters $c_{ \pm}, d_{ \pm}, \lambda$.
+
+\part%7c
+Introduce two sets of raising and lowering operators $a_{j, \pm}$ for the two-dimensional harmonic oscillator by \[
+	a_{j, \pm}=c_{j, \pm} X_{j}+\mathrm{i} d_{j, \pm} P_{j}, \qquad(j=1,2)
+\] with $c_{j, \pm}, d_{j, \pm}$ taken from part (b) with the replacement $\omega \rightarrow \omega_{j}$. Compute $\left[a_{j,-}, a_{k,+}\right]$. Express the six energy eigenstates previously found in (a) in terms of the operators $a_{j, \pm}$ acting an appropriate number of times on the vacuum state $\psi_{0,0}$.
+
+\part%7d
+Consider the following observable \[
+	L_{3}=X_{1} P_{2}-X_{2} P_{1}.
+\] Determine $\left[L_{3}, H\right]$ in the special case when $\omega_{2}=\omega_{1}$.
+
+\part%7e
+Based on your result above for $\left[L_{3}, H\right]$, in this part you will write down a new basis for the first three energy eigenstates (out of the six considered so far) when $\omega_{2}=\omega_{1}$. To do so, follow the steps below:
+\begin{subparts}
+\subpart%7ei
+Express $L_{3}$ in terms of $a_{j, \pm}$.
+
+\subpart%7eii
+Compute the action of $L_{3}$ on the first three energy eigenstates. Based on your results, propose a new basis consisting of simultaneous eigenstates of $H$ and $L_{3}$.
+
+\subpart%7eiii
+Write down the wave functions of this new basis in Cartesian coordinates. Convert these formulas to polar coordinates.
+\end{subparts}
+\end{parts}
+
+\end{questions}
+
+\end{document}

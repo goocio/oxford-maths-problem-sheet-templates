@@ -1,0 +1,151 @@
+\documentclass[answers]{exam}
+\usepackage{../MT2024}
+
+\title{Probability -- Sheet 3\\Markov chains, Transition probabilities}
+\author{YOUR NAME HERE :)}
+\date{Michaelmas Term 2024}
+% accurate as of 12/11/2024
+
+
+\begin{document}
+\maketitle
+
+\begin{questions}
+
+\question%1
+Find the communicating classes of the Markov chains with the following transition matrices on the state space $\{1,2,3,4,5\}$, and in each case determine which classes are closed: \[
+	\text{(i)}\quad\begin{pmatrix}
+		\frac{1}{2} & 0 & 0 & 0 & \frac{1}{2} \\
+		0 & \frac{1}{2} & 0 & \frac{1}{2} & 0 \\
+		0 & 0 & 1 & 0 & 0 \\
+		0 & \frac{1}{4} & \frac{1}{4} & \frac{1}{4} & \frac{1}{4} \\
+		\frac{1}{2} & 0 & 0 & 0 & \frac{1}{2}
+	\end{pmatrix} \qquad
+	\text{(ii)}\quad\begin{pmatrix}
+		\frac{1}{4} & 0 & \frac{3}{4} & 0 & 0 \\
+		0 & \frac{1}{3} & 0 & \frac{2}{3} & 0 \\
+		0 & 0 & \frac{1}{2} & 0 & \frac{1}{2} \\
+		\frac{1}{2} & \frac{1}{6} & 0 & \frac{1}{3} & 0 \\
+		\frac{1}{4} & 0 & \frac{1}{2} & 0 & \frac{1}{4}
+	\end{pmatrix}.
+\] If $X$ is a chain with the transition matrix in (ii), find the distribution of $X_{1}$ when $X_{0}$ has the uniform distribution on $\{1,2,3,4,5\}$, and find $P\left(X_{2}=3 \mid X_{0}=1\right)$.
+
+
+
+\question%2
+$N$ black balls and $N$ white balls are distributed between two urns, numbered 1 and 2, so that each urn contains $N$ balls. At each step, one ball is chosen at random from each urn and the two chosen balls are exchanged. Let $X_{n}$ be the number of white balls in urn 1 after $n$ steps. Find the transition probabilities for the Markov chain $X$.
+
+
+
+\question%3
+A die is ``fixed" so that each time it is rolled the score cannot be the same as the preceding score, all other scores having probability $1 / 5$. If the first score is 6, what is the probability that the $n$th score is 6 and what is the probability that the $n$th score is 1? [\emph{Hint: you can simplify things by selecting an appropriate state-space; do you really need a 6-state chain to answer the question?}]
+
+
+
+\question%4
+Let $C$ be a communicating class of a Markov chain. Prove the following statements:
+\begin{parts}
+\part%4a
+Either all states in $C$ are recurrent, or all are transient (so we may refer to the whole class as transient or recurrent). [\emph{Hint: use the criterion for recurrence of a state $i$ in terms of $\sum p_{i i}^{(n)}$ to show that if $i$ is recurrent and $i \leftrightarrow j$ then also $j$ is recurrent.}]
+
+\part%4b
+If $C$ is recurrent then $C$ is closed.
+
+\part%4c
+If $C$ is finite and closed, then $C$ is recurrent.
+\end{parts}
+
+
+
+\question%5
+Let $X_{n}, n \geq 1$ be i.i.d. taking value 1 with probability $p$ and $-1$ with probability $1-p$, where $p \in(0,1)$. For $n \geq 0$, let $S_{n}=\sum_{i=1}^{n} X_{n}$ and let $M_{n}=\max _{0 \leq i \leq n} S_{i}$. In lectures we saw that $\left(S_{n}, n \geq 0\right)$ is a Markov chain, but $(M_{n}, n \geq 0)$ is not. Is $(Y_{n}, n \geq 0)$ a Markov chain in the following cases? If so, give the transition probabilities.
+\begin{parts}
+\part%5a
+$Y_{n}=\sum_{i=1}^{n} S_{i}$;
+
+\part%5b
+$Y_{n}=M_{n}-S_{n}$.
+\end{parts}
+
+
+
+\question%6
+A gambler has $\pounds 8$ and wants to increase it to $\pounds 10$ in a hurry. He can repeatedly stake money on the toss of a fair coin; when the coin comes down tails, he loses his stake, and when the coin comes down heads, he wins an amount equal to his stake, and his stake is returned. He decides to use a strategy in which he stakes all his money if he has less than $\pounds 5$, and otherwise stakes just enough to increase his capital to $\pounds 10$ if he wins. For example, he will stake $\pounds 2$ on the first coin toss, and afterwards will have either $\pounds 6$ or $\pounds 10$.
+\begin{parts}
+\part%6a
+Let $\pounds X_{n}$ be his capital after the $n$th coin toss. Show how to describe the sequence $X_{0}, X_{1}, X_{2}, \ldots$ as a Markov chain.
+
+\part%6b
+Find the expected number of coin tosses until he either reaches $\pounds 10$ or loses all his money.
+
+\part%6c
+Show that he reaches $\pounds 10$ with probability $4 / 5$.
+
+\part%6d
+Show that the probability that he wins the first coin toss, given that he eventually reaches $\pounds 10$, is $5 / 8$. Extend this to describe the distribution of the whole sequence $X_{0}, X_{1}, X_{2}, \ldots$ conditional on the event that he reaches $\pounds 10$.
+
+\part%6e
+In a similar way, let $X_{n}, n \geq 0$ be a Markov chain on $\mathbb{N}$ with $p_{i, i+1}=p=1-p_{i, i-1}$ for $i \geq 1$, and $p_{0,0}=1$. Let $p>1 / 2$ so that the process has an upward bias. Start at $X_{0}=j>0$. In lectures we showed that the probability of absorption at 0 is $\left(\frac{1-p}{p}\right)^{j}$. Describe the distribution of $\left(X_{n}, n \geq 0\right)$ conditional on the event of being absorbed at 0.
+\end{parts}
+
+
+
+\question%7
+Let $P$ be a Markov transition matrix on a finite state-space $I$. Let $f$ be a function from $I$ to $\mathbb{R}$, interpreted as a column vector.
+\begin{parts}
+\part%7a
+Show that $(P f)_{i}=\mathbb{E}[f(X_{1}) \mid X_{0}=i]$.
+
+\part%7b
+How would you interpret (i) $\left(P^{n} f\right)_{i}$; (ii) $\mu P f$, where $\mu$ is a probability distribution on $I$, written as a row vector?
+
+\part%7c
+Show that if $\lambda \in \mathbb{C}$ is an eigenvalue of $P$, then $|\lambda| \leq 1$. [\emph{Hint: letting $\|f\|_{\infty}=\max _{j}\left|f_{j}\right|$, compare $\|f\|_{\infty}$ and $\|P f\|_{\infty}$ for any vector $f$.}]
+
+\part%7d
+Any constant vector is a (right) eigenvector of $P$ with eigenvalue 1 (why?). Show that if $P$ is irreducible, then these are the only such eigenvectors (i.e. the eigenspace of the eigenvalue 1 is 1-dimensional).
+
+\part%7e
+(Optional.) Suppose $P$ is irreducible. When does $P$ have $-1$ as an eigenvalue? Give a necessary and sufficient condition in terms of the period of the chain.
+\end{parts}
+
+
+
+\question%8
+A Markov chain with state space $\{0,1,2, ...\}$ is called a ``birth-and-death chain" if the only non-zero transitions from state $i$ are to states $i-1$ and $i+1$. Consider a general birth-and-death chain and write $p_{i}=p_{i, i+1}$ and $q_{i}=p_{i, i-1}=1-p_{i}$. Assume that $p_{i}$ and $q_{i}$ are positive for all $i \geq 1$. Let $h_{i}$ be the probability of reaching 0 starting from $i$, and write $u_{i}=h_{i-1}-h_{i}$.
+\begin{parts}
+\part%8a
+Show that $p_{i} h_{i}+q_{i} h_{i}=h_{i}=p_{i} h_{i+1}+q_{i} h_{i-1}$, and hence that $u_{i+1}=\frac{q_{i}}{p_{i}} u_{i}$.
+
+\part%8b
+Define $\gamma_{i}=\frac{q_{1}}{p_{1}} \frac{q_{2}}{p_{2}} \cdots \frac{q_{i-1}}{p_{i-1}}$. Write $u_{i}$ in terms of $\gamma_{i}$ and $u_{1}$, and then $h_{i}$ in terms of $\gamma_{1}, \ldots, \gamma_{i}$ and $u_{1}$.
+
+\part%8c
+The equations for $h_{1}, h_{2}, ...$ may have multiple solutions. Which solution gives the true hitting probabilities? Hence find the value of $u_{1}$, and deduce that the chain is transient if and only if $\sum_{i=1}^{\infty} \gamma_{i}$ is finite.
+
+\part%8d
+Consider the case where \[
+	p_{i}=\left(\frac{i+1}{i}\right)^{2} q_{i} .
+\] Show that if $X_{0}=1$, then $\mathbb{P}(X_{n}\geq 1\text{ for all }n \geq 1)=6 / \pi^{2}$.
+\end{parts}
+
+
+
+\section*{Additional problems:}
+
+\question%9
+Suppose $P$ is an irreducible transition matrix, with period $d$. Consider the transition matrix $P^{k}$. In terms of $d$ and $k$, how many communicating classes does $P^{k}$ have, and what is the period of each state?
+
+
+
+\question%10
+Continuing question 5: what about $Y_{n}=\left|S_{n}\right|$?
+
+
+
+\question%11
+Fix $N$ and let $W_{1}, \ldots, W_{N}$ be a random sample from a geometric distribution with parameter $p$ (i.e. $W_{1}, \ldots W_{N}$ are i.i.d. taking value $k$ with probability $(1-p)^{k} p$ for $\left.k \geq 0\right)$. Define $A_{n}$ and $B_{n}, n \geq 0$, by $A_{n}=\#\left\{i: W_{i}=n\right\}$ and $B_{n}=\#\left\{i: W_{i} \geq n\right\}$. Is $A_{n}$ a Markov chain? Is $B_{n}$ a Markov chain? If so, find the transition probabilities. What happens if we replace the geometric distribution by a general distribution on the nonnegative integers?
+
+\end{questions}
+
+\end{document}

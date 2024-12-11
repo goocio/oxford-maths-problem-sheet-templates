@@ -1,0 +1,152 @@
+\documentclass[answers]{exam}
+\usepackage{../MT2024}
+
+\title{Quantum -- Sheet 4\\Angular momentum, Hydrogen atom}
+\author{YOUR NAME HERE :)}
+\date{Michaelmas Term 2024}
+% accurate as of 15/10/2024
+
+
+\begin{document}
+\maketitle
+
+\begin{questions}
+
+\question%1
+A particle of mass $m$ and charge $e$ moving in a plane perpendicular to a magnetic field $B$ has Hamiltonian \[
+	H=\frac{1}{2 m}\left((P_{1}+\tfrac{1}{2} e B X_{2})^{2}+(P_{2}-\tfrac{1}{2} e B X_{1})^{2}\right)
+\] where we suppose that $e B \neq 0$ is constant. Show that the energy levels have the form \[
+	E=E_{n}=\frac{|e B| \hbar}{m}\left(n+\frac{1}{2}\right)
+\] where $n$ is a non-negative integer. [\emph{Hint: Introduce new operators $P$ and $X$, proportional to $P_{1}+\frac{1}{2} e B X_{2}$ and $P_{2}-\frac{1}{2} e B X_{1}$, and show that the given Hamiltonian takes the same form as the harmonic oscillator Hamiltonian for a suitable choice of angular frequency $\omega$.}]
+
+
+
+\question%2 search up "Pauli spin matrices"
+The spin representation of angular momentum has $j=1 / 2$, with angular momentum matrices $J_{i}=S_{i}$ given by \[
+	S_{1}=\frac{1}{2} \hbar\begin{pmatrix}
+		0 & 1 \\
+		1 & 0
+	\end{pmatrix}, \qquad S_{2}=\frac{1}{2} \hbar\begin{pmatrix}
+		0 & -\mathrm{i} \\
+		\mathrm{i} & 0
+	\end{pmatrix}, \qquad S_{3}=\frac{1}{2} \hbar\begin{pmatrix}
+		1 & 0 \\
+		0 & -1
+	\end{pmatrix}
+\] Here $J_{3}=S_{3}$ has eigenvalues $\pm \frac{1}{2} \hbar$, with corresponding eigenstates $\psi_{+}=(1,0)^{T}, \psi_{-}=$ $(0,1)^{T}$, which are called spin up and spin down states. Introducing the unit vector $\mathbf{n}=(\sin \theta \cos \phi, \sin \theta \sin \phi, \cos \theta)$ in spherical polar coordinates, we define the operator $S_{\mathbf{n}} \equiv \sum_{i=1}^{3} n_{i} S_{i}$, which is the component of spin angular momentum in the direction $\mathbf{n}$.
+\begin{parts}
+\part%2a
+Show that \[
+	S_{\mathbf{n}}=\frac{\hbar}{2}\begin{pmatrix}
+		\cos \theta & \sin \theta \mathrm{e}^{-\mathrm{i} \phi} \\
+		\sin \theta \mathrm{e}^{\mathrm{i} \phi} & -\cos \theta
+	\end{pmatrix}
+\]
+
+\part%2b
+Hence, or otherwise, show that $\left(S_{\mathbf{n}}\right)^{2}=\frac{\hbar^{2}}{4}\left(\begin{array}{ll}1 & 0 \\ 0 & 1\end{array}\right)$, and deduce that $S_{\mathbf{n}}$ has eigenvalues $\pm \frac{\hbar}{2}$. Verify that the corresponding normalized eigenstates of $S_{\mathrm{n}}$ are \begin{align*}
+	\psi_{\mathbf{n},+}&=\cos \frac{\theta}{2} \psi_{+}+\sin \frac{\theta}{2} \mathrm{e}^{\mathrm{i} \phi} \psi_{-} \\
+	\psi_{\mathbf{n},-}&=\sin \frac{\theta}{2} \psi_{+}-\cos \frac{\theta}{2} \mathrm{e}^{\mathrm{i} \phi} \psi_{-}
+\end{align*}
+
+\part%2c
+Contrast $\left(S_{\mathbf{n}}\right)^{2}$ with the total spin $S^{2} \equiv \mathbf{S} \cdot \mathbf{S}$.
+
+\part%2d
+The spin angular momentum of $S_{3}$ is measured for a quantum system, obtaining the value $\frac{1}{2} \hbar$ (so that this is "spin up" along the $z$-axis). The spin angular momentum of $S_{\mathbf{n}}$ is now measured. Find the probabilities for obtaining the values $\frac{1}{2} \hbar$ and $-\frac{1}{2} \hbar$.
+\end{parts}
+
+
+
+\question%3
+\begin{parts}
+\part%3a
+Determine the representation matrices of $J_{i}$ ($i=1,2,3$) in the $j=1$ representation following the steps below.
+\begin{subparts}
+\subpart%3ai
+Using a basis that diagonalises $J_{3}$, determine which matrix entries of $J_{ \pm}$ are nonzero. [\emph{Hint: You can deduce this from the action of $J_{ \pm}$ on $J_{3}$ eigenstates.}]
+
+\subpart%3aii
+Determine these nonzero entries from the matrix commutator $\left[J_{+}, J_{-}\right]=2 \hbar J_{3}$ by writing a system of equations for these unknown matrix entries. [\emph{Hint: You can always choose the matrix entries to be non-negative.}]
+
+\subpart%3aiii
+From this write down the representation matrices of $J_{i}$ ($i=1,2,3$).
+\end{subparts}
+
+\part%3b
+You will analyse a physical system in the $j=1$ representation of angular momentum with Hamiltonian $H=\omega J_{3}$, where $\omega$ is a positive real constant.
+\begin{subparts}
+\subpart%3bi
+What are the stationary states for this Hamiltonian?
+
+\subpart%3bii
+At $t=0$ the observable $J_{1}$ is measured with the measurement outcome $+\hbar$. Afterwards the system evolves (with the above Hamiltonian) for time $t_{k}=\frac{\pi k}{\omega}$, where $k \in \mathbb{Z}^{+}$, and $J_{1}$ is measured again. What are the possible outcomes and what are their probabilities (as a function of $k$)?
+\end{subparts}
+\end{parts}
+
+
+
+\question%4
+Recall that the orbital angular momentum operators $L_{i}$ are in spherical polar coordinates given by \[
+	L_{\pm}= \pm \hbar \mathrm{e}^{ \pm \mathrm{i} \phi}\left(\frac{\partial}{\partial \theta} \pm \mathrm{i} \cot \theta \frac{\partial}{\partial \phi}\right), \quad L_{3}=-\mathrm{i} \hbar \frac{\partial}{\partial \phi}
+\] where $L_{ \pm}=L_{1} \pm \mathrm{i} L_{2}$ are raising and lowering operators.
+\begin{parts}
+\part%4a
+Using the fact that $L_{+} Y_{\ell, \ell}(\theta, \phi)=0$, hence show that $Y_{\ell, \ell}(\theta, \phi)=a_{\ell}\left(\sin \theta \mathrm{e}^{\mathrm{i} \phi}\right)^{\ell}$, where $a_{\ell}$ is a normalization constant.
+
+\part%4b
+By applying the lowering operator $L_{-}$ appropriately, hence find $Y_{\ell, m}(\theta, \phi)$ for $(\ell, m)=(1,1)$, $(1,0)$, $(1,-1)$, $(2,2)$, $(2,1)$ and $(2,0)$, up to overall normalization constants that you may ignore.
+\end{parts}
+
+
+
+\question%5
+In a two-dimensional model of the hydrogen atom, the stationary state Schrödinger equation takes the form \[
+	-\frac{\hbar^{2}}{2 m}\left[\frac{1}{r} \frac{\partial}{\partial r}\left(r \frac{\partial \psi}{\partial r}\right)+\frac{1}{r^{2}} \frac{\partial^{2} \psi}{\partial \phi^{2}}\right]-\frac{e^{2}}{4 \pi \epsilon_{0} r} \psi=E \psi
+\] where $(r, \phi)$ are polar coordinates.
+\begin{parts}
+\part%5a
+By separating the equation via $\psi(r, \phi)=R(r) \Phi(\phi)$, show that $\Phi(\phi)$ is a constant linear combination of $\mathrm{e}^{\mathrm{i} \ell \phi}$ and $\mathrm{e}^{-\mathrm{i} \ell \phi}$, where $\ell$ is a non-negative integer. [\emph{Hint: use the fact that $\Phi(\phi+2 \pi)=\Phi(\phi)$.}]
+
+\part%5b
+By further substituting $R(r)=f(r) \mathrm{e}^{-\kappa r}$, where $\kappa=\sqrt{-2 m E} / \hbar$, show that the radial equation becomes \[
+	f''+\left(\frac{1}{r}-2 \kappa\right) f'-\left(\frac{\ell^{2}}{r^{2}}+\frac{\kappa-\beta}{r}\right) f=0
+\] where $\beta$ is a constant you should identify.
+
+\part%5c
+By substituting a generalized power series expansion for $f$, of the form $f(r)=$ $\sum_{k=0}^{\infty} a_{k} r^{k+c}$, argue that $c=\ell$ for a non-singular wave function, and in this case hence deduce the recurrence relation \[
+	a_{k}=\frac{2 \kappa(k+\ell)-\kappa-\beta}{(k+\ell)^{2}-\ell^{2}} a_{k-1}.
+\]
+
+\part%5d
+Hence or otherwise show that the energy levels are of the form $E_{n}=-\nu /(2 n+1)^{2}$, where $\nu$ is a positive constant and $n$ is a non-negative integer. [\emph{Hint: appeal to normalizability to make the series terminate.}] What is the degeneracy of each energy level?
+\end{parts}
+
+
+
+\question%6 gamma function :3
+{}[\emph{In both parts you may use the integral $\int_0^\infty r^n\mathrm e^{-r/b}\mathrm{~d}r=b^{n+1}n!$, where $b>0$ and $n\in\mathbb N$.}]
+\begin{parts}
+\part%6a
+\begin{subparts}
+\subpart%6ai
+Making use of any results you need from the lecture notes, show that the $(N, \ell, m)=(2,1,0)$ state of the hydrogen atom has wave function \[
+	\psi(r, \theta, \phi)=B r \mathrm{e}^{-r / 2 a} \cos \theta
+\] where $a$ is the Bohr radius and $B$ is a normalization constant.
+
+\subpart%6aii
+By normalizing $\psi=\psi(r, \theta, \phi)$, show that we may take $B=\sqrt{\frac{1}{32 \pi a^{5}}}$.
+
+\subpart%6aiii
+Compute $\mathbb{E}_{\psi}(r)$, the expected value of the distance of the electron from the nucleus in this excited state.
+\end{subparts}
+
+\part%6b
+Recall that the normalized ground state wave function for an electron in a hydrogenlike atom with $Z$ protons and any number $A$ neutrons in the nucleus is \[
+	\psi=\sqrt{\frac{Z^{3}}{\pi a^{3}}} \mathrm{e}^{-Z r / a}
+\] where $a$ is the Bohr radius and $r$ is distance from the nucleus. An electron is in the ground state of tritium $(Z=1, A=2)$. A nuclear reaction ($\beta$-decay) instantaneously changes the nucleus into a helium-3 ion ${}^3\mathrm{He}^{+}$ ($Z=2$, $A=1$). Show that the probability of measuring the electron to be in the ground state of ${}^3\mathrm{He}^{+}$ is $\frac{512}{729}$.
+\end{parts}
+
+\end{questions}
+
+\end{document}

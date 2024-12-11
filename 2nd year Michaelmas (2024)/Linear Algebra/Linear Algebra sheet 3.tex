@@ -1,0 +1,91 @@
+\documentclass[answers]{exam}
+\usepackage{../MT2024}
+
+\title{Linear Algebra -- Sheet 3\\Jordan normal form, Dual spaces}
+\author{YOUR NAME HERE :)}
+\date{Michaelmas Term 2024}
+% accurate as of 02/10/2024
+
+
+\begin{document}
+\maketitle
+
+\begin{questions}
+
+\question%1
+Consider the matrix \[
+	A=\begin{pmatrix}
+		0 & 2 & -1 \\
+		-2 & 3 & -2 \\
+		-3 & 2 & -2
+	\end{pmatrix}.
+\]
+\begin{parts}
+\part%1a
+Find the characteristic polynomial $\chi_{A}(x)$ and show it is of the form $-(x-\lambda_{1})(x-\lambda_{2})^{2}$ for some $\lambda_{1} \neq \lambda_{2}$.
+
+\part%1b
+Find basis vectors $u$ of $\ker(A-\lambda_{1} I)$, $v_{1}$ of $\ker(A-\lambda_{2} I)$ and $v_{1}, v_{2}$ of $\ker(A-\lambda_{2} I)^{2}$
+
+\part%1c
+Explain why $(A-\lambda_{2} I) v_{2}$ is a scalar multiple of $v_{1}$.
+
+\part%1d
+Find the matrix of the linear transformation $A$ with respect to the new basis $v_{1}, v_{2}, u$.
+\end{parts}
+
+
+
+\question%2
+Write down all possible Jordan normal forms for matrices with characteristic polynomial $(x-\lambda)^{5}$. In each case, calculate the minimal polynomial and the geometric multiplicity of the eigenvalue $\lambda$. Verify that this information determines the Jordan normal form for this choice of characteristic polynomial.
+
+
+
+\question%3
+Prove that every square matrix over the complex numbers is conjugate to its transpose, i.e. prove that given any $(n \times n)$-matrix $A$ there exists an $(n \times n)$-matrix $P$ such that $P^{-1} A P=A^{T}$ where $A^{T}$ is the transpose of $A$.
+
+
+
+\question%4
+Let $\{e_{1}, e_{2}, e_{3}\}$ be the usual basis $\{(1,0,0)^{T},(0,1,0)^{T},(0,0,1)^{T}\}$ of $\mathbb{R}^{3}$. Express in terms of $e_{1}', e_{2}', e_{3}'$ the dual basis to $\{(1,0,0)^{T},(1,-1,1)^{T},(2,-4,7)^{T}\}$.
+
+
+
+\question%5
+Let $T: V \to W$ be a linear map between finite-dimensional vector spaces. Prove that \[
+	\operatorname{Im}\left(T'\right)=(\ker T)^{\circ}.
+\]
+
+
+
+\question%6
+Let $U$ be a subspace of $V$. Show that restriction $f \mapsto f\bigr|_{U}$ defines a linear map $V' \to U'$. Deduce that there is a natural injection $V' / U^{\circ} \to U'$ which is an isomorphism when $V$ is finite-dimensional.
+
+
+
+\question%7
+\begin{parts}
+\part%7a
+Let $V$ be a finite dimensional vector space over $\mathbb{F}$. For a linear transformation $T: V \to V$ define the trace $\operatorname{tr}(T)$ to be the trace of the matrix representing $T$ with respect to some basis of $V$. Show that $\operatorname{tr}(T)$ is well-defined, i.e. show that it is independent of choice of basis.
+
+\part%7b
+As usual let $\operatorname{Hom}(V, V)$ denote the space of linear maps from $V$ to itself. For $S \in$ $\operatorname{Hom}(V, V)$ define $f_{S}: \operatorname{Hom}(V, V) \to \mathbb{F}$ by \[
+	f_{S}: T \mapsto \operatorname{tr}(S \circ T).
+\] Show that $S \mapsto f_{S}$ defines a linear isomorphism between $\operatorname{Hom}(V, V)$ and its dual that does not depend on a choice of basis.
+\end{parts}
+
+
+
+\question%8
+Let $T: V \to W$ be a map between finite-dimensional vector spaces and let $T'': V'' \to W''$ be the associated map between double duals. Show that under the natural identifications between spaces and their double duals, $T''$ is identified with $T$. That is, if $E^{(V)}: V \cong V''$ and $E^{(W)}: W \cong W''$ are the natural isomorphisms, then we have \[
+	T'' \circ E^{(V)}=E^{(W)} \circ T.
+\]
+
+
+
+\question%9
+Let $V$ be finite dimensional. A hyperplane in $V$ is defined as the kernel of a linear functional. Show that every subspace of $V$ is the intersection of hyperplanes.
+
+\end{questions}
+
+\end{document}

@@ -1,0 +1,91 @@
+\documentclass[answers]{exam}
+\usepackage{../MT2024}
+
+\title{Differential Equations I -- Sheet 4\\Second order semilinear PDEs}
+\author{YOUR NAME HERE :)}
+\date{Michaelmas Term 2024}
+% accurate as of 02/10/2024
+
+
+\begin{document}
+\maketitle
+\begin{questions}
+
+\question%1
+Show that the equation \[
+	y u_{x x}+(x+y) u_{x y}+x u_{y y}=0
+\] is hyperbolic everywhere except on the line $y=x$. Find the characteristic variables, reduce the equation to canonical form, and show that the general solution is \[
+	u=\frac{1}{y-x} f(y^{2}-x^{2})+g(y-x).
+\]
+
+
+
+\question%2
+Consider the partial differential equation \[
+	e^{2 y} u_{x x}+u_{y}=u_{y y}.
+\]
+\begin{parts}
+\part%2a
+Write down the differential equation satisfied by its characteristic curves and show that $\phi=x+e^{y}$ and $\psi=x-e^{y}$ are characteristic variables for the partial differential equation.
+
+\part%2b
+Reduce the equation to canonical form and find the solution of the equation for which $u=x$ and $u_{y}=1$ on the line $y=0,0 \leq x \leq 1$.
+
+\part%2c
+Sketch the characteristic curves $x+e^{y}=1, x+e^{y}=2, x-e^{y}=-1, x-e^{y}=0$. In what region of the $x, y$-plane is your solution uniquely determined by the initial data? Show this region on your diagram.
+\end{parts}
+
+
+
+\question%3
+Let $D=(a_{1}, a_{2}) \times(0, \tau)$ for some $\tau>0$ and $a_{1}<a_{2}$ and let $f: D \to \mathbb{R}$, $g_{1,2}:[0, \tau] \to \mathbb{R}$ and $u_{0}:[a_{1}, a_{2}] \to \mathbb{R}$ be continuously differentiable functions so that $g_{1,2}(0)=u_{0}(a_{1,2})$.
+\begin{parts}
+\part%3a
+Show that the solution $u=u(x, t)$ of the inhomogeneous heat equation \begin{equation}
+	\partial_{t} u-\partial_{x x} u=f\text{ on } D
+\end{equation} with initial and boundary values \begin{equation}
+	u(x, 0)=u_{0}(x) \text { for } x \in\left[a_{1}, a_{2}\right],\quad
+	u(a_{1,2}, t)=g_{1,2}(t) \text { for } t \in[0, \tau]
+\end{equation} is unique and depends continuously on the initial and boundary data, if it exists.
+
+\part%3b
+Prove that the only non-negative solution of \[
+	\partial_{t} u-\partial_{x x} u=-u^{2}
+\] with $u(a_{1,2}, t)=0, t \in[0, \tau]$ and $u(x, 0)=0, x \in[a_{1}, a_{2}]$ is the trivial solution $u=0$.
+
+\part%3c
+Show that the solution of (1) is also unique if we replace the boundary condition $u(a_{2}, t)=g_{2}(t)$ in (2) by the condition that \[
+	\partial_{x} u(a_{2}, t)+u(a_{2}, t)=g_{2}(t)\quad
+	\text{for } t \in(0, \tau)
+\] [\emph{Hint: Show that if $u_{1}$ and $u_{2}$ are two solutions, then $u=u_{1}-u_{2}$ can not achieve a positive maximum on $x=a_{2}$.}]
+
+\part%3d
+Show that if $u$ is a positive function which solves \[
+	\partial_{t} u=\partial_{x}(u \partial_{x} u)+u \text { in } D
+\] then $u(x, t)$ attains its minimum value on the parabolic boundary \[
+	\partial_{P}D=[a_1,a_2]\times\{0\}\cup\{a_{1}\}\times[0,\tau]\cup\{a_{2}\}\times[0,\tau].
+\]
+\end{parts}
+
+
+
+\question%4
+Let $D \subset \mathbb{R}^{2}$ be a bounded open set, let $u: \mathbb{R}^{2} \to \mathbb{R}$ be twice continuously differentiable.
+\begin{parts}
+\part%4a
+Show that if $u$ achieves its maximum in a point $(x_{0}, y_{0}) \in D$ then the Hessian matrix at $(x_{0}, y_{0})$ is negative semi-definite, i.e. \[
+	A:=\begin{pmatrix}
+		u_{x x}(x_{0}, y_{0}) & u_{x y}(x_{0}, y_{0}) \\
+		u_{x y}(x_{0}, y_{0}) & u_{y y}(x_{0}, y_{0})
+	\end{pmatrix}
+\] satisfies $(v_1,v_2)A\binom{v_1}{v_2}\leq0$ for all $(v_{1}, v_{2})\in\mathbb R^2.$ [\emph{Hint: Consider $t \mapsto u((x_{0}, y_{0})+t(v_{1}, v_{2}))$.}]
+
+\part%4b
+Suppose that $u$ satisfies \[
+	x^{2} u_{x x}-14 x y u_{x y}+(49 y^{2}+1) u_{y y} \geq 0 \text { in } D.
+\] Adapt the proof of the Maximum principle for the Laplace operator to show that $u$ achieves its maximum over $\bar{D}$ on the boundary $\partial D$.
+\end{parts}
+
+\end{questions}
+
+\end{document}

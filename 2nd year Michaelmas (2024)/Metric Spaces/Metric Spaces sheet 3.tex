@@ -1,0 +1,77 @@
+\documentclass[answers]{exam}
+\usepackage{../MT2024}
+
+\title{Metric Spaces -- Sheet 3\\Interiors, Closures, Completeness}
+\author{YOUR NAME HERE :)}
+\date{Michaelmas Term 2024}
+% accurate as of 02/10/2024
+
+
+\begin{document}
+\maketitle
+\begin{questions}
+
+\question%1
+Let $X$ be a metric space. Show that the closure of the union of two subsets $A, B$ of $X$ is the union of the closures of $A$ and $B$, that is $\overline{A \cup B}=\overline{A} \cup \overline{B}$. Is $\overline{A} \cap \overline{B}=\overline{A \cap B}$?
+
+
+
+\question%2
+Let $A \subseteq[0,1]$ be the set of real numbers whose decimal expansion contains only 0s and 1s. Show that $A$ is closed. [\emph{Hint: Write $A$ as an infinite intersection of sets which are more obviously closed.}]
+
+
+
+\question%3
+Let $A \subseteq \mathbb{R}$. For this question, write $i(A)$ for the interior of a set $A$ and $c(A)$ for its closure in $\mathbb{R}$.
+\begin{parts}
+\part%3a
+Find $i(A)$ and $c(A)$ when $A=(0,1) \cup(1,2]$, and when $A=\mathbb{Q} \cap(0,1)$.
+
+\part%3b
+Give an example of a set $A$ such that 7 different sets (including $A$ itself) can be obtained by applying the $i()$ and $c()$ operations in some order.
+
+\part%3c
+Show that for every $A$ we have $icic(A)=ic(A)$ and $cici(A)=ci(A)$.
+
+\part%3d
+Show that for every $A$ at most 7 different sets (including $A$ itself) can be obtained by applying the $i()$ and $c()$ operations in some order.
+\end{parts}
+
+
+
+\question%4
+Let $X$ be a metric space, and suppose that $A$ and $B$ are disjoint non-empty closed subsets of $X$. Define $\operatorname{dist}(A, B)\coloneqq\inf_{a \in A, b \in B} d(a, b)$. Show that if $A$ is a singleton then $\operatorname{dist}(A, B)>0$, but that this is not true in general.
+
+
+
+\question%5
+Show that, in $C[0,1]$ (with the $\sup$ norm), the piecewise linear functions are dense. [A function $f:[0,1] \to \mathbb{R}$ is piecewise linear if there is some partition $0=x_{0}<x_{1}<\cdots<$ $x_{n}=1$ such that $f$ is linear on $\left[x_{i}, x_{i+1}\right]$ for $i=0, \ldots, n-1$.]
+
+
+
+\question%6
+Consider $X=C[-1,1]$ with the metric defined by the norm $\|f\|_{1}=\int_{-1}^{1}|f(t)| d t$. Consider the sequence of functions $\left(f_{n}\right)_{n=1}^{\infty}$ defined by $f_{n}(x)=-1$ for $x \leqslant-1 / n, f_{n}(x)=1$ for $x \geqslant 1 / n$, and $f_{n}(x)=n x$ for $1 / n \leqslant x \leqslant 1 / n$. Show that $\left(f_{n}\right)_{n=1}^{\infty}$ is a Cauchy sequence in $X$. Hence, or otherwise, show that $X$ is not complete.
+
+
+
+\question%7
+By considering the sequence of functions $\left(f_{n}\right)_{n=1}^{\infty}$ defined by $f_{n}(x)=|x|^{1+1 / n}$, or otherwise, show that the set of functions in $C[-1,1]$ which are differentiable on $(-1,1)$ is not closed (in the metric induced by the $\sup$ norm).
+
+
+
+\question%8
+Show that the space $\Sigma$ considered in Sheet 2, Q1 is complete.
+
+
+
+\question%9
+Show that $\mathbb Z$ is not complete with the 2-adic metric.
+
+
+
+\question%10
+Let $X$ be a complete metric space, and let $A_{1}, A_{2}, ...$ be a sequence of dense open sets in $X$. Show that $\bigcap_{n=1}^{\infty} A_{n}$ is nonempty.
+
+\end{questions}
+
+\end{document}

@@ -1,0 +1,121 @@
+\documentclass[answers]{exam}
+\usepackage{../MT2024}
+
+\title{Linear Algebra -- Sheet 4\\Inner product spaces}
+\author{YOUR NAME HERE :)}
+\date{Michaelmas Term 2024}
+% accurate as of 02/10/2024
+
+
+\begin{document}
+\maketitle
+
+\begin{questions}
+
+\question%1
+Use the Gram-Schmidt process to obtain an orthogonal basis for $V$, the vector space of polynomials of degree less or equal to two with inner product $\langle f, g\rangle=\int_{0}^{1} f(x) g(x) ~\mathrm{d} x$ and basis $\{f_{0}, f_{1}, f_{2}\}$ where $f_{0}(x)=1, f_{1}(x)=x, f_{2}(x)=x^{2}$.
+
+
+
+\question%2
+Let $\{e_{1}, \ldots, e_{k}\}$ be an orthonormal set in a finite dimensional real inner product space.
+\begin{parts}
+\part%2a
+If $v \in V$, show that \[
+	\sum_{i=1}^{k}|\langle v, e_{i}\rangle|^{2} \leq\|v\|^{2}
+\] [\emph{Hint: consider $\|v-\sum_{i=1}^{k}\langle v, e_{i}\rangle e_{i}\|^{2}$.}]
+
+\part%2b
+Deduce the Cauchy-Schwarz inequality \[
+	|\langle v, w\rangle| \leq\|v\|\|w\| .
+\] When does equality hold?
+
+\part%2c
+Deduce the triangle inequality \[
+	\|v+w\| \leq\|v\|+\|w\| .
+\]
+\end{parts}
+
+
+
+\question%3
+Let $V$ be the set of all real sequences $(a_{n})$ such that $\sum_{n=1}^{\infty} a_{n}^{2}$ converges.
+\begin{parts}
+\part%3a
+Prove that $V$ is a vector space under component-wise addition and scalar multiplication.
+
+\part%3b
+Define a suitable inner product on $V$ and prove that it is an inner product.
+
+\part%3c
+Deduce that for all $(a_{n})$ and $(b_{n})$ in $V$ \[
+	\left(\sum_{n=1}^{\infty}(a_{n}+b_{n})^{2}\right)^{1 / 2} \leq\left(\sum_{n=1}^{\infty} a_{n}^{2}\right)^{1 / 2}+\left(\sum_{n=1}^{\infty} b_{n}^{2}\right)^{1 / 2}
+\]
+
+\part%3d
+Let $U$ be the subspace of all finite (that is, zero after some point) sequences. Show that $U^{\perp}=0$, and deduce that $(U^{\perp})^{\perp}=V \neq U$.
+\end{parts}
+
+
+
+\question%4
+Let $T: \mathbb{C}^{2} \to \mathbb{C}^{2}$ be defined by \[
+	T:(x, y) \mapsto(2 i x+y, x).
+\] Write down the matrix $A$ of $T$ with respect to the usual basis of $\mathbb{C}^{2}$. Is $A$ symmetric? Is it conjugate symmetric? Find the eigenvectors of $A$ and decide if it is diagonalisable.
+
+
+
+\question%5
+Let $(V,\langle\cdot,\cdot\rangle)$ be a complex inner product space. Suppose that $\langle T v, v\rangle=0$ for all $v \in V$. Show that $T=0$. Is this still true over a real inner product space?
+
+
+
+\question%6
+Let $T$ be a linear transformation of a finite dimensional complex inner product space $V$.
+\begin{parts}
+\part%6a
+Show that $T^{*} T$ is self-adjoint and has only real, non-negative eigenvalues.
+
+\part%6b
+Let $\lambda_{\min }$ be the minimum and $\lambda_{\max }$ be the maximum of these eigenvalues. Show that for $v \in V$, \[
+	\lambda_{\min }^{1 / 2}\|v\| \leq\|T v\| \leq \lambda_{\max }^{1 / 2}\|v\|.
+\]
+\end{parts}
+
+
+
+\question%7
+Let $(V,\langle\cdot,\cdot\rangle)$ be a finite-dimensional inner product space. Let a self-adjoint transformation $T: V \to V$ be positive definite, that is $\langle T v, v\rangle>0$ for all $v \neq 0$. Show that all eigenvalues of $T$ are positive. Deduce that there is a positive definite self-adjoint $S: V \to V$ with $S^{2}=T$.
+
+
+
+\question%8
+\begin{parts}
+\part%8a
+Show that the unitary matrices $U(n)$ form a group and that the determinant is a group homomorphism from $U(n)$ onto $S^{1}$, the multiplicative group of complex numbers of modulus 1. Show that $U(n)$ is not isomorphic to $S U(n) \times S^{1}$ as a group.
+
+\part%8b
+Show that the elements of the group $S U(2)$ are of the form \[
+	\begin{pmatrix}
+		\alpha & -\bar{\beta} \\
+		\beta & \bar{\alpha}
+	\end{pmatrix}:\quad
+	\alpha \bar{\alpha}+\beta \bar{\beta}=1.
+\] Deduce that $S U(2)$ can be identified with the 3-sphere $S^{3}$, i.e. the elements of length 1 in $\mathbb{C}^{2}=\mathbb{R}^{4}$.
+\end{parts}
+
+
+
+\question%9
+Let $A\in\mathbb R^{m\times n}$. Define the operator norm by \[
+	\|A\|=\sup_x\frac{\|Ax\|}{\|x\|},
+\] where in the right hand side, the vector norms are simply the distance $\|x\|=\sqrt{\langle x,x\rangle}$. Prove that $\|A\|=\sigma_1$, the largest singular value of $A$.
+
+
+
+\question%10
+Let $A,B\in\mathbb R^{m\times n}$, and let $C=A\circ B$ denote the elementwise product, that is, $C_{ij}=A_{ij}B_{ij}$. Prove that $\operatorname{rank}(A\circ B)\leq\operatorname{rank}(A)\operatorname{rank}(B)$.
+
+\end{questions}
+
+\end{document}

@@ -1,0 +1,84 @@
+\documentclass[answers]{exam}
+\usepackage{../MT2024}
+
+\title{Differential Equations I -- Sheet 1\\ODEs, Picard's theorem}
+\author{YOUR NAME HERE :)}
+\date{Michaelmas Term 2024}
+% accurate as of 02/10/2024
+
+
+\begin{document}
+\maketitle
+\begin{questions}
+
+\question%1
+Consider the initial-value problem \[
+	y'(x)=(1-2 x) y(x), \qquad y(0)=1.
+\]
+\begin{parts}
+\part%1a
+Find $y_{0}(x), y_{1}(x), y_{2}(x), y_{3}(x)$, where $\{y_{n}(x)\}_{n \geq 0}$ is the sequence of Picard iterates.
+
+\part%1b
+Use Picard's theorem to show that the problem has a unique solution $y(x)$ for all $x \in \mathbb{R}$.
+
+\part%1c
+Find the solution $y(x)$ explicitly.
+
+\part%1d
+Find an explicit expression for the Picard iterates $y_{n}(x)$ and use this expression as well as the Weierstrass M-test to prove directly that $y_{n}(x)$ converges uniformly on every interval $[-h, h]$ to the solution $y$ obtained in (c). [\emph{Hint: Write $y_{n}(x)$ as a polynomial in $\left(x-x^{2}\right)$.}]
+\end{parts}
+
+
+
+\question%2
+Consider the initial-value problem \[
+	y'(x)=x y^{1 / 3}(x), \qquad y(0)=b.
+\]
+\begin{parts}
+\part%2a
+Use Picard's theorem to show that if $b>0$ then there is a unique solution on an interval $[-h, h]$, for a suitable $h>0$ which you should specify (you must check carefully that the assumptions of Picard's theorem are satisfied).
+
+\part%2b
+Show that the function $F(x, y)=x y^{1 / 3}$ does not satisfy a Lipschitz condition on any rectangle $\{(x, y):|x| \leq h,|y| \leq k\}$ with $h>0$ and $k>0$.
+
+\part%2c
+Show that if $b=0$ then for any $c>0$ there is a solution $y_{c}$ which is identically zero on $[-c, c]$ and positive when $|x|>c$. Are there any other solutions of the initial value problem?
+
+\part%2d
+(Optional) Now return to the case $b>0$. Consider the set $R=\{(x, y): y \geq$ $b,|x| \leq h\}$. By working in this $R$, and adapting the proof of Picard's theorem, prove that in fact there is a unique solution of the problem on $|x| \leq h$ for any $h$ and hence that there is global existence of solutions.
+\end{parts}
+
+
+
+\question%3
+\begin{parts}
+\part%3a
+Show that $f(x, y)=x^{1 / 3}(1+y^{2})$ satisfies the Lipschitz-condition on $[-h, h] \times$ $[-k, k]$ for every $h, k>0$.
+
+\part%3b
+Determine the maximal number $h_{0}>0$ so that Picard's theorem guarantees the existence of a unique solution on $\left[-h_{0}, h_{0}\right]$ of the initial value problem \[
+	y'(x)=x^{1 / 3}\left(1+y^{2}(x)\right), \qquad y(0)=0.
+\] Does this interval agree with the maximal interval on which a unique solution exists?
+\end{parts}
+
+
+
+\question%4
+Suppose that $f:[a, b] \to \mathbb{R}$ and $K:[a, b] \times[a, b] \to \mathbb{R}$ are continuous. Consider the integral equation \begin{equation*}
+	y(x)=f(x)+\int_{a}^{x} K(x, t) y(t) \mathrm{~d} t, \qquad x \in[a, b]. \tag{IE}
+\end{equation*} For $x \in[a, b]$ define \begin{align*}
+	y_{0}(x) & =f(x), \\
+	y_{n+1}(x) & =f(x)+\int_{a}^{x} K(x, t) y_{n}(t) \mathrm{~d} t.
+\end{align*}
+\begin{parts}
+\part%4a
+Adapt the proof of Picard's theorem to show that $y_{n}$ converges uniformly to a solution of the integral equation for all $x \in[a, b]$. [\emph{You may assume that if $y:[a, b] \to \mathbb{R}$ is continuous then also $x \mapsto \int_{a}^{x} K(x, t) y(t) \mathrm{~d} t$ is a well defined continuous function on $[a, b]$.}]
+
+\part%4b
+Show that the solution of (IE) is unique and prove that it depends continuously on $f$.
+\end{parts}
+
+\end{questions}
+
+\end{document}

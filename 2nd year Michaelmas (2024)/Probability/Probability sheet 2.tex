@@ -1,0 +1,121 @@
+\documentclass[answers]{exam}
+\usepackage{../MT2024}
+
+\title{Probability -- Sheet 2\\Characteristic functions, Joint distributions}
+\author{YOUR NAME HERE :)}
+\date{Michaelmas Term 2024}
+% accurate as of 02/10/2024
+
+
+\begin{document}
+\maketitle
+
+\begin{questions}
+
+\question%1
+\begin{parts}
+\part%1a
+Let $X$ and $Y$ be independent standard normal random variables. Define $R$ and $\Theta$ by $X=R \cos \Theta, Y=R \sin \Theta$. Find the joint distribution of $R$ and $\Theta$.
+
+\part%1b
+Let $Z_{1}, Z_{2}, ..., Z_{n}$ be independent standard normal random variables. Let $A$ be an orthogonal $n \times n$ matrix. Find the joint distribution of $W_{1}, W_{2}, ..., W_{n}$ where $\mathbf{W}=A \mathbf{Z}$. Explain the link to part (a).
+\end{parts}
+
+
+
+\question%2
+The $\operatorname{Gamma}(r, \lambda)$ distribution has density \[
+	f_{r, \lambda}(x)=\frac{1}{\Gamma(r)} \lambda^{r} x^{r-1} e^{-\lambda x}
+\] on $\mathbb{R}_{+}$. Here $r$ is called the \emph{shape} parameter and $\lambda$ is called the \emph{rate} parameter. Use moment generating functions to show that the sum of two independent Gamma-distributed random variables with the same rate parameter is also Gamma-distributed. What does this say about sums of exponential random variables?
+
+
+
+\question%3
+A student makes repeated attempts to solve a problem. Suppose the $i$th attempt takes time $X_{i}$, where $X_{i}$ are i.i.d. exponential random variables with parameter $\lambda$. Each attempt is successful with probability $p$ (independently for each attempt, and independently of the durations). Use moment generating functions to show that the distribution of the total time before the problem is solved has an exponential distribution, and find its parameter.
+
+
+
+\question%4
+Let $X, Y$ and $U$ be independent random variables, where $X$ and $Y$ have moment generating functions $M_{X}(t)$ and $M_{Y}(t)$, and where $U$ has the uniform distribution on $[0,1]$.
+\begin{parts}
+\part%4a
+Find random variables which are functions of $X, Y$ and $U$ and which have the following moment generating functions: (i) $M_{X}(t) M_{Y}(t)$; (ii) $e^{b t} M_{X}(a t)$; (iii) $\int_{0}^{1} M_{X}(t u) \mathrm{~d} u$; (iv) $[M_{X}(t)+M_{Y}(t)] / 2$.
+
+\part%4b
+Using characteristic functions or otherwise, find $\mathbb{E} \cos (t X)$ and $\mathbb{E} \sin (t X)$ when $X$ has exponential distribution with parameter $\lambda$.
+
+\part%4c
+Which random variables $X$ have a real-valued characteristic function?
+\end{parts}
+
+
+
+\question%5
+Suppose $X$ has $\operatorname{Gamma}(2, \lambda)$ distribution, and the conditional distribution of $Y$ given $X=x$ is uniform on $(0, x)$. Find the joint density function of $X$ and $Y$, the marginal density function of $Y$, and the conditional density function of $X$ given $Y=y$. How would you describe the distribution of $X$ given $Y=y$? Use this to describe the joint distribution of $Y$ and $X-Y$.
+
+
+
+\question%6 Z in the 2nd part is an example of a Cauchy distribution - they arise e.g. as the ratio of normal variables, and have lots of cool properties such as: they're one of only 3 analytically expressible stable distributions ("stable" meaning you add two Cauchy variables and get another Cauchy variable), the other 2 being the normal and levy distributions; and none of their moments (mean, variance, etc) are defined!!! these have interesting consequences: the sample mean of cauchy random variables is itself a cauchy random variable, but it doesn't converge as you take more samples, therefore demonstrating the necessity of the "finite variance" condition in the central limit theorem; however, there is a _generalized_ central limit theorem, which specifically generalizes normal distributions to stable distributions (which, as mentioned, the Cauchy distribution is an example of).
+Random variables $X$ and $Y$ have joint density $f(x, y)$. Let $Z=Y / X$. Show that $Z$ has density \[
+	f_{Z}(z)=\int_{-\infty}^{\infty}|x| f(x, x z) \mathrm{~d} x.
+\] Suppose now that $X$ and $Y$ are independent standard normal random variables. Show that $Z$ has density \[
+	f_{Z}(z)=\frac{1}{\pi\left(1+z^{2}\right)},\quad -\infty<z<\infty.
+\]
+
+
+
+\question%7
+The distribution of the heights of husband-wife pairs in a particular population is modelled by a bivariate normal distribution. The mean height of the women is $165 \mathrm{cm}$ and the mean height of the men is $175 \mathrm{cm}$. The standard deviation is $6 \mathrm{cm}$ for women and $8 \mathrm{cm}$ for men. The correlation of height between husbands and wives is 0.5.
+\begin{parts}
+\part%7a
+Let $X$ be the height of a typical wife and $Y$ the height of her husband. Show how $Y$ can be represented as a sum of term which is a multiple of $X$ and a term which is independent of $X$.
+
+\part%7b
+Hence or otherwise:
+\begin{subparts}
+\subpart%7bi
+Given that a woman has height $168 \mathrm{cm}$, find the expected height of her husband.
+
+\subpart%7bii
+Given that a woman has height $168 \mathrm{cm}$, what is the probability that her husband is above average height?
+
+\subpart%7biii
+What is the probability that a randomly chosen man is taller than a randomly chosen woman?
+
+\subpart%7biv
+What is the probability that a randomly chosen man is taller than his wife?
+\end{subparts}
+\end{parts}
+
+
+
+\question%8
+\begin{parts}
+\part%8a
+Let $X$ and $Y$ be independent standard normal random variables. Use question 1(a) to show that for a constant $c>0$, \[
+	\mathbb{P}(X>0, Y>-c X)=\frac{1}{4}+\frac{\tan ^{-1}(c)}{2 \pi}.
+\]
+
+\part%8b
+Two candidates contest a close election. Each of the $n$ voters votes independently with probability $1 / 2$ each way. Fix $\alpha \in(0,1)$. Show that, for large $n$, the probability that the candidate leading after $\alpha n$ votes have been counted is the eventual winner is approximately \[
+	\frac{1}{2}+\frac{\sin ^{-1}(\sqrt{\alpha})}{\pi}.
+\] [\emph{Hint: let $S_{m}$ be the difference between the vote totals of the two candidates when $m$ votes have been counted. What is the approximate distribution of $S_{\alpha n}$ (when appropriately rescaled)? What is the approximate distribution of $S_{n}-S_{\alpha n}$ (when appropriately rescaled)? What about their joint distribution? Finally, notice $\sin ^{-1}(\sqrt{\alpha})=\tan ^{-1} \sqrt{\alpha /(1-\alpha)}$.}]
+\end{parts}
+
+
+
+\section*{Additional problems:}
+
+\question%9
+Let $U, V$ and $W$ be i.i.d. random variables with uniform distribution on $[0,1]$. Find the distribution of $(U V)^{W}$.
+
+
+
+\question%10
+Use characteristic functions to prove the identity \[
+	\frac{\sin t}{t}=\prod_{n=1}^{\infty} \cos \left(\frac{t}{2^{n}}\right)
+\] [\emph{Hint: consider the c.f. of a uniform distribution, and of a distribution taking only two values.}]
+
+\end{questions}
+
+\end{document}
