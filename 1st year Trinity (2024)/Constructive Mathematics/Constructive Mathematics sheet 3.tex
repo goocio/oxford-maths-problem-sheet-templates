@@ -1,0 +1,78 @@
+\documentclass[answers]{exam}
+\usepackage{../TT2024}
+
+\title{Constructive Mathematics -- Sheet 3}
+\author{YOUR NAME HERE :)}
+\date{Trinity Term 2024}
+% accurate as of 25/06/2024
+
+
+\begin{document}
+\maketitle
+\begin{questions}
+
+\question%1
+Suppose $f \in C^{4}$ in a interval containing the root, $\alpha$ and that Newton's method gives a sequence of iterates $x_{k}, k=0,1,2, \ldots$ which converge to $\alpha$.
+\begin{parts}
+\part Show that Newton's method is at least quadratically convergent to $\alpha$ if $f'(\alpha) \neq 0$.
+\part If $f'(\alpha)=0$, then by using L'Hôpital's Rule or otherwise, show that Newton's method is linearly convergent in both of the cases \[
+	\text{(i) } f''(\alpha) \neq 0 \qquad\text{(ii) } f''(\alpha)=0, f'''(\alpha) \neq 0.
+\] What is \[
+	\lim _{k \rightarrow \infty} \frac{\left|x_{k+1}-\alpha\right|}{\left|x_{k}-\alpha\right|}
+\] in each of these cases?
+\part What can you say about the order of convergence of Newton's method when $f'(\alpha) \neq$ $0, f''(\alpha)=0$?
+\end{parts}
+
+
+
+\question%2
+Deduce from the above that Newton's Method has linear convergence to a double root. Further show that in the case that the multiplicity of a particular root is known to be $m \in \mathbb{N}\left(\Rightarrow f(x)=(x-\alpha)^{m} h(x), h(\alpha) \neq 0\right)$ then the modified Newton's method \[
+	x_{k+1}=x_{k}-m \frac{f\left(x_{k}\right)}{f'\left(x_{k}\right)}
+\] is at least quadratically convergent.
+
+
+
+\question%3
+(P) Apply Newton's method with $x_{0}=\frac{1}{2}$ to find the root $\alpha=0$ of the following functions \[
+	\text{(a) } f(x)=\sin x \sinh x\qquad
+	\text{(b) } f(x)=x \cos x\qquad
+	\text{(c) } f(x)=x-\sin x
+\] and relate the order of convergence observed in each case to question 1 above. (Note that it is here easier to observe what $\left|x_{k}-\alpha\right| /\left|x_{k-1}-\alpha\right|^{p}$ is, at least for $p=1$ and possibly $p=2$, since $\alpha=0$.) For (c) make the trivial modification to your code to apply the appropriate modified Newton's method; observe the order of convergence.
+
+\question%4
+(Optional, easier) Division of two real numbers on a computer is much more difficult than addition, subtraction and even multiplication, so often Newton's method is used even to divide 2 real numbers. This question is about reciprocation: given $a \in \mathbb{R}\setminus\{0\}$, find $1 / a$. Clearly reciprocation followed by multiplication gives the result of division. For given $a \in \mathbb{R}\setminus\{0\}$, show that application of Newton's method to $f(x)=a-1 / x$ yields an iterative formula which only requires addition, subtraction and multiplication.
+
+
+
+\question%5
+(Optional, harder (Süli \& Mayers, problem 1.10)) By replacing (approximating) $f'\left(x_{k}\right)$ by the slope of the secant between two previous points, one derives the secant method \[
+	x_{k+1}=x_{k}-f\left(x_{k}\right)\left(\frac{x_{k}-x_{k-1}}{f\left(x_{k}\right)-f\left(x_{k-1}\right)}\right)
+\] for finding roots of $f$.
+\begin{parts}
+\part Show that the secant iteration can be written in the form \[
+	x_{k+1}=\frac{x_{k} f\left(x_{k-1}\right)-x_{k-1} f\left(x_{k}\right)}{f\left(x_{k-1}\right)-f\left(x_{k}\right)} .
+\]
+\part  Supposing that $f$ has a continuous second derivative in a neighbourhood of the root $\alpha$ of $f$ and that $f'(\alpha)>0, f''(\alpha)>0$, define \[
+	\phi\left(x_{k}, x_{k-1}\right)=\frac{x_{k+1}-\alpha}{\left(x_{k}-\alpha\right)\left(x_{k-1}-\alpha\right)}
+\] where $x_{k+1}$ has been expressed in terms of $x_{k}$ and $x_{k-1}$. Find an expression for \[
+	\psi\left(x_{k-1}\right)=\lim _{x_{k} \rightarrow \alpha} \phi\left(x_{k}, x_{k-1}\right),
+\] and the determine $\lim _{x_{k-1} \rightarrow \alpha} \psi\left(x_{k-1}\right)$. Deduce that \[
+	\lim _{x_{k}, x_{k-1} \rightarrow \alpha} \phi\left(x_{k}, x_{k-1}\right)=\frac{f''(\alpha)}{2 f'(\alpha)} .
+\]
+\part Now assume that \[
+	\lim _{k \rightarrow \infty} \frac{\left|x_{k+1}-\alpha\right|}{\left|x_{k}-\alpha\right|^{q}}=A.
+\] Show that $q-1-1 / q=0$, and hence that $q=\frac{1}{2}(1+\sqrt{5})$. Deduce finally that \[
+	\lim _{k \rightarrow \infty} \frac{\left|x_{k+1}-\alpha\right|}{\left|x_{k}-\alpha\right|^{q}}=\left(\frac{f''(\alpha)}{2 f'(\alpha)}\right)^{q /(1+q)}
+\] so that secant iteration has order of convergence $\frac{1}{2}(1+\sqrt{5}) \approx 1.618$. Note that two starting guesses, $x_{0}$ and $x_{1}$, are required for the secant method.
+\end{parts}
+
+
+
+\question%6
+For a given real number $c>0$, find the order of convergence of \[
+	x_{k+1}=\frac{1}{9}\left(5 x_{k}+\frac{5 c}{x_{k}^{2}}-\frac{c^{2}}{x_{k}^{5}}\right)=G\left(x_{k}\right)
+\] to the real cube root of $c$. Determine the other fixed point, $d$ of $x=G(x)$, and show that for no interval $a<d<$ $b$ can convergence of the fixed point iteration to $d$ be guaranteed by the Contraction Mapping Theorem.
+
+\end{questions}
+
+\end{document}

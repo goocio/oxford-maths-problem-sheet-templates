@@ -1,0 +1,55 @@
+\documentclass[answers]{exam}
+\usepackage{../TT2024}
+
+\title{Constructive Mathematics -- Sheet 1}
+\author{YOUR NAME HERE :)}
+\date{Trinity Term 2024}
+% accurate as of 25/06/2024
+
+
+\begin{document}
+\maketitle
+(P) indicates that it is suggested that you use Python.
+\begin{questions}
+
+\question%1
+\begin{parts}
+\part Use Euclid's method to calculate $\operatorname{hcf}(19397,1904)$. Show all of the steps.
+\part (P) Use Euclid's method to compute $\operatorname{hcf}(9506112,4183179)$.
+\end{parts}
+
+
+
+\question%2
+\begin{parts}
+\part Find all solutions $x, y \in \mathbb{Z}$ of $163 x+16 y=1$.
+\part Find $\operatorname{hcf}(2023,812)$ and all solutions of \[
+	2023 x+812 y=28, \quad x, y \in \mathbb{Z}
+\]
+\end{parts}
+
+
+
+\question%3
+Suppose that $a, b \in \mathbb{N}$ and $c \in \mathbb{N}$ divides $a b$. Prove that if $\operatorname{hcf}(a, c)=1$, then $c$ divides $b$.
+
+
+
+\question%4
+Prove that if $a, b, c \in \mathbb{N}$ with $\operatorname{hcf}(a, c)=1=\operatorname{hcf}(b, c)$, then $\operatorname{hcf}(a b, c)=1$.
+
+
+
+\question%5
+Perform the division algorithm for the real polynomials $x^{3}+2 x^{2}-5 x-6$ and $x^{2}+3 x-10$. What is the remainder? By Euclid's algorithm, find all roots common to these two polynomials.
+
+
+
+\question%6
+The Legendre polynomials (which you may come across in various contexts later) are defined by $P_{0}(x)=1, P_{1}(x)=x$ and for $k \geq 1$ by the 3-term recurrence relation \[
+	P_{k+1}(x)=\frac{2 k+1}{k+1} x P_{k}(x)-\frac{k}{k+1} P_{k-1}(x)
+\] Prove that for no $k \in \mathbb{N}$ can $P_{k}$ and $P_{k+1}$ have any common roots.
+
+\end{questions}
+
+\end{document}

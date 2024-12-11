@@ -1,0 +1,87 @@
+\documentclass[answers]{exam}
+\usepackage{../TT2024}
+
+\title{Statistics and Data Analysis -- Sheet 1}
+\author{YOUR NAME HERE :)}
+\date{Trinity Term 2024}
+% accurate as of 25/06/2024
+
+
+\begin{document}
+\maketitle
+\begin{questions}
+
+\question%1
+Suppose $X_{1}, \ldots, X_{n}$ is a random sample from a distribution with mean $\mu$ and variance $\sigma^{2}$. Let $\bar{X}=\sum_{i=1}^{n} X_{i} / n$ and $S^{2}=\sum_{i=1}^{n}\left(X_{i}-\bar{X}\right)^{2} /(n-1)$ be the sample mean and variance.
+\begin{subparts}
+\subpart Find $E(\bar{X})$ and $\operatorname{var}(\bar{X})$.
+\subpart Using $\sum\left(X_{i}-\bar{X}\right)^{2}=\sum\left\{\left(X_{i}-\mu\right)+(\mu-\bar{X})\right\}^{2}$ show that \[
+	\sum_{i=1}^{n}\left(X_{i}-\bar{X}\right)^{2}=\sum_{i=1}^{n}\left(X_{i}-\mu\right)^{2}-n(\bar{X}-\mu)^{2}.
+\] By taking expectations show that $E\left(S^{2}\right)=\sigma^{2}$.
+\end{subparts}
+
+
+
+\question%2
+Let $X_{1}, \ldots, X_{n}$ be independent identically distributed random variables. Find the maximum likelihood estimators of the parameter $\theta$ for the following distributions. (In each case $r$ is a known positive integer.)
+\begin{subparts}
+\subpart $X_{i}$ has a binomial distribution with parameters $r$ and $\theta$;
+\subpart $X_{i}$ has a negative binomial distribution with probability mass function \[
+	f(x;\theta)=\binom{r+x-1}x \theta^{r}(1-\theta)^{x}, \quad x=0,1,2, \ldots;
+\]
+\subpart $X_{i}$ has a gamma distribution with probability density function \[
+	f(x ; \theta)=\frac{\theta^{r}}{(r-1) !} x^{r-1} e^{-\theta x}, \quad x>0 .
+\]
+\end{subparts}
+
+
+
+\question%3
+Suppose that in a population of twins, males $(M)$ and females $(F)$ are equally likely to occur and that the probability that twins are identical is $\theta$. If twins are not identical, their genders are independent (if they are identical, their genders are the same).
+\begin{subparts}
+\subpart Show that, ignoring birth order, $P(M M)=P(F F)=(1+\theta) / 4$ and $P(M F)=(1-\theta) / 2$.
+\subpart Suppose that $n$ twins are sampled. It is found that $n_{1}$ are $M M, n_{2}$ are $F F$, and $n_{3}$ are $M F$, but it is not known which twins are identical. Find the maximum likelihood estimator of $\theta$.
+\end{subparts}
+
+
+
+\question%4
+Suppose $X$ is a normal random variable with mean $\mu$ and variance $\sigma^{2}$.
+\begin{subparts}
+\subpart If $a$ and $b$ are constants and $a\neq0$, show that $a X+b$ has a normal distribution and find its mean and variance.
+\subpart If $Z=(X-\mu) / \sigma$, deduce that $Z \sim N(0,1)$.
+\subpart Using (ii) find $P(X<x)$ in terms of $\Phi$, where $\Phi$ is the cumulative distribution function of a $N(0,1)$ random variable.
+\subpart If $c>0$ is a constant, show that $P(\mu-c \sigma<X<\mu+c \sigma)$ does not depend on $\mu$ or $\sigma$.
+\end{subparts}
+
+
+
+\question%5
+It is a standard result, which you may assume, that if $X_{1}$ and $X_{2}$ are independent and normally distributed random variables, then $X_{1}+X_{2}$ is normally distributed. Suppose $X_{1}, \ldots, X_{n}$ are independent normal random variables, $X_{i}$ having mean $\mu_{i}$ and variance $\sigma_{i}^{2}$. If $a_{1}, \ldots, a_{n}$ are constants, show that $\sum_{i=1}^{n} a_{i} X_{i}$ is normally distributed and find its mean and variance.
+
+
+
+\question%6
+\emph{In the previous question, you might find it frustrating to be told: ``It is a standard result, which you may assume ...". One nice way to prove the result is to use moment generating functions -- see Probability in 2nd year. Here are the steps of a different proof.}
+\begin{subparts}
+\subpart Let $X$ and $Y$ be independent $N(0,1)$ random variables.
+\begin{parts}
+\part Write down the joint density function $f_{X, Y}(x, y)$.
+\part Let $a$ and $b$ be constants (not both zero). For any $z\in\mathbb R$, we know that \[
+	P(a X+b Y \leqslant z)=\iint_{A} f_{X, Y}(x, y)~\mathrm dx~\mathrm dy
+\] where $A$ is the region of the $x y$-plane in which $a x+b y \leqslant z$. By changing variables in this integral from $(x,y)$ to $(u,v)$ where $u=a x+b y, v=b x-a y$, show that \[
+	P(a X+b Y \leqslant z)=\int_{-\infty}^{z} \int_{-\infty}^{\infty} \frac{1}{2 \pi\left(a^{2}+b^{2}\right)} \exp \left[\frac{-\left(u^{2}+v^{2}\right)}{2\left(a^{2}+b^{2}\right)}\right]~\mathrm dv~\mathrm du.
+\]
+\part Hence show that \[
+	P(a X+b Y \leqslant z)=\int_{-\infty}^{z} \frac{1}{\sqrt{2 \pi\left(a^{2}+b^{2}\right)}} \exp \left[\frac{-u^{2}}{2\left(a^{2}+b^{2}\right)}\right]~\mathrm du.
+\] [\emph{Remember that p.d.f.s integrate to 1, there's no need to actually do any integration.}]
+\part Deduce that $a X+b Y \sim N\left(0, a^{2}+b^{2}\right)$.
+\end{parts}
+\subpart Now suppose $X_{1}$ and $X_{2}$ are independent, $X_{i} \sim N\left(\mu_{i}, \sigma_{i}^{2}\right)$ for $i=1$, 2 . If $a_{1}$ and $a_{2}$ are constants (not both zero), use (a)(iv) (and question 4) to show that \[
+	a_{1} X_{1}+a_{2} X_{2} \sim N\left(a_{1} \mu_{1}+a_{2} \mu_{2}, a_{1}^{2} \sigma_{1}^{2}+a_{2}^{2} \sigma_{2}^{2}\right).
+\]
+\end{subparts}
+
+\end{questions}
+
+\end{document}

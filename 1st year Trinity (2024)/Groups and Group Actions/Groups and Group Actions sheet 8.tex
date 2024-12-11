@@ -1,0 +1,73 @@
+\documentclass[answers]{exam}
+\usepackage{../TT2024}
+
+\title{Groups and Group Actions -- Sheet 8\\Orbit-counting Formula. Polyhedral Symmetry Groups.}
+\author{YOUR NAME HERE :)}
+\date{Trinity Term 2024}
+% accurate as of 25/06/2024
+
+
+\begin{document}
+\maketitle
+\begin{questions}
+\question%1
+Let $G$ be a finite group with $m$ conjugacy classes. Explain why \[
+	\sum_{g \in G}\left|C_{G}(g)\right|=m|G|.
+\] Deduce that the probability that two randomly chosen elements of $G$ commute is $m /|G|$. Comment on this formula when $G$ is Abelian.
+
+
+
+\question%2
+Show that a regular hexagon's edges may be coloured red, white or blue in 92 essentially different ways. How many ways are possible if an equal number of red, white and blue edges must appear?
+
+
+
+\question%3
+Let $n$ be an integer such that $n \geqslant 3$ and let $S$ be the set of all ordered triples of strictly positive integers $(x, y, z)$ whose sum is $n$. Show that $S$ has $\frac{1}{2}(n-1)(n-2)$ elements. Distinguishing cases, find the number of integer triples $(x, y, z)$ such that \[
+	x+y+z=n \quad \text { and } \quad x \geqslant y \geqslant z>0 .
+\]
+
+
+
+\question%4
+\begin{parts}
+\part Prove that the group of all symmetries of a regular tetrahedron is isomorphic to $S_{4}$.
+\part In lectures, it was shown that the group of rotations of a cube is also isomorphic to $S_{4}$. Prove that these two groups are not conjugate when considered as subgroups of the group of isometries of three-dimensional space.
+\end{parts}
+
+
+
+\question%4
+\begin{parts}
+\part A frame is made in the shape of a regular tetrahedron and its edges are each coloured with one of $n$ colours. Show that there are \[
+	\frac{n^{6}+3 n^{4}+8 n^{2}}{12}
+\] essentially different colourings of this frame.
+\part Show that the number of different (labelled) colourings of the frame that contain one or more monochromatic triangles is \[
+	4 n^{4}-6 n^{2}+3 n
+\] [\emph{Hint}: use the inclusion-exclusion principle.] Explain why these lead to \[
+	\frac{n^{2}\left(n^{2}+2\right)}{3}
+\] essentially different tetrahedra with one or more monochromatic triangles.
+\end{parts}
+
+\end{questions}
+
+\section*{Starter}
+\begin{questions}
+\question%S1
+What is the probability that two randomly chosen elements of $D_{8}$ commute?
+
+\end{questions}
+
+\section*{Pudding}
+\begin{questions}
+\question%P1
+Let $G$ be a group of size $n$ and let $p$ be a prime number. Assume that $p^{k}$ divides $n$ but $p^{k+1}$ does not divide $n$ for some $k \in \mathbb{N}$. The aim of this exercise is to prove one of Sylow's theorems: $G$ contains a subgroup of size $p^{k}$. Let $\Omega$ be the set of all subsets of $G$ of size $p^{k}$ and consider the left action of $G$ on $\Omega$ defined by $g \cdot A:=g A=\{g a \mid a \in A\}$ for each $g \in G$ and $A \in \Omega$.
+\begin{parts}
+\part Show that $p$ does not divide $|\Omega|$.
+\part Show that there is some orbit $O$ of $G$ on $\Omega$ such that $p$ does not divide $|O|$. Let $A \in O$ and let $H=\operatorname{Stab}_{G}(A)$. Prove that $p^{k}$ divides $|H|$.
+\part Prove that if $H$ is as in (ii) above then $|H| \leqslant p^{k}$ and conclude that $|H|=p^{k}$.
+\end{parts}
+
+\end{questions}
+
+\end{document}

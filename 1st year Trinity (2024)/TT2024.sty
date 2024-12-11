@@ -1,0 +1,160 @@
+% keep the packages, but put whatever macros you want here,
+% I've made sure none of the sheets are dependent on them
+
+% see sample.tex and sample.pdf for an example of the class
+
+\RequirePackage{amssymb}
+\RequirePackage{amsmath}
+\RequirePackage{stmaryrd}
+\RequirePackage{pifont}
+\RequirePackage{mathrsfs}
+\RequirePackage{mathtools}
+\RequirePackage{leftindex}
+\RequirePackage{cancel}
+\RequirePackage{xcolor}
+\RequirePackage{array}   % for \newcolumntype macro
+\RequirePackage[a4paper, left = 1.7cm, right = 1.7cm, top = 2.5cm, bottom = 2.5cm]{geometry}
+\renewcommand{\baselinestretch}{1.25}
+\footer{}{\thepage}{}
+\parindent0pt
+
+
+
+% GENERAL
+
+% shorthand
+\let\ds\displaystyle
+\let\mb\mathbf
+\let\bb\mathbb
+\let\mf\mathfrak
+\let\ms\mathscr
+\let\mc\mathcal
+\let\mr\mathrm
+\let\bs\boldsymbol
+\let\on\operatorname
+\let\en\ensuremath
+\let\f\frac
+\newcommand*{\lb}{\left(}
+\newcommand*{\rb}{\right)}
+\newcommand*{\ls}{\left[}
+\newcommand*{\rs}{\right]}
+\newcommand*{\lc}{\left\{}
+\newcommand*{\rc}{\right\}}
+\newcommand*{\lv}{\left|}
+\newcommand*{\rv}{\right|}
+
+% misc
+\newcommand*{\sech}{\operatorname{sech}}
+\newcommand*{\csch}{\operatorname{csch}}
+\newcommand*{\inv}{^{-1}}
+\newcommand*{\func}[3]{#1\!\!\!\: :#2\to #3}
+\newcommand*{\bvec}[1]{\vec{\mathbf{#1}}}
+\newcommand*{\im}{\operatorname{Im}}
+\newcommand*{\re}{\operatorname{Re}}
+\newcommand*{\ceil}[1]{\left\lceil #1\right\rceil}
+\newcommand*{\floor}[1]{\left\lfloor #1\right\rfloor}
+\newcommand*{\round}[1]{\left\lfloor #1\right\rceil}
+\newcommand*{\lang}{\left\langle}
+\newcommand*{\rang}{\right\rangle}
+\newcommand*{\lcm}{\operatorname{lcm}}
+\newcommand*{\hcf}{\operatorname{hcf}}
+\newcommand*{\sgn}{\operatorname{sgn}}
+\newcommand*{\deq}{\coloneqq}
+
+% overrides
+% make default \geq and \leq be slanted \geqslant \leqslant
+\let\geqflat\geq
+\let\geq\geqslant
+\let\leqflat\leq
+\let\leq\leqslant
+% i hate the standard \epsilon and prefer \varepsilon, so swap them
+\let\tempepsiloncopy\epsilon
+\let\epsilon\varepsilon
+\let\varepsilon\tempepsiloncopy
+% make colour of cancellation (\cancel, \bcancel, \cancelto) blue for clarity
+\renewcommand\CancelColor{\color{blue}}
+
+% typesetting
+\newcommand{\note}[1]{{\color{blue}\textbf{Note:} #1}}
+\newcommand{\shift}[2]{\makebox[0pt][l]{\makebox[#1][r]{#2}}}
+\newcommand{\up}[1]{\vspace{-#1\baselineskip}}
+\newcommand*{\dquad}{\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!}
+\newcolumntype{L}{>{$}l<{$}} % left align table math
+\newcolumntype{C}{>{$}c<{$}} % centre align table math
+\newcolumntype{R}{>{$}r<{$}} % right align table math
+
+% proofs
+\newcommand*{\via}[2]{\underset{\text{#1}}{#2}}
+\newcommand{\by}[1]{\qquad\text{by #1}}
+\newcommand*{\st}{(\ensuremath{\ast}) }
+\newcommand*{\qed}{\ensuremath{\qquad_\blacksquare}}
+\newcommand*{\cont}{~\ensuremath{\lightning}}
+\newcommand*{\tick}{\text{~\ding{51}}}
+\newcommand*{\cross}{\text{~\ding{55}}}
+
+% letters
+\let\ga\alpha %no Alpha
+\let\gb\beta %no Beta
+\let\gc\gamma\let\gC\Gamma %c because gg already taken, and gamma is the 3rd letter after all
+\let\gd\delta\let\gD\Delta
+\let\ge\epsilon %no Epsilon ; technically there is \ge already, but it's synonymous with \geq
+\let\ve\varepsilon
+\let\gz\zeta %no Zeta
+%no eta, Eta
+\let\gt\theta\let\gT\Theta
+\let\vt\vartheta
+\let\gi\iota%no Iota
+\let\gk\kappa%no Kappa
+\let\gl\lambda\let\gL\Lambda
+%no mu, Mu
+%no nu, Nu
+%no omicron, Omicron
+%no xi, Xi
+%no pi, Pi
+\let\vp\varpi
+%no rho, Rho
+\let\vr\varrho
+\let\gs\sigma\let\gS\Sigma
+\let\vs\varsigma
+%no tau, Tau
+\let\gu\upsilon\let\gU\Upsilon
+%no phi, Phi
+\let\vf\varphi
+%no chi, Chi
+%no psi, Psi
+\let\go\omega\let\gO\Omega
+
+
+% LINEAR ALGEBRA
+\newcommand*{\spn}{\operatorname{span}}% unfortunately \span already exists
+\newcommand*{\nll}{\operatorname{null}}% unfortunately \null already exists
+\newcommand*{\rank}{\operatorname{rank}}
+\newcommand*{\rrank}{\operatorname{rowrank}}
+\newcommand*{\crank}{\operatorname{colrank}}
+\newcommand*{\id}{\operatorname{id}}
+\newcommand*{\tr}{\operatorname{tr}}
+\newcommand*{\ip}[2]{\left\langle#1,#2\right\rangle}
+\newcommand*{\norm}[1]{\left\|#1\right\|}
+\newcommand*{\dmat}[1]{\left|~\begin{matrix}#1\end{matrix}~\right|}
+\newcommand*{\pmat}[1]{\left(~\begin{matrix}#1\end{matrix}~\right)}
+\newcommand*{\bmat}[1]{\left[~\begin{matrix}#1\end{matrix}~\right]}
+\newcommand*{\lmat}[1]{\left\langle~\begin{matrix}#1\end{matrix}~\right\rangle}
+\newcommand*{\unit}{\operatorname{unit}}
+\newcommand*{\vect}[3]{\begin{pmatrix}#1\\#2\\#3\end{pmatrix}}
+\newcommand*{\diag}{\operatorname{diag}}
+
+
+% CALCULUS
+\newcommand*{\dd}{~\mathrm d}
+\newcommand*{\der}[2]{\frac{\mathrm d#1}{\mathrm d#2}}
+\newcommand*{\dder}[3][2]{\frac{\mathrm d^{#1}#2}{\mathrm d#3^{#1}}}
+\newcommand*{\pder}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand*{\pdder}[3][2]{\frac{\partial^{#1}#2}{\partial #3^{#1}}}
+\newcommand*{\jac}[4]{\frac{\partial(#1,#2)}{\partial(#3,#4)}}
+\newcommand*{\del}{\boldsymbol{\nabla}}
+\newcommand*{\eval}{\Bigr|}
+\newcommand*{\vol}{\operatorname{Vol}}
+\newcommand*{\iil}{\iint\limits}
+\newcommand*{\iiil}{\iiint\limits}
+\newcommand*{\db}[1]{\dot{\mathbf{#1}}}
+\newcommand*{\ddb}[1]{\ddot{\mathbf{#1}}}

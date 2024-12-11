@@ -1,0 +1,83 @@
+\documentclass[answers]{exam}
+\usepackage{../TT2024}
+
+\title{Groups and Group Actions -- Sheet 6\\Quotient Groups. Isomorphism Theorem. Group Actions.}
+\author{YOUR NAME HERE :)}
+\date{Trinity Term 2024}
+% accurate as of 25/06/2024
+
+
+\begin{document}
+\maketitle
+\begin{questions}
+\question%1
+\begin{subparts}
+\subpart Explain why there is only one homomorphism from $\mathbb{Z}_{5}$ to $D_{8}$ but five homomorphisms from $\mathbb{Z}_{5}$ to $D_{10}$.
+\subpart What are the normal subgroups $N$ of $S_{3}$ ? For each $N$, identify the quotient group $S_{3} / N$.
+\subpart Hence, or otherwise, explain why there are two homomorphisms from $S_{3}$ to $\mathbb{Z}_{6}$ and six homomorphisms from $S_{3}$ to $D_{8}$.
+\end{subparts}
+
+
+
+\question%2
+Let $G$ be a group and let $N$ be a normal subgroup of $G$. Let $H$ be a subgroup of $G$ with $H \geqslant N$.
+\begin{subparts}
+\subpart Show that $H / N=\{h N \mid h \in H\}$ is a subgroup of $G / N$.
+\subpart Assume further that $H$ is a normal subgroup of $G$. Show that $H / N$ is a normal subgroup of $G / N$.
+\end{subparts}
+
+
+
+\question%3
+\begin{subparts}
+\subpart Show that the group $S_{n}$ (right) acts on the set of subsets of $\{1,2, \ldots, n\}$ by $\rho(S, \sigma)=S \sigma$.
+\subpart Show that there are $n+1$ orbits, one for each possible value of $|S|$.
+\subpart Show that if $|S|=k$ then $\operatorname{Stab}(S) \cong S_{k} \times S_{n-k}$.
+\end{subparts}
+
+
+
+\question%4
+Let $S$ denote the set of possible black-or-white colourings of the edges of an equilateral triangle.
+\begin{subparts}
+\subpart Explain why $|S|=8$.
+\subpart The triangle's symmetry group $D_{6}$ acts naturally on $S$. How many orbits are there?
+\subpart By listing an element from each orbit, show that there are 10 orbits if three colours are used.
+\end{subparts}
+
+
+
+\question%5
+\begin{subparts}
+\subpart Show that $V_{4}=\{e,(12)(34),(13)(24),(14)(23)\}$ is a normal subgroup of $S_{4}$.
+\subpart Let $H=\operatorname{Sym}\{1,2,3\}=\left\{\sigma \in S_{4}: 4 \sigma=4\right\}$. How many left cosets of $H$ are there? Show that if $h_{1}, h_{2} \in H$ and $h_{1} V_{4}=h_{2} V_{4}$ then $h_{1}=h_{2}$.
+\subpart Deduce that $S_{4} / V_{4}$ is isomorphic to $S_{3}$.
+\subpart With the aid of diagrams, determine the number of essentially different ways there are of labelling the vertices of a rectangle as $1,2,3,4$. How do these diagrams relate to the cosets of $V_{4}$ in $S_{4}$?
+\end{subparts}
+
+\end{questions}
+
+\section*{Starter}
+\begin{questions}
+\question%S1
+By constructing a homomorphism with the appropriate kernel and image and then applying the Isomorphism Theorem, demonstrate the following isomorphisms:
+\begin{subparts}
+\subpart $\mathbb{R}^{*} /\{ \pm 1\} \cong(0, \infty)$;
+\subpart $\mathbb{C}^{*} /\{ \pm 1\} \cong \mathbb{C}^{*}$;
+\subpart $\mathbb{C}^{*} / S^{1} \cong(0, \infty)$;
+\subpart $\mathbb{R} / \mathbb{Z} \cong S^{1}$.
+\end{subparts}
+
+\end{questions}
+
+\section*{Pudding}
+\begin{questions}
+\question%P1
+\begin{subparts}
+\subpart Let $G$ be a group and $H$ a normal subgroup of $G$ with $|H|=n$. Further let $g \in G$ be such that $g H$ has order $m$ in $G / H$. Show that $\langle g\rangle H=\left\{g^{k} h: k \in \mathbb{Z}, h \in H\right\}$ is a subgroup of $G$ of order $m n$.
+\subpart Use this method to construct subgroups of $S_{4}$ of orders 8 and 12.
+\end{subparts}
+
+\end{questions}
+
+\end{document}

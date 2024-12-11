@@ -1,0 +1,54 @@
+\documentclass[answers]{exam}
+\usepackage{../TT2024}
+
+\title{Analysis III -- Sheet 4}
+\author{YOUR NAME HERE :)}
+\date{Trinity Term 2024}
+% accurate as of 25/06/2024
+
+
+\begin{document}
+\maketitle
+\emph{In this sheet you may assume standard properties of $\sin , \cos , \exp , \log$, as established in lectures and on previous problem sheets.}
+\begin{questions}
+
+\question%1
+Discuss the existence of the following improper integrals.
+\begin{subparts}
+\subpart $\displaystyle\int_{0}^{1} \frac{\mathrm d x}{\sqrt{1-x}}$,
+\subpart $\displaystyle\int_{0}^{1} \frac{\mathrm d x}{\sin x}$,
+\subpart $\displaystyle\int_{0}^{\infty} \frac{\mathrm d x}{1+x^{3 / 2}}$,
+\subpart $\displaystyle\int_{2}^{\infty} \frac{\mathrm d x}{x \log x}$.
+\end{subparts}
+
+
+
+\question%2
+Let $m, n \geqslant 0$ be non-negative integers. Show that \[
+	\lim _{\epsilon \rightarrow 0^{+}} \epsilon^{m+1}(\log \epsilon)^{n}=0.
+\] (\emph{Hint: you may find it helpful to set $\epsilon=e^{-t}$ and to consider the series expansion of $e^{t}$.}) Using induction on $n$ or otherwise, show that the improper integral \[
+	\int_{0}^{1} x^{m}(\log x)^{n} ~\mathrm d x
+\] exists, and give a closed-form expression for it.
+
+
+
+\question%3
+Suppose that $f:[1, \infty) \rightarrow \mathbb{R}$ is a continuous function with the property that $f(x) \rightarrow 0$ as $x \rightarrow \infty$.
+\begin{subparts}
+\subpart Show that $\lim _{X \rightarrow \infty} \frac{1}{X} \int_{1}^{X} f(x) ~\mathrm d x=0$.
+\subpart Does the improper integral $\int_{1}^{\infty} \frac{f(x)}{x} ~\mathrm d x=\lim _{X \rightarrow \infty} \int_{1}^{X} \frac{f(x)}{x} ~\mathrm d x$ necessarily exist?
+\end{subparts}
+
+
+
+\question%4
+Show that $\frac{1}{x^{x}}$ is continuous on $[0,1]$, and that its integral on this range is equal to $\sum_{n=1}^{\infty} \frac{1}{n^{n}}$. (\emph{Hint: write $\frac{1}{x^{x}}=\sum_{n=0}^{\infty} \frac{1}{n !}(-x \log x)^{n}$.})
+
+
+
+\question%5
+Does the improper integral $\int_{2 \pi}^{\infty} \frac{\sin x}{x} ~\mathrm d x$ exist?
+
+\end{questions}
+
+\end{document}

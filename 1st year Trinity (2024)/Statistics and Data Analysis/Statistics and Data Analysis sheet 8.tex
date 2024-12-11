@@ -1,0 +1,128 @@
+\documentclass[answers]{exam}
+\usepackage{../TT2024}
+\usepackage{xurl}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,urlcolor=red,}
+\urlstyle{same}
+
+\title{Statistics and Data Analysis -- Sheet 8}
+\author{YOUR NAME HERE :)}
+\date{Trinity Term 2024}
+% accurate as of 25/06/2024
+
+
+\begin{document}
+\maketitle
+At the end of this exercise sheet there are Practical Exercises in R and MATLAB. Students should ask their college tutor whether to use R or MATLAB. The course website has an Introduction to R, which students should work through before starting the $\mathrm{R}$ exercises.
+\begin{questions}
+\question%1
+Let $\mathbf{X}$ be an $n \times p$ data matrix, with $x_{i}$ denoting the $i$th row of $\mathbf{X}$. Let $C_{1}, C_{2}, \ldots, C_{K}$ be a set of $K$ clusters of observations. Let $\mu_{k}=\frac{1}{\left|C_{k}\right|} \sum_{i \in C_{k}} x_{i}$ be the mean of the observations in cluster $k$.
+\begin{subparts}
+\subpart Prove the following identity for the within-cluster sum of squares for a given cluster $C_{k}$: \[
+	\frac{1}{\left|C_{k}\right|} \sum_{i, i^{\prime} \in C_{k}} \sum_{j=1}^{p}\left(x_{i j}-x_{i^{\prime} j}\right)^{2}=2 \sum_{i \in C_{k}} \sum_{j=1}^{p}\left(x_{i j}-\mu_{k j}\right)^{2}.
+\]
+\subpart Let $v_{k}$ be a $p$-vector. Show that \[
+	\sum_{i \in C_{k}} \sum_{j=1}^{p}\left(x_{i j}-v_{k j}\right)^{2}=\sum_{i \in C_{k}} \sum_{j=1}^{p}\left(x_{i j}-\mu_{k j}\right)^{2}+\left|C_{k}\right| \sum_{j=1}^{p}\left(\mu_{k j}-v_{k j}\right)^{2}.
+\]
+\end{subparts}
+
+
+
+\question%2
+Consider the following small dataset with $n=6$ observations on $p=2$ variables \[
+	\mathbf{X}=\left[\begin{array}{rr}
+		-0.220 & -0.708 \\
+		0.463 & -1.040 \\
+		1.698 & 0.835 \\
+		-2.175 & 0.565 \\
+		0.700 & 0.010 \\
+		1.414 & 0.656
+	\end{array}\right]
+\] with associated Euclidean distance matrix $\mathbf{D}^{(6)}$. The lower diagonal of the matrix $\mathbf{D}^{(6)}$ is given by \[
+	\mathbf{D}^{(6)}=\begin{array}{c|ccccc} 
+		  & 1    &    2 &    3 &    4 &    5 \\
+		\hline
+		2 & 0.76 &      &      &      &      \\
+		3 & 2.46 & 2.25 &      &      &      \\
+		4 & 2.33 & 3.09 & 3.88 &      &      \\
+		5 & 1.17 & 1.08 & 1.29 & 2.93 &      \\
+		6 & 2.13 & 1.95 & 0.34 & 3.59 & 0.96
+	\end{array}
+\] Apply agglomerative clustering using (i) Single Linkage and (ii) Complete Linkage to this dataset. Use the notation $\mathbf{D}^{(k)}$ to denote the dissimilarities of $k$ clusters of observations. You should write down the sequence of dissimilarity matrices at each stage of the algorithm, and draw an approximate dendrogram that summarizes the clustering process for each method.
+
+\end{questions}
+
+
+
+\section*{Practical Exercises using R}
+Students should carry out these practical exercises and produce a report summarizing the results of their analysis i.e. produce a document that contains the plots produced and hand this in to your tutor.\\
+\textbf{NOTE} To run these exercises in R you will need to install a few packages called \texttt{MASS}, \texttt{rgl} and \texttt{car}. To do this in RStudio click Tools ---$>$ Install Packages and then type in the names of the packages and install them. Make sure to click the box that says ``install dependencies". Alternatively you could use the command \texttt{install.packages("packagename")} to install packages.
+
+\begin{questions}
+\question%1
+The Crabs dataset is in the \texttt{MASS} library which can be loaded using
+\verb|library(MASS)|. Create a new dataset with the 5 main variables as follows: \begin{verbatim}
+varnames <- c("FL", "RW", "CL", "CW", "BD")
+Crabs <- crabs[,varnames]
+\end{verbatim} Load \texttt{stats} library using \verb|library(stats)| and run PCA on the scaled dataset using \begin{verbatim}
+f1 <- prcomp(Crabs, scale = TRUE, retx = TRUE)
+\end{verbatim} Run the k-means algorithm with $K=3$ on the first 3 PCs using \begin{verbatim}
+fk <- kmeans(f1$x[,1:3], centers=3)
+\end{verbatim} We know however that the 200 crabs are two distinct species and the species labels are in \verb|crabs[,1]|. We can compare the true species labels with the labels assigned by the k-means algorithm by cross-tabulating the labels: \begin{verbatim}
+table(crabs[,1], fk$cluster)
+\end{verbatim} How well did the automated approach do in separating the species? What is the performance of the k-means algorithm is run with $K=2$ in the first 2 PCs?
+
+
+
+\question%2
+Download the EU indicators dataset (\texttt{eu.csv}) from \href{https://courses.maths.ox.ac.uk/course/view.php?id=620}{the course page}. Load stats library using \verb|library(stats)|. Load the dataset into R using \begin{verbatim}
+eu <- read.csv("eu.csv", sep=",", hea = T, row.names = 1)
+\end{verbatim} Note you will need to change the command so that file includes the path to its location on your computer. Run hierarchical clustering with Single Linkage on the dataset as follows: \begin{verbatim}
+hc1 <- hclust(dist (scale (eu $[,-1])$ ), method = "single")
+\end{verbatim} Plot the dendrogram using \verb|plot(hc1)| -- now change the clustering to use Complete Linkage (set method = "complete") and Average Linkage (set method = "average"). How does this change the results?
+
+\end{questions}
+
+
+
+\section*{Practical Exercises using MATLAB}
+Students should carry out these practical exercises and produce a report summarizing the results of their analysis i.e. produce a document that contains the plots produced and hand this in to your tutor. \textbf{NOTE} If you get the error \texttt{Undefined function or variable 'princomp'} when you try to run the PCA commands, then you might not have the ``Statistics and Machine Learning Toolbox" installed with your copy of MATLAB. If you rerun the MATLAB installer that you used for your previous MATLAB course, you should be able to add the ``Statistics and Machine Learning Toolbox" to your installation by following the instructions here: \url{http://uk.mathworks.com/help/install/ug/install-mathworks-software.html} You might have to download the MATLAB installer again in case you've deleted it since your previous MATLAB course. You can download it again using this link: \url{https://www.maths.ox.ac.uk/members/it/software-personal-machines/matlab}
+
+\begin{questions}
+\question%1
+Download a copy of the Crabs dataset (\texttt{crabs.txt}) from \href{https://courses.maths.ox.ac.uk/course/view.php?id=620}{the course page}. Load the dataset into MATLAB using \verb|crabs = readtable("crabs.txt", "Delimiter", "tab");| Create a new dataset with the 5 main variables as follows \begin{verbatim}
+varnames = ["FL", "RW", "CL", "CW", "BD"];
+Crabs = crabs(:,varnames);
+\end{verbatim} Run PCA on the scaled dataset using \begin{verbatim}
+X1 = table2array(Crabs);
+for d = 1:size(X1,2)
+    X1(:, d) = X1(:, d) - mean(X1(:, d));
+    X1(:, d) = X1(:, d)/std(X1(:, d), 1);
+end
+[coeff1, score1, latent1] = pca(X1);
+\end{verbatim} Run the the k-means algorithm with $K=3$ on the first 3 PCs using \begin{verbatim}
+fk=kmeans(score1(:,1:3), 3);
+\end{verbatim}  We know however that the 200 crabs are two distinct species and the species labels are in \verb|crabs(:, "sp")|. We can compare the true species labels with the labels assigned by the k-means algorithm by cross-tabulating the labels: \begin{verbatim}
+crosstab(crabs(:, "sp"),fk)
+\end{verbatim} How well did the automated approach do in separating the species? What is the performance of the k-means algorithm is run with $K=2$ in the first 2 PCs?
+
+
+
+\question%2
+Download the EU indicators dataset from (\texttt{eu.csv}) from \href{https://courses.maths.ox.ac.uk/course/view.php?id=620}{the course page} Load the dataset into MATLAB using \begin{verbatim}
+eu = readtable("eu.csv", "Delimiter", "comma");
+\end{verbatim} Note you will need to change the command so that file includes the path to its location on your computer. Run hierarchical clustering with Single Linkage on a scaled version of the dataset as follows: \begin{verbatim}
+X2 = table2array(Crabs);
+for d = 1:size(X2,2)
+    X2(:, d) = X2(:, d) - mean(X2(:, d));
+    X2(:, d) = X2(:, d)/std(X2(:, d), 1);
+end
+hc1 = linkage(X2, 'single');
+\end{verbatim} Plot the dendrogram using \begin{verbatim}
+dendrogram(hc1, 'Labels', table2cell(eu(:, 1)));
+set(gca, 'XTickLabelRotation', 90);
+\end{verbatim} Now change the clustering to use Complete Linkage (set the second argument of the \texttt{linkage} command to \texttt{'complete'}) and Average Linkage (set the second argument \texttt{'average'}). How does this change the results?
+
+\end{questions}
+
+\end{document}

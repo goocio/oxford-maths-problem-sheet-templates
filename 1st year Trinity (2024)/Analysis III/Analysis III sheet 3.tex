@@ -1,0 +1,45 @@
+\documentclass[answers]{exam}
+\usepackage{../TT2024}
+
+\title{Analysis III -- Sheet 3}
+\author{YOUR NAME HERE :)}
+\date{Trinity Term 2024}
+% accurate as of 25/06/2024
+
+
+\begin{document}
+\maketitle
+\begin{questions}
+
+\question%1
+Evaluate $\int_{2}^{5} \frac{\mathrm d x}{\sqrt{x-1}}$, explaining carefully which results from the course you are using.
+
+
+
+\question%2
+Recall that $\cos : \mathbb{R} \rightarrow \mathbb{R}$ and $\sin : \mathbb{R} \rightarrow \mathbb{R}$ are defined by \[
+	\cos (x)=\sum_{n=0}^{\infty}(-1)^{n} \frac{x^{2 n}}{(2 n) !}
+	\qquad\text{and}\qquad
+	\sin (x)=\sum_{n=0}^{\infty}(-1)^{n} \frac{x^{2 n+1}}{(2 n+1) !}.
+\] Recall that there is a unique $p \in[0,2]$ such that $\cos p=0$ and $\sin p=1$. One can then define $\pi$ to be $2 p$. Show that \[
+	\int_{0}^{1} \frac{\mathrm d x}{1+x^{2}}=\frac\pi4
+\] (\emph{This question relies on Problem Sheet 6 Exercise 3 of the 2022 Analysis II course. That problem sheet is now available on the course website. You may use anything from that exercise in your answer.})
+
+
+
+\question%3
+For the following functions $f_{n}$, in which cases does the sequence $\left(f_{n}\right)$ converge uniformly on $[0,1]$? In which cases is it true that $\lim _{n \rightarrow \infty} \int_{0}^{1} f_{n}=\int_{0}^{1} \lim _{n \rightarrow \infty} f_{n}$?
+\begin{subparts}
+\subpart $n x^{n}(x-1)$,
+\subpart $\displaystyle\frac{x}{1+n x^{2}}$,
+\subpart $n^{2} x e^{-n x^{2}}$.
+\end{subparts}
+
+
+
+\question%4
+Let $f_{n}(t)=\frac{n}{n+t}$ for $t \geqslant 0$. Show that, for each $x>0$, the sequence $\left(f_{n}\right)_{n=1}^{\infty}$ converges uniformly on $[0, x]$. By considering $\int_{0}^{x} f_{n}$ deduce that $\left(1+\frac{x}{n}\right)^{n} \rightarrow e^{x}$ as $n \rightarrow \infty$ for all $x \in \mathbb{R}$. (\emph{You may use simple facts about $\log$ and $\exp$ without proof.})
+
+\end{questions}
+
+\end{document}

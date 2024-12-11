@@ -1,0 +1,193 @@
+\documentclass[answers]{exam}
+\usepackage{../TT2024}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,urlcolor=red,}
+\urlstyle{same}
+
+\title{Statistics and Data Analysis -- Sheet 6}
+\author{YOUR NAME HERE :)}
+\date{Trinity Term 2024}
+% accurate as of 25/06/2024
+
+
+\begin{document}
+\maketitle
+At the end of this exercise sheet there are Practical Exercises in $\mathrm{R}$ and MATLAB. Students should ask their college tutor whether to use R or MATLAB.
+\begin{questions}
+\question%1
+Let $X, Y$ and $Z$ be random variables and let $\operatorname{cov}(A, B)$ denote the covariance of any two random variables $A$ and $B$. Show that
+\begin{subparts}
+\subpart $\operatorname{cov}(a X, Y)=a \operatorname{cov}(X, Y)$
+\subpart $\operatorname{cov}(X, Y+Z)=\operatorname{cov}(X, Y)+\operatorname{cov}(X, Z)$
+\subpart If $X_{1}, \ldots, X_{p}$ is a set of random variables then show that \[
+	\operatorname{cov}\left(\sum_{i=1}^{p} \alpha_{i} X_{i}, \sum_{j=1}^{p} \beta_{j} X_{j}\right)=\sum_{i=1}^{p} \sum_{j=1}^{p} \alpha_{i} \beta_{j} \operatorname{cov}(X_{i}, X_{j})
+\]
+\end{subparts}
+
+
+
+\question%2
+Suppose $X=\left(X_{1}, \ldots, X_{p}\right)^{T}$ is a $p$-vector of random variables with covariance matrix $\boldsymbol{\Sigma}$ where \[
+	\operatorname{var}(X_{i})=\boldsymbol{\Sigma}_{ii}\quad\text{ for }i\in1,\ldots,p\qquad
+	\operatorname{cov}\left(X_{i}, X_{j}\right) =\boldsymbol{\Sigma}_{i j} \quad \text { for } i \neq j \in 1, \ldots, p
+\] Define new random variables $Z$ and $W$ to be linear combinations of $X=\left(X_{1}, \ldots, X_{p}\right)$ such that \[
+	Z=\alpha^{T} X=\alpha_{1} X_{1}+\alpha_{2} X_{2}+\ldots+\alpha_{p} X_{p} \qquad
+	W=\beta^{T} X=\beta_{1} X_{1}+\beta_{2} X_{2}+\ldots+\beta_{p} X_{p}
+\] where \[
+	\alpha =(\alpha_{1}, \alpha_{2}, \ldots, \alpha_{p})^{T} \\
+	\beta =(\beta_{1}, \beta_{2}, \ldots, \beta_{p})^{T}
+\] then show that
+\begin{subparts}
+\subpart $\operatorname{var}(Z)=\alpha^{T} \boldsymbol{\Sigma} \alpha$
+\subpart $\operatorname{cov}(Z, W)=\alpha^{T} \boldsymbol{\Sigma} \beta$
+\end{subparts}
+
+
+
+\question%3
+If $X=\left(X_{1}, \ldots, X_{p}\right)^{T}$ is a $p$-dimensional random column vector such that $X \sim N_{p}(\mu, \boldsymbol{\Sigma})$ and $\boldsymbol{B}$ is a $m \times p$ matrix then
+\begin{subparts}
+\subpart Show that the $m$-dimensional random column vector $Y=\boldsymbol{B} X$ has covariance matrix $\operatorname{cov}(Y)=\boldsymbol{B} \boldsymbol{\Sigma} \boldsymbol{B}^{T}$.
+\subpart If $m=p$ how can we choose the matrix $\boldsymbol{B}$ so that the transformed variable $\boldsymbol{B} X$ has a covariance matrix that is the identity matrix.
+\end{subparts}
+
+
+
+\question%4
+Let $X=\left(X_{1}, X_{2}\right)^{T}$ be a 2-dimensional random column vector such that $X \sim N_{p}(\mu, \boldsymbol{\Sigma})$ with $\mu=(0,0)^{T}$, $\boldsymbol{\Sigma}_{11}=\boldsymbol{\Sigma}_{22}=1$ and $\boldsymbol{\Sigma}_{12}=\boldsymbol{\Sigma}_{21}=\rho$.
+\begin{subparts}
+\subpart Show that pdf of $X$ is given by \[
+	f(\mathbf{x})=\frac{1}{2 \pi \sqrt{1-\rho^{2}}} \exp \left(-\frac{x_{1}^{2}-2 \rho x_{1} x_{2}+x_{2}^{2}}{2(1-\rho^{2})}\right) \quad x \in \mathbb{R}^{2}.
+\]
+\subpart Describe the shape of the pdf of $X$ at any fixed value of the first random variable $X_{1}=a \in \mathbb{R}$.
+\end{subparts}
+
+
+
+\question%5
+Let $X=\left(X_{1}, X_{2}\right)^{T}$ be a 2-dimensional random column vector such that $X \sim N_{p}(\mu, \boldsymbol{\Sigma})$ with $\mu=(120,80)^{T}$, $\boldsymbol{\Sigma}_{11}=25, \boldsymbol{\Sigma}_{22}=16$ and $\boldsymbol{\Sigma}_{12}=\boldsymbol{\Sigma}_{21}=12$. Define the new random variable $Y=2 X_{1}-3 X_{2}$. You may assume the result stated in the notes that if $X=\left(X_{1}, \ldots, X_{p}\right)^{T}$ is a p-dimensional random column vector such that $X \sim N_{p}(\mu, \boldsymbol{\Sigma})$ and $\boldsymbol{B}$ is a $m \times p$ matrix then $Y \sim N_{m}(\boldsymbol{B} \mu, \boldsymbol{B} \boldsymbol{\Sigma} \boldsymbol{B}^{T})$.
+\begin{subparts}
+\subpart Calculate $P(Y>20)$.
+\subpart If $\Sigma_{21}=0$ what is $P(Y>20)$.
+\end{subparts}
+
+
+
+\question%6
+Let $x_{1}, \ldots, x_{n}$ be iid realizations of a $p$-dimensional random column vector $X=\left(X_{1}, \ldots, X_{p}\right)^{T}$ such that $X \sim N_{p}(\mu, \boldsymbol{\Sigma})$.
+\begin{subparts}
+\subpart Prove that the maximum likelihood estimator of $\mu$ is \[
+	\hat{\mu}=\frac{1}{n} \sum_{i=1}^{n} x_{i}
+\]
+\subpart Show that the log-likelihood can be expressed as \[
+	\ell(\mu, \boldsymbol{\Sigma})=\frac{n}{2} \log \left|\boldsymbol{\Sigma}^{-1}\right|-\frac{1}{2} \operatorname{tr}\left(\boldsymbol{\Sigma}^{-1} \sum_{i=1}^{n}\left(x_{i}-\mu\right)\left(x_{i}-\mu\right)^{T}\right)
+\]
+\subpart Using Hints (c) and (d) prove that the maximum likelihood estimator of $\boldsymbol{\Sigma}$ is \[
+	\hat{\boldsymbol{\Sigma}}=\frac{1}{n} \sum_{i=1}^{n}\left(x_{i}-\hat{\mu}\right)\left(x_{i}-\hat{\mu}\right)^{T}
+\]
+\subpart Show that the sample covariance $\boldsymbol{S}$ is unbiased for $\boldsymbol{\Sigma}$ where \[
+	\mathbf{S}=\frac{1}{n-1} \sum_{i=1}^{n}\left(x_{i}-\hat{\mu}\right)\left(x_{i}-\hat{\mu}\right)^{T}
+\]
+\end{subparts}
+
+\emph{Hint: You may find it helpful to use the following results:}
+\begin{parts}
+\part If $a$ and $x$ are $p$-column vectors, $\boldsymbol{B}$ is a $p \times p$ symmetric matrix and $y$ and $z$ are scalars such that $y=a^{T} x$ and $z=x^{T}\boldsymbol{B}x$ then \[
+	\nabla y=a \text { and } \nabla z=2 \boldsymbol{B} x
+\]
+\part If $\boldsymbol{C}$ is a $n \times m$ matrix and $\boldsymbol{D}$ is $m \times n$ matrix then $\operatorname{tr}[\boldsymbol{C} \boldsymbol{D}]=\operatorname{tr}[\boldsymbol{D} \boldsymbol{C}]$
+\part The matrix of partial derivatives of a scalar function $y$ of an $n \times n$ matrix $\boldsymbol{X}$ of independent variables, with respect to the matrix $\boldsymbol{X}$, is defined as \[
+	\nabla_{\boldsymbol{X}} y=\begin{bmatrix}
+		\frac{\partial y}{\partial x_{11}} & \frac{\partial y}{\partial x_{12}} & \cdots & \frac{\partial y}{\partial x_{1 n}} \\
+		\frac{\partial y}{\partial x_{21}} & \frac{\partial y}{\partial x_{22}} & \cdots & \frac{\partial y}{\partial x_{2 n}} \\
+		\vdots & \vdots & \ddots & \vdots \\
+		\frac{\partial y}{\partial x_{2 n}} & \frac{\partial y}{\partial x_{n 2}} & \cdots & \frac{\partial y}{\partial x_{n n}}
+	\end{bmatrix}
+\] If $\boldsymbol{E}$ and $\boldsymbol{F}$ are $p \times p$ matrices then \[
+	\nabla_{\boldsymbol{E}} \log |\boldsymbol{E}|=\left(\boldsymbol{E}^{-1}\right)^{T}\qquad
+	\nabla_{\boldsymbol{E}}\operatorname{tr}[\boldsymbol{E}\boldsymbol{F}]=\boldsymbol{F}^T
+\]
+\part If $L(\theta)$ is a likelihood function with Maximum Likelihood Estimator (MLE) of $\hat{\theta}$ and $g(\theta)$ is a function of $\theta$ then the MLE of $g(\theta)$ is $g(\hat{\theta})$. [\emph{This is known as the invariance property of MLEs and it is covered formally in Part A Statistics course, but it is straightforward to prove, and could be covered in tutorials if you ask your tutor nicely. This property may help you when choosing what you should differentiate the log-likelihood in (ii) with respect to in derivation of the maximum likelihood estimator of $\boldsymbol{\Sigma}$.}]
+\end{parts}
+
+\end{questions}
+
+
+
+\section*{Practical Exercises using R}
+Students should carry out these practical exercises and produce a report summarizing the results of their analysis i.e. produce a document that contains the plots produced and hand this in to your tutor.\\
+\textbf{NOTE} To run these exercises in R you will need to install a few packages called \texttt{MASS}, \texttt{rgl} and \texttt{car}. To do this in RStudio click Tools ---$>$ Install Packages and then type in the names of the packages and install them. Make sure to click the box that says ``install dependencies". Alternatively you could use the command \texttt{install.packages("packagename")} to install packages.
+
+\begin{questions}
+\question%1
+Use the following R code to simulate and plot 200 points from a bivariate normal distribution with mean $\mu=(0,0)^{T}$, both variances equal to 1 and covariance equal to $0.5$. \begin{verbatim}
+	library(MASS)
+	S <- matrix(c(1,0.5,0.5,1),2,2)
+	x <- mvrnorm(200, mu = c(0,0), Sigma = S)
+	plot(x)
+\end{verbatim} Change the code and make a new plot for the situation where the covariance is equal to $-0.7$.
+
+
+
+\question%2
+The Crabs dataset is in the \texttt{MASS} library which can be loaded using \verb|library (MASS)|. To look at the dataset just type \verb|crabs|. We can create a new dataset with the 5 main variables with \begin{verbatim}
+varnames <- c("FL", "RW", "CL", "CW", "BD")
+\end{verbatim} Please note that some versions of $\mathrm{R}$ will require this instead: \begin{verbatim}
+varnames <- c('FL', 'RW', 'CL', 'CW', 'BD')
+Crabs <- crabs[,varnames]
+\end{verbatim} Then we can create boxplots of the 5 variables with \verb|boxplot(Crabs)| and a pairs plot of the variables with \verb|pairs(Crabs)|. Histograms of the variables can be created as follows: \begin{verbatim}
+par(mfrow=c(2,3))
+hist(Crabs$FL)
+hist(Crabs$RW)
+hist(Crabs$CL)
+hist(Crabs$CW)
+hist(Crabs$BD)
+\end{verbatim} To explore the dataset in 3D using triples of variables we can use the following code: \begin{verbatim}
+library(rgl)
+library(car)
+rgl.open()
+scatter3d(x=Crabs$RW, y=Crabs$CW, z=Crabs$CL, surface=F)
+\end{verbatim}
+\end{questions}
+
+
+
+\section*{Practical Exercises using MATLAB}
+Students should carry out these practical exercises and produce a report summarizing the results of their analysis i.e. produce a document that contains the plots produced and hand this in to your tutor.
+\begin{questions}
+\question%1
+Use the following MATLAB code to simulate and plot 200 points from a bivariate normal distribution with mean $\mu=(0,0)^{T}$, both variances equal to 1 and covariance equal to 0.5. \begin{verbatim}
+S = [1 0.5; 0.5 1];
+x = mvnrnd([0 0], S, 200);
+plot(x);
+\end{verbatim} Change the code and make a new plot for the situation where the covariance is equal to $-0.7$.
+
+
+
+\question%2
+Download the Crabs dataset (\texttt{crabs.txt}) from \href{https://courses.maths.ox.ac.uk/course/view.php?id=620}{the course page} and save it in a new folder, for example \verb|C\\Downloads| (this will depend on your own machine/OS.) Change to that directory using something like \verb|cd C:\\Downloads;| Read the dataset into MATLAB using \begin{verbatim}
+crabs = readtable("crabs.txt", "Delimiter", "tab");
+\end{verbatim} \textbf{Please note that copying commands with} \verb|"| \textbf{quotation marks appears to cause problems in MATLAB but typing such commands should work.} To look at the dataset just type \verb|crabs|. We can create a new dataset with the 5 main variables as follows: \begin{verbatim}
+varnames = ["FL","RW","CL","CW","BD"];
+Crabs = crabs(:, varnames);
+\end{verbatim} Then we can create boxplots of the 5 variables with \verb|boxplot(table2array(Crabs), 'Labels', varnames);| and a pairs plot of the variables with \verb|corrplot (Crabs);| Histograms of the variables can be created as follows: \begin{verbatim}
+hist(Crabs.FL);
+xlabel('FL');
+hist(Crabs.RW);
+xlabel('RW');
+hist(Crabs.CL);
+xlabel('CL');
+hist(Crabs.CW);
+xlabel('CW');
+hist(Crabs.BD);
+xlabel('BD');
+\end{verbatim} To explore the dataset in 3D using triples of variables we can use the following code. To explore the 3D projection click the ``rotate" tool i.e. the button with the circular arrow. \begin{verbatim}
+scatter3(Crabs.RW, Crabs.CW, Crabs.CL);
+xlabel('RW');
+ylabel('CW');
+zlabel('CL');
+\end{verbatim}
+
+\end{questions}
+
+\end{document}

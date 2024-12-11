@@ -1,0 +1,75 @@
+\documentclass[answers]{exam}
+\usepackage{../TT2024}
+
+\title{Statistics and Data Analysis -- Sheet 2}
+\author{YOUR NAME HERE :)}
+\date{Trinity Term 2024}
+% accurate as of 25/06/2024
+
+
+\begin{document}
+\maketitle
+\begin{questions}
+
+\question%1
+\begin{subparts}
+\subpart If $X_{1}, \ldots, X_{n}$ is a random sample from a geometric distribution with parameter $p$, find the maximum likelihood estimator $\widehat{p}$ of $p$.
+\subpart Let $\theta=1 / p$. Find the likelihood as a function of $\theta$, the maximum likelihood estimator $\widehat{\theta}$, and verify that $\widehat{\theta}=1 / \widehat{p}$.
+\subpart Show that $\widehat{\theta}$ is unbiased. In the case $n=1$ show that $E(\widehat{p})>p$. [\emph{In the $n=1$ case, having first shown $E(\widehat{p})>p$, can you find the value of $E(\widehat{p})$?}]
+\end{subparts}
+
+
+
+\question%2
+Suppose $X_{1}, \ldots, X_{n}$ is a random sample from a $N\left(\mu, \sigma^{2}\right)$ distribution, where $\mu=\sigma^{2}=\theta$. Show that the maximum likelihood estimator of $\theta$ is \[
+	\widehat{\theta}=\frac{1}{2}\left\{\left(1+\frac{4}{n} \sum_{j=1}^{n} X_{j}^{2}\right)^{1 / 2}-1\right\} .
+\]
+
+
+
+\question%3
+A researcher wishes to estimate the density $\rho$ of organisms per unit volume in a liquid. She conducts $n$ independent experiments: in experiment $i=1, \ldots, n$, she takes a fixed volume $v_{i}$ of liquid and measures the number of organisms $X_{i}$ in this volume -- she assumes $X_{i}$ has a Poisson distribution with mean $\rho v_{i}$. Find the maximum likelihood estimator $\widehat{\rho}$ and find the bias of $\widehat{\rho}$. If the total volume taken is fixed, $\sum_{i=1}^{n} v_{i}=a$ say, show that the variance of $\widehat{\rho}$ only depends on $v_{1}, \ldots, v_{n}$ via their sum $a$.
+
+
+
+\question%4
+Suppose $X_{1}, \ldots, X_{n}$ is a random sample from a distribution with probability density function \[
+	f(x ; \theta)= \begin{cases}e^{-(x-\theta)} & \text { if } x \geqslant \theta \\ 0 & \text { otherwise.}\end{cases}
+\] Find the maximum likelihood estimator of $\theta$.
+
+
+
+\question%5
+The following data (from Dyer (1981)) are annual wages (in multiples of 100 US dollars) of a random sample of 30 production line workers in a large American industrial firm. \begin{center} Annual wages (hundreds of US \$)\\ \begin{tabular}{llllllllll}
+	\hline
+	112 & 154 & 119 & 108 & 112 & 156 & 123 & 103 & 115 & 107 \\
+	125 & 119 & 128 & 132 & 107 & 151 & 103 & 104 & 116 & 140 \\
+	108 & 105 & 158 & 104 & 119 & 111 & 101 & 157 & 112 & 115 \\
+	\hline
+\end{tabular}\end{center}
+\begin{subparts}
+\subpart A standard probability model used for data on wages is the Pareto distribution, which has probability density function \[
+	f(x ; \theta)=\theta \alpha^{\theta} x^{-(\theta+1)} \quad \text { for } x \geqslant \alpha,
+\] where $\theta>0$ and the constant $\alpha$ represents a statutory minimum wage. Find the maximum likelihood estimator of $\theta$ from a random sample $X_{1}, X_{2}, \ldots, X_{n}$, and, assuming $\alpha=100$, the maximum likelihood estimate for the above dataset (for which $\sum \log x_{i}=143.5$).
+\subpart Now suppose there is no statutory minimum wage, so that $\alpha$ is also an unknown parameter.
+\begin{parts}
+\part Show that the MLE for $\alpha$ is $\widehat{\alpha}=\min _{i} X_{i}$. What is the MLE for $\theta$?
+\part Show that \[
+	P(\widehat{\alpha}>y)=\left(\frac{\alpha}{y}\right)^{n \theta} \quad \text { for } y \geqslant \alpha
+\] [\emph{Use the fact that $\min _{i} X_{i}>y \Longleftrightarrow\left\{X_{i}>y\right.$ for $\left.1 \leqslant i \leqslant n\right\}$.}]
+\part Deduce that, for each $\epsilon>0$, \[
+	P(|\widehat{\alpha}-\alpha|>\epsilon)\rightarrow0\quad \text { as } n \rightarrow \infty
+\]
+\end{parts}
+\end{subparts}
+
+
+
+\question%6
+(Using R or MATLAB)\\
+$\mathrm{R}$: work through Rdemo- 1 on the course website. At this stage the idea is to get some experience with $\mathrm{R}$ and to look at simple plots of the \texttt{trees} data. In a few lectures' time we will fit linear regression models to data of this type.\\
+MATLAB: work through the Matlab section on the final page of Rdemo-1.
+
+\end{questions}
+
+\end{document}

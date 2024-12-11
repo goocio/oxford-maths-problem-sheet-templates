@@ -1,0 +1,52 @@
+\documentclass[answers]{exam}
+\usepackage{../TT2024}
+
+\title{Analysis III -- Sheet 2}
+\author{YOUR NAME HERE :)}
+\date{Trinity Term 2024}
+% accurate as of 25/06/2024
+
+
+\begin{document}
+\maketitle
+\begin{questions}
+
+\question%1
+Determine the following limits (you may assume that standard functions are Riemann integrable and that their integrals are as you learned in school: we'll prove this later in the course).
+\begin{subparts}
+\subpart \[
+\lim _{n \rightarrow \infty} \frac{1}{n}\left(1+\mathrm{e}^{\frac{1}{n}}+\mathrm{e}^{\frac{2}{n}} \ldots+\mathrm{e}^{\frac{\mathrm{n}-1}{n}}\right)
+\]
+\subpart \[
+\lim _{n \rightarrow \infty} \frac{1}{n^{6}}\left(1+2^{5}+\ldots+n^{5}\right)
+\]
+\subpart \[
+	\lim _{n \rightarrow \infty} \frac{1}{\sqrt{n}}\left(\frac{1}{\sqrt{1+2 n}}+\frac{1}{\sqrt{2+2 n}}+\frac{1}{\sqrt{3+2 n}}+\ldots+\frac{1}{\sqrt{3 n}}\right)
+\]
+\end{subparts}
+
+
+
+\question%2
+Let $a<b$. Suppose that $\mathcal{P}_{i}, i=1,2, \ldots$ is a sequence of partitions of $[a, b]$ for which $\operatorname{mesh}\left(\mathcal{P}_{i}\right) \nrightarrow 0$. Show that there is a Riemann integrable function on $[a, b]$ and a sequence of Riemann sums such that $\Sigma\left(f ; \mathcal{P}_{i}, \xi_{i}\right) \nrightarrow \int_{a}^{b} f$.
+
+
+
+\question%3
+Is every Riemann integrable function a uniform limit of step functions?
+
+
+
+\question%4
+Show that a bounded function $f:[a, b] \rightarrow \mathbb{R}$ is integrable if and only if the following is true. For every $\epsilon>0$, there is a partition $\mathcal{P}: a=x_{0} \leqslant x_{1} \leqslant$ $\ldots \leqslant x_{n}=b$, such that the total length of all subintervals $\left(x_{i-1}, x_{i}\right)$ on which $\sup _{x \in\left(x_{i-1}, x_{i}\right)} f>\inf _{x \in\left(x_{i-1}, x_{i}\right)} f+\epsilon$ is at most $\epsilon$.
+
+
+
+\question%5
+Suppose that $f$ is Riemann integrable on $[-\pi, \pi]$. Prove the ``Riemann-Lebesgue lemma", namely that \[
+	\lim _{n \rightarrow \infty} \int_{-\pi}^{\pi} f(x) \cos n x ~\mathrm d x=0.
+\] (\emph{Hint: you may assume standard properties of the cosine function. First check the result for step functions})
+
+\end{questions}
+
+\end{document}

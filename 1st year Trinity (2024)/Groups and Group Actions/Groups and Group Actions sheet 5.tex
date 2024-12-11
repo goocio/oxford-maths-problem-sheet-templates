@@ -1,0 +1,81 @@
+\documentclass[answers]{exam}
+\usepackage{../TT2024}
+
+\title{Groups and Group Actions -- Sheet 5\\Homomorphisms. Conjugacy. Normal Subgroups.}
+\author{YOUR NAME HERE :)}
+\date{Trinity Term 2024}
+% accurate as of 25/06/2024
+
+
+\begin{document}
+\maketitle
+\section*{Main Course}
+\begin{questions}
+\question%1
+Let $G$ be a group and $H$ a subgroup of $G$. Show that $g H=H g$ for all $g \in G$ if and only if $g^{-1} h g \in H$ for all $g \in G, h \in H$.
+
+ 
+ 
+\question%2
+Let $G$ be a group and $a \in G$.
+\begin{subparts}
+\subpart Show that $C_{G}(a)=\{g \in G: a g=g a\}$, the \emph{centralizer of $a$ in $G$}, is a subgroup of $G$.
+\subpart Find $C_{G}(a)$ when (a) $G=S_{4}$ and $a=(12)(34)$, (b) $G=A_{4}$ and $a=(123)$. [\emph{Hint}: use the fact that $a g=g a$ if and only if $a=g^{-1} a g$.]
+\end{subparts}
+
+
+
+\question%3
+Recall that the dihedral group $D_{2 n}$ (where $n \geqslant 3$) can be defined as \[
+	D_{2 n}=\left\langle r, s: r^{n}=e=s^{2}, s r=r^{-1} s\right\rangle
+\] and that as a set $D_{2 n}=\left\{e, r, \ldots, r^{n-1}, s, r s, \ldots r^{n-1} s\right\}$. (So $r$ and $s$ are generators of $D_{2 n}$ and the rules $r^{n}=e=s^{2}, s r=r^{-1} s$ are sufficient to completely determine the group table.)
+\begin{subparts}
+\subpart Show, for any integer $i$, that $s r^{i}=r^{-i} s$.
+\subpart Write down each of \[
+	\left(r^{j}\right)^{-1} r^{i}\left(r^{j}\right), \quad\left(r^{j}\right)^{-1} r^{i} s\left(r^{j}\right), \quad\left(r^{j} s\right)^{-1} r^{i}\left(r^{j} s\right), \quad\left(r^{j} s\right)^{-1} r^{i} s\left(r^{j} s\right),
+\] in the form $r^{k}$ or $r^{k} s$ for some integer $k$.
+\subpart Hence determine the conjugacy classes of $D_{2 n}$. You will need to treat separately the cases when $n$ is odd and even.
+\end{subparts}
+
+
+
+\question%4
+Show that the following maps are homomorphisms. In each case determine the kernel and the image of the homomorphism.
+\begin{subparts}
+\subpart $f_{1}: \mathbb{R} \rightarrow \mathbb{R}^{*}$ defined by $f_{1}(x)=2^{x}$.
+\subpart $f_{2}: \mathbb{C}^{*} \rightarrow \mathbb{R}^{*}$ defined by $f_{2}(z)=|z|$.
+\subpart $f_{3}: S_{3} \rightarrow S_{4}$ defined by $f_{3}(\sigma)=(14) \sigma(14)$.
+\subpart $f_{4}: \mathbb{Z}_{n} \rightarrow \mathbb{C}^{*}$ defined by $f_{4}(k)=e^{2 \pi i k / n}$.
+\end{subparts}
+
+
+
+\question%5
+\begin{subparts}
+\subpart Let $G$ be a group and let $\phi, \psi$ be automorphisms of $G$ (that is, isomorphisms from $G$ to $G$). Show that $\phi \circ \psi$ and $\phi^{-1}$ are automorphisms of $G$. Deduce that the set $\operatorname{Aut}(G)$ of automorphisms of $G$ forms a group under composition.
+\subpart Given $a \in G$, show that the map $\theta_{a}: G \rightarrow G$ with $\theta_{a}(g)=a g a^{-1}$ is an automorphism of $G$.
+\subpart Show that the map $\Theta: G \rightarrow \operatorname{Aut}(G)$ defined by $a \mapsto \theta_{a}$ is a homomorphism. What is the kernel of $\Theta$?
+\end{subparts}
+
+\end{questions}
+
+\section*{Starter}
+\begin{questions}
+\question%S1
+Verify that the determinant map $f(A)=\operatorname{det}(A)$ is a homomorphism $f: G L(n, \mathbb{R}) \rightarrow \mathbb{R}^{*}$. What is the image of $f$? What is $f(O(n, \mathbb{R}))$?
+
+\end{questions}
+
+\section*{Pudding}
+\begin{questions}
+\question%P1
+\begin{subparts}
+\subpart Let $G$ be a group and let $\phi: S_{3} \rightarrow G$ be a homomorphism. Explain why the function $\phi$ is completely determined by the values of $\phi(12)$ and $\phi(123)$.
+\subpart Deduce that there are at most 6 automorphisms of $S_{3}$.
+\subpart For each $a \in S_{3}$, determine $\theta_{a}(12)$ and $\theta_{a}(123)$.
+\subpart Deduce that there are 6 automorphisms of $S_{3}$ and that $\operatorname{Aut}\left(S_{3}\right)$ is isomorphic to $S_{3}$.
+\end{subparts}
+
+\end{questions}
+
+\end{document}

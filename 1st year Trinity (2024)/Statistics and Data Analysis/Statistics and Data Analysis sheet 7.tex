@@ -1,0 +1,168 @@
+\documentclass[answers]{exam}
+\usepackage{../TT2024}
+\usepackage{xurl}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,urlcolor=red,}
+\urlstyle{same}
+
+\title{Statistics and Data Analysis -- Sheet 7}
+\author{YOUR NAME HERE :)}
+\date{Trinity Term 2024}
+% accurate as of 25/06/2024
+
+
+\begin{document}
+\maketitle
+At the end of this exercise sheet there are Practical Exercises in R and MATLAB. Students should ask their college tutor whether to use R or MATLAB. The course website has an Introduction to R, which students should work through before starting the R exercises.
+\begin{questions}
+\question%1
+Let $\mathbf{X}$ be a mean centered $n \times p$ data matrix and let $\mathbf{Z}$ be the corresponding $n \times p$ scores matrix. Show that the sample covariance of the scores matrix is diagonal. What is the interpretation of this result?
+
+
+
+\question%2
+Let $\mathbf{X}$ be a mean centered $n \times p$ data matrix.
+\begin{subparts}
+\subpart Define the sample covariance matrix $\mathbf{S}$ in terms of $\mathbf{X}$.
+\subpart If $\mathbf{W}$ be a diagonal matrix with entries $\mathbf{S}_{i i}$ for $i \in 1, \ldots, p$ and $\mathbf{R}$ is the sample correlation matrix, how can $\mathbf{R}$ be written in terms of $\mathbf{S}$ and $\mathbf{W}$.
+\subpart Show that the PCA components derived from using the sample covariance matrix $\mathbf{S}$ will be equivalent to those derived using the sample correlation matrix $\mathbf{R}$ when the variances of the $p$ variables are all equal.
+\end{subparts}
+
+
+
+\question%3
+Suppose $\mathbf{X}$ is a mean centered data matrix, and let $\widetilde{\mathbf{X}}=z_{1} w_{1}^{T}$ be the best rank-1 approximation to $\mathbf{X}$, where $z_{1}$ is an $n$-column vector and $w_{1}$ is a $p$-column vector with $w_{1}^{T} w_{1}=1$.
+\begin{subparts}
+\subpart How is $w_{1}$ related to the eigendecomposition of $\mathbf{S}=\frac{1}{n-1} \mathbf{X}^{T} \mathbf{X}$?
+\subpart Show that $z_{1}=\mathbf{X} w_{1}$ and that $\widetilde{\mathbf{X}}=\mathbf{X} w_{1} w_{1}^{T}$.
+\subpart Consider the sum of the squared differences between $\mathbf{X}$ and $\widetilde{\mathbf{X}}$ defined as \[
+	d=\frac{1}{n-1} \sum_{i=1}^{n} \sum_{j=1}^{p}\left(\mathbf{X}_{i j}-\widetilde{\mathbf{X}}_{i j}\right)^{2}.
+\] Show that $d$ is equal to each of the following expressions
+\begin{parts}
+\part $\frac{1}{n-1} \operatorname{tr}\left((\mathbf{X}-\widetilde{\mathbf{X}})(\mathbf{X}-\widetilde{\mathbf{X}})^{T}\right)$
+\part $\frac{1}{n-1} \operatorname{tr}\left(\mathbf{X}^{T} \mathbf{X}\right)-\lambda_{1}$ where $\lambda_{1}$ is the largest eigenvalue of $\mathbf{S}$.
+\part $\sum_{i=2}^{p} \lambda_{i}$ where $\lambda_{i} i=1, \ldots, p$ are the eigenvalues of $\mathbf{S}$.
+\end{parts}
+\end{subparts}
+
+\end{questions}
+
+
+
+\section*{Practical Exercises using R}
+Students should carry out these practical exercises and produce a report summarizing the results of their analysis i.e. produce a document that contains the plots produced and hand this in to your tutor.\\
+\textbf{NOTE} To run these exercises in R you will need to install a few packages called \texttt{MASS}, \texttt{rgl} and \texttt{car}. To do this in RStudio click Tools ---$>$ Install Packages and then type in the names of the packages and install them. Make sure to click the box that says ``install dependencies". Alternatively you could use the command \texttt{install.packages("packagename")} to install packages.
+
+\begin{questions}
+\question%1
+Download the Olympics 2020 men's decathlon dataset (\texttt{decathlon2020.txt}) from \href{https://courses.maths.ox.ac.uk/course/view.php?id=620}{the courses page}. The decathlon is a ten-event competition. The Olympics 2020 dataset was obtained here: \url{https://web.archive.org/web/20210805132635/https://olympics.com/tokyo-2020/olympic-games/resOG2020-/pdf/OG2020-/ATH/OG2020-\_ATH\_C73U\_ATHMDECATH------------------------.pdf}. Load the stats library using \verb|library (stats)| and load the dataset into R using \begin{verbatim}
+decath <- read.csv("decathlon2020.txt", sep="", hea = T, row.names = 1)
+\end{verbatim} Note you will need to change the command so that file includes the path to its location on your computer. Look at the dataset \texttt{decath}. You'll see that it has some different variable names than in the original \texttt{.txt} file. This is because R inserts ``X" into the front of variable names that start with numbers. Thus, the variable names listed in \texttt{varnames} below sometimes start with ``X". Create a new dataset with the 10 event decathlon variables as follows: \begin{verbatim}
+varnames <- c("X100m", "Longjump", "Shot", "Highjump", "X400m", "X110mhurdles", "Discus",
+    "Polevault" , "Javelin", "X1500m")
+\end{verbatim} (Please note that some versions of R will require this instead: \begin{verbatim}
+varnames <- c('X100m', 'Longjump', 'Shot', 'Highjump', 'X400m', 'X110mhurdles', 'Discus',
+    'Polevault', 'Javelin', 'X1500m')
+\end{verbatim} This alteration may similarly apply to later such commands as well.) \begin{verbatim}
+Decathlon <- decath[,varnames]
+\end{verbatim} Run PCA on the scaled dataset using \begin{verbatim}
+f1 <- prcomp(Decathlon, scale=TRUE, retx=TRUE)
+\end{verbatim} Produce a pairs plot of the PCs using \verb|pairs(f1$x)| and a plot of the 2nd and 3rd PCs using \verb|plot(f1$x[,2:3])|. Produce the scree plot using \verb|barplot(f1$sdev)|. Look at the loadings matrix using \verb|f1$rotation| -- how do you interpret the PC1 loadings?
+
+
+
+\question%2
+The Crabs dataset is in the \texttt{MASS} library which can be loaded using \verb|library(MASS)|. Create a new dataset with the 5 main variables as follows
+\begin{verbatim}
+varnames <- c("FL", "RW", "CL", "CW", "BD")
+Crabs <- crabs[,varnames]
+\end{verbatim} Load stats library using \verb|library (stats)| and run PCA on the scaled dataset using \begin{verbatim}
+f1 <- prcomp(Crabs, scale = TRUE, retx = TRUE)
+\end{verbatim} Produce a pairs plot of the PCs using \verb|pairs(f1$x)| and a plot of the 2nd and 3rd PCs using \verb|plot(f1$x[,2:3])|. Produce the scree plot using \verb|barplot(f1$sdev)|. Look at the loadings matrix using \verb|f1$rotation| -- how do you interpret the PC1 loadings?
+
+
+
+\question%3
+Download the EU indicators dataset (\texttt{eu.csv}) from \href{https://courses.maths.ox.ac.uk/course/view.php?id=620}{the course page}. Load \texttt{stats} library using \verb|library(stats)|. Load the dataset into R using \begin{verbatim}
+eu <- read.csv("eu.csv", sep=",", hea = T, row.names = 1)
+\end{verbatim} Note you will need to change the command so that file includes the path to its location on your computer. Look at the dataset using \verb|eu| and run PCA on the scaled dataset using \begin{verbatim}
+f2 <- prcomp(eu[,-1], scale=TRUE,retx=TRUE)
+\end{verbatim} Plot the 1st and 2nd PCs and label the points using \begin{verbatim}
+plot(f2$x[,1:2])
+text(f2$x[,1:2], labels=rownames(eu), pos=4, offset=1)
+\end{verbatim} and make a biplot using \verb|biplot(f2)| -- what happens when you don't scale the dataset?
+
+\end{questions}
+
+
+
+\section*{Practical Exercises using MATLAB}
+Students should carry out these practical exercises and produce a report summarizing the results of their analysis i.e. produce a document that contains the plots produced and hand this in to your tutor. \textbf{NOTE} If you get the error \texttt{Undefined function or variable 'princomp'} when you try to run the PCA commands, then you might not have the ``Statistics and Machine Learning Toolbox" installed with your copy of MATLAB. If you rerun the MATLAB installer that you used for your previous MATLAB course, you should be able to add the ``Statistics and Machine Learning Toolbox" to your installation by following the instructions here: \url{http://uk.mathworks.com/help/install/ug/install-mathworks-software.html} You might have to download the MATLAB installer again in case you've deleted it since your previous MATLAB course. You can download it again using this link: \url{https://www.maths.ox.ac.uk/members/it/software-personal-machines/matlab}
+
+\begin{questions}
+\question%1
+Download the Olympics 2020 decathlon dataset (\texttt{decathlon2020.txt}) from \href{https://courses.maths.ox.ac.uk/course/view.php?id=620}{the course page}. The decathlon is a ten-event competition. The Olympics 2020 dataset was obtained here: \url{https://web.archive.org/web/20210805132635/https://olympics.com/tokyo-2020/olympic-games/resOG2020-/pdf/OG2020-/ATH/OG2020-\_ATH\_C73U\_ATHMDECATH------------------------.pdf}. Load the dataset into MATLAB using \begin{verbatim}
+decath = readtable("decathlon2020.txt", "Delimiter", "tab", "VariableNamingRule", "preserve");
+\end{verbatim} \textbf{Please note that copying commands with} \verb|"| \textbf{quotation marks appears to cause problems in MATLAB but typing such commands should work.} Create a new dataset with the 10 event decathlon variables as follows: \begin{verbatim}
+varnames = ["100m", "Longjump", "Shot", "Highjump", "400m", "110mhurdles", "Discus",
+    "Polevault", "Javelin", "1500m"];
+Decathlon = decath(:, varnames);
+\end{verbatim} Run PCA on the scaled dataset using \begin{verbatim}
+X1 = table2array(Decathlon);
+for d = 1:size(X1,2)
+    X1(:, d) = X1(:, d) - mean(X1(:, d));
+    X1(:, d) = X1(:, d)/std(X1(:, d), 1);
+end
+[coeff1, score1, latent1] = pca(X1);
+\end{verbatim} Produce a pairs plot of the PCs using \verb|corrplot (score1);| and plot the 2nd and 3rd PCs using \begin{verbatim}
+plot(score1(:,2), score1(:,3), 'o');
+\end{verbatim} Produce the scree plot using \begin{verbatim}
+sdev = std(score1);
+bar(sdev);
+\end{verbatim} Look at the loadings matrix \verb|coeff1| -- how do you interpret the PC1 loadings?
+
+
+
+\question%2
+Download a copy of the Crabs dataset (\texttt{crabs.txt}) from \href{https://courses.maths.ox.ac.uk/course/view.php?id=620}{the course page}. Load the dataset into MATLAB using \begin{verbatim}
+crabs = readtable("crabs.txt", "Delimiter", "tab");
+\end{verbatim} Create a new dataset with the 5 main variables as follows: \begin{verbatim}
+varnames = ["FL", "RW", "CL", "CW", "BD"];
+Crabs = crabs(:,varnames);
+\end{verbatim} Run PCA on the scaled dataset using \begin{verbatim}
+X1 = table2array(Crabs);
+for d=1:size(X1,2)
+    X1(:,d) = X1(:,d) - mean(X1(:,d));
+    X1(:,d) = X1(:,d)/std(X1(:,d), 1);
+end
+[coeff1, score1, latent1] = pca(X1);
+\end{verbatim} Produce a pairs plot of the PCs using \verb|corrplot(score1);| and a plot of the 2nd and 3rd PCs using \begin{verbatim}
+plot(score1(:,2), score1(:,3), 'o');
+\end{verbatim} Produce the scree plot using \begin{verbatim}
+sdev = std(score1);
+bar(sdev);
+\end{verbatim} Look at the loadings matrix \verb|coeff1| -- how do you interpret the PC1 loadings?
+
+
+
+\question%3
+Download the EU indicators dataset from (\texttt{eu.csv}) from  \href{https://courses.maths.ox.ac.uk/course/view.php?id=620}{the course page}. Load the dataset using \begin{verbatim}
+eu = readtable("eu.csv", "Delimiter", "comma");
+\end{verbatim} Look at the dataset using \verb|eu| and run PCA on the scaled dataset using \begin{verbatim}
+X2 = table2array(eu(:, 3:end));
+for d = 1:size(X2,2);
+    X2(:,d) = X2(:,d) - mean(X2(:,d));
+    X2(:,d) = X2(:,d) - std(X2(:,d), 1);
+end
+[coeff2, score2, latent2] = pca(X2);
+\end{verbatim} Plot the 1st and 2nd PCs using \begin{verbatim}
+plot(score2(:,2), score2(:,3), 'o');
+text(score2(:,2), score2(:,3), eu.Countries);
+\end{verbatim} Make a biplot \begin{verbatim}
+vbls = eu.Properties.VariableNames(1,3:end);
+biplot(coeff2(:,1:2), 'scores', score2(:,1:2), 'variables', vbls);
+\end{verbatim} What happens when you don't scale the dataset?
+
+\end{questions}
+
+\end{document}

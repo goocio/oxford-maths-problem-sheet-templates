@@ -1,0 +1,102 @@
+\documentclass[answers]{exam}
+\usepackage{../TT2024}
+
+\title{Groups and Group Actions -- Sheet 7\\Orbits. Stabilizers. Orbit-Stabilizer Theorem.}
+\author{YOUR NAME HERE :)}
+\date{Trinity Term 2024}
+% accurate as of 25/06/2024
+
+
+\begin{document}
+\maketitle
+\begin{questions}
+\question%1
+Consider the following actions. [You are not asked to show they are actions.] In each case describe the orbits of the action and determine the stabiliser of the given $s$.
+\begin{subparts}
+\subpart $(0, \infty)$ acts on $\mathbb{C}$ by multiplication, that is, $r \cdot z=r z ; s=i$.
+\subpart $\mathbb{Z}$ acts on $\mathbb{Z}_{6}$ by addition, that is, $n \cdot \bar{m}=\overline{n+m}$ where the line denotes $\bmod 6$ congruence; $s=0$.
+\subpart $S_{3}$ acts on $S_{3}$ by conjugation, that is, $\tau \cdot \sigma=\tau \sigma \tau^{-1} ; s=(12)$.
+\subpart $O(2)$ acts on $\mathbb{R}^{2}$ by $A \cdot \mathbf{v}=A \mathbf{v}$; $s=\mathbf{i}$.
+\end{subparts}
+
+
+
+\question%2
+Let $f$ be a polynomial in the (commuting) variables $x_{1}, x_{2}, \ldots, x_{n}$ and let $N$ be the number of distinct polynomials, including $f$ itself, that can be obtained from $f$ by permuting the variables.
+\begin{subparts}
+\subpart Prove that $N$ divides $n!$.
+\subpart Give examples to show that every divisor of $n!$ occurs when $n=3$. Verify the Orbit-Stabilizer Theorem for each of your examples.
+\end{subparts}
+
+
+
+\question%3
+Let $G$ be a group and let $S$ denote the set of subgroups of $G$.
+\begin{subparts}
+\subpart Show that \[
+	g \cdot H=g H g^{-1}, \quad \text { where } g \in G, H \leqslant G
+\] defines a left action of $G$ on $S$.
+\subpart Now let $G=S_{4}$. What is $\operatorname{Orb}(H)$ and $\operatorname{Stab}(H)$ in each of the following cases? \[
+	H=V_{4}, \qquad H=\operatorname{Sym}\{1,2,3\}, \qquad H=\langle(1234)\rangle .
+\]
+\end{subparts}
+
+
+
+\question%4
+\begin{subparts}
+\subpart Show that $G L_{3}(\mathbb{R})$ (the group of invertible $3 \times 3$ real matrices) acts on $M_{3 \times 3}(\mathbb{R})$ (the set of $3 \times 3$ real matrices) by $A \cdot M=A M$.
+\subpart Let \[
+	M_{1}=\begin{pmatrix}
+		1 & 0 & 1 \\
+		0 & 1 & 2 \\
+		0 & 0 & 0
+	\end{pmatrix}, \quad M_{2}=\begin{pmatrix}
+		1 & 0 & 1 \\
+		0 & 1 & 1 \\
+		0 & 0 & 0
+	\end{pmatrix}, \quad M_{3}=\begin{pmatrix}
+		1 & -1 & 0 \\
+		0 & 2 & 2 \\
+		1 & 1 & 2
+	\end{pmatrix}.
+\] Show that $M_{2}$ and $M_{3}$ lie in the same orbit; determine a matrix $A$ such that \[
+	\operatorname{Stab}\left(M_{2}\right)=A \operatorname{Stab}\left(M_{3}\right) A^{-1}
+\]
+\subpart Show that $M_{1}$ and $M_{2}$ lie in different orbits, but that nonetheless $\operatorname{Stab}\left(M_{1}\right)=\operatorname{Stab}\left(M_{2}\right)$.
+\end{subparts}
+
+
+
+\question%5
+Cayley's Theorem states that every finite group is isomorphic to a subgroup of some $S_{n}$. For each of the following groups, what is the smallest $n$ such that $S_{n}$ contains a subgroup isomorphic to that group? Justify your answers and describe such a subgroup.
+\begin{subparts}
+\subpart $C_{5}$;
+\subpart $D_{10}$;
+\subpart $C_{2} \times C_{2} \times C_{2}$;
+\subpart $S_{3} \times S_{3}$.
+\end{subparts}
+
+\end{questions}
+
+\section*{Starter}
+\begin{questions}
+\question%S1
+Let $G$ be a finite group acting on a set $\Omega$ with $|\Omega|>1$. Assume that the action is transitive (i.e. there is only one orbit). Prove that there is an element $g$ which acts on $\Omega$ without any fixed points.
+
+\end{questions}
+
+\section*{Pudding}
+\begin{questions}
+\question%P1
+Let $n$ be a positive integer.
+\begin{subparts}
+\subpart Show that the equation \[
+	\frac{1}{a_{1}}+\frac{1}{a_{2}}+\cdots+\frac{1}{a_{n}}=1
+\] has finitely many solutions in positive integers $a_{1} \leqslant a_{2} \leqslant \cdots \leqslant a_{n}$.
+\subpart Show that (up to an isomorphism) there are only finitely many finite groups $G$ with precisely $n$ conjugacy classes.
+\end{subparts}
+
+\end{questions}
+
+\end{document}

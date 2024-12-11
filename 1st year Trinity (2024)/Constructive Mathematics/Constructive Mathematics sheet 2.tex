@@ -1,0 +1,41 @@
+\documentclass[answers]{exam}
+\usepackage{../TT2024}
+
+\title{Constructive Mathematics -- Sheet 2}
+\author{YOUR NAME HERE :)}
+\date{Trinity Term 2024}
+% accurate as of 25/06/2024
+
+
+\begin{document}
+\maketitle
+\begin{questions}
+
+\question%1
+Let $f:\left[a_{0}, b_{0}\right] \rightarrow \mathbb{R}$ be continuous with $f\left(a_{0}\right) f\left(b_{0}\right)<0$. A method for the approximation of $\alpha \in\left(a_{0}, b_{0}\right)$ such that $f(\alpha)=0$ is defined which is identical to the Bisection Method except that instead of testing the midpoint of the current interval $\left[a_{k}, b_{k}\right]$, the point \[
+	c=\frac{a_{k} f\left(b_{k}\right)-b_{k} f\left(a_{k}\right)}{f\left(b_{k}\right)-f\left(a_{k}\right)}
+\] is chosen. Draw a sketch to illustrate the geometric description of this method in the case where $f$ has no inflection points in $\left[a_{0}, b_{0}\right]$. Would it be reasonable to use $\left|b_{k}-a_{k}\right|<\mathtt{tol}$ as a convergence criterion with this method?
+
+
+
+\question%2
+How might $g$ be defined so that any root of $f(x)=x^{3}-3 x-1$ is a fixed point of $g$. Find two such distinct functions $g_{1}$ and $g_{2}$ and investigate which might be more suitable to obtain fast convergence of the associated fixed point iteration to obtain the root of $f$ between $-\frac{1}{2}$ and 0? (P) Write a fixed-point iteration to compute this root to an accuracy of 6 decimal places.
+
+
+
+\question%3
+For each of the following identify an interval $[a, b]$ for which the Contraction Mapping Theorem guarantees convergence to the positive fixed point or verify that there is no such interval. Verify your result is every case.
+\begin{parts}
+\part $x=g_{1}(x)=\frac{14}{13}-\frac{x^{3}}{13}$,
+\part $x=g_{2}(x)=e^{-x}$,
+\part $x=g_{3}(x)=x^{3}+3 x^{2}-3$.
+\end{parts}
+
+
+
+\question%4
+(P) Write a function which implements the method described in question 1. Apply \texttt{bisection.py} and your new function separately to approximate $\pi / 2$ to 6 decimal places by solving $f(x)=\cos (x)=0$ (for example starting with $a=\frac{1}{2}, b=3$). Which method converges in fewer steps?
+
+\end{questions}
+
+\end{document}

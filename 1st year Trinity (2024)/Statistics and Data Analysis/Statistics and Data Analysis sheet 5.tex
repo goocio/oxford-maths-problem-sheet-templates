@@ -1,0 +1,57 @@
+\documentclass[answers]{exam}
+\usepackage{../TT2024}
+
+\title{Statistics and Data Analysis -- Sheet 5}
+\author{YOUR NAME HERE :)}
+\date{Trinity Term 2024}
+% accurate as of 25/06/2024
+
+
+\begin{document}
+\maketitle
+\begin{questions}
+
+\question%1
+Suppose that in the model $Y_{i}=\alpha+\beta x_{i}+\epsilon_{i}, i=1, \ldots, n$, the errors $\epsilon_{i}$ are independent and normally distributed with mean 0, but that $\operatorname{var}\left(\epsilon_{i}\right)=\sigma^{2} / w_{i}$ where $w_{1}, \ldots, w_{n}>0$ are known constants. Show that the maximum likelihood estimates of $\alpha$ and $\beta$ can be found by minimizing \[
+	\sum_{i=1}^{n} w_{i}\left(y_{i}-\alpha-\beta x_{i}\right)^{2}.
+\] Can you give two examples of situations in which this model might arise?
+
+
+
+\question%2
+Suppose the straight-line model \[
+	Y_{i}=a+b\left(x_{i}-\bar{x}\right)+\epsilon_{i}, \quad i=1, \ldots, n
+\] is fitted using maximum likelihood, where $\epsilon_{1}, \ldots, \epsilon_{n} \stackrel{\text{iid}}{\sim} N\left(0, \sigma^{2}\right)$. Suppose we estimate the position of the line at new value $x_{0}$ of $x$ by $\widehat{\mu}\left(x_{0}\right)$, where \[
+	\widehat{\mu}(x_{0})=\widehat{a}+\widehat{b}(x_{0}-\bar{x}).
+\] Derive an expression for the variance of $\widehat{\mu}\left(x_{0}\right)$. Sketch the regression line $y=\widehat{\mu}(x)$ together with $y=\widehat{\mu}(x)+2 \operatorname{SE}(\widehat{\mu}(x))$ and $y=\widehat{\mu}(x)-$ $2 \operatorname{SE}(\widehat{\mu}(x))$ as a function of $x$.
+
+
+
+\question%3
+\begin{subparts}
+\subpart In the model $Y_{i}=\alpha+\beta x_{i}+\epsilon_{i}, i=1, \ldots, n$, where $\epsilon_{i} \stackrel{\text {iid}}{\sim} N\left(0, \sigma^{2}\right)$, show that the maximum likelihood estimator $\widehat{\sigma}^{2}$ of $\sigma^{2}$ is given by \[
+	\widehat{\sigma}^{2}=\frac{1}{n} \sum_{i=1}^{n}\left(y_{i}-\widehat{\alpha}-\widehat{\beta} x_{i}\right)^{2}
+\] where $\widehat{\alpha}, \widehat{\beta}$ are the usual estimates of $\alpha, \beta$.
+\subpart Show that $E\left(\widehat{\sigma}^{2}\right)=\left(\frac{n-2}{n}\right) \sigma^{2}$ and deduce an unbiased estimator of $\sigma^{2}$. [\emph{Hint: use the result from lectures that $\operatorname{var}\left(e_{i}\right)=\sigma^{2}\left(1-h_{i}\right)$.}]
+\end{subparts}
+
+
+
+\question%4
+Let \[
+	Y_{i}=f\left(x_{i}\right)+\epsilon_{i}, \quad i=1, \ldots, n
+\] where $f(x)$ is some function (not necessarily $f(x)=\alpha+\beta x$) and where $\epsilon_{i} \stackrel{\text {iid}}{\sim} N\left(0, \sigma^{2}\right)$. Suppose that $f$ is estimated by some estimator $\widehat{f}$ (where $\widehat{f}$ depends on $\left(x_{i}, y_{i}\right), i=1, \ldots, n$ ). The mean squared error for a new $Y$ at a new value of $x$, say $Y_{0}=f\left(x_{0}\right)+\epsilon_{0}$, is defined by $E\left[\left(Y_{0}-\widehat{f}\left(x_{0}\right)\right)^{2}\right]$. Here $\epsilon_{0} \sim N\left(0, \sigma^{2}\right)$ independent of $\epsilon_{1}, \ldots, \epsilon_{n}$. Show that \[
+	E\left[\left(Y_{0}-\widehat{f}\left(x_{0}\right)\right)^{2}\right]=\operatorname{Var}\left(\widehat{f}\left(x_{0}\right)\right)+\left[\operatorname{Bias}\left(\widehat{f}\left(x_{0}\right)\right)\right]^{2}+\sigma^{2}
+\] where \[
+	\operatorname{Bias}\left(\widehat{f}\left(x_{0}\right)\right) =E\left[\widehat{f}\left(x_{0}\right)\right]-f\left(x_{0}\right), \qquad
+	\operatorname{Var}\left(\widehat{f}\left(x_{0}\right)\right) =E\left[\left\{\widehat{f}\left(x_{0}\right)-E\left[\widehat{f}\left(x_{0}\right)\right]\right\}^{2}\right] .
+\] [\emph{Hint: start from $E[(Y_{0}-\widehat{f}(x_{0}))^{2}]=E[\{(Y_{0}-f(x_{0}))+(f(x_{0})-\widehat{f}(x_{0}))\}^{2}]$.}]
+
+
+
+\question%5
+(Using R or MATLAB) Matlab) Elaborate on your answer to Q4 on Sheet 4. For example, how might you test the assumptions underlying your earlier answer?
+
+\end{questions}
+
+\end{document}

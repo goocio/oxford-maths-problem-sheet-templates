@@ -1,0 +1,60 @@
+\documentclass[answers]{exam}
+\usepackage{../TT2024}
+
+\title{Statistics and Data Analysis -- Sheet 3}
+\author{YOUR NAME HERE :)}
+\date{Trinity Term 2024}
+% accurate as of 25/06/2024
+
+
+\begin{document}
+\maketitle
+\begin{questions}
+
+\question%1
+Construct a central $100(1-\alpha)\%$ confidence interval for the unknown parameter $\mu$ based on a random sample of size $n$ from a normal distribution with mean $\mu$ and variance 1. If $\alpha=0.05$ and the length of the interval is to be less than 1, how large must $n$ be? What if the length is to be less than 0.1?
+
+
+
+\fullwidth{[In questions 2 and 3, respectively, first assume that it is permissible to replace p, $\theta$ by $\bar{x}$ to obtain an estimate of the variance of $\widehat{p}, \widehat{\theta}$. Can you find confidence intervals without doing this?]}
+\question%2
+Suppose $X_{1}, \ldots, X_{n}$ is a random sample from a Bernoulli distribution with probability $P(X_{i}=1)=p$.
+\begin{subparts}
+\subpart What is the variance of $X_{i}$? Show that the estimator $\widehat{p}=\bar{X}$ has expectation $p$ and find its variance.
+\subpart Using the central limit theorem construct a random variable which has an approximate standard normal distribution and indicate how this can be used to find a $100(1-\alpha)\%$ confidence interval for $p$.
+\subpart Fifty female black ducks from locations in New Jersey were captured and radio-tagged prior to severe winter months. Of these 19 died during the winter. Find a $95\%$ confidence interval for the proportion surviving. Claims made by environmentalists suggested a 50-50 chance of survival. Is this reasonable?
+\end{subparts}
+
+
+
+\question%3
+Suppose $X_{1}, \ldots, X_{n}$ are independent Poisson random variables each with mean $\theta$. Assuming $n$ is large and using the central limit theorem, construct:
+\begin{subparts}
+\subpart a central confidence interval for $\theta$;
+\subpart an upper confidence limit for $\theta$, each with an associated confidence of $1-\alpha$.
+\end{subparts}
+
+
+
+\question%4
+Let $X_{1}, \ldots, X_{n}$ be i.i.d. $\operatorname{Uniform}[0, \theta]$. Find the maximum likelihood estimator $\widehat{\theta}$ of $\theta$. Show that the distribution of $\widehat{\theta} / \theta$ does not depend on $\theta$ and show that the interval $(\widehat{\theta}, \widehat{\theta} / \alpha^{1 / n})$ is a $1-\alpha$ confidence interval for $\theta$.
+
+
+
+\question%5
+\begin{subparts}
+\subpart Let $X$ and $Y$ be independent normally distributed random variables with means $a$ and $b$ and variances $v$ and $w$. State, without proof, the distribution of $\kappa X+\lambda Y$ for $\kappa, \lambda \in \mathbb{R}$.
+\subpart Consider a random sample $(L_{1}, R_{1}), \ldots,(L_{n}, R_{n})$ of eye pressure measurements in the left and right eyes of $n$ patients. Suppose that $L_{j}$ and $R_{j}$ are independent and normally distributed with unknown mean $\mu$ and known variance $\sigma^{2}$, for $j=1, \ldots, n$. Obtain the likelihood function of the sample and derive the maximum likelihood estimator of $\mu$. Construct a $100(1-\alpha) \%$ confidence interval for $\mu$.
+\subpart Suppose now that for each $j$, we do not assume that $L_{j}$ and $R_{j}$ are independent. Instead we assume that \[
+	L_{j}=M_{j}+D_{j} \quad \text { and } \quad R_{j}=M_{j}-D_{j}
+\] for independent $M_{j}$ and $D_{j}$, where $M_{j} \sim N(\mu, \sigma_{1}^{2})$ and $D_{j} \sim N(0, \sigma_{2}^{2})$, with $\sigma_{1}^{2} \geqslant \sigma_{2}^{2}$ and $\sigma_{1}^{2}+\sigma_{2}^{2}=\sigma^{2}$. Here $\mu$ is unknown but $\sigma_{1}^{2}$ and $\sigma_{2}^{2}$ are known.
+\begin{parts}
+\part Find the distribution of $L_{j}$ and the distribution of $R_{j}$, and find the maximum likelihood estimator for $\mu$ in terms of $L_{j}$ and $R_{j}$.
+\part Assuming that $\sigma_{1}^{2}=\sigma_{2}^{2}=\sigma^{2} / 2$, find a $100(1-\alpha) \%$ confidence interval for $\mu$.
+\part Assuming now that $\sigma_{1}^{2}>\sigma_{2}^{2}$, state qualitatively, without calculations, how this change will affect the maximum likelihood estimator and the confidence interval.
+\end{parts}
+\end{subparts}
+
+\end{questions}
+
+\end{document}

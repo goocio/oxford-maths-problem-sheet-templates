@@ -1,0 +1,59 @@
+\documentclass[answers]{exam}
+\usepackage{../TT2024}
+
+\title{Constructive Mathematics -- Sheet 4}
+\author{YOUR NAME HERE :)}
+\date{Trinity Term 2024}
+% accurate as of 25/06/2024
+
+
+\begin{document}
+\maketitle
+\begin{questions}
+
+\question%1
+Let $p(z)=a_{n} z^{n}+a_{n-1} z^{n-1}+\ldots+a_{1} z+a_{0}$ be a polynomial with real coefficients.
+\begin{parts}
+\part If $u, w \in \mathbb{R}$ are given and \[
+	p(z)=\left(z^{2}-u z-w\right) s(z)+c_{1} z+c_{0}
+\] where \[
+	s(z)=c_{n} z^{n-2}+c_{n-1} z^{n-3}+\ldots+c_{3} z+c_{2},
+\] derive a nested multiplication procedure to determine all the real coefficients, $c_{j}$.
+\part If $n \geq 5$ and we further write \[
+	s(z)=\left(z^{2}-u z-w\right) t(z)+d_{1} z+d_{0},
+\] verify that \[
+	p'(z)=\left[z^{2}-u z-w\right]\left[s'(z)+(2 z-u) t(z)\right]+(2 z-u)\left(d_{1} z+d_{0}\right)+c_{1} .
+\]
+\part Hence if $\sigma$ is a complex number which satisfies $\sigma^{2}-u \sigma-w=0$ and the real numbers $c_{1}, c_{0}, d_{1}$ and $d_{0}$ have been determined (by the nested multiplication procedure), give an expression for the next Newton iterate if $\sigma$ is the current iterate. (Remark: for a general polynomial $p_{n}$ with real coefficients, the above allows computation even of complex roots using only real arithmetic except for the Newton update step where complex arithmetic must be used.)
+\end{parts}
+
+
+
+\question%2
+Calculate (by hand!) the first Newton iterate for the nonlinear system \[
+	\begin{array}{rcl}
+		x^{2}+y^{2}+y-6&=&0 \\
+		x^{2}-y^{2}+2 \sin (\pi x / 4)-2 y-3&=&0
+	\end{array}
+\] starting with $x=0=y$.
+
+
+
+\question%3
+(P) Write a Python program to continue the Newton iteration started in question 2 above.
+
+
+
+\question%4
+It is desired to find \[
+	\min _{x, y} f(x, y)\quad\text{where}\quad f(x, y)=(x+y)^{4}+x^{2}-5 x.
+\] Calculate the gradient, $\mathbf{g}$, and Hessian, $H$. Would it be reasonable to start Newton iteration for $\mathbf{g}=\mathbf{0}$ at $x_{0}=0, y_{0}=0$? If $H$ is approximated/replaced by $\begin{bmatrix}5 & 0 \\ 0 & 5\end{bmatrix}$ with $x_{0}=0, y_{0}=0$ calculate $x_{1}, y_{1}$ from this approximate Newton method. Verify that $f\left(x_{1}, y_{1}\right)<f\left(x_{0}, y_{0}\right)$ and that $H\left(x_{1}, y_{1}\right)$ is positive definite.
+
+
+
+\question%5
+(Optional) (P) Compute a minimum for the function in question 4 using Newton's method starting from the values of $x_{1}, y_{1}$ that you obtained in your answer to that question. Why do you think that convergence is so slow? (To see real quadratic convergence for a system of equations, just, for example, add a $y^{2}$ term to $f$ as above.)
+
+\end{questions}
+
+\end{document}
