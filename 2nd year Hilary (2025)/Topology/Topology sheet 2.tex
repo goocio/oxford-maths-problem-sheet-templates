@@ -1,0 +1,126 @@
+\documentclass[answers]{exam}
+\usepackage{../HT2025}
+
+\title{Topology -- Sheet 2\\Connectedness, Compactness}
+\author{YOUR NAME HERE :)}
+\date{Hilary Term 2025}
+
+
+\begin{document}
+\maketitle
+
+\begin{questions}
+
+\question%1
+Consider $\mathbb{R}^{n}$ endowed with the norm $\|\cdot\|_{\infty}$.
+\begin{parts}
+\part%1a
+Prove that for any $\mathbf{x} \in \mathbb{R}^{n}$ and $\varepsilon>0$, there is a $\mathbf{y} \in \mathbb{Q}^{n}$ and $\delta \in \mathbb{Q}$, $\delta>0$, such that \[
+	\mathbf{x} \in B(\mathbf{y}, \delta) \subseteq B(\mathbf{x}, \varepsilon).
+\]
+
+\part%1b
+Prove that the family $\{B(\mathbf{y}, \delta): \mathbf{y} \in \mathbb{Q}^{n}\text{ and }\delta \in \mathbb{Q}, \delta>0\}$ is a countable basis for the Euclidean topology on $\mathbb{R}^{n}$.
+\end{parts}
+
+
+
+\question%2
+Prove that if $f: X \to Y$ is a continuous map of a space $X$ to a Hausdorff space $Y$, then its graph \[
+	\mathcal{G}_{f}=\{(x, f(x)) \in X \times Y: x \in X\}
+\] is a closed subset of $X \times Y$.
+
+
+
+\question%3
+\begin{parts}
+\part%3a
+Let $A$ and $B$ be connected subsets of a topological space $X$ such that $A \cap \bar{B} \neq \emptyset$. Prove that $A \cup B$ is connected.
+
+\part%3b
+Which of the following subsets of $\mathbb{R}^{2}$ are connected? \begin{itemize}
+  \item $B((1,0), 1) \cup B((-1,0), 1)$;
+  \item $\overline{B((1,0), 1)} \cup B((-1,0), 1)$;
+  \item the set of all points with at least one rational coordinate.
+\end{itemize}
+\end{parts}
+
+
+
+\question%4
+Let $X$ be a topological space.
+\begin{parts}
+\part%4a
+Let $a$ be an arbitrary point in $X$. Prove that there exists a largest connected subset of $X$ containing $a$, i.e. a set $C_{a}$ such that: \begin{itemize}
+  \item $a \in C_{a}$ and $C_{a}$ is connected;
+  \item for any connected subset $S$ of $X$ containing $a, S \subseteq C_{a}$.
+\end{itemize} We call such a set $C_{a}$ the \emph{connected component of $X$ containing a}, or simply \emph{a connected component of $X$}.
+
+\part%4b
+Prove that $C_{a}$ is closed for every $a \in X$.
+
+\part%4c
+Prove that the relation $x \sim y \iff y \in C_{x}$ is an equivalence relation.
+
+\part%4d
+Prove that connected components of $X$ are either disjoint or they coincide.
+
+\part%4e
+Find the connected components of $X=\{(x, y) \in \mathbb{R}^{2}: x \neq y\}$ with the topology induced from $\mathbb{R}^{2}$. Same question for $X=\left\{(z, w) \in \mathbb{C}^{2}: z \neq w\right\}$ with the topology induced from $\mathbb{C}^{2}$.
+
+\part%4f
+Let $A$ be a subset of $\mathbb{R}$ such that $\AA=\emptyset$. Prove that the connected components of $A$ are the singletons. What are the connected components of $\mathbb{Q}$ with the topology induced from $\mathbb{R}$?
+
+\part%4g
+Show that $G L(n, \mathbb{R})$ (where we identify this with a subspace of $\mathbb{R}^{n^{2}}$) is not connected. (\emph{Hint: determinant.}) ($\ast$) How many connected components does it have?
+\end{parts}
+
+
+
+\question%5
+Let $I$ be an open interval in $\mathbb{R}$ and let $f: I \to \mathbb{R}$ be a differentiable function.
+\begin{parts}
+\part%5a
+Prove that the set $T=\{(x, y) \in I \times I: x<y\}$ is a connected subset of $\mathbb{R}^{2}$ with the standard topology.
+
+\part%5b
+Let $g: T \to \mathbb{R}$ be the function defined by \[
+	g(x, y)=\frac{f(x)-f(y)}{x-y}
+\] Prove that $g(T) \subseteq f'(I) \subseteq \overline{g(T)}$.
+
+\part%5c
+Show that $f'(I)$ is an interval. [\emph{Thus the derivative $f'$ of any differentiable function $f: I \to \mathbb{R}$ always has the intermediate value property (without necessarily being continuous). This is Darboux's theorem.}]
+\end{parts}
+
+
+
+\question%6
+Let $G$ be a topological group, i.e. $G$ is a group and a topological space such that the operations $x \to x^{-1}$ and $(x, y) \to x y$ are continuous. Assume that $G$ is connected and let $N$ be a normal subgroup of $G$ which is a discrete set with the topology induced from $G$. Show that $N$ is contained in the centre of $G, Z(G)$.
+
+
+
+\question%7
+\begin{parts}
+\part%7a
+Let $X$ be a compact space, and let $(V_{n})_{n \in \mathbb{N}}$ be a nested sequence of non-empty closed subsets of $X$ (nested means that $V_{n+1} \subseteq V_{n}$ for every $n \in \mathbb{N}$). Prove that $\bigcap_{n=1}^{\infty} V_{n} \neq \emptyset$.\\
+
+\part%7b
+Now suppose that $X$ is Hausdorff as well as compact, and let $f: X \to X$ be a continuous map. Let $X_{0}=X$, $X_{1}=f(X_{0})$ and inductively define $X_{n+1}=f(X_{n})$ for $n \geq 1$. Show that $A=\bigcap_{n} X_{n}$ is non-empty.
+
+\part%7c
+Prove that $f(A)=A$. [\emph{Hint: the proof that $f(A) \subseteq A$ is straightforward. To show that any $a \in A$ is in $f(A)$, apply (a) to the sets $V_{n}=f^{-1}(a) \cap X_{n}.$}]
+\end{parts}
+
+
+
+\question%8
+Let $X$ be a Hausdorff space and let $A, B$ be disjoint compact subsets of $X$. Show that there exist disjoint open subsets $U, V$ of $X$ such that $A \subseteq U$ and $B \subseteq V$.
+
+
+
+\question%9
+Let $X, Y$ be topological spaces and let $W \subseteq X \times Y$ be closed. Assume that $Y$ is compact and let $p_{X}: X \times Y \to X$ be the projection map. Show that $p_{X}(W)$ is closed. Is this true if we don't assume $Y$ to be compact?
+
+\end{questions}
+
+\end{document}

@@ -1,0 +1,107 @@
+\documentclass[answers]{exam}
+\usepackage{../HT2025}
+
+\title{Topology -- Sheet 1\\Closures, Hausdorff spaces}
+\author{YOUR NAME HERE :)}
+\date{Hilary Term 2025}
+
+
+\begin{document}
+\maketitle
+
+\begin{questions}
+
+\question%1
+Let $\mathcal{T}_{\text {left }}$ be the family of subsets $U$ of $\mathbb{R}$ with the property that for every $x \in U$ there exists $\varepsilon>0$ such that $(x-\varepsilon, x] \subseteq U$. Prove that $\mathcal{T}_{\text {left }}$ is a topology on $\mathbb{R}$. What is the closure of $(0,1)$ with respect to this topology?
+
+
+
+\question%2
+Let $X$ be an infinite set equiped with the co-finite topology. So $A \subseteq X$ is open if its complement is finite or $A=\emptyset$. Which functions $f: X \to X$ are continuous?
+
+
+
+\question%3
+Show that the subspaces $\mathbb{Z}, \mathbb{Q}$ of $\mathbb{R}$ (equipped with the standard topology) are not homeomorphic.
+
+
+
+\question%4
+Let $(X, \mathrm{d})$ be a metric space and $A$ a non-empty subset of $X$. For every $x \in X$, define the distance from $x$ to $A$, $\operatorname{dist}(x, A)$, by \[
+	\operatorname{dist}(x, A)=\inf _{a \in A} \mathrm{d}(x, a)
+\] Prove that $x \in \bar{A}$ if and only if $\operatorname{dist}(x, A)=0$.
+
+
+
+\question%5
+Let $(X, \mathrm{d})$ be a metric space.
+\begin{parts}
+\part%5a
+Prove that a closed ball is a closed set in $(X, \mathcal{T}_{\mathrm{d}})$, where $\mathcal{T}_{\mathrm{d}}$ is the topology defined by the metric $\mathrm d$. Prove that the closure of an open ball is contained in the closed ball.
+
+\part%5b
+Draw the picture of the closed ball with centre $\left(\frac{1}{2}, 0\right)$ and of radius $\frac{1}{2}$ in $(\mathbb{R}^{2},\|\cdot\|_{\infty})$.
+
+\part%5c
+Consider the subset $E=([0,1] \times\{0\}) \cup(\{0\} \times[0,1])$ of $\mathbb{R}^{2}$ endowed with the metric induced from $(\mathbb{R}^{2},\|\cdot\|_{\infty})$. What are the open and the closed ball of centre $\left(\frac{1}{2}, 0\right)$ and of radius $\frac{1}{2}$ in this new metric space? Show that the closure of the open ball is a proper subset of the closed ball.
+
+\part%5d
+Let $(V,\|\cdot\|)$ be a normed real vector space. Show that in this case the closure of any open ball is a closed ball.
+\end{parts}
+
+
+
+\question%6
+Let $f: X \to Y$ be a continuous map between topological spaces, and let $A$ and $B$ be subsets of $X$ such that $\bar{A}=\bar{B}$. Prove that $\overline{f(A)}=\overline{f(B)}$.
+
+
+
+\question%7
+Give examples of subsets $A_{1}$, $A_{2}$ and $A_{3}$ of $\mathbb{R}^{2}$ (with its standard topology) such that
+\begin{parts}
+\part%7a
+$A_{1}'=\mathbb{R}^{2}$ and $(\mathbb{R}^{2} \setminus A_{1})'=\mathbb{R}^{2}$;
+
+\part%7b
+$A_{2}' \nsubseteq A_{2}$ and $A_{2} \nsubseteq A_{2}'$;
+
+
+\part%7c
+$A_{3}''' \neq A_{3}'' \neq A_{3}' \neq A_{3}$.
+\end{parts}
+
+
+
+\question%8
+Give examples of disjoint open subsets $A_{1}$, $A_{2}$ and $A_{3}$ of $\mathbb{R}$ (with its standard topology) such that \[
+	\partial A_{1}=\partial A_{2}=\partial A_{3} .
+\]
+
+
+
+\question%9
+Let $(X, \mathcal{T})$ be a Hausdorff topological space and let $A$ be a non-empty subset of $X$.
+\begin{parts}
+\part%9a
+Prove that an open set $U \in \mathcal{T}$ has non-empty intersection with $A$ if and only if $U$ has nonempty intersection with $\bar{A}$.
+
+\part%9b
+Prove that a point $x$ is an accumulation point of $A$ (i.e. $x \in A'$) if and only if $x$ is in $\overline{A \setminus\{x\}}$.
+
+\part%9c
+Prove that $A'$ is closed in $X$.
+
+\part%9d
+Prove that $(\bar{A})'=A'$. Deduce that $(A')' \subseteq A'$.
+\end{parts}
+
+
+
+\question%10
+Let $(X, \mathcal{T})$ be a Hausdorff topological space and let $f: X \to X$ be continuous. Show that the set \[
+	\operatorname{Fix}(f)=\{x: f(x)=x\}
+\] is closed.
+
+\end{questions}
+
+\end{document}
