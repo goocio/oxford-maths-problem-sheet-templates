@@ -1,0 +1,107 @@
+\documentclass[answers]{exam}
+\usepackage{../HT2026}
+
+\title{Functional Analysis II -- Sheet 2\\Fourier series, Baire category theorem, Open mapping theorem}
+\author{YOUR NAME HERE :)}
+\date{Hilary Term 2025}
+
+
+\begin{document}
+\maketitle
+
+\section*{Section A \large(not to be handed in, solutions to be published)}
+
+\begin{questions}
+
+\question%A1
+\begin{parts}
+\part%A1a
+Let $M$ be a complete metric space, let $A_{n}$ be nowhere dense subsets of $M$ and let $G_{n}$ be dense open subsets of $M$. Show that $\cap_{n \in \mathbb{N}} G_{n}$ is not contained in $\cup_{n \in \mathbb{N}} A_{n}$. Deduce that $\mathbb{Q}$ is not the intersection of countably many open dense subsets of $\mathbb{R}$.
+
+\part%A1b
+Derive the inverse mapping theorem from the open mapping theorem.
+\end{parts}
+
+
+
+\question%A2
+\begin{parts}
+\part%A2a
+Consider a double sequence $(a_{n, j})$ such that for every fixed $n$, the sequence $(a_{n, j})_{j=1}^{\infty}$ belongs to $c_{0}(\mathbb{R})=\{(x_{n}): x_{n} \to 0\}$. Show that if \[
+	\sup _{n} \sum_{j} a_{n, j} b_{j}<\infty \text { for every } b=(b_{j}) \in \ell^{1}
+\] then $\sup _{n, j}|a_{n, j}|<\infty$.
+
+\part%A2b
+Suppose that $(a_{j})$ is a sequence of real numbers such that $\sum_{j} a_{j} b_{j}$ converges for all $b=(b_{j}) \in c_{0}(\mathbb{R})$. Prove that $(a_{j}) \in \ell^{1}(\mathbb{R})$.
+\end{parts}
+
+\end{questions}
+
+
+
+\section*{Section B \large(to be handed in)}
+
+\begin{questions}
+
+\question%B1
+\begin{parts}
+\part%B1a
+Prove the localisation property of Fourier series: if two (continuous) $2 \pi$-periodic functions $f$ and $g$ are equal in an open interval containing $x_{0}$, then their Fourier series either both converge at $x_{0}$ or both diverge at $x_{0}$.
+
+\part%B1b
+In the lecture, we will prove that there is a continuous function $f_{0}$ whose Fourier series diverges at 0 . Use (a) to construct a continuous function $f_{S}$ whose Fourier series diverges at every point of a given finite subset $S=\left\{s_{1}<s_{2}<\ldots<s_{n}\right\} \subset$ $(-\pi, \pi]$.
+\end{parts}
+
+
+
+\question%B2
+Let $1 \leqslant p<q<\infty$ and consider the Banach space $(\ell^{q}(\mathbb{R}),\|\cdot\|_{\ell^{q}})$. Show that $A\coloneqq\ell^{p}(\mathbb{R})$ is a subset of $\ell^{q}(\mathbb{R})$ with Baire category 1 which is dense in $(\ell^{q}(\mathbb{R}),\|\cdot\|_{\ell^{q}})$. Hint: Consider $A_{n}\coloneqq\{x \in \ell^{p}:\|x\|_{p} \leqslant n\}$.
+
+
+
+\question%B3
+\begin{parts}
+\part%B3a
+Let $X$ be a real Banach space, $Y$ and $Z$ be real normed vector spaces, and $B: X \times Y \to Z$ be bilinear (i.e. linear in each variable). Suppose that for each $x \in X$ and $y \in Y$, the linear maps $B^{x}: Y \to Z$ and $B_{y}: X \to Z$ defined by \[
+	B^{x}(y)=B(x, y)=B_{y}(x)
+\] are continuous. Use the principle of uniform boundedness to prove that there exists a constant $K$ such that $\|B(x, y)\| \leqslant K\|x\|\|y\|$ for all $x \in X$ and $y \in Y$. Deduce that $B$ is continuous.
+
+\part%B3b
+Let $X$ and $Y$ both be the subspace of $L^{1}(0,1)$ consisting of polynomials, $Z=\mathbb{R}$, and \[
+	B(f, g)=\int_{0}^{1} f g~\mathrm d t .
+\] Show that the bilinear form $B$ is continuous in each variables but it is not continuous. [\emph{To put things in perspective, please note that even on $\mathbb{R}^{2}$, for nonlinear functions, separate continuity does not imply joint continuity. A standard example is the function $f(x, y)=\frac{x y}{x^{2}+y^{2}}$ for $(x, y) \neq 0$ and $f(0,0)=0$.}]
+\end{parts}
+
+
+
+\question%4
+Let $X$ and $Y$ be real Banach spaces and $T \in \mathcal{B}(X, Y)$. Assume that $Z=T X$ is a finite-codimensional subspace of $Y$ and let $\{y_{1}+Z, \ldots, y_{m}+Z\}$ be a basis for $Y / Z$. Define $\hat{T}: X \oplus \mathbb{R}^{m} \to Y$ by \[
+	\hat{T}\left(x,\left(v_{1}, \ldots, v_{m}\right)\right)=T(x)+\sum_{j=1}^{m} v_{j} y_{j}
+\] Show that $\hat{T}$ is a surjective bounded linear operator. Hence, by applying the open mapping theorem, deduce that $Z$ is closed.
+
+
+
+\question%5
+Derive the open mapping theorem from the inverse mapping theorem in the case where $X$ is a Hilbert space.
+
+\end{questions}
+
+
+
+\section*{Section C \large(optional, not to be handed in, sketches of solutions to be published)}
+
+\begin{questions}
+
+\question%C1
+Consider the system $\{e_{n}=\frac{1}{\sqrt{2 \pi}} e^{i n x}\}_{n \in \mathbb{Z}}$ as a subset of $X=L^{1}(-\pi, \pi)$.
+\begin{parts}
+\part%C1a
+Show that $\|e_{n}\|=\sqrt{2 \pi}$ for all $n$ and $\|e_{n}-e_{m}\|=\frac{8}{\sqrt{2 \pi}}$ for all $n \neq m$.
+
+\part%C1b
+Show that the closed linear span of $\{e_{n}=\frac{1}{\sqrt{2 \pi}} e^{i n x}\}_{n \in \mathbb{Z}}$ is $L^{1}(-\pi, \pi)$.
+\end{parts}
+
+\end{questions}
+
+\end{document}

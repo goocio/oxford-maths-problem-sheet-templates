@@ -1,0 +1,114 @@
+\documentclass[answers]{exam}
+\usepackage{../HT2026}
+
+\title{Functional Analysis II -- Sheet 4\\Spectral theory}
+\author{YOUR NAME HERE :)}
+\date{Hilary Term 2025}
+
+
+\begin{document}
+\maketitle
+
+\section*{Section A \large(not to be handed in, solutions to be published)}
+
+\begin{questions}
+
+\question%A1
+Let $X=C([0,2], \mathbb{C})$ with the sup norm, and let \[
+	g(t)= \begin{cases}
+		t & \text{if } 0 \leqslant t \leqslant 1 \\
+		1 & \text{if } 1<t \leqslant 2
+	\end{cases}
+\] Define $T \in L(X)$ by \[
+	(T f)(t)=g(t) f(t), \quad f \in C[0,2], \quad t \in[0,2] .
+\] Determine $\|T\|$, $\sigma_{p}(T)$, $\sigma_{c}(T)$, $\sigma_{r}(T)$, and $\sigma(T)$.
+
+\end{questions}
+
+
+
+\section*{Section B \large(to be handed in)}
+
+\begin{questions}
+
+\question%B1
+Consider the right shift operator on sequences $R(x_{1}, x_{2}, ...)=(0, x_{1}, x_{2}, ...)$. Show that:
+\begin{parts}
+\part%B1a
+As an operator on $\ell^{2}$, $R$ satisfies $\sigma_{p}(R)=\emptyset$, $\sigma_{r}(R)=\{\lambda:|\lambda|<1\}$, and $\sigma_{c}(R)=\{\lambda:|\lambda|=1\}$.
+
+\part%B1b
+As an operator on $\ell^{\infty}, R$ satisfies $\sigma_{p}(R)=\emptyset, \sigma_{r}(R)=\{\lambda:|\lambda| \leqslant 1\}$ and $\sigma_{c}(R)=$ $\emptyset$.
+\end{parts}
+
+
+
+\question%B2
+Let $X$ be a complex Hilbert space and $T \in \mathcal{B}(X)$ be normal (i.e. $T^{*} T=T T^{*}$).
+\begin{parts}
+\part%B2a
+Show that \[
+	r_{\sigma}(T)=\|T\| .
+\] Deduce that if $P$ is a polynomial, then \[
+	\|P(T)\|=\sup _{\lambda \in \sigma(T)}|P(\lambda)|.
+\]
+
+\part%B2b
+Let $P$ be a Laurent polynomial, i.e. $P(z)=\sum_{k} a_{k} z^{k}$ where the summation range is finite but may contain positive as well as negative powers. Show that if $T$ is unitary, then \[
+	\|P(T)\|=\sup _{\lambda \in \sigma(T)}|P(\lambda)|.
+\]
+\end{parts}
+
+
+
+\question%B3
+Let $X$ be a complex Hilbert space and $S$ and $T$ be two self-adjoint bounded linear operators on $X$.
+\begin{parts}
+\part%B3a
+Let $\lambda \notin \sigma(T)$. Use the fact that $\sigma((T-\lambda I)^{-1})=(\sigma(T)-\lambda)^{-1}$ (a form of spectral mapping theorem) and Gelfand's formula to show that \[
+	\|(T-\lambda I)^{-1}\|=\frac{1}{\operatorname{dist}(\lambda, \sigma(T))}
+\] Deduce that $I+(T-\lambda I)^{-1}(S-T)$ is invertible if \[
+	\|S-T\|<\operatorname{dist}(\lambda, \sigma(T)).
+\] Hence, show under this latter assumption that $\lambda \notin \sigma(S)$.
+
+\part%B3b
+Use (a) to show that \[
+	\|S-T\| \geqslant \operatorname{dist}_{H}(\sigma(S), \sigma(T))
+\] where the Hausdorff distance $\operatorname{dist}_{H}(A, B)$ between two closed subsets $A$ and $B$ of $\mathbb{C}$ is defined by \[
+	\operatorname{dist}_{H}(A, B)=\max\left(\sup_{a \in A} \min_{b \in B}|a-b|,\ \sup_{b \in B} \min_{a \in A}|a-b|\right) .
+\]
+\end{parts}
+
+
+
+\question%B4
+A linear operator $T: \ell^{1} \to \ell^{1}$ is defined by \[
+	T(x_{1}, x_{2}, x_{3}, ...)=(y_{1}, y_{2}, y_{3}, ...)\quad
+	\text{where } y_{k}=\left(\frac{k+1}{k}\right) x_{k+1}\quad
+	\text{for } k \geqslant 1.
+\]
+\begin{parts}
+\part%B4a
+Show that $T$ is bounded and that $\|T\|=2$. Obtain an explicit formula for $T^{2} x$ and, more generally, for $T^{n} x$ when $n$ is a positive integer and $x=(x_{1}, x_{2}, x_{3}, ...) \in$ $\ell^{1}$. Calculate $\|T^{n}\|$.
+
+\part%B4b
+Which complex numbers $\lambda$ are eigenvalues of $T$?
+
+\part%B4c
+Prove that the spectrum of $T$ is the disc $\{\lambda \in \mathbb{C}:|\lambda| \leqslant 1\}$.
+\end{parts}
+
+\end{questions}
+
+
+
+\section*{Section C \large(optional, not to be handed in, sketches of solutions to be published)}
+
+\begin{questions}
+
+\question%C1
+Let $X$ be any Banach space. Show that there exist no $C, D \in \mathcal{B}(X)$ with $D^{n} \neq 0$ for all $n \in \mathbb{N}$ and $\|D\|<1$ such that $C D=D C+D+\operatorname{Id}$.
+
+\end{questions}
+
+\end{document}

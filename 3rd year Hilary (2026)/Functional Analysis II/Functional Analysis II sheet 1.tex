@@ -1,0 +1,143 @@
+\documentclass[answers]{exam}
+\usepackage{../HT2026}
+
+\title{Functional Analysis II -- Sheet 1\\Hilbert spaces, Adjoint, normal, unitary, and compact operators}
+\author{YOUR NAME HERE :)}
+\date{Hilary Term 2025}
+
+
+\begin{document}
+\maketitle
+
+\section*{Section A \large(not to be handed in, solutions to be published)}
+
+\begin{questions}
+
+\question%A1
+Let $T \in \mathcal{B}(X, Y)$ and $S \in \mathcal{B}(Y, Z)$ for $X, Y, Z$ normed spaces. Show that
+\begin{parts}
+\part%A1a
+$T$ is compact if and only if every bounded sequence $(x_{n})$ in $X$ has a subsequence $(x_{n_{j}})$ which is so that $T x_{n_{j}}$ converges (in $Y$).
+
+\part%A1b
+If $\dim(T X)<\infty$ then $T$ is compact.
+
+\part%A1c
+If either $S$ or $T$ is compact then also $S \circ T$ is compact.
+\end{parts}
+
+
+
+\question%A2
+Let $K$ be a non-empty convex set of a real Hilbert space $X$. Suppose that $x \in X$ and $y \in K$. Prove that the following are equivalent: \[
+	(1)\quad\|x-y\| \leqslant\|x-z\| \text{ for all } z \in K;\qquad
+	(2)\quad\langle x-y, z-y\rangle \leqslant 0 \text{ for all } z \in K.
+\]
+
+\end{questions}
+
+
+
+\section*{Section B \large(to be handed in)}
+
+\begin{questions}
+
+\question%B1
+Let $T: X \to Y$ be a bounded linear operator between Hilbert spaces. Show the following equivalences:
+\begin{parts}
+\part%B1a
+\[
+	T \text{ is isometric}\qquad
+	\iff\qquad
+	\langle T x, T y\rangle=\langle x, y\rangle \quad \forall x, y \in X\qquad
+	\iff\qquad
+	T^{*} T=I_{X} .
+\]
+
+\part%B1b
+\[
+	T \text{ is unitary }\qquad
+	\iff\qquad
+	T^{*} T=I_{X} \text{ and } T T^{*}=I_{Y}
+\]
+\end{parts}
+
+
+
+\question%B2
+Let $X$ be a Hilbert space and let $U: X \to X$ be a unitary operator.
+\begin{parts}
+\part%B2a
+Show that $\ker(I-U)=\ker(I-U^{*})$;
+
+\part%B2b
+Show that $X=\overline{\operatorname{Im}(I-U)} \oplus \ker(I-U)$;
+
+\part%B2c
+Show that $\lim_{N \to \infty} \frac{1}{N} \sum_{n=1}^{N-1} U^{n} x=x$ if $x \in \ker(I-U)$ and $\lim_{N \to \infty} \frac{1}{N} \sum_{n=1}^{N-1} U^{n} x=0$ if $x \in \overline{\operatorname{Im}(I-U)}$;
+
+\part%B2d
+Deduce that, for each $x \in X$, \[
+	\lim_{N \to \infty} \frac{1}{N} \sum_{n=1}^{N-1} U^{n} x=P x
+\] where $P$ is the orthogonal projection onto $\ker(I-U)$.
+\end{parts}
+
+
+
+\question%B3
+Let $X$ be a real Hilbert space and assume that $A \in \mathcal{B}(X)$ is a projection, i.e. so that $A^{2}=A$.
+\begin{parts}
+\part%B3a
+Show that $\operatorname{Im} A=\ker(I-A)$ and prove the following equivalences: \[
+	A=A^{*}\qquad
+	\iff\qquad
+	(\operatorname{Im} A)^{\perp}=\ker A\qquad
+	\iff\qquad\|A\| \leqslant 1.
+\] [\emph{Hint: To prove that $\|A\| \leqslant 1$ implies $A=A^{*}$, show that $\operatorname{dist}(A x, \operatorname{Im}(I-A))=$ $\|A x\|$ and use this to prove that $\langle A x,(I-A) y\rangle=0$ for all $x, y \in X$.}]
+
+\part%B3b
+Deduce that either $\|A\|=1$ or $A=0$ provided that one of the above statements is true.
+\end{parts}
+
+
+
+\question%B4
+Let $X=C([a, b])$, let $k:[a, b] \times[a, b] \to \mathbb{R}$ be continuous. Show that $T \in \mathcal{B}(X)$ defined by $T f(x)=\int_{a}^{b} k(x, t) f(t) d t$ is a compact operator.
+
+
+
+\question%B5
+Let $X$ be a normed space, $Y$ a Banach space and let $(T_{k}) \subset \mathcal{B}(X, Y)$ be a sequence of compact operators.
+\begin{parts}
+\part%B5a
+Let $(x_{n})$ be a bounded sequence in $X$. Show that there exists a subsequence $x_{n_{j}}$ so that $T_{k}(x_{n_{j}})$ converges for every $k \in \mathbb{N}$.
+
+\part%B5b
+Hence or otherwise show that if $T_{k}$ converges in $\mathcal{B}(X, Y)$ to an operator $T$ then $T$ is also a compact operator.
+\end{parts}
+
+\end{questions}
+
+
+
+\section*{Section C \large(optional, not to be handed in, sketches of solutions to be published)}
+
+\begin{questions}
+
+\question%C1
+For more general (not necessarily linear) functions $T: X \to X$ from a Banach space $X$ to itself we say that $T$ is compact if $T$ is continuous and if $\overline{T(U)}$ is compact for every bounded set $U \subset \Omega$. A famous result (proven in C4.6) is Schauder's Fixed point theorem which asserts that every compact function that maps a closed ball $\overline{B_{R}(x_{0})}=\{x \in X:\|x-x_{0}\| \leqslant R\}$ of a Banach space to itself has a fixed point.
+\begin{parts}
+\part%C1a
+Show that if $f: \mathbb{R}^{2} \to \mathbb{R}$ is continuous then \[
+	T y(x):=b+\int_{a}^{x} f(t, y(t))~\mathrm d t
+\] defines a compact operator from $X=C([a-h, a+h], \mathbb{R})$ to itself.
+
+\part%C1b
+Then check that for any $R>0$ there exists $h>0$ so that $T$ maps the closed ball with radius $R$ around the constant function $f_{0} \equiv b$ to itself. Hence use Schauder's Fixed point theorem to deduce that there exists a solution of the initial value problem \[
+	y'(t)=f(t, y(t)), \quad y(a)=b
+\] at least on an interval $[a-h, a+h]$. (\emph{This is Peano's existence theorem for solutions of ODEs which shows that while the uniqueness part of Picard's theorem fails if the Lipschitz assumption is removed, the existence part still remains valid.})
+\end{parts}
+
+\end{questions}
+
+\end{document}

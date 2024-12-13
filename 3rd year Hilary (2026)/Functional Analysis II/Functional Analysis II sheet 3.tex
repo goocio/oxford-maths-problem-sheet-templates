@@ -1,0 +1,103 @@
+\documentclass[answers]{exam}
+\usepackage{../HT2026}
+\usepackage{bbm}
+
+\title{Functional Analysis II -- Sheet 3\\Inverse mapping theorem, Closed graph theorem, Weak convergence}
+\author{YOUR NAME HERE :)}
+\date{Hilary Term 2025}
+
+
+\begin{document}
+\maketitle
+
+\section*{Section A \large(not to be handed in, solutions to be published)}
+
+\begin{questions}
+
+\question%A1
+Let $X=L^{p}(\mathbb{R}), p \in[1, \infty)$, let $f_{n}=n^{1 / p} \mathbbm{1}_{[0, \frac{1}{n}]}$. Show that
+\begin{parts}
+\part%A1a
+$f_{n}$ does not converge strongly in $L^{p}(\mathbb{R})$.
+
+\part%A1b
+If $p \in(1, \infty)$ then we have $f_{n} \rightharpoonup 0$ in $L^{p}(\mathbb{R})$.
+
+\part%1A1c
+If $p=1$ then $f_{n}$ does not converge weakly.
+\end{parts}
+
+\end{questions}
+
+
+
+\section*{Section B \large(to be handed in)}
+
+\begin{questions}
+
+\question%B1
+Let $X$ and $Y$ be real Hilbert spaces and let $T \in \mathcal{B}(X, Y)$ be surjective. Show that there exists a unique bounded linear operator $R \in \mathcal{B}(Y, X)$ such that \[
+	T R=I_{Y} \text{ and }\|R T x\| \leqslant\|x\| \text{ for all } x \in X
+\] [\emph{Hint: Follow the strategy of the proof from the lecture that for operators between Hilbert spaces $S X$ is closed iff $S^{*} Y$ is closed.}]
+
+
+
+\question%B2
+Let $X$ be a Hilbert space and $T \in \mathcal{B}(X)$. Show that the graph $\Gamma(T)$ of $T$ is so that \[
+	\Gamma(T)^{\perp}=\{(-T^{*} x, x): x \in X\}
+\] By considering the corresponding orthogonal decomposition of $(x, 0)$, prove that $I+$ $T^{*} T: X \to X$ is surjective. [\emph{Recall that if $X$ is a Hilbert space then also $X \times X$ endowed with the product inner product $\langle(x_{1}, x_{2}),(y_{1}, y_{2})\rangle_{X \times X}=\langle x_{1}, y_{1}\rangle_{X}+\langle x_{2}, y_{2}\rangle_{X}$ is a Hilbert space.}]
+
+
+
+\question%B3
+Let $X$ be a normed space.
+\begin{parts}
+\part%B3a
+Suppose that $x_{n} \rightharpoonup x$ in $X$ and $\ell_{n} \to \ell$ in $X^{*}$. Show that $\ell_{n}(x_{n}) \to \ell(x)$.
+
+\part%B3b
+Suppose in addition that $X$ is an inner product space. Show that if $x_{n} \rightharpoonup x$ in $X$ and if $\|x_{n}\| \to\|x\|$, then $x_{n} \to x$.
+
+\part%B3c
+Prove (b) when the assumption that $X$ is an inner product space is replaced by the assumption that $X$ is \emph{uniformly convex}: for every $\varepsilon>0$, there exists $\delta=\delta(\varepsilon)>0$ such that if $\|x\|=\|y\|=1$ and if $\|x-y\| \geqslant \varepsilon$, then $\left\|\frac{1}{2}(x+y)\right\| \leqslant(1-\delta)$. [\emph{Hint: Reduce to the case that $\|x_{n}\|=1$ for all $n$.}]
+\end{parts}
+
+
+
+\question%B4
+Let $1<p<\infty$. Show that a sequence $(x^{(n)}) \subset \ell^{p}$ converges weakly to $x$ if and only if it is bounded and $x_{j}^{(n)} \to x_{j}$ for every $j$. [\emph{Hint: Use weak sequential compactness or Hölder's inequality.}]
+
+
+
+\question%B5
+A sequence $(\ell_{n})$ in the dual space $X^{*}$ of a Banach space $X$ is said to be weak* convergent to $\ell \in X^{*}$ if \[
+	\ell_{n}(x) \to \ell(x) \text { for all } x \in X.
+\]
+\begin{parts}
+\part%B5a
+Show that weak* convergent sequences are bounded.
+
+\part%B5b
+Show that if $X$ is separable, then the closed unit ball of $X^{*}$ is weak* sequentially compact, i.e. every sequence $(\ell_{n})$ in $X^{*}$ with $\|\ell_{n}\|_{*} \leqslant 1$ has a weak* convergent subsequence. [\emph{Hint: Consider a countable dense subset $S=\{x_{n}, n \in \mathbb{N}\}$ and use a diagonal sequence argument to construct a subsequence $(\ell_{n_{k}})$ such that $\ell_{n_{k}}(x_{m})$ is convergent for every m.}]
+\end{parts}
+
+\end{questions}
+
+
+
+\section*{Section C \large(optional, not to be handed in, sketches of solutions to be published)}
+
+\begin{questions}
+
+\question%C1
+Show that a sequence in $\ell^{1}$ is weakly convergent if and only if it is strongly convergent.
+[\emph{Hint: For given $\varepsilon>0$, construct inductively increasing sequences $n_{k}$ and $m_{k}$ such that $\sum_{j \leqslant m_{k-1}}|x_{j}^{(n_{k})}|<\varepsilon / 8$ and $\sum_{j>m_{k}}|x_{j}^{(n_{k})}|<\varepsilon / 8$. Then test the weak convergence against $b \in \ell^{\infty}$ given by $b_{j}=\operatorname{sign}(x_{j}^{(n_{k})})$ for $m_{k-1}<j \leqslant m_{k}$.}]
+
+
+
+\question%C2
+Prove the geometric version of Mazur's theorem stated in the lecture, i.e. that every closed convex subset $K$ of a normed space can be written as an intersection of halfspaces.
+
+\end{questions}
+
+\end{document}
