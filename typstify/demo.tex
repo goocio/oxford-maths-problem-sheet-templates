@@ -1,0 +1,139 @@
+\documentclass[answers]{exam}
+\usepackage{../MT2024}
+
+\title{Metric Spaces -- Sheet 1\\Continuity, 2-adic metric}
+\author{YOUR NAME HERE :)}
+\date{Michaelmas Term 2024}
+
+
+\begin{document}
+\maketitle
+[\emph{You may find it helpful in some examples to work with polar coordinates.}]
+\begin{questions}
+
+\question%1
+The function $f:\mathbb R^2\to\mathbb R$ is defined by \[
+	f(x,y)=\begin{cases}
+		\frac{|xy|^\alpha}{x^2+y^2} & \text{for }(x,y)\neq(0,0);\\
+		0 & \text{for }(x,y)=(0,0),
+	\end{cases}
+\] where $\alpha>0$. Find the values of $\alpha$ for which $f$ is
+\begin{parts}
+\part%1a
+continuous at $(0,0)$;
+\begin{subparts}
+\subpart%1ai
+This sheet doesn't actually have any questions with subparts,
+
+\subpart%1aii
+so I've added a couple in for demonstration purposes.
+\end{subparts}
+
+\part%1b
+differentiable at $(0,0)$.
+\end{parts}
+
+
+
+\question%2
+Let $f:\mathbb R^2\to\mathbb R$ be defined by \[
+	f(x,y)=\begin{cases}
+		\frac{xy^2}{x^2+y^4} & \text{for }(x,y)\neq(0,0);\\
+		0 & \text{for }(x,y)=(0,0).
+	\end{cases}
+\] Show that all the directional derivatives of $f$ exist at the origin, but $f$ is not continuous at the origin.
+
+
+
+\question%3
+Let $f:\mathbb R^2\to\mathbb R$ and assume that on some disk $U\subseteq\mathbb R^2$ with centre the origin $(0,0)$ we have that the partial derivatives $f_x$ and $f_y$ exist, and moreover $f_{x y}$ exists and is continuous.
+\begin{parts}
+\part%3a
+Prove that $f_{yx}(0,0)$ is equal to the following limit, provided this limit exists: \[
+	\lim_{h\to0}\left(\lim_{k\to0}F(h,k)\right)
+\] where \[
+	F(h,k)=\frac{(f(h,k)-f(h,0))-(f(0,k)-f(0,0))}{hk}.
+\]
+
+\part%3b
+Let $\phi(x)=f(x,k)-f(x,0)$. Using the Mean Value Theorem show that \[
+	F(h,k)=\frac1k\cdot\phi_x(\theta_1h)
+\] for some $0<\theta_1<1$.
+
+\part%3c
+Deduce further that \[
+	F(h,k)=f_{xy}(\theta_1h,\theta_2k)
+\] for some $0<\theta_2<1$.
+
+\part%3d basically just proving Clairaut's theorem
+Use the continuity of $f_{xy}$ and existence of $f_y$ to conclude that $f_{yx}(0,0)$ exists and equals $f_{xy}(0,0)$. [\emph{Beware, part (iv) is very delicate. Note that $\theta_1=\theta_1(h,k)$ and $\theta_2=\theta_2(h,k)$. The dependence of $\theta_1$ on $k$ makes life difficult.}]
+\end{parts}
+
+
+
+\question%4
+Let \[
+	f(x, y)=\begin{cases}
+		\frac{xy(x^2-y^2)}{x^2+y^2} & \text{for }(x,y)\neq(0,0);\\
+		0 & \text{for }(x,y)=(0,0).
+	\end{cases}
+\]
+\begin{parts}
+\part%4a
+Show that $f\in C^1(\mathbb R^2,\mathbb R)$, that is, $f$ has continuous partial derivatives everywhere. [\emph{You may assume that rational functions in $x$ and $y$ are continuous wherever they are defined.}]
+
+\part%4b
+For $(a,b)\neq(0,0)$ show that $f_{xy}(a,b)$ and $f_{yx}(a,b)$ exist and are equal.
+
+\part%4c
+However, prove that $f_{xy}(0,0)=-1$ and $f_{yx}(0,0)=1$.
+\end{parts}
+
+
+
+\question%5
+Let $U \subseteq \mathbb R^2$ and $u_{0}, u_{1} \in U$. Let $P_{0,1}$ denote the set of all paths between $u_{0}$ and $u_{1}$. Show that homotopy defines an equivalence relation on $P_{0,1}$.
+
+
+
+\question%6
+Assume $U \subseteq \mathbb R^2$ is \emph{convex} (that is to say, the straight line segment joining any two points $u, v \in U$ lies wholly within $U$), show that $U$ is path-connected. Moreover for any $u \in U$, prove carefully that any path joining $u$ and $u$ is homotopic to the trivial path.
+
+
+
+\question%7
+Show that there is no continuous injective map $f: \mathbb R^2 \to \mathbb R$. [\emph{Hint: consider the restriction of $f$ to $\mathbb R^2 \setminus\{a\}$, for a suitable point a.}]
+
+
+
+\question%8
+Let $A \subseteq \mathbb R^2$ be the set of all points with at least one rational coordinate. Is $A$ connected? What if the points with both coordinates rational are removed from $A$?
+
+
+
+\question%9
+Which of the following subsets of $\mathbb R^2$ are open, which are closed, and which are neither? (No proofs are required.) \begin{gather*}
+	[0,1]\times\{0\},\qquad
+	(0,1)\times\{0\},\qquad
+	\{(x,y):1<4x^2+y^2<4\},\\
+	\{(x, y): x y=1\}\qquad
+	\mathbb Z\times\mathbb R,\qquad
+	\{(x,y): x \in \mathbb Z \text{ and } y>0\}.
+\end{gather*}
+
+
+
+\question%10
+Let $f: \mathbb R^2 \to \mathbb R^2$ be defined as $f(x, y)=(e^{x} \cos (y), e^{x} \sin (y))$. Show that $f$ has a local inverse in a neighbourhood of any point in $\mathbb R^2$, but does not have an inverse defined on the whole of $\mathbb R^2$.
+
+
+
+\question%11
+By considering the function defined by \[
+	f(x)=\frac x2+x^2 \sin \left(\frac1x\right)\text{ for }x\neq0;\quad
+	f(0)=0
+\] show that the assumption on continuous partial derivatives cannot be removed from the statement of the Inverse Function Theorem in $\mathbb R^2$.
+
+\end{questions}
+
+\end{document}

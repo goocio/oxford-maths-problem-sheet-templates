@@ -8,3 +8,7 @@ Despite making the *sheets* publicly available, most courses do not make the `.t
 I've used the `exam` class in all the sheets to lay out questions and solutions; a demo is provided in `sample.tex` and `sample.pdf`. Each term has a header `.sty` file containing some essential package imports, together with several optional ones and my own macro preferences; maybe you might take a couple macro ideas but otherwise feel free to use your own macros instead, since I've made sure none of the sheet templates depend on them unless explicitly provided within the sheet itself.
 
 Any files that have images in are assumed to have the file tree laid out as it is here, i.e. the folder containing the sheet has a subfolder called `images` which contains the relevant images. This can easily be changed by changing the argument to `\graphicspath` in the relevant `.tex` files.
+
+
+
+As of Hilary 2025 I now also provide them in Typst, with a converter I threw together that generates a Typst file based on the input $\LaTeX$ file; see the `typstify` directory and the associated example `demo.typ` automatically converted from `demo.tex`. I'm aware things like pandoc exist but as of when I last tried, it's still terrible at `.tex -> .typ` conversion.
