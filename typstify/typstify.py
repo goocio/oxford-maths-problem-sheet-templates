@@ -1,9 +1,9 @@
 import sys
 from regex_macros import (
     captureInsideBraces,
-    casesFormatting,
     environmentBegun,
     environmentEnded,
+    typstifyArraySyntax,
     typstifyMacros,
     typstifyMathMode,
     typstifyQuestions,
@@ -19,10 +19,12 @@ GENERAL FLOW
   - This tracks indentation using begin and end blocks, with a mechanism for "storing"
     indentation that should take effect on the *next* line rather than the current one.
 - Then the processing moves on to making it typst-compatible, in `typstify`:
-  - `casesFormatting` updates the cases environment to the typst format, since the
-    formats are incompatible: in LaTeX it's common to put a comma or semi-colon at the
-    end of cases, and a newline to separate them, but in typst a semi-colon will give an
-    error, a comma gives a newline, and a newline is a "worse" newline than the comma.
+  - `typstifyArraySyntax` updates math array-like environment to typst's syntax, since
+    it's incompatible with latex's. In latex, all array-like environments have ampersand
+    to separate entries, and a double backslash to separate lines. In typst it's a comma
+    to separate entries, and a semi-colon to separate lines; except for the `cases`
+    environment (ironically), which has `quad&` to separate entries (??? one of the few
+    bad design choices in typst) and a comma to separate lines.
   - `typstifyMathMode` makes a preliminary pass over macro substitutions, in order to
     make it clear to the parser what is and isn't math mode (see multiline comment MACRO
     REPLACEMENT). It then uses this to space out math symbols as Typst requires.
@@ -59,19 +61,11 @@ def filterPreamble(tex_file):
         ):
             continue
         elif line[0:6] == r"\title":
-            typ_preamble.append(
-                "#align(center, text(1.75em)["
-                + captureInsideBraces(line).replace(r"\\", r"\ ")
-                + "])"
-            )
+            typ_preamble.append("#align(center, text(1.75em)[" + captureInsideBraces(line).replace(r"\\", r"\ ") + "])")
         elif line[0:7] == r"\author":
-            typ_preamble.append(
-                "#align(center, text(1.4em)[" + captureInsideBraces(line) + "])"
-            )
+            typ_preamble.append("#align(center, text(1.4em)[" + captureInsideBraces(line) + "])")
         elif line[0:5] == r"\date":
-            typ_preamble.append(
-                "#align(center, text(1.2em)[" + captureInsideBraces(line) + "])"
-            )
+            typ_preamble.append("#align(center, text(1.2em)[" + captureInsideBraces(line) + "])")
         else:
             filtered_tex.append(line.strip())
 
@@ -106,9 +100,7 @@ minimal example, with only the base question/part/subpart layout and no further 
 
 def fixIndentation(lines):
     indent_level = 1
-    reading_questions = (
-        False  # We only want this formatting when we're scanning over the questions
-    )
+    reading_questions = False  # We only want this formatting when we're scanning over the questions
 
     # Count how many times the current line should be indented (see multiline comment INDENTATION)
     def measureIndentation(line):
@@ -137,11 +129,7 @@ def fixIndentation(lines):
         if environmentBegun(line):
             indent_level += 1
             shift = -1
-        if (
-            (line[0:9] == r"\question")
-            or (line[0:5] == r"\part")
-            or (line[0:8] == r"\subpart")
-        ):
+        if (line[0:9] == r"\question") or (line[0:5] == r"\part") or (line[0:8] == r"\subpart"):
             shift = -1
 
         return indent_level + shift
@@ -150,8 +138,9 @@ def fixIndentation(lines):
 
 
 def typstify(lines):
+    lines = [(line.replace(r"%", r"//") if (len(line) != 0) and (line[0] == r"%") else line) for line in lines]
     string = "\n".join(lines)
-    string = casesFormatting(string)
+    string = typstifyArraySyntax(string)
     """
     MACRO REPLACEMENT
     The ordering of the various macro replacement commands is slightly finnicky. We can't simply
@@ -166,9 +155,9 @@ def typstify(lines):
     the math mode spacing, then convert the rest of the macros.
 
     Moreover, environments in math mode would have their names spaced erroneously, so we substitute
-    these out early along with math mode delimiters in typstifyMathMode. This is done by converting
-    them to an intermediary fake control sequence and then adding this control sequence to the
-    regular macro dictionary so the substitution is finished in the second pass, in typstifyMacros.
+    these out early along with math mode delimiters in typstifyArraySyntax. This is done by first
+    converting them to an intermediary fake control sequence and then adding this control sequence
+    to macro_dict so the substitution is finished in the second pass, by typstifyMacros.
     """
     string = typstifyMathMode(string)
     string = typstifyMacros(string)

@@ -195,7 +195,7 @@
 \newcommand*{\cY}{\mathcal{Y}}\newcommand*{\cZ}{\mathcal{Z}}
 
 
-% LINEAR ALGEBRA
+% ALGEBRA
 \newcommand*{\spn}{\operatorname{span}}% unfortunately \span already exists
 \newcommand*{\nll}{\operatorname{null}}% unfortunately \null already exists
 \newcommand*{\rank}{\operatorname{rank}}
@@ -209,6 +209,7 @@
 \newcommand*{\norm}[1]{\left\|#1\right\|}
 \newcommand*{\isom}{\xrightarrow{\raisebox{-0.25em}{\smash{\ensuremath\sim}}}} %f: V \isom W
 \newcommand*{\mat}[3]{\tensor*[_{#1}]{[#2]}{_{#3}}}
+\let\nsg\trianglelefteqslant % normal subgroup
 % tight matrices: bracket, square, curly, vertical, angled
 \newcommand*{\bbm}[1]{\left(\begin{matrix}#1\end{matrix}\right)}
 \newcommand*{\bsm}[1]{\left[\begin{matrix}#1\end{matrix}\right]}
@@ -226,8 +227,7 @@
 % CALCULUS
 \let\pt\partial
 \newcommand*{\md}{\mathrm d}
-\newcommand*{\dd}{~\mathrm d} % in integrals i like the extra spacing before the dx
-\newcommand*{\dx}{~\mathrm dx} % ditto
+\newcommand*{\dd}{\mathop{}\!\mathrm d} % in integrals i like the extra spacing before the dx
 \newcommand*{\dv}[2]{\frac{\mathrm d#1}{\mathrm d#2}} % derivative
 \newcommand*{\ddv}[3][2]{\frac{\mathrm d^{#1}#2}{\mathrm d#3^{#1}}} % multiple derivative
 \newcommand*{\pdv}[2]{\frac{\partial #1}{\partial #2}} % partial derivative

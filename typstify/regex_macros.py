@@ -1,6 +1,5 @@
 import re
-from collections import Counter
-from macro_dictionaries import macro_dict, math_environments_dict
+from macro_dictionaries import macro_dict, single_arg_macro_dict, math_delimiters_dict
 
 
 def captureInsideBraces(line):
@@ -54,12 +53,28 @@ def environmentBegun(line):
     )
 
 
-# LaTeX abd Typst cases formats are incompatible so I update it manually before anything else can mess it up
-def casesFormatting(string):
-    return re.sub(
+# LaTeX and Typst array syntax is incompatible so I update it manually before anything else can mess it up;
+# also I leave them with the latex names and prefixed with a backslash so that typstifyMathMode doesn't
+# add erroneous spaces, and this is then tidied up along with the routine substitutions by macro_dict
+def typstifyArraySyntax(string):
+    # `cases` environment substitutions (typst cases has different syntax to all the other ones ???)
+    string = re.sub(
         r"\\begin\{cases\}(.*?)\\end\{cases\}",
         lambda match: r"\cases("
         + match.group(1).replace(",", r"\,").replace(";", r"\;").replace("&", r" \quad&").replace(r"\\", ",")
+        + ")",
+        string,
+        flags=re.DOTALL,
+    )
+
+    # all other environments
+    array_environments = r"\{(matrix|pmatrix|bmatrix|vmatrix)\}"
+    return re.sub(
+        r"\\begin" + array_environments + r"(.*?)\\end" + array_environments,
+        lambda match: "\\"
+        + match.group(1)
+        + "("
+        + match.group(2).replace(",", r"\,").replace(";", r"\;").replace("&", r",").replace(r"\\", ";")
         + ")",
         string,
         flags=re.DOTALL,
@@ -69,54 +84,57 @@ def casesFormatting(string):
 single_arg_pattern = r"(?: ?(\w)|\{([^}]+)\}| ?(\\[a-zA-Z]+))"
 
 
-def substituteSingleArgMacro(string, latex, typst):
-    return re.sub(r"\\" + latex + single_arg_pattern, typst + r"(\1\2\3)", string)
-
-
 def typstifyMacros(string):
     # Put a space e.g. in "thing\sqrt{10}" -> "thing \sqrt{10}"
     string = re.sub(r"([a-zA-Z0-9])(?=\\[a-zA-Z]+)", r"\1 ", string)
 
-    # 1-arg macros
+    ### 1-arg macros
+    # replace _{} with _() and ^{} with ^()
+    string = re.sub(r"(_|\^)\{([^}]*[^\\])\}", r"\1(\2)", string)
+    # some others whose pattern is an exception to the rule
+    string = re.sub(r"\\emph\{\s*(.*?[^\\]+)\s*\}", r"_\1_", string)
+    string = re.sub(r"\\textbf\{\s*(.*?)\s*\}", r"*\1*", string)
+    string = re.sub(r"\\pmod" + single_arg_pattern, r"(mod \1\2\3)", string)
     string = re.sub(r"\\section\{(.*?)\}", r"= \1", string)
-    for pair in [
-        (r"mathbf", r"mb"),
-        (r"mathbb", r"bb"),
-        (r"boldsymbol", r"bold"),
-        (r"mathcal", r"cal"),
-        (r"mathfrak", r"frak"),
-        (r"mathrm", r"rm"),
-        (r"sqrt", r"sqrt"),
-        (r"overline", r"overline"),
-        (r"widehat", r"hat"),
-        (r"hat", r"hat"),
-        (r"vec", r"arrow"),
-        (r"abs", r"abs"),
-    ]:
-        string = substituteSingleArgMacro(string, pair[0], pair[1])
+    # generic macros
+    for latex_command, typst_command in single_arg_macro_dict.items():
+        string = re.sub(r"\\" + latex_command + single_arg_pattern, typst_command + r"(\1\2\3)", string)
 
-    # 2-arg macros
+    ### 2-arg macros
     # replace \frac__ with (_)/(_), ditto with \dfrac
     string = re.sub(r"\\frac" + 2 * single_arg_pattern, r"(\1\2\3)/(\4\5\6)", string)
     string = re.sub(r"\\dfrac" + 2 * single_arg_pattern, r"display((\1\2\3)/(\4\5\6))", string)
-    # replace _{} with _() and ^{} with ^()
-    string = re.sub(r"(_|\^)\{([^}]*[^\\])\}", r"\1(\2)", string)
-    # replace \emph with _ _
-    string = re.sub(r"\\emph\{\s*(.*?[^\\]+)\s*\}", r"_\1_", string)
-    # replace \textbf_ with *_*
-    string = re.sub(r"\\textbf\{\s*(.*?)\s*\}", r"*\1*", string)
 
-    # 0-arg macros; needs to be after because it breaks single_arg_pattern
-    for key, value in macro_dict.items():
-        string = string.replace(key, value)
+    # macros with args having been replaced, it will never be correct to have <control word><number>
+    string = re.sub(r"(\\[a-zA-Z]+)(?=[0-9])", r"\1 ", string)
+
+    ### 0-arg macros; needs to be after because it breaks single_arg_pattern
+    r"""
+    Instead of simply enumerating over the regular dictionary items, I need to enumerate over
+    the items sorted by decreasing key (control sequence) length, since latex macros are not
+    a prefix code, e.g. if `\foo` were supposed to be replaced with `thing` and `\foobar` were
+    supposed to be replaced with `stuff`, if I had them in that order in the dictionary, when
+    enumerating it would end up scanning through the string and replacing `foo` instances
+    *first*. This means e.g. a string "abc\foobar abc" wouldn't become the intended "abcstuff
+    abc" but instead "abc\thingbar abc". To avoid this, we could default to re.sub with a
+    greedy regex to ensure a full control sequence is captured at a time, or instead we could
+    sort the substitutions in order of decreasing control sequence length. I've opted for the
+    latter since the former would require accounting not only for how control sequences can be
+    either control *characters* (e.g. `\[` or `\]`) or control *words* (e.g. `\alpha`) but
+    also for the various environments currently being replaced by the dictionary.
+
+    This issue doesn't apply to single_arg_macro_dict since that is using a regex already.
+    """
+    for latex_command, typst_command in sorted(macro_dict.items(), key=lambda item: len(item[0]), reverse=True):
+        string = string.replace(latex_command, typst_command)
 
     return string
 
 
 def typstifyMathMode(string):
-    # In order to identify math mode we need to convert some macros first.
-    for key, value in math_environments_dict.items():
-        string = string.replace(key, value)
+    # In order to identify math mode we need to convert math delimiters first.
+    for latex_delimiter, typst_delimiter in math_delimiters_dict.items():
+        string = string.replace(latex_delimiter, typst_delimiter)
 
     # We also don't want to erroneously add spaces to strings:
     # Replace \operatorname_ with \op("_") intermediary for op("_")

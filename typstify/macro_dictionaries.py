@@ -89,6 +89,8 @@ macro_dict = {
     r"\arsech": r"arsech",
     r"\arcsch": r"arcsch",
     r"\arcoth": r"arcoth",
+    r"\mod": r"quad mod",
+    r"\bmod": r"mod",
     # relations
     r"\neq": r"!=",
     r"\leq": r"<=",
@@ -131,12 +133,13 @@ macro_dict = {
     r"\\": r"\ ",
     r"\quad": r"quad",
     r"\qquad": r"wide",
-    # fixing temporary extra \ in math_environments_dict entries
+    # fixing temporary intermediate from typstifyArraySyntax hacks
     r"\cases": r"cases",
-    r"\mat": r"mat",
-    r"\delim": r"delim",
-    r"\none": r"none",
     r"\op": r"op",
+    r"\matrix(": r"mat(delim: #none,",  # ))
+    r"\pmatrix": r"mat",
+    r"\bmatrix(": r'mat(delim: "[",',  # ]))
+    r"\vmatrix(": r'mat(delim: "|",',  # ))
     # environments
     r"\begin{verbatim}": r"`",
     r"\end{verbatim}": r"`",
@@ -149,8 +152,24 @@ macro_dict = {
 }
 
 
-math_environments_dict = {
-    # math mode delimiters
+single_arg_macro_dict = {
+    r"mathbf": r"mb",
+    r"mathbb": r"bb",
+    r"boldsymbol": r"bold",
+    r"mathcal": r"cal",
+    r"mathfrak": r"frak",
+    r"mathrm": r"rm",
+    r"sqrt": r"sqrt",
+    r"bar": r"overline",
+    r"overline": r"overline",
+    r"widehat": r"hat",
+    r"hat": r"hat",
+    r"vec": r"arrow",
+    r"abs": r"abs",
+}
+
+
+math_delimiters_dict = {
     r"\[": r"$ ",
     r"\]": r" $",
     r"\begin{align*}": r"$ ",
@@ -159,15 +178,4 @@ math_environments_dict = {
     r"\end{aligned*}": r" $",
     r"\begin{gather*}": r"$ ",
     r"\end{gather*}": r" $",
-    # other math environments (with intermediary \)
-    # r"\begin{cases}": r"\cases(",
-    # r"\end{cases}": r")",
-    r"\begin{matrix}": r"\mat(\delim: #\none,",
-    r"\end{matrix}": r")",
-    r"\begin{pmatrix}": r"\mat(",
-    r"\end{pmatrix}": r")",
-    r"\begin{bmatrix}": r'\mat(\delim: "[",',
-    r"\end{bmatrix}": r")",
-    r"\begin{vmatrix}": r'\mat(\delim: "|",',
-    r"\end{vmatrix}": r")",
 }
