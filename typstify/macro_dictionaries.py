@@ -61,6 +61,7 @@ macro_dict = {
     r"\int": r"integral",
     r"\iint": r"integral.double",
     r"\iiint": r"integral.triple",
+    r"rm(d)": r"dif",
     # operators
     r"\log": r"log",
     r"\ln": r"ln",
@@ -130,6 +131,10 @@ macro_dict = {
     r"\left": r"",
     r"\right": r"",
     # spacing
+    r"\,": r"thin ",
+    r"\:": r"med ",
+    r"\;": r"thick ",
+    r"\ ": r"space ",
     r"\\": r"\ ",
     r"\quad": r"quad",
     r"\qquad": r"wide",
@@ -140,6 +145,8 @@ macro_dict = {
     r"\pmatrix": r"mat",
     r"\bmatrix(": r'mat(delim: "[",',  # ]))
     r"\vmatrix(": r'mat(delim: "|",',  # ))
+    r"\semi": r"semi",
+    r"\comma": r"comma",
     # environments
     r"\begin{verbatim}": r"`",
     r"\end{verbatim}": r"`",
@@ -152,20 +159,28 @@ macro_dict = {
 }
 
 
+# we need the extra \ each time since this is being parsed by regex
 single_arg_macro_dict = {
-    r"mathbf": r"mb",
-    r"mathbb": r"bb",
-    r"boldsymbol": r"bold",
-    r"mathcal": r"cal",
-    r"mathfrak": r"frak",
-    r"mathrm": r"rm",
-    r"sqrt": r"sqrt",
-    r"bar": r"overline",
-    r"overline": r"overline",
-    r"widehat": r"hat",
-    r"hat": r"hat",
-    r"vec": r"arrow",
-    r"abs": r"abs",
+    # latex macro: typst pattern
+    r"\\mathbf": r"mb(\1)",
+    r"\\mathbb": r"bb(\1)",
+    r"\\boldsymbol": r"bold(\1)",
+    r"\\mathcal": r"cal(\1)",
+    r"\\mathfrak": r"frak(\1)",
+    r"\\mathrm": r"rm(\1)",
+    r"\\sqrt": r"sqrt(\1)",
+    r"\\bar": r"overline(\1)",
+    r"\\overline": r"overline(\1)",
+    r"\\widehat": r"hat(\1)",
+    r"\\hat": r"hat(\1)",
+    r"\\vec": r"arrow(\1)",
+    r"\\abs": r"abs(\1)",
+    r"_": r"_(\1)",
+    r"\^": r"^(\1)",
+    r"\\emph": r"_\1_",
+    r"\\textbf": r"*\1*",
+    r"\\pmod": r"(mod \1)",
+    r"\\section": r"= \1",
 }
 
 
