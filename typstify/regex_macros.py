@@ -28,6 +28,7 @@ def environmentEnded(line):
         # or line[:13] == r"\end{tabular}"
         # or line[:14] == r"\end{tabularx}"
         or line[:14] == r"\end{verbatim}"
+        or line[:13] == r"\end{itemize}"
     )
 
 
@@ -50,6 +51,7 @@ def environmentBegun(line):
         # or line[-15:] == r"\begin{tabular}"
         # or line[-16:] == r"\begin{tabularx}"
         or line[-16:] == r"\begin{verbatim}"
+        or line[-15:] == r"\begin{itemize}"
     )
 
 
@@ -87,40 +89,45 @@ macros can be called as: `\foo5`, `\foo\somemacro`, or `\foo{stuff}`, or any of 
 In the case of the last one, there might be further nested macros with arguments, so I'm using the
 recursive regex option from the `regex` package (not available with usual `re` package). As such,
 these ones must be substituted repeatedly until no further changes occur.
+
+While it's only the nested ones which need to be repeatedly substituted, unfortunately we need to use
+the full arg_pattern in the loop (as opposed to being able to split it into the scope version and the
+single token version and only loop the scope version), since if we don't have the pattern encompass
+any argument syntax, macros with multiple arguments but given in different syntax would fail to
+match, e.g. `\frac{2\pi}3`. Luckily though it doesn't matter much since we can just put the scope
+pattern first so if there's lots of nested scoping it won't be wasting a check for the non-scoped
+ones each time.
+
+Also, in arg_pattern, there are a few \s* tags to remove excess whitespace, but the last won't work
+unless we have non-greedy markers on the scoped pattern, which is fine, but if you look you'll see
+there are *two* non-greedy markers; for some reason it doesn't work with only one or the other, even
+if the possessive lookahead ?> is replaced with a regular capturing lookahead ?:
 """
-# for some reason we need both of those non-greedy markers in order for the ending \s* to work;
-# without, we will get issues such as `\emph{hi }`-> `*hi *` which won't work in typst
-recursive_arg_pattern = r"\s*(\{\s*((?>[^{}]+?|(?1))*?)\s*\})"
-non_recursive_arg_pattern = r"\s*(\\[a-zA-Z]+|[^\s{}()])"  # has () to avoid typstifying already typstified arguments
+arg_pattern = r"\s*(?:(\{\s*((?>[^{}]+?|(?1))*?)\s*\})|(\\[a-zA-Z]+)|([^\s{}()]))"
 
 
-def typstifyArguments(latex_macro, args, output_pattern, string):
-    # due to nature of recursive patterns, relevant capture groups are double usual, e.g. first desired capture group is \2 not \1
-    doubled_output_pattern = regex.sub(r"(\d+)", lambda number: str(int(number.group(1)) * 2), output_pattern)
-
-    # if the argument is a scope, there might be nested scopes, so we iterate to ensure all are replaced
-    recursive_macro_pattern = latex_macro + args * recursive_arg_pattern
+def typstifyArguments(latex_macro, args, typst_pattern, string):
+    macro_pattern = latex_macro + args * arg_pattern
     while True:
-        temp = regex.sub(recursive_macro_pattern, doubled_output_pattern, string)
+        temp = regex.sub(macro_pattern, typst_pattern, string)
         if temp == string:
             break
         string = temp
 
-    # if the argument is a single token, nesting isn't possible, so a single substitution will do
-    return regex.sub(latex_macro + args * non_recursive_arg_pattern, output_pattern, string)
+    return string
 
 
 def typstifyMacros(string):
     # Put a space e.g. in "thing\sqrt{10}" -> "thing \sqrt{10}"
     string = regex.sub(r"([a-zA-Z0-9])(?=\\[a-zA-Z]+)", r"\1 ", string)
 
-    ### 1-arg macros
-    for latex_command, typst_pattern in single_arg_macro_dict.items():
-        string = typstifyArguments(latex_command, 1, typst_pattern, string)
+    # 1-arg macros
+    for latex_macro, typst_pattern in single_arg_macro_dict.items():
+        string = typstifyArguments(latex_macro, 1, typst_pattern, string)
 
-    ### 2-arg macros
-    string = typstifyArguments(r"\\frac", 2, r"(\1)/(\2)", string)
-    string = typstifyArguments(r"\\dfrac", 2, r"display((\1)/(\2))", string)
+    # 2-arg macros
+    string = typstifyArguments(r"\\frac", 2, r"(\2\3\4)/(\6\7\8)", string)
+    string = typstifyArguments(r"\\dfrac", 2, r"display((\2\3\4)/(\6\7\8))", string)
 
     # macros with args having been replaced, it will never be correct to have <control word><number>
     string = regex.sub(r"(\\[a-zA-Z]+)(?=[0-9])", r"\1 ", string)

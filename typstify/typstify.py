@@ -9,6 +9,24 @@ from regex_macros import (
     typstifyQuestions,
 )
 
+r"""
+KNOWN ISSUES
+- tabular, tabularx, array, and any other environments which take an extra argument
+  currently have no way of being handled
+- currently \left and \right are simply removed, but this doesn't account for \left. and
+  \right. e.g. in `\left.\frac{\mathrm dy}{\mathrm dx}\right|_{x=a}`, which in typst
+  should be `lr(zwj (dif y)/(dif x) |)_(x=a)` (note that aside from this, `lr` should
+  almost never be needed, since typst applies \left and \right automatically, since it
+  isn't 50 years old like tex)
+- certain tex-style (i.e. *not* latex-style) macros are very very hard to parse/convert,
+  such as `\limits` and `\displaystyle`, due to their tex-style scoping, so they're
+  currently simply replaced with nothing
+- need to implement conversion of `\verb|...|`, similar issue to with tex-style macros
+  since its scoping isn't done like `\macro{arg}`
+- plausibly itemize could have indentation issues after conversion, though this hasn't
+  come up yet
+"""
+
 """
 GENERAL FLOW
 - Load .tex file and filter out its preamble, using it to fill in the associated .typ
