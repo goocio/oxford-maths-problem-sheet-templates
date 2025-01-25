@@ -11,4 +11,4 @@ Any files that have images in are assumed to have the file tree laid out as it i
 
 
 
-As of Hilary 2025 I now also provide them in Typst, with a converter I threw together that generates a Typst file based on the input $\LaTeX$ file; see the `typstify` directory and the associated example `demo.typ` automatically converted from `demo.tex`. I'm aware things like pandoc exist but as of when I last tried, it's still terrible at `.tex -> .typ` conversion.
+As of Hilary 2025 I now also provide them in Typst, with a converter I threw together that generates a Typst file based on the input $\LaTeX$ file; see the `typstify` directory and the associated example `demo.typ` automatically converted from `demo.tex`. I'm aware things like pandoc exist but as of when I last tried, it's still terrible at `.tex -> .typ` conversion. The only manual modifications made to the `.typ` file output by `typstify` will be if `typstifyRemaining` puts a `#panic` in for an unprocessed macro.

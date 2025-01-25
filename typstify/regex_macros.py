@@ -29,6 +29,7 @@ def environmentEnded(line):
         # or line[:14] == r"\end{tabularx}"
         or line[:14] == r"\end{verbatim}"
         or line[:13] == r"\end{itemize}"
+        or line[:12] == r"\end{center}"
     )
 
 
@@ -52,6 +53,7 @@ def environmentBegun(line):
         # or line[-16:] == r"\begin{tabularx}"
         or line[-16:] == r"\begin{verbatim}"
         or line[-15:] == r"\begin{itemize}"
+        or line[-14:] == r"\begin{center}"
     )
 
 
@@ -83,27 +85,7 @@ def typstifyArraySyntax(string):
     )
 
 
-r"""
-ARG STRUCTURE
-macros can be called as: `\foo5`, `\foo\somemacro`, or `\foo{stuff}`, or any of those with spaces in.
-In the case of the last one, there might be further nested macros with arguments, so I'm using the
-recursive regex option from the `regex` package (not available with usual `re` package). As such,
-these ones must be substituted repeatedly until no further changes occur.
-
-While it's only the nested ones which need to be repeatedly substituted, unfortunately we need to use
-the full arg_pattern in the loop (as opposed to being able to split it into the scope version and the
-single token version and only loop the scope version), since if we don't have the pattern encompass
-any argument syntax, macros with multiple arguments but given in different syntax would fail to
-match, e.g. `\frac{2\pi}3`. Luckily though it doesn't matter much since we can just put the scope
-pattern first so if there's lots of nested scoping it won't be wasting a check for the non-scoped
-ones each time.
-
-Also, in arg_pattern, there are a few \s* tags to remove excess whitespace, but the last won't work
-unless we have non-greedy markers on the scoped pattern, which is fine, but if you look you'll see
-there are *two* non-greedy markers; for some reason it doesn't work with only one or the other, even
-if the possessive lookahead ?> is replaced with a regular capturing lookahead ?:
-"""
-arg_pattern = r"\s*(?:(\{\s*((?>[^{}]+?|(?1))*?)\s*\})|(\\[a-zA-Z]+)|([^\s{}()]))"
+arg_pattern = r"\s*(?:(\{\s*((?>[^{}]+?|(?1))*?)\s*\})|(\\[a-zA-Z]+)| ([a-zA-Z])|([^\s{}()a-zA-Z]))"
 
 
 def typstifyArguments(latex_macro, args, typst_pattern, string):
@@ -126,29 +108,13 @@ def typstifyMacros(string):
         string = typstifyArguments(latex_macro, 1, typst_pattern, string)
 
     # 2-arg macros
-    string = typstifyArguments(r"\\frac", 2, r"(\2\3\4)/(\6\7\8)", string)
-    string = typstifyArguments(r"\\dfrac", 2, r"display((\2\3\4)/(\6\7\8))", string)
+    string = typstifyArguments(r"\\frac", 2, r"(\2\3\4\5)/(\7\8\9\10)", string)
+    string = typstifyArguments(r"\\dfrac", 2, r"display((\2\3\4\5)/(\7\8\9\10))", string)
 
     # macros with args having been replaced, it will never be correct to have <control word><number>
     string = regex.sub(r"(\\[a-zA-Z]+)(?=[0-9])", r"\1 ", string)
 
     ### 0-arg macros; needs to be after because it breaks arg pattern for control sequences to not start with \
-    r"""
-    Instead of simply enumerating over the regular dictionary items, I need to enumerate over
-    the items sorted by decreasing key (control sequence) length, since latex macros are not
-    a prefix code, e.g. if `\foo` were supposed to be replaced with `thing` and `\foobar` were
-    supposed to be replaced with `stuff`, if I had them in that order in the dictionary, when
-    enumerating it would end up scanning through the string and replacing `foo` instances
-    *first*. This means e.g. a string "abc\foobar abc" wouldn't become the intended "abcstuff
-    abc" but instead "abc\thingbar abc". To avoid this, we could default to regex.sub with a
-    greedy regex to ensure a full control sequence is captured at a time, or instead we could
-    sort the substitutions in order of decreasing control sequence length. I've opted for the
-    latter since the former would require accounting not only for how control sequences can be
-    either control *characters* (e.g. `\[` or `\]`) or control *words* (e.g. `\alpha`) but
-    also for the various environments currently being replaced by the dictionary.
-
-    This issue doesn't apply to single_arg_macro_dict since that is using a regex already.
-    """
     for latex_command, typst_command in sorted(macro_dict.items(), key=lambda item: len(item[0]), reverse=True):
         string = string.replace(latex_command, typst_command)
 
@@ -161,15 +127,17 @@ def typstifyMathMode(string):
         string = string.replace(latex_delimiter, typst_delimiter)
 
     # We also don't want to erroneously add spaces to strings:
-    string = regex.sub(r"\\operatorname(?: (\w)|\{([^}]+)\})", r'\\op("\1\2")', string)
-    string = regex.sub(r"\\text\{\s*(.*?)\s*\}", r' "\1" ', string)
+    string = regex.sub(r"\\operatorname" + arg_pattern, r'\\op("\2\3\4")', string)
+    string = regex.sub(r"\\text" + arg_pattern, r' "\2\3\4" ', string)
 
     # Now we identify the math mode sections,
     modes = regex.split(r"(?<!\\)\$(.*?)(?<!\\)\$", string, flags=regex.DOTALL)
     result = []
     for i in range(0, len(modes)):
-        if i % 2:  # and when in math mode,
-            modes[i] = addSpacesToConsecutiveLetters(modes[i])  # fix spacing.
+        if i % 2:  # and when in math mode, fix the spacing, slashes, and tildes
+            modes[i] = addSpacesToConsecutiveLetters(modes[i]).replace("/", " slash ").replace("~", " space.nobreak ")
+        else:  # also sub backticks for quotes, needs to be done here to avoid breaking typst code block syntax
+            modes[i] = modes[i].replace("``", '"').replace("`", "'")
         result.append(modes[i])
     return r"$".join(result)
 
@@ -184,5 +152,6 @@ def addSpacesToConsecutiveLetters(string):
     return "".join(result)
 
 
-def typstifyQuestions(string):
-    return regex.sub(r"\\(?:question|part|subpart)%([a-zA-Z0-9]+)\b.*\s+", r"+ /* \1 */ ", string)
+def typstifyRemaining(string):
+    string = regex.sub(r"\\(?:question|part|subpart)%([a-zA-Z0-9]+)\b.*\s+", r"+ /* \1 */ ", string)
+    return regex.sub(r"(\\[a-zA-Z]+|\\[^a-zA-Z\s])", r'#panic("typstify missed this macro:")\1', string)
