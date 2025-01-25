@@ -110,6 +110,7 @@ def typstifyMacros(string):
     # 2-arg macros
     string = typstifyArguments(r"\\frac", 2, r"(\2\3\4\5)/(\7\8\9\10)", string)
     string = typstifyArguments(r"\\dfrac", 2, r"display((\2\3\4\5)/(\7\8\9\10))", string)
+    string = typstifyArguments(r"\\binom", 2, r"binom(\2\3\4\5, \7\8\9\10)", string)
 
     # macros with args having been replaced, it will never be correct to have <control word><number>
     string = regex.sub(r"(\\[a-zA-Z]+)(?=[0-9])", r"\1 ", string)
@@ -130,28 +131,30 @@ def typstifyMathMode(string):
     string = regex.sub(r"\\operatorname" + arg_pattern, r'\\op("\2\3\4")', string)
     string = regex.sub(r"\\text" + arg_pattern, r' "\2\3\4" ', string)
 
-    # Now we identify the math mode sections,
+    # Now we identify the math mode sections:
     modes = regex.split(r"(?<!\\)\$(.*?)(?<!\\)\$", string, flags=regex.DOTALL)
-    result = []
-    for i in range(0, len(modes)):
-        if i % 2:  # and when in math mode, fix the spacing, slashes, and tildes
-            modes[i] = addSpacesToConsecutiveLetters(modes[i]).replace("/", " slash ").replace("~", " space.nobreak ")
-        else:  # also sub backticks for quotes, needs to be done here to avoid breaking typst code block syntax
-            modes[i] = modes[i].replace("``", '"').replace("`", "'")
-        result.append(modes[i])
-    return r"$".join(result)
+    # odd groups are math and need spacing and / and ~ handled, even groups are text and need backticks handled
+    return r"$".join(
+        [
+            (
+                addSpacesToConsecutiveLetters(modes[i]).replace("/", " slash ").replace("~", " space.nobreak ")
+                if i % 2
+                else modes[i].replace("``", '"').replace("`", "'")
+            )
+            for i in range(len(modes))
+        ]
+    )
 
 
 def addSpacesToConsecutiveLetters(string):
-    consecutive_letter_pattern = r'(?<![\\"])\b[a-zA-Z0-9]{2,}\b'
-    result = []
-    for consecutive_letters in regex.split(f"({consecutive_letter_pattern})", string):
-        if regex.match(consecutive_letter_pattern, consecutive_letters):
-            consecutive_letters = " ".join(consecutive_letters)
-        result.append(consecutive_letters)
-    return "".join(result)
+    # if quotes are properly matched, being inside quotes is the same as being followed by an even number of quotes
+    consecutive_letter_pattern = r'((?<=^|[^\\])\b[a-zA-Z0-9]{2,}\b(?=(?:[^"]*"[^"]*")*[^"]*$))'
+    groupings = regex.split(consecutive_letter_pattern, string)
+    # every odd index is a sequence of consecutive letters that need to be spaced out for typst math mode to work
+    return "".join([" ".join(groupings[i]) if i % 2 else groupings[i] for i in range(len(groupings))])
 
 
 def typstifyRemaining(string):
     string = regex.sub(r"\\(?:question|part|subpart)%([a-zA-Z0-9]+)\b.*\s+", r"+ /* \1 */ ", string)
+    string = regex.sub(r"(\n\s*)%", r"\1//", string)
     return regex.sub(r"(\\[a-zA-Z]+|\\[^a-zA-Z\s])", r'#panic("typstify missed this macro:")\1', string)

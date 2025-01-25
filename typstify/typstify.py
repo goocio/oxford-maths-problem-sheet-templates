@@ -90,7 +90,6 @@ def fixIndentation(lines):
 
 
 def typstify(lines):
-    lines = [(line.replace(r"%", r"//") if (len(line) != 0) and (line[0] == r"%") else line) for line in lines]
     string = "\n".join(lines)
     string = typstifyArraySyntax(string)
     string = typstifyMathMode(string)

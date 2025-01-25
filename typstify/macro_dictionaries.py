@@ -1,9 +1,11 @@
 macro_dict = {
     r"\relax": r"",
+    r"\hline": r"",
     # see KNOWN ISSUES comment in typstify.py
     r"\displaystyle": r"",
     r"\limits": r"",
     # letters
+    r"\AA": r"circle(A)",
     r"\ell": r"ell",
     r"\aleph": r"aleph",
     r"\alpha": r"alpha",
@@ -63,6 +65,8 @@ macro_dict = {
     r"\supseteq": r"supset.eq",
     r"\subsetneq": r"subset.neq",
     r"\supsetneq": r"supset.neq",
+    r"\nsubseteq": r"subset.eq.not",
+    r"\nsupseteq": r"supset.eq.not",
     r"\emptyset": r"diameter",
     r"\varnothing": r"diameter",
     # calculus / analysis
@@ -178,6 +182,8 @@ macro_dict = {
     # brackets
     r"\{": r"{",
     r"\}": r"}",
+    r"\|": r"||",
+    r"\mid": r"mid(|)",
     r"\lfloor": r"floor.l",
     r"\rfloor": r"floor.r",
     r"\lceil": r"ceil.l",
@@ -241,6 +247,7 @@ single_arg_macro_dict = {
     r"\\abs": r"abs(\2\3\4\5)",
     r"\\dot": r"dot(\2\3\4\5)",
     r"\\ddot": r"dot.double(\2\3\4\5)",
+    r"\\mathring": r"circle(\2\3\4\5)",
     r"_": r"_(\2\3\4\5)",
     r"\^": r"^(\2\3\4\5)",
     r"\\emph": r"_\2\3\4\5_",
@@ -248,6 +255,7 @@ single_arg_macro_dict = {
     r"\\pmod": r"(mod \2\3\4\5)",
     r"\\section\*": r"= \2\3\4\5",
     r"\\section": r"= \2\3\4\5",
+    r"\\vspace": r"",
 }
 
 

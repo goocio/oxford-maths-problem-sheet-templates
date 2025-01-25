@@ -18,7 +18,7 @@ Here I'll set out roughly the workings of `typstify.py`, `regex_macros.py`, and 
 
 
 
-### General flow
+## General flow
 - Load .tex file and filter out its preamble, using it to fill in the associated .typ preamble, via `filterPreamble`. The .typ preamble is returned, along with the remaining lines of the .tex file for further processing.
 - The next processing is done by `fixIndentation`, which updates the indentation based on question layout and environments, as described in [indentation](#indentation).
     - This tracks indentation using begin and end blocks, with a mechanism for "storing" indentation that should take effect on the *next* line rather than the current one.
@@ -28,7 +28,9 @@ Here I'll set out roughly the workings of `typstify.py`, `regex_macros.py`, and 
     - `typstifyMacros` finishes the macro substitutions and corrects for the temporary intermediate substitutions made by `typstifyMathMode`.
     - Finally `typstifyRemaining` polishes up the question format and checks for any macros left unconverted
 
-### Indentation
+
+
+## Indentation
 The indentation is rather complicated, as the starting of a multiline environment on one line
 should adjust the indent starting from the *next* line (see `shift` variable). Here is a fairly
 minimal example, with only the base question/part/subpart layout and no further environments:
@@ -55,7 +57,7 @@ minimal example, with only the base question/part/subpart layout and no further 
 
 
 
-### Macro replacement
+## Macro replacement
 The ordering of the various macro replacement commands is slightly finnicky. We can't simply use just the one dictionary of macros to replace from, because of how latex is able to start and end math mode without using dollar signs via various environments. In order to fix the math mode spacing to work in typst (i.e. `$ab$` -> `$a b$` etc) we of course need to know when we're in math mode, and so we can't run it *before* all the macro conversions. However, we also can't run it *after* all the macro conversions, since any macros still left in math mode (such as `op` or `sin`) would be mis-identified as sequences of letters rather than macros and would hence be given spaces between their letters erroneously. Therefore we convert only the macros which delimit math mode (and also math mode macros with text arguments), then sort out the math mode spacing, then convert the rest of the macros.
 
 Moreover, environments in math mode would have their names spaced erroneously, so we substitute these out early along with math mode delimiters in `typstifyArraySyntax`. This is done by first converting them to an intermediate fake control sequence and then adding this control sequence to `macro_dict` so the substitution is finished in the second pass, by `typstifyMacros`.
