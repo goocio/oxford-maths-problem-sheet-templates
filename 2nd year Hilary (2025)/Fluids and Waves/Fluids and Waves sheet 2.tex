@@ -4,6 +4,7 @@
 \title{Fluids and Waves -- Sheet 2\\Complex potential, Blasius' theorem}
 \author{YOUR NAME HERE :)}
 \date{Hilary Term 2025}
+% version uploaded 2025-01-10
 
 
 \begin{document}
@@ -11,7 +12,7 @@
 \begin{questions}
 
 \question%1
-An impermeable sphere has a time-varying radius, $R(t)=a(1+\cos \Omega t)$, which induces a time-dependent irrotational, incompressible flow. The resulting velocity potential $\phi(r, t)$ satisfies Laplace's equation, $\nabla^{2} \phi=0$, which in spherically-symmetric coordinates reads \[
+\textbf{An example of the velocity potential.} An impermeable sphere has a time-varying radius, $R(t)=a(1+\cos \Omega t)$, which induces a time-dependent irrotational, incompressible flow. The resulting velocity potential $\phi(r, t)$ satisfies Laplace's equation, $\nabla^{2} \phi=0$, which in spherically-symmetric coordinates reads \[
 	0=\frac{1}{r^{2}} \frac{\partial}{\partial r}\left(r^{2} \frac{\partial \phi}{\partial r}\right)
 \]
 \begin{parts}
@@ -22,7 +23,7 @@ Explain why appropriate boundary conditions for $\phi(r, t)$, are $\phi_{r}(R, t
 By using an appropriate form of Bernoulli's principle and neglecting any body force, calculate the pressure, $p[R(t), t]$, on the surface of the sphere (measured relative to the pressure at $\infty$ ).
 
 \part%1c
-Show that the time average of the surface pressure, $\bar{p}=\frac{\Omega}{2 \pi} \int_{0}^{2 \pi / \Omega} p[R(t), t] ~\mathrm{d} t$, is non-zero.
+Show that the time average of the surface pressure, $\overline{p-p_\infty}=\frac{\Omega}{2 \pi} \int_{0}^{2 \pi / \Omega} (p[R(t), t]-p_\infty) ~\mathrm{d} t$, is non-zero.
 \end{parts}
 
 
@@ -54,7 +55,7 @@ Fluid occupies the region $x>0$ and there is a plane rigid boundary at $x=0$. Fi
 
 
 \question%4
-Incompressible inviscid fluid occupies the region $y>0$, and there is a rigid plane wall at $y=0$. There is a uniform flow, speed $U$, in the positive $x$-direction, and a line source of strength $Q$ at $(0, a)$, where $a>0$. Find the complex potential $w(z)$ and calculate $\mathrm{d} w / \mathrm{d} z$. Let $\beta=Q / 2 \pi U a$. Show that if $\beta>1$ there are two stagnation points, both on the wall, while if $\beta<1$ there is only one, in the fluid, a distance $a$ from the origin. Try to sketch the streamlines in either case.
+Incompressible inviscid fluid occupies the region $y>0$, and there is an impermeable wall at $y=0$. There is a uniform flow, speed $U$, in the positive $x$-direction, and a line source of strength $Q$ at $(0, a)$, where $a>0$. Find the complex potential $w(z)$ and calculate $\mathrm{d} w / \mathrm{d} z$. Let $\beta=Q / 2 \pi U a$. Show that if $\beta>1$ there are two stagnation points, both on the wall, while if $\beta<1$ there is only one, in the fluid, a distance $a$ from the origin. Try to sketch the streamlines in either case.
 
 
 
@@ -62,7 +63,7 @@ Incompressible inviscid fluid occupies the region $y>0$, and there is a rigid pl
 \textbf{Blasius' Theorem.} Consider the steady, two-dimensional, irrotational flow of a fluid with constant density $\rho$ past a closed body $B$.
 \begin{parts}
 \part%5a
-If $p$ and $w$ are the pressure and complex potential of the flow, and $z=x+\mathrm{i} y$, show that the force exerted on $B$ by the fluid is $(F_{x}, F_{y})$, where \[
+If $p$ and $w$ are the pressure and complex potential of the flow, and $z=x+i y$, show that the force exerted on $B$ by the fluid is $(F_{x}, F_{y})$, where \[
 	F_{x}+i F_{y}=\oint_{\partial B} pi ~\mathrm{d} z=-\frac{i\rho}{2} \oint_{\partial B}\left|\frac{\mathrm{d} w}{\mathrm{d} z}\right|^2 \mathrm{~d} z
 \] Explain why the integral on the right-hand side is not amenable to calculation via Cauchy's Theorem as it stands.
 
@@ -80,41 +81,46 @@ Show that the moment (about the centre of $B$) exerted on $B$ by the fluid may s
 
 
 \question%6
-Inviscid, incompressible fluid occupies the region $x^{2}+y^{2}>a^{2}$ outside a rigid circular cylinder of radius $a$. There is a line source of strength $Q$ at $(b, 0)$, where $b>a$, and there is also a circulatory flow around the cylinder as if due to a line vortex of strength $\Gamma$ at the origin.
+\textbf{Flow inside a cylinder: a modified Circle Theorem.} Modify the proof of Milne-Thomson's Circle Theorem to show that if $f(z)$ has all of its singularities lying in $|z|<a$ then the function \[
+	w(z)=f(z)+\overline{f\left(\frac{a^{2}}{\bar{z}}\right)}
+\] has:
 \begin{parts}
 \part%6a
-Explain why the complex potential is \[
-	w(z)=\frac{Q}{2 \pi} \log (z-b)+\frac{Q}{2 \pi} \log \left(\frac{a^{2}}{z}-b\right)-\frac{i \Gamma}{2 \pi} \log z .
-\]
+the same singularities as $f$ within $|z|<a$;
 
 \part%6b
-Calculate $\mathrm{d} w / \mathrm{d} z$ and use Blasius' Theorem to find the force components $(F_{x}, F_{y})$ on the cylinder.
+the circle $|z|=a$ as a streamline.
 \end{parts}
 
 
 
 \question%7
-A two-dimensional irrotational incompressible flow has streamfunction $\psi=A(x-c) y$, where $A$ and $c$ are real constants.
+Inviscid, incompressible fluid occupies the region $x^{2}+y^{2}>a^{2}$ outside a rigid circular cylinder of radius $a$. There is a line source of strength $Q$ at $(b, 0)$, where $b>a$, and there is also a circulatory flow around the cylinder as if due to a line vortex of strength $\Gamma$ at the origin.
 \begin{parts}
 \part%7a
-Write down (without further calculation), the corresponding complex potential. (This is unique up to an additive constant. Why?)
+Explain why the complex potential is \[
+	w(z)=\frac{Q}{2 \pi} \log (z-b)+\frac{Q}{2 \pi} \log \left(\frac{a^{2}}{z}-b\right)-\frac{i \Gamma}{2 \pi} \log z .
+\]
 
 \part%7b
-A circular cylinder of radius $a$ is introduced, its centre being at the origin. Find the force exerted on the cylinder by the resulting flow.
+Calculate $\mathrm{d} w / \mathrm{d} z$ and use Blasius' Theorem to find the force components $(F_{x}, F_{y})$ on the cylinder.\\
+Adding the results, we have \[
+  F_x-iF_y=-\rho\frac{Q}{2\pi}\left[-\frac{Qa^2}{b(b^2-a^2)}+\frac{i\Gamma}{b}\right]
+\] and hence \[
+  F_x=\frac{\rho Q^2a^2}{2\pi b(b^2-a^2)},\quad F_y=\frac{\rho Q\Gamma}{2\pi b}.
+\] Note that the horizontal component of the force is positive, independent of the sign of $Q$ -- the cylinder is pulled towards the source/sink. However, the sign of the vertical component of the force depends on the sign of the product $Q\Gamma$: when there is positive circulation and a source, the fluid velocity is highest (and the pressure is lowest) above the cylinder so that the force acts to `suck' the cylinder vertically upwards. When there is negative circulation (and a source), the highest velocity is at the bottom of the cylinder and the direction of the force reverses.
 \end{parts}
 
 
 
 \question%8
-\textbf{Flow inside a cylinder: a modified Circle Theorem.} Modify the proof of Milne-Thomson's Circle Theorem to show that if $f(z)$ has all of its singularities lying in $|z|<a$ then the function \[
-	w(z)=f(z)+\overline{f\left(\frac{a^{2}}{\bar{z}}\right)}
-\] has:\\
+A two-dimensional irrotational incompressible flow has streamfunction $\psi=A(x-c) y$, where $A$ and $c$ are real constants.
 \begin{parts}
 \part%8a
-the same singularities as $f$ within $|z|<a$;\\
+Write down (without further calculation), the corresponding complex potential. (\emph{This is unique up to an additive constant. Why?})
 
 \part%8b
-the circle $|z|=a$ as a streamline.
+A circular cylinder of radius $a<\abs{c}$ is introduced, its centre being at the origin. Find the force exerted on the cylinder by the resulting flow.
 \end{parts}
 
 \end{questions}

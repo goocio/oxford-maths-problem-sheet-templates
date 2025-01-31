@@ -85,7 +85,7 @@ def typstifyArraySyntax(string):
     )
 
 
-arg_pattern = r"\s*(?:(\{\s*((?>[^{}]+?|(?1))*?)\s*\})|(\\[a-zA-Z]+)| ([a-zA-Z])|([^\s{}()a-zA-Z]))"
+arg_pattern = r"\s*(?:(\{\s*((?>[^{}]+?|(?1))*?)\s*\})|(\\[a-zA-Z]+)|([a-zA-Z])|([^\s{}()a-zA-Z]))"
 
 
 def typstifyArguments(latex_macro, args, typst_pattern, string):
@@ -128,8 +128,9 @@ def typstifyMathMode(string):
         string = string.replace(latex_delimiter, typst_delimiter)
 
     # We also don't want to erroneously add spaces to strings:
-    string = regex.sub(r"\\operatorname" + arg_pattern, r'\\op("\2\3\4")', string)
-    string = regex.sub(r"\\text" + arg_pattern, r' "\2\3\4" ', string)
+    string = regex.sub(r"\\operatorname" + arg_pattern, r'\\op("\2\3\4\5")', string)
+    string = regex.sub(r"\\textbf" + arg_pattern, r"*\2\3\4\5*", string)  # and subbing this first because prefix
+    string = regex.sub(r"\\text" + arg_pattern, r' "\2\3\4\5" ', string)
 
     # Now we identify the math mode sections:
     modes = regex.split(r"(?<!\\)\$(.*?)(?<!\\)\$", string, flags=regex.DOTALL)
@@ -148,7 +149,7 @@ def typstifyMathMode(string):
 
 def addSpacesToConsecutiveLetters(string):
     # if quotes are properly matched, being inside quotes is the same as being followed by an even number of quotes
-    consecutive_letter_pattern = r'((?<=^|[^\\])\b[a-zA-Z0-9]{2,}\b(?=(?:[^"]*"[^"]*")*[^"]*$))'
+    consecutive_letter_pattern = r'((?<=^|[^\\a-zA-Z0-9])[a-zA-Z0-9]{2,}(?![a-zA-Z0-9])(?=(?:[^"]*"[^"]*")*[^"]*$))'
     groupings = regex.split(consecutive_letter_pattern, string)
     # every odd index is a sequence of consecutive letters that need to be spaced out for typst math mode to work
     return "".join([" ".join(groupings[i]) if i % 2 else groupings[i] for i in range(len(groupings))])

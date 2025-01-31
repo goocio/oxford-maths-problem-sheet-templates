@@ -90,10 +90,10 @@
 	
 	
 	
-+ /* 11 */ (MATLAB/Python exercise) Using a loop and tic and toc compare the time it takes to do (pivoted) LU and QR factorisations. For example, for random matrices of dimension $2^(5)$ to $2^(1 0)$ #h(-1em)```
++ /* 11 */ (MATLAB/Python exercise) Using a loop and tic and toc compare the time it takes to do (pivoted) LU and QR factorisations. For example, for random matrices of dimension $2^(5)$ to $2^(1 0)$ ```
 		for k=5:10, A=randn(2^k); tic, [L,U,P]=lu(A); toc,...
 		tic, [Q,R]=qr(A); toc, end
-	```#h(-1em)
+	```
 	should give some timings. What do you think the computational work is for QR factorisation given that LU is to leading order $(2)/(3) n^(3)$? Note `qr` uses Householder matrices as described in lectures to compute the QR factorisation.
 	
 	

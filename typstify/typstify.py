@@ -31,6 +31,7 @@ def filterPreamble(tex_file):
         if (
             (line[0:14] == r"\documentclass")
             or (line[0:11] == r"\usepackage")
+            or (line[0:15] == r"\RequirePackage")
             or (line[0:10] == r"\maketitle")
             or (line[0:16] == r"\begin{document}")
             or (line[0:14] == r"\end{document}")
