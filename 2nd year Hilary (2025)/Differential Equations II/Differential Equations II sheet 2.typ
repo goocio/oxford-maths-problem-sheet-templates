@@ -19,17 +19,17 @@
 	
 + /* 1 */ *Computing Green's functions.* Obtain the Green's function for the following operators using the delta-function construction:
 	#parts[
-		+ /* 1a */ $frak(L) y=-y', quad 0<x<1, quad y(0)-y'(1)=0, quad y(0)+y(1)=0$.
+		+ /* 1a */ $frak(L) y=-y'', quad 0<x<1, quad y(0)-y'(1)=0, quad y(0)+y(1)=0$.
 			
-		+ /* 1b */ $frak(L) y=y'-y, quad 0<x<2 pi, quad y(0)-y(2 pi)=0, quad y'(0)-y'(2 pi)=0$.
+		+ /* 1b */ $frak(L) y=y''-y, quad 0<x<2 pi, quad y(0)-y(2 pi)=0, quad y'(0)-y'(2 pi)=0$.
 			
-		+ /* 1c */ In (b), what goes wrong if we change the operator to $frak(L) y=y'+y$ (for the same boundary conditions)?
+		+ /* 1c */ In (b), what goes wrong if we change the operator to $frak(L) y=y''+y$ (for the same boundary conditions)?
 	]
 	
 	
 	
 + /* 2 */ *Green's functions for an Initial Value Problem.* Reconsider the IVP from Sheet 1 Q3, $ 
-		frak(L) y(x) equiv P_(2)(x) y'(x)+P_(1)(x) y'(x)+P_(0)(x) y(x)=f(x)
+		frak(L) y(x) equiv P_(2)(x) y''(x)+P_(1)(x) y'(x)+P_(0)(x) y(x)=f(x)
 	 $ for $x>0$, subject to initial conditions $y(0)=y'(0)=0$. Recall that $y_(1)$ and $y_(2)$ are linearly independent solutions to the homogeneous problem $frak(L) y=0$ satisfying $y_(1)(0)=0$ and $y_(2)'(0)=0$. State the ODE and initial conditions satisfied by the Green's function $g(x, xi)$ in terms of a delta function, solve this problem for $g$, and show that this approach reproduces the expression found by variation of parameters on Sheet 1.
 	
 	
@@ -37,7 +37,7 @@
 + /* 3 */ *Eigenfunction expansion.*
 	#parts[
 		+ /* 3a */ Find the general solution of the Cauchy-Euler equation $ 
-				x^(2) y'(x)+3 x y'(x)+(1+alpha) y(x)=0,
+				x^(2) y''(x)+3 x y'(x)+(1+alpha) y(x)=0,
 			 $ where $alpha$ is a given positive constant.
 			
 		+ /* 3b */ Use (a) to determine the eigenvalues $lambda_(j)$ and eigenfunctions $y_(j)$ of the self-adjoint problem $ 
@@ -54,7 +54,7 @@
 + /* 4 */ *Eigenvalue expansion - two routes.*
 	#parts[
 		+ /* 4a */ Consider the following eigenvalue problem on $0 <= x <= 1$: $ 
-				frak(L) y equiv y'+2 y'+y=lambda y, wide y'(0)+y(0)=0, wide y'(1)+y(1)=0 .
+				frak(L) y equiv y''+2 y'+y=lambda y, wide y'(0)+y(0)=0, wide y'(1)+y(1)=0 .
 			 $ Compute the eigenvalues $lambda_(k)$, eigenfunctions $y_(k)$, and the adjoint eigenfunctions $w_(k)$.
 			
 		+ /* 4b */ Under what condition on $f$ does a solution exist for the inhomogeneous problem $ 
@@ -69,7 +69,7 @@
 	
 	
 + /* 5 */ *Legendre's equation and the Fredholm Alternative.* Consider bounded solutions of the eigenvalue problem $ 
-		frak(L) y(x) equiv (1-x^(2)) y'(x)-2 x y'(x)=lambda y(x), wide-1<x<1 wide (star)
+		frak(L) y(x) equiv (1-x^(2)) y''(x)-2 x y'(x)=lambda y(x), wide-1<x<1 wide (star)
 	 $
 	#parts[
 		+ /* 5a */ Use the inner product relation to compute $frak(L)^(*)$ and show that the boundary terms vanish identically. Why are no boundary conditions given for $(star)$?

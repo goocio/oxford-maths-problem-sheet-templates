@@ -15,20 +15,20 @@
 \textbf{Computing Green's functions.} Obtain the Green's function for the following operators using the delta-function construction:
 \begin{parts}
 \part%1a
-$\mathfrak{L} y=-y', \quad 0<x<1, \quad y(0)-y'(1)=0, \quad y(0)+y(1)=0$.
+$\mathfrak{L} y=-y'', \quad 0<x<1, \quad y(0)-y'(1)=0, \quad y(0)+y(1)=0$.
 
 \part%1b
-$\mathfrak{L} y=y'-y, \quad 0<x<2 \pi, \quad y(0)-y(2 \pi)=0, \quad y'(0)-y'(2 \pi)=0$.
+$\mathfrak{L} y=y''-y, \quad 0<x<2 \pi, \quad y(0)-y(2 \pi)=0, \quad y'(0)-y'(2 \pi)=0$.
 
 \part%1c
-In (b), what goes wrong if we change the operator to $\mathfrak{L} y=y'+y$ (for the same boundary conditions)?
+In (b), what goes wrong if we change the operator to $\mathfrak{L} y=y''+y$ (for the same boundary conditions)?
 \end{parts}
 
 
 
 \question%2
 \textbf{Green's functions for an Initial Value Problem.} Reconsider the IVP from Sheet 1 Q3, \[
-	\mathfrak{L} y(x) \equiv P_{2}(x) y'(x)+P_{1}(x) y'(x)+P_{0}(x) y(x)=f(x)
+	\mathfrak{L} y(x) \equiv P_{2}(x) y''(x)+P_{1}(x) y'(x)+P_{0}(x) y(x)=f(x)
 \] for $x>0$, subject to initial conditions $y(0)=y'(0)=0$. Recall that $y_{1}$ and $y_{2}$ are linearly independent solutions to the homogeneous problem $\mathfrak{L} y=0$ satisfying $y_{1}(0)=0$ and $y_{2}'(0)=0$. State the ODE and initial conditions satisfied by the Green's function $g(x, \xi)$ in terms of a delta function, solve this problem for $g$, and show that this approach reproduces the expression found by variation of parameters on Sheet 1.
 
 
@@ -38,7 +38,7 @@ In (b), what goes wrong if we change the operator to $\mathfrak{L} y=y'+y$ (for 
 \begin{parts}
 \part%3a
 Find the general solution of the Cauchy-Euler equation \[
-	x^{2} y'(x)+3 x y'(x)+(1+\alpha) y(x)=0,
+	x^{2} y''(x)+3 x y'(x)+(1+\alpha) y(x)=0,
 \] where $\alpha$ is a given positive constant.
 
 \part%3b
@@ -59,7 +59,7 @@ Obtain the eigenfunction expansion for the solution of the inhomogeneous problem
 \begin{parts}
 \part%4a
 Consider the following eigenvalue problem on $0 \leq x \leq 1$: \[
-	\mathfrak{L} y \equiv y'+2 y'+y=\lambda y, \qquad y'(0)+y(0)=0, \qquad y'(1)+y(1)=0 .
+	\mathfrak{L} y \equiv y''+2 y'+y=\lambda y, \qquad y'(0)+y(0)=0, \qquad y'(1)+y(1)=0 .
 \] Compute the eigenvalues $\lambda_{k}$, eigenfunctions $y_{k}$, and the adjoint eigenfunctions $w_{k}$.
 
 \part%4b
@@ -78,7 +78,7 @@ Convert the problem in (b) to the equivalent Sturm-Liouville problem and show th
 
 \question%5
 \textbf{Legendre's equation and the Fredholm Alternative.} Consider bounded solutions of the eigenvalue problem \[
-	\mathfrak{L} y(x) \equiv\left(1-x^{2}\right) y'(x)-2 x y'(x)=\lambda y(x), \qquad-1<x<1 \tag{$\star$}
+	\mathfrak{L} y(x) \equiv\left(1-x^{2}\right) y''(x)-2 x y'(x)=\lambda y(x), \qquad-1<x<1 \tag{$\star$}
 \]
 \begin{parts}
 \part%5a
