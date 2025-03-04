@@ -43,7 +43,7 @@ macro_dict = {
     r"\Gamma": r"Gamma",
     r"\Delta": r"Delta",
     r"\Theta": r"Theta",
-    r"\Lambda": r"lambda",
+    r"\Lambda": r"Lambda",
     r"\Xi": r"Xi",
     r"\Pi": r"Pi",
     r"\Sigma": r"Sigma",

@@ -56,7 +56,7 @@
 	
 + /* 4 */ When studying the sex ratio in a population using a sample of size $n$, it is usually assumed that, independently, each child is male with probability $p$.
 	#parts[
-		+ /* 4a */ Renkonen (1956) observed 19,711 male births out of a total of 38,562 births in American families with two children each. Use the likelihood ratio statistic $lambda$ to test the hypothesis $H_(0): p=(1)/(2)$ against a suitable alternative which you should specify.
+		+ /* 4a */ Renkonen (1956) observed 19,711 male births out of a total of 38,562 births in American families with two children each. Use the likelihood ratio statistic $Lambda$ to test the hypothesis $H_(0): p=(1)/(2)$ against a suitable alternative which you should specify.
 			
 		+ /* 4b */ Renkonen also found 17,703 males out of 35,042 similar births in Finland. Use the generalised likelihood ratio test to test the hypothesis that $p$ has the same value in each country versus a suitable alternative.
 	]
@@ -77,8 +77,8 @@
 				+ /* 5ci */ Find the equation satisfied by the maximum likelihood estimate $hat(theta)$ of $theta$.
 					
 				+ /* 5cii */ You may assume that $hat(theta)=0.0 5 8$. Let $H_(0)$ be the null hypothesis that the genetic linkage model is appropriate, and let $H_(1)$ be the general alternative. If $L_(0)$ is the supremum of the likelihood under $H_(0)$ and if $L_(1)$ is the supremum of the likelihood under $H_(1)$, show that $ 
-						lambda=2 sum_(i=1)^(4) n_(i) log ((n_(i))/(n pi_(i)(hat(theta))))
-					 $ where $lambda=-2 (log L_(0)-log L_(1))$. Write down the approximate distribution of $lambda$. What can you infer about the plausibility of the genetic linkage model?
+						Lambda=2 sum_(i=1)^(4) n_(i) log ((n_(i))/(n pi_(i)(hat(theta))))
+					 $ where $Lambda=-2 (log L_(0)-log L_(1))$. Write down the approximate distribution of $Lambda$. What can you infer about the plausibility of the genetic linkage model?
 			]
 	]
 	
