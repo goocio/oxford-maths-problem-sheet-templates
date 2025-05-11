@@ -73,6 +73,7 @@ macro_dict = {
     r"\emptyset": r"diameter",
     r"\varnothing": r"diameter",
     # calculus / analysis
+    r"\dd": "dif",
     r"\min": r"min",
     r"\max": r"max",
     r"\argmin": r"argmin",

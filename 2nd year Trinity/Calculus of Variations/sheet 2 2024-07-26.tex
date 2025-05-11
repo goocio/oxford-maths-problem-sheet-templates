@@ -1,0 +1,94 @@
+\documentclass[answers]{exam}
+\usepackage{../preamble}
+
+\title{Calculus of Variations -- Sheet 2}
+\author{YOUR NAME HERE :)}
+\date{Trinity Term 2025}
+
+\renewcommand*{\dd}{\mathop{}\!\mathrm d} % differential element
+\renewcommand*{\dv}[2]{\frac{\mathrm d#1}{\mathrm d#2}} % derivative
+\renewcommand*{\pdv}[2]{\frac{\partial #1}{\partial #2}} % partial derivative
+
+
+\begin{document}
+\maketitle
+\begin{questions}
+
+\question%1
+It is required to find an extremal of the functional \[
+	\int_a^b F(x, y(x), y'(x), y''(x)) \dd x
+\] among all smooth functions $y(x)$ that satisfy the boundary conditions \[
+	y(a)=y(b)=0 .
+\] Show that such an extremal must be a solution of the differential equation \[
+	\pdv Fy-\dv{}x\left(\pdv F{y'}\right)+\dv{^2}{x^2}\left(\pdv F{y''}\right)=0,
+\] and must satisfy the natural boundary conditions \[
+	\pdv F{y''}=0 \quad
+	\text{at} \quad
+	x=a \quad
+	\text{and} \quad
+	x=b.
+\]
+
+
+
+\question%2
+An elastic beam has vertical displacement $y(x)$ for $x \in[0, l]$. The $x$-axis is horizontal and the $y$-axis is vertical and directed upwards. The ends of the beam are supported, meaning $y(0)=y(l)=0$, and the displacement minimizes the energy \[
+	\int_0^l\left\{\frac12 D[y''(x)]^2+\rho g y(x)\right\} \dd x,
+\] where $D$, $\rho$, and $g$ are positive constants. Write down the differential equation and the boundary conditions that $y(x)$ must satisfy, and show that \[
+	y(x)=-\frac{\rho g}{24 D} x(l-x)(l^2+x(l-x)) .
+\]
+
+
+
+\question%3
+Find an extremal of the functional \[
+	\int_{-1}^1 y \dd x
+\] subject to the boundary conditions $y(-1)=y(1)=0$, and the constraint \[
+	\int_{-1}^1(y^2+(y')^2) \dd x=1 .
+\]
+
+
+
+\question%4
+\begin{parts}
+\part%4a
+Suppose that $F: \mathbb{R}^7 \to \mathbb{R}$ is a $C^2$-function, and that $u: \mathbb{R}^3 \to \mathbb{R}$ is a $C^2$-function that gives a stationary value of the integral \[
+	\iiint\limits_V F(x, y, z, u, u_x, u_y, u_z) \dd x \dd y \dd z
+\] and satisfies $u=f$ on the smooth simple closed surface $\partial V$ that bounds the open set $V$ in $\mathbb{R}^3$. Show that $u$ satisfies the Euler-Lagrange equation \[
+	\pdv{}x\left(\pdv F{u_x}\right)+\pdv{}y\left(\pdv F{u_y}\right)+\pdv{}z\left(\pdv F{u_z}\right)=\pdv Fu.
+\]
+
+\part%4b
+Let $V=\{(x, y, z) \in \mathbb{R}^3: x^{2}+y^{2}+z^{2}<1\}$ be the interior of the unit sphere. Find the function $u=u(x, y, z)$ that minimizes the integral \[
+	\iiint\limits_V(u_x^2+u_y^2+u_z^2) \dd x \dd y \dd z,
+\] subject to the constraint \[
+	\iiint\limits_V u \dd x \dd y \dd z=4 \pi,
+\] and the boundary condition that $u=1$ on $\partial V$.
+\end{parts}
+
+
+
+\question%5
+Let $p$ be a positive real-valued differentiable function on the bounded interval $[a, b]$, and let $q$ and $r$ be positive real-valued continuous functions on $[a, b]$.
+\begin{parts}
+\part%5a
+Show that the extremals of \[
+	J(y)=\int_a^b(p (y')^2+q y^2) \dd x
+\] subject to the constraint \[
+	\int_a^b r y^2 \dd x=1
+\] must satisfy the differential equation \begin{equation*}
+	(p y')'+(-q+\lambda r) y=0, \tag{A}
+\end{equation*} for some constant $\lambda$, and satisfy the boundary conditions $p y'=0$ at $x=a$ and $x=b$.
+
+\part%5b
+Show that if $y_1$ and $y_2$ are solutions to (A) with $\lambda=\lambda_1$ and $\lambda=\lambda_2$ respectively, and $\lambda_1 \neq \lambda_2$, then \begin{equation*}
+	\int_a^b r y_1 y_2 \dd x=0. \tag{B}
+\end{equation*}
+
+\part%5c
+Find the extremals of $\int_0^\pi (y')^2 \dd x$ subject to $\int_0^\pi y^{2} \dd x=1$, and the corresponding values of $\lambda$. Verify that these extremals satisfy the condition (B).
+\end{parts}
+
+\end{questions}
+
+\end{document}

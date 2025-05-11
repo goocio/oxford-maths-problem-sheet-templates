@@ -1,0 +1,81 @@
+\documentclass[answers]{exam}
+\usepackage{../preamble}
+
+\title{Projective Geometry -- Sheet 2}
+\author{YOUR NAME HERE :)}
+\date{Trinity Term 2025}
+
+
+\begin{document}
+\maketitle
+\begin{questions}
+
+\question%1
+Write down the dual of Pappus' Theorem.
+
+
+
+\question%2
+Let $P_0, P_1, P_2, P_3$ be four distinct points in a projective plane $\mathbb{P}(V)$. Show that $P_0, P_1, P_2, P_3$ are in general position if and only if the lines $P_0 P_1, P_1 P_2, P_2 P_3, P_3 P_0$ are in general position in $\mathbb{P}(V^{*})$.
+
+
+
+\question%3
+Use general position arguments to show that given five points in the projective plane, such that no three are collinear, there is a unique conic through these five points.
+
+
+
+\question%4
+Let $C, D$ be conics in a projective plane $\mathbb{P}(V)$, where $V$ is a 3 -dimensional real vector space, and suppose that $C \cap D=\{p_1, p_2, p_3, p_4\}$, where $p_1, \ldots, p_4$ are distinct points in $\mathbb{P}(V)$.
+\begin{parts}
+\part%4a
+Show that $p_1, \ldots, p_4$ are in general position. Prove that there exist homogeneous coordinates $[x_0: x_1: x_2]$ on $\mathbb{P}(V)$ for which \[
+	p_1=[1: 1: 1], \quad p_2=[1:-1: 1], \quad p_3=[1: 1:-1], \quad p_4=[1:-1:-1] .
+\]
+
+\part%4b
+Show that any conic through $p_1, \ldots, p_4$ has equation \[
+	\lambda x_0^2+\mu x_1^2+\nu x_2^2=0
+\] where $\lambda+\mu+\nu=0$.
+
+\part%4c
+Find four projective transformations $\tau$ of $\mathbb{P}(V)$ that form a group, and for which $\tau(C)=C$ and $\tau(D)=D$.
+\end{parts}
+
+
+
+\question%5
+Let $F\left(x_0, x_1, x_2\right)$ be a homogeneous polynomial of degree $n$. Let $\mathcal{C}$ be the set of points $\mathbf{a}=[a_0, a_1, a_2]$ in $\mathbb{R P}^2$ such that $F(a_0, a_1, a_2)=0$. Provided that $\nabla F(\mathbf{a}) \neq \mathbf0$, the tangent line to $\mathcal{C}$ at $\mathbf{a}=[a_0, a_1, a_2]$ is the line \[
+	x_0 \frac{\partial F}{\partial x_0}(\mathbf{a})+x_1 \frac{\partial F}{\partial x_1}(\mathbf{a})+x_2 \frac{\partial F}{\partial x_2}(\mathbf{a})=0
+\] in $\mathbb{R P}^2$ and $\mathbf{a}$ is said to be singular if $\nabla F(\mathbf{a})=\mathbf0$.
+\begin{parts}
+\part%5a
+Show that a lies on the tangent line to a.
+
+\part%5b
+Given a $3 \times 3$ symmetric real matrix $B$ its associated conic is the set of solutions to the equation $\mathbf{x}^{T} B \mathbf{x}=0$ where $\mathbf{x}=[x_0: x_1: x_2]$ and the conic is said to be singular if $B$ is singular. Show that a conic is singular if and only if it has a singular point.
+
+\part%5c
+Sketch the curves $y^2=x^3$ and $y^2=x^2(x+1)$ in $\mathbb{R}^2$. What singular points do these curves have? Show that $y=x^3$ has a singular point at infinity.
+\end{parts}
+
+
+
+\question%6
+Find all rational numbers $x, y$ such that $x^2+y^2-x y=1$.
+
+
+
+\question%7
+Let $V$ be a 3-dimensional real vector space and suppose that $L_0, L_1, L_2, L_3$ are four lines in the projective plane $\mathbb{P}(V)$ all intersecting in a common point $x$. Explain why:
+\begin{parts}
+\part%7a
+if $L$ is a line in $\mathbb{P}(V)$ that does not pass though $x$, but intersects $L_{i}$ in a point $x_{i}$ (so $x_0, x_1, x_2, x_3$ are four distinct collinear points), then the cross-ratio $\left(x_0 x_1: x_2 x_3\right)$ is independent of the choice of $L$;
+
+\part%7b
+the cross-ratio defined in (a) equals the cross-ratio $(L_0 L_1: L_2 L_3)$ formed by regarding $L_0, L_1, L_2, L_3$ as collinear points of the dual projective plane $\mathbb{P}(V^{*})$.
+\end{parts}
+
+\end{questions}
+
+\end{document}

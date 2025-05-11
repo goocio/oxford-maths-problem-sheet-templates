@@ -1,0 +1,78 @@
+\documentclass[answers]{exam}
+\usepackage{../preamble}
+
+\title{Number Theory -- Sheet 2}
+\author{YOUR NAME HERE :)}
+\date{Trinity Term 2025}
+
+
+\begin{document}
+\maketitle
+\begin{questions}
+
+\question%1
+Suppose that $p$ and $q=2 p+1$ are both odd primes. Explain why (a) $2 p$ is a quadratic non-residue of $q$ and (b) $q$ has $p-1$ primitive roots. Show that the primitive roots of $q$ are precisely the quadratic non-residues of $q$, other than $2 p$.
+
+
+
+\question%2
+Prove that if $n$ has a primitive root then it has $\phi(\phi(n))$ of them.
+
+
+
+\question%3
+Let $p$ be an odd prime. Show that every element in $\mathbb{Z} / p \mathbb{Z}$ can be written as the sum of two squares.
+
+
+
+\question%4
+Do there exist integer solutions to the equation $x^2 \equiv 251 \bmod 779$? [\emph{Note that $779=19 \times 41$.}]
+
+
+
+\question%5
+Does the equation $x^2+10 x+15 \equiv 0 \bmod 45083$ have any integer solutions? [\emph{Note that $45083$ is prime.}]
+
+
+\question%6
+Use the Fermat method to factorise 9579, without using a calculator.
+
+
+
+\question%7
+For any integer $n \geqslant 2$, let $F_{n}=2^{2^n}+1$ be the $n$th "Fermat number". Suppose that $p$ is a prime factor of $F_n$.
+\begin{parts}
+\part%7a
+Show that $\operatorname{ord}_p(2)=2^{n+1}$.
+
+\part%7b
+Show that \[
+	2^{(p-1) / 2} \equiv 1 \bmod p
+\]
+
+\part%7c
+Deduce that $p=1+2^{n+2} k$ for some $k \in \mathbb{N}$.
+
+\part%7d
+Hence, or otherwise, verify that $F_4=65537$ is prime.
+\end{parts}
+
+
+
+\question%8
+\begin{parts}
+\part%8a
+Using the Fermat method, factorise 2881, and hence find $\phi(2881)$.
+
+\part%8b
+A message has been encrypted using RSA and the encoding $01 \leftrightarrow A$, $02 \leftrightarrow B$, $03 \leftrightarrow C$, etc. with exponent $e=5$ and modulus $n=2881$. The message is 235221380828. What is the plain-text message? I suggest using a free online modular exponentiation calculator, which you can find by a google search for those terms.
+\end{parts}
+
+
+
+\question%9
+Let $p \geqslant 7$ be a prime. Show that every nonzero element of $\mathbb{Z} / p \mathbb{Z}$ is a sum of two non-zero squares.
+
+\end{questions}
+
+\end{document}

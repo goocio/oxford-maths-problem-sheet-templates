@@ -1,0 +1,99 @@
+\documentclass[answers]{exam}
+\usepackage{../preamble}
+\usepackage{stmaryrd}% for \trianglelefteqslant
+\let\nsg\trianglelefteqslant% normal subgroup symbol
+
+\title{Group Theory -- Sheet 2}
+\author{YOUR NAME HERE :)}
+\date{Trinity Term 2025}
+
+
+\begin{document}
+\maketitle
+\begin{questions}
+
+\question%1
+Let $A_{\infty}$ denote the even permutations of $\mathbb{N}$ which fix all but finitely many elements: that is $A_{\infty}$ is the union \[
+	A_{\infty}=\bigcup_{n=1}^{\infty} A_{n}
+\] where $A_{n} \subset A_{n+1}$ in the natural way. Show that $A_{\infty}$ is an infinite simple group.
+
+
+
+\question%2
+Let $G$ be a group and $[G, G]$ its commutator subgroup (derived subgroup).
+\begin{parts}
+\part%2a
+Show that if $H \nsg G$ and $G / H$ is Abelian then $[G, G] \leqslant H$.
+
+\part%2b
+Conversely, show that if $[G, G] \leqslant H \leqslant G$ then $H \nsg G$ and $G / H$ is Abelian.
+\end{parts}
+
+
+
+\question%3
+A sequence \[
+	\ldots \xrightarrow{\phi_{i-2}} G_{i-1} \xrightarrow{\phi_{i-1}} G_{i} \xrightarrow{\phi_{i}} \ldots
+\] of groups and homomorphisms is called exact at $G_{i}$ if \[
+	\operatorname{ker} \phi_{i}=\operatorname{im} \phi_{i-1}
+\] Show that if $N \nsg G$ then \[
+	1 \to N \to G \to G / N \to 1
+\] is exact at $N, G$ and $G / N$, where the middle two maps are inclusion and the canonical quotient map.
+
+
+
+\question%4
+Verify Sylow's Theorems for the following groups: \[
+	S_{3},\ D_{12},\ A_{4},\ S_{4} .
+\]
+
+
+
+\question%5
+Let $P$ be a non-trivial group of order $p^{m}$ where $p$ is prime (so $P$ is a `$p$-group').
+\begin{parts}
+\part%5a
+By considering the conjugation action of $P$ on itself prove that the centre \[
+	Z(P)=\{z \in P: z x=x z \text { for all } x \in P\}
+\] is nontrivial.
+
+\part%5b
+Deduce, using induction on $m$, that $P$ is solvable. What can you say if $m=2$?
+\end{parts}
+
+
+
+\question%6
+Show that every group of order 350 is solvable.
+
+
+
+\question%7
+Let $G$ be a group of order 30.
+\begin{parts}
+\part%7a
+Show that either:
+(1) there is a normal subgroup $N$ of order 5 and a subgroup $H$ of order 3, or
+(2) there is a normal subgroup $N$ of order 3 and a subgroup $H$ of order 5.
+Deduce that $G$ has a normal subgroup $K$ isomorphic to $C_{15}$.
+
+\part%7b
+Let $y$ be a generator of $K$ and let $x$ be an order 2 element. Show that \[
+	G=\{x^i y^j: 0 \leqslant i \leqslant 1,\ 0 \leqslant j \leqslant 14\}
+\]
+
+\part%7c
+Let $\psi \in \operatorname{Aut}(K)$ satisfy $\psi^{2}=i d_{K}$. Show that $\psi: y \mapsto y^i$ where $i \in\{1,4,11,14\}$.
+
+\part%7d
+Deduce that there are exactly four groups of order 30, up to isomorphism.
+\end{parts}
+
+
+
+\question%8
+Find all groups of order 2023.
+
+\end{questions}
+
+\end{document}

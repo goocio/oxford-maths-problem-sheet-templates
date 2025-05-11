@@ -1,0 +1,115 @@
+\documentclass[answers]{exam}
+\usepackage{../preamble}
+\usepackage{stmaryrd}% for \trianglelefteqslant
+\let\nsg\trianglelefteqslant% normal subgroup symbol
+
+\title{Group Theory -- Sheet 1}
+\author{YOUR NAME HERE :)}
+\date{Trinity Term 2025}
+
+
+\begin{document}
+\maketitle
+\begin{questions}
+
+\question%1
+Let $K \nsg G$ and let $\bar{H} \leqslant G / K$. Let $\pi: G \to G / K$ denote the quotient map $g \mapsto g K$. Show that \[
+	H=\pi^{-1}(\bar{H})=\{g \in G: g K \in \bar{H}\}
+\] is a subgroup of $G$, containing $K$ as a normal subgroup, with $H / K=\bar{H}$. Show further that if $\bar{H} \nsg G / K$ then $H \nsg G$.
+
+
+
+\question%2
+The dihedral group $D_{2 n}$ has presentation \[
+	\langle a, b \mid a^n=b^2=1, b a b^{-1}=a^{-1}\rangle.
+\] Verify that this group has $2 n$ elements, all of the form $a^i$ or $b a^i$, and that $(b a^i)^2=1$. Interpret this geometrically.
+
+
+
+\question%3
+Identify the following groups from their presentation:
+\begin{parts}
+\part%3a
+$G_1=\langle x \mid x^6=1\rangle$;
+
+\part%3b
+$G_2=\langle x, y \mid x y=y x\rangle$;
+
+\part%3c
+$G_3=\langle x, y \mid x^3 y=y^2 x^2=x^2 y\rangle$;
+
+\part%3d
+$G_4=\langle x, y \mid x y=y x, x^5=y^3\rangle$ [\emph{you may wish to consider the homomorphism $\mathbb{Z}^2 \to \mathbb{Z}$ given by $(a, b) \mapsto 3 a+5 b$}];
+
+\part%3e
+$G_5=\langle x, y \mid x y=y x, x^4=y^2\rangle$.
+\end{parts}
+
+
+
+\question%4
+Let $G=\langle x, y \mid x^2=y^2=1\rangle$.
+\begin{parts}
+\part%4a
+Let $z=x y$. Show that every element of $G$ can be written as $z^k$ or $y z^k$ where $k$ is an integer.
+
+\part%4b
+Deduce that $G$ is isomorphic to the \emph{infinite dihedral group} $D_\infty$, namely the isometry group of the integers $\mathbb{Z}$, considered as a subset of the real line with the Euclidean metric.
+
+\part%4c
+Show that \[
+	G=\langle y, z \mid y^2=1, y z y^{-1}=z^{-1}\rangle.
+\] is another presentation of the group.
+\end{parts}
+
+
+
+\question%5
+Let $G$ be a non-Abelian group of order 8.
+\begin{parts}
+\part%5a
+Show that $G$ has an element $a$ of order 4.
+
+\part%5b
+Let $A=\langle a\rangle$ and let $b \in G-A$. Show that $b a b^{-1}=a^{-1}$ and either $b^2=1$ or $b^2=a^2$.
+
+\part%5c
+\begin{subparts}
+\subpart%5ci
+Deduce that there are, up to isomorphism, exactly two non-Abelian groups of order 8, and five groups of order 8 in total.
+
+\subpart%5cii
+Show that one of the non-Abelian groups may be identified with the quaternion group \[
+	Q_8=\{ \pm 1, \pm i, \pm j, \pm k\},
+\] where we have the usual quaternionic relations \[
+	i^2=j^2=k^2=-1 \quad: \quad i j=k=-j i.
+\]
+\end{subparts}
+\end{parts}
+
+
+
+\question%6
+Write down all possible composition series of the following groups and verify the Jordan-Hölder Theorem for them: \[
+	C_{18}, \quad D_{10}, \quad D_8, \quad Q_8.
+\]
+
+
+
+\question%7
+Let $H$ and $K$ be subgroups of a group $G$. Show that \[
+	H K=\{h k: h \in H, k \in K\}
+\] is a subgroup of $G$ if and only if $H K=K H$.
+
+
+\question%8
+Show that $(\mathbb{Q},+)$ is not finitely generated.
+
+
+
+\question%9
+Let $G$ be a group all of whose non-identity elements have order 2. Show that $G$ is abelian. Give an example of a non-abelian group, all of whose non-identity elements have order 3.
+
+\end{questions}
+
+\end{document}

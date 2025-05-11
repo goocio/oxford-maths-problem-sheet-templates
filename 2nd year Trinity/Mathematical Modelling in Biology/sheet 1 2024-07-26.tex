@@ -1,0 +1,183 @@
+\documentclass[answers]{exam}
+\usepackage{../preamble}
+
+\title{Mathematical Modelling in Biology -- Sheet 1}
+\author{YOUR NAME HERE :)}
+\date{Trinity Term 2025}
+
+
+\begin{document}
+\maketitle
+\begin{questions}
+
+\question%1
+A model for harvesting a population takes the form: \[
+	\frac{\mathrm{d} N}{\mathrm{~d} t}=r N\left(1-\frac{N}{K}\right)-Y_{0}
+\] where $N(t)$ is the population density at time $t$, and $r, K$ and $Y_{0}$ are positive constants.
+\begin{parts}
+\part%1a
+Explain why this is called a constant yield model.
+
+\part%1b
+Show that for $Y_{0}<\frac{r K}{4}$, this equation has two steady states, and explain graphically why one of these steady states is linearly stable while the other is linearly unstable.
+
+\part%1c
+Show that the recovery time for harvesting at a yield $Y_{0}$, $T_{R}(Y_{0})$, satisfies \[
+	\frac{T_{R}(Y_{0})}{T_{R}(0)}=\frac1{(1-\frac{Y_{0}}{Y_{M}})^{\frac12}}
+\] for $Y_{0}<Y_{M}$ and $Y_{M}=\frac{r K}{4}$.
+
+\part%1d
+Why is this harvesting approach worse than the constant effort approach if we aim for maximum yield $(Y_M)$.
+
+\part%1e
+Explain why this model is unrealistic for $Y_{0}>Y_{M}$.
+
+\part%1f
+Why might you have anticipated right from the outset that this model could be unrealistic in certain circumstances?
+\end{parts}
+
+
+\question%2
+A continuous-time model for the evolution of a prey species (density $N(t)$, where $t$ is time), takes the form: \[
+	\frac{\mathrm{d} N}{\mathrm{~d} t}=R N\left(1-\frac{N}{K}\right)-P\left(1-\exp \left[-\frac{N^2}{\epsilon A^2}\right]\right)
+\] where $0<\epsilon \ll 1$ and $R, K, P$ and $A$ are positive constants.
+\begin{parts}
+\part%2a
+Explain the biological interpretation of the different terms in the model.
+
+\part%2b
+If the units of $N$ are density and those of $t$ are time, what are the dimensions of $R$, $K$, $P$, $A$ and $\epsilon$? Hence show that \[
+	u=\frac{N}{A}, \quad \tau=\frac{P}{A} t, \quad r=\frac{A R}{P}, \quad q=\frac{K}{A}
+\] are non-dimensional.
+
+\part%2c
+Show that the model can be non-dimensionalised to give \[
+	\frac{\mathrm{d} u}{\mathrm{~d} \tau}=r u\left(1-\frac uq\right)-\left(1-\exp \left[-\frac{u^2}{\epsilon}\right]\right)
+\] where $r$ and $q$ are positive parameters.
+
+\part%2d
+If $r q>4$, show that it is possible to have three positive steady states.
+
+\part%2e
+Could this model exhibit hysteresis? Justify your answer.
+\end{parts}
+
+
+\question%3
+Suppose that the evolution of a population can be described by a discrete-time Ricker model of the form \[
+	N_{t+1}=N_{t} \exp \left[r\left(1-\frac{N_{t}}{K}\right)\right]
+\] where $0<r<2$.
+\begin{parts}
+\part%3a
+Describe the biological interpretation of the model.
+
+\part%3b
+Determine any non-negative steady states and their linear stability.
+
+\part%3c
+Construct a cobweb map the model and discuss the global qualitative behaviour of the solutions.
+\end{parts}
+
+
+
+\question%4
+Consider the effect of regularly harvesting the population of a species for which the model equation is \[
+	N_{t+1}=\frac{b N_t^2}{1+N_t^2}-E N_t\coloneqq f(N_t ; E)
+\] where $E$ is a measure of the effort expended in obtaining the harvest, $E N_{t}$, and the parameters are such that $b>2$ and $E>0$.
+\begin{parts}
+\part%4a
+Determine the steady states and hence show that if the effort $E>E_{M}=(b-2) / 2$, then no harvest is obtained.
+
+\part%4b
+If $E<E_{M}$ show by cob-webbing $N_{t+1}=f(N_{t} ; E)$, or otherwise, that the model is realistic only if the population, $N_{t}$, always lies between two positive values for which you should find analytic expressions (but do not solve explicitly).
+
+\part%4c
+Demonstrate the existence of a tangent bifurcation as $E \to E_M$.
+\end{parts}
+
+
+
+\question%5
+The interaction between two populations with densities $N_1$ and $N_2$ is modelled by \begin{align*}
+	\frac{\mathrm{d} N_1}{\mathrm{d} t} &= r N_1\left(1-\frac{N_2}K\right)-a N_1 N_2\left(1-\exp \left[-b N_1\right]\right) \\
+	\frac{\mathrm{d} N_2}{\mathrm{d} t} &= -d N_2+e N_2(1-\exp [-b N_1])
+\end{align*} where $a$, $b$, $d$, $e$, $r$, and $K$ are positive constants.
+\begin{parts}
+\part%5a
+What type of interaction exists between $N_1$ and $N_2$? What do the various terms imply ecologically?
+
+\part%5b
+Non-dimensionalise the system by writing \[
+	u=\frac{N_1}K, \quad v=\frac{a N_2}r, \quad \tau=r t, \quad \alpha=\frac er, \quad \delta=\frac dr, \quad \beta=b K.
+\]
+
+\part%5c
+Determine the non-negative equilibria and note any parameter restrictions.
+
+\part%5d
+Discuss the linear stability of the equilibria.
+
+\part%5e
+Show that a non-zero $N_2$ population can exist if $\beta>\beta_{c}=-\ln (1-\delta / \alpha)$.
+
+\part%5f
+Briefly describe the bifurcation behaviour as $\beta$ increases with $0<\delta / \alpha<1$.
+\end{parts}
+
+
+
+\section*{Optional}
+\question%6
+Consider a lake with some fish attractive to people who like to fish (from here on denoted ``fishers"). We wish to model the fish-fishers interactions under the following assumptions:
+\begin{itemize}
+	\item the fish population grows logistically in the absence of fishing;
+	\item the presence of fishers depresses the fish growth rate at a rate jointly proportional to the size of the fish and fishers populations;
+	\item fishing crew are attracted to the lake at a rate directly proportional to the number of fish in the lake;
+	\item fishers are discouraged from the lake at a rate directly proportional to the number of fishers already there.
+\end{itemize}
+\begin{parts}
+\part%6a
+Write down a mathematical model for this situation, clearly defining your terms.
+
+\part%6b
+Show that a non-dimensionalised version of the model is \[
+	\frac{\mathrm{d} u}{\mathrm{~d} \tau}=r u(1-u)-u v \qquad
+	\frac{\mathrm{~d} v}{\mathrm{~d} \tau}=\beta u-v
+\] where $u$ and $v$ represent the non-dimensionalised fish and fishers populations, respectively.
+
+\part%6c
+Calculate the steady states of the system and determine their stability.
+
+\part%6d
+Draw the phase plane, including the nullclines and phase trajectories.
+
+\part%6e
+What would be the effect of adding fish to the lake at a constant rate?
+\end{parts}
+
+
+
+\question%7
+\begin{parts}
+\part%7a
+What kind of interactive behaviour between two populations, $N_1$ and $N_2$, is suggested by the model \begin{align*}
+	\frac{\mathrm{d} N_1}{\mathrm{d} t} &= r_1 N_1\left(1-\frac{N_1}{K_1+b_{12} N_2}\right) \\
+\frac{\mathrm{d} N_2}{\mathrm{d} t} &= r_2 N_2\left(1-\frac{N_2}{K_2+b_{21} N_1}\right)
+\end{align*} where $r_1$, $r_2$, $K_1$, $K_2$, $b_{12}$, and $b_{21}$ are positive constants?
+
+\part%7b
+Show that, with appropriate non-dimensionalisation, this model takes the form \begin{align*}
+\frac{\mathrm{d} u_1}{\mathrm{~d} \tau} &= u_1\left(1-\frac{u_1}{1+\alpha_{12} u_2}\right) \\
+\frac{\mathrm{d} u_2}{\mathrm{~d} \tau} &= \rho u_2\left(1-\frac{u_2}{1+\alpha_{21} u_1}\right)
+\end{align*} where $u_1=\frac{N_1}{K_1}$, $u_2=\frac{N_2}{K_2}$, $\tau$ is non-dimensionalised time, and $\alpha_{12}$, $\alpha_{21}$, and $\rho$ are positive parameters.
+
+\part%7c
+Determine the steady states and their linear stability, taking care to list any restrictions on parameters.
+
+\part%7d
+By drawing the nullclines and sketching phase trajectories, briefly discuss the behaviour of the model for the cases $\alpha_{12} \alpha_{21}<1$ and $\alpha_{12} \alpha_{21}>1$.
+\end{parts}
+
+\end{questions}
+
+\end{document}

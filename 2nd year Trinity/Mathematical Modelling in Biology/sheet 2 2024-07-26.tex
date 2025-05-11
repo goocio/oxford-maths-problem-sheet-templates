@@ -1,0 +1,116 @@
+\documentclass[answers]{exam}
+\usepackage{../preamble}
+
+\title{Mathematical Modelling in Biology -- Sheet 2}
+\author{YOUR NAME HERE :)}
+\date{Trinity Term 2025}
+
+
+\begin{document}
+\maketitle
+\begin{questions}
+
+\question%1
+Recall from lecture 5 that the non-dimensionalised Michael-Menten model takes the form: \begin{align*}
+	\frac{d u}{d \tau} & =-u+(u+K-\lambda) v \\
+	\varepsilon \frac{d v}{d \tau} & =u-(u+K) v
+\end{align*} where $u(\tau), v(\tau)$ are, respectively, non-dimensionalised substrate and complex concentrations, $K$ and $\lambda$ are positive parameters, with $K>\lambda$, and $0<\varepsilon \ll 1$. The initial conditions are $u(0)=1$, $v(0)=0$.
+\begin{parts}
+\part%1a
+Show that the only steady state is $(u, v)=(0,0)$ and that it is linearly stable.
+
+\part%1b
+On the $(u, v)$ phase plane, plot the nullclines and the phase trajectory from the initial condition, labelling the fast initial transient and the quasi-steady state portions of the trajectory.
+\end{parts}
+
+
+
+\question%2
+An allosteric enzyme $E$ reacts with a substrate $S$ to produce a product $P$ according to the mechanism \begin{align*}
+	S+E&\xrightleftharpoons[k_{-1}]{k_1} C_1\xrightarrow{k_2} E+P\\
+	S+C_1&\xrightleftharpoons[k_{-3}]{k_3} C_2\xrightarrow{k_4} C_1+P
+\end{align*} where the $k$s are (positive) rate constants and $C_1$ and $C_2$ are enzyme-substrate complexes. With lower case letters denoting concentrations, and intial conditions $s(0)=s_0, e(0)=$ $e_0, c_1(0)=c_2(0)=p(0)=0$ (with $s_0$ and $e_0$ both greater than 0).
+\begin{parts}
+\part%2a
+Write down the differential equation model based on the Law of Mass Action.
+
+\part%2b
+If $\varepsilon=\frac{e_0}{s_0} \ll 1$, $\tau=k_1 e_0 t$, $u=\frac{s}{s_0}$, $v_{i}=\frac{c_{i}}{e_0}$, $i=1,2$, show that the non-dimensional model reduces to \[
+	\frac{\mathrm d u}{\mathrm d \tau}=f\left(u, v_1, v_2\right), \quad \varepsilon \frac{\mathrm d v_{i}}{\mathrm d \tau}=g_{i}\left(u, v_1 ; v_2\right), \quad i=1,2
+\] and determine $f, g_1$ and $g_2$.
+
+\part%2c
+Hence show that for $\tau \gg \varepsilon$ the uptake of $u$ is given by \[
+	\frac{\mathrm d u}{\mathrm d r}=-r(u)=-u \frac{A+B U}{C+u+D u^2},
+\] where $A, B, C$ and $D$ are positive parameters which you should find. (You may simply quote the quasi-steady-state assumption.)
+
+\part%2d
+When $k_2=0$, sketch $r(u)$ as a function of $u$ and compare it with the Michaelis-Menten uptake.
+\end{parts}
+
+
+
+\question%3
+A simple oscillator system takes the form: \begin{align*}
+	\varepsilon \frac{\mathrm d u}{\mathrm d t} & =v-f(u) \\
+	\frac{\mathrm d v}{\mathrm d t} & =-u,
+\end{align*} where $u(t)$ and $v(t)$ can take negative values, and $\varepsilon$ is a small parameter, $0<\varepsilon \ll 1$. Assume that $f(u)=\frac13 u^3-u$ (the well-known Van der Pol oscillator).
+\begin{parts}
+\part%3a
+Draw the $(u, v)$ phase plane and illustrate the fast and slow portions of the limit cycle trajectory.
+
+\part%3b
+Draw the corresponding graphs of $u(t)$ and $v(t)$ as functions of time.
+
+\part%3c
+On the phase plane, show that one of the slow (quasi-steady state) portions goes from approximately $(2, \frac23)$ to $(1,-\frac23)$.
+
+\part%3d
+Exploiting the fact that along this portion, $v$ is approximately $\frac13 u^3-u$, use the differential equation for $v$ to show that the time taken to travel between the two points is approximately $T=\frac32-\ln 2$.
+
+\part%3e
+Hence deduce that the period of oscillation is approximately $3-2 \ln 2$.
+\end{parts}
+
+
+
+\question%4
+An animal population is prone to a fatal disease. There is a limited vaccine that creates immunity in the susceptible population but has no effect on infected animals. The higher the number of infected animals observed, the more vigorously vaccinations are administered. Let $I(t)$ denote the infected animal population, $S(t)$ the susceptible animal population, $V(t)$ the vaccinated animal population and $R(t)$ the dead animal population at time $t$. An ordinary differential equation description of these interactions can be written \begin{align*}
+	\frac{\mathrm{d} S}{\mathrm{d} t} & =-\beta S I-p S I \\
+	\frac{\mathrm{d} I}{\mathrm{d} t} & =\beta S I-a I \\
+	\frac{\mathrm{d} R}{\mathrm{d} t} & =a I \\
+	\frac{\mathrm{d} V}{\mathrm{d} t} & =p I S
+\end{align*} where $\beta, p$ and $a$ are positive constants.
+\begin{parts}
+\part%4a
+Explain the biological interpretation of each of the terms in the model.
+
+\part%4b
+Non-dimensionalise the model to give \begin{align*}
+	\frac{\mathrm{d} s}{\mathrm{~d} \tau}&=-s i(1+\eta), \\
+	\frac{\mathrm{d} i}{\mathrm{~d} \tau}&=i(s-1), \\
+	\frac{\mathrm{d} r}{\mathrm{~d} \tau}&=i, \\
+	\frac{\mathrm{~d} v}{\mathrm{~d} \tau}&=\eta i s,
+\end{align*} where the non-dimensionalised populations are indicated using corresponding lowercase letters, $\tau$ is non-dimensional time and the parameter $\eta>0$ should be given.
+
+\part%4c
+Suppose that the initial conditions are \[
+	s(0)=s_0, \quad i(0)=i_0, \quad r(0)=0, \quad v(0)=0,
+\] where $s_0>0$ and $i_0>0$, and assume that $i \to 0$ as $t \to \infty$.
+\begin{subparts}
+\subpart%4ci
+Explain why the total number of animals that die from the disease is given (non-dimensionally) by $r(\infty)$. By considering $\mathrm{d} i / \mathrm{d} s$ and $\mathrm{d} v / \mathrm{d} s$, determine this quantity, giving your answer in terms of $i_0, s_0, \eta$ and $s(\infty)$. [\emph{Hint: it may help to find a conservation equation.}]
+
+\subpart%4cii
+From the above, we have that \[
+	-(1+\eta) i_0=\ln s(\infty)-\ln s_0-s(\infty)+s_0.
+\] Hence, or otherwise, show that for $\eta \gg 1$ the number of susceptibles (nondimensionalised) left is approximately of order $e^{-\eta i_0}$. Hence show that the number of animals that die from the disease (non-dimensionalised) is approximately $i_0+s_0 / \eta$. What is the approximate number of deaths in dimensional terms?
+
+\subpart%4ciii
+Briefly discuss the biological insights this yields.
+\end{subparts}
+\end{parts}
+
+\end{questions}
+
+\end{document}

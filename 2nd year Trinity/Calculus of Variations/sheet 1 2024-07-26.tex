@@ -1,0 +1,87 @@
+\documentclass[answers]{exam}
+\usepackage{../preamble}
+
+\title{Calculus of Variations -- Sheet 1}
+\author{YOUR NAME HERE :)}
+\date{Trinity Term 2025}
+
+\renewcommand*{\dd}{\mathop{}\!\mathrm d} % differential element
+\renewcommand*{\dv}[2]{\frac{\mathrm d#1}{\mathrm d#2}} % derivative
+\renewcommand*{\pdv}[2]{\frac{\partial #1}{\partial #2}} % partial derivative
+
+
+\begin{document}
+\maketitle
+\begin{questions}
+
+\question%1
+Find the extremals of the following functionals when $y$ is prescribed at $x=a$ and $x=b$:
+\begin{parts}
+\part%1a
+$\displaystyle\int_a^b(y^2-(y')^2-2 y \cos 2 x) \dd x$;
+
+\part%1b
+$\displaystyle\int_a^b \frac{(y')^2}{x^3} \dd x$;
+
+\part%1c
+$\displaystyle\int_a^b(y^{2}+(y')^2-2 y e^x) \dd x$.
+\end{parts}
+
+
+
+\question%2
+Find the extremals of:
+\begin{parts}
+\part%2a
+$\displaystyle\int_0^1(y^{2}+y'+(y')^2) \dd x$ subject to $y(0)=0$, $y(1)=1$;
+
+\part%2b
+$\displaystyle\int_{0}^{1} \frac{(y')^2}{x^{3}} \dd x$ subject to $y(0)=1$, $y(1)=2$;
+
+\part%2c
+$\displaystyle\int_{0}^{1}(y')^2 \dd x+\{y(1)\}^{2}$ subject to $y(0)=1$. [\emph{Hint: start from first principles by adapting the derivation of the Euler-Lagrange equation and natural boundary conditions in lectures, and in question 3.}]
+\end{parts}
+
+
+
+\question%3
+\begin{parts}
+\part%3a
+Show that the problem of finding extremals of \[
+	J[y]=\int_{a}^{b} F(x, y, y') \dd x
+\] among all twice continuously differentiable functions $y$ for which $y(a)$ is prescribed, leads to the Euler-Lagrange equation \[
+	\dv{}x\left(\pdv F{y'}\right)=\pdv Fy,
+\] and to the natural boundary condition \[
+	\left.\pdv F{y'}\right|_{x=b}=0.
+\]
+
+\part%3b
+Find the extremal of $\displaystyle\int_0^1\left(\frac12 (y')^2+y y'+y'+y\right) \dd x$ among all functions $y$ with $y(0)=1$.
+\end{parts}
+
+
+
+\question%4
+Consider the Euler-Lagrange equation of the functional \[
+	\int_{x_0}^{x_1} F(x, y, y', y'') \dd x .
+\] Show that when $\partial F / \partial y \equiv 0$ the Euler-Lagrange equation has the first integral \[
+	\pdv F{y'}-\dv{}x \pdv F{y''}=\text{constant},
+\] and that when $\partial F / \partial x \equiv 0$ the Euler-Lagrange equation has the first integral \[
+	F-y'\left(\pdv F{y'}-\dv{}x \pdv F{y''}\right)-y'' \pdv F{y''}=\text{constant}.
+\]
+
+
+
+\question%5
+Find the extremals of the functional \[
+	\int_0^{\pi / 2}((y')^2+(z')^2+2 y z) \dd x
+\] subject to the boundary conditions \[
+	y(0)=0, \quad
+	y\left(\frac\pi2\right)=1, \quad
+	z(0)=0, \quad
+	z\left(\frac\pi2\right)=1 .
+\]
+
+\end{questions}
+
+\end{document}

@@ -22,7 +22,7 @@
 	
 	
 	
-+ /* 3 */ Show that a graph is minimally connected if and only if it is maximally acyclic. [_'Minimally $P$' means '$P$ holds but $P$ doesn't hold if we delete any edge'; 'maximally $P$' means '$P$ holds but $P$ doesn't hold if we add any new edge in the same set of vertices'._]
++ /* 3 */ Show that a graph is a tree if and only if it is maximally acyclic.
 	
 	
 	
