@@ -106,6 +106,10 @@ def typstifyMacros(string):
     # 1-arg macros
     for latex_macro, typst_pattern in single_arg_macro_dict.items():
         string = typstifyArguments(latex_macro, 1, typst_pattern, string)
+    # replace _(1) with _1 and ^(1) with ^1 etc
+    string = regex.sub(r"([_\^])\((\d)\)", r"\1\2", string)
+    # TODO: maybe replace `(\d) (\d)` with `\1\2` (iteratively, e.g. 1 0 0 -> 1 00 since matches don't overlap)
+    # probably NOT safe to do, e.g. prime factorizations 2^5 3^7 5^2 has necessary spaces between numbers
 
     # 2-arg macros
     string = typstifyArguments(r"\\frac", 2, r"(\2\3\4\5)/(\7\8\9\10)", string)
@@ -115,7 +119,8 @@ def typstifyMacros(string):
     # macros with args having been replaced, it will never be correct to have <control word><number>
     string = regex.sub(r"(\\[a-zA-Z]+)(?=[0-9])", r"\1 ", string)
 
-    ### 0-arg macros; needs to be after because it breaks arg pattern for control sequences to not start with \
+    # 0-arg macros; needs to be after because it breaks arg pattern for control sequences to not start with \
+    # sorted in order of decreasing length, since macros aren't a prefix code, e.g. \leq and \leqslant
     for latex_command, typst_command in sorted(macro_dict.items(), key=lambda item: len(item[0]), reverse=True):
         string = string.replace(latex_command, typst_command)
 

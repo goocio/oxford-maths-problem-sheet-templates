@@ -39,10 +39,10 @@
     edge(<1>,<5>,$2$),
     edge(<2>,<4>,$1$),
     edge(<2>,<5>,$1$),
-    edge(<2>,<6>,$3$),
-    edge(<3>,<5>,$2$),
-    edge(<4>,<6>,$3$),
-    edge(<5>,<6>,$1$),
+    edge(<2>,<6>,$3$,label-side:left),
+    edge(<3>,<5>,$2$,label-side:right),
+    edge(<4>,<6>,$3$,label-side:left),
+    edge(<5>,<6>,$1$,label-side:right),
   )) Carefully describe the steps of the algorithm and the tentative distance $D$-values until they are finalized. Except for $v_(3)$, state the parent of every vertex. Finally, describe an $ell$-shortest path tree rooted at $v_(3)$.
 	
 	
