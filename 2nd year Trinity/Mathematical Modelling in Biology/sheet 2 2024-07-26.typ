@@ -25,18 +25,18 @@
 	
 	
 + /* 2 */ An allosteric enzyme $E$ reacts with a substrate $S$ to produce a product $P$ according to the mechanism $ 
-		S+E&stretch(harpoons.rtlb)_(k_(-1))^(k_1) C_1 stretch(harpoons.rtlb)^(k_2) E+P\ 
-		S+C_1&stretch(harpoons.rtlb)_(k_(-3))^(k_3) C_2 strech(harpoons.rtlb)^(k_4) C_1+P
-	 $ where the $k$s are (positive) rate constants and $C_1$ and $C_2$ are enzyme-substrate complexes. With lower case letters denoting concentrations, and intial conditions $s(0)=s_0, e(0)=$ $e_0, c_1(0)=c_2(0)=p(0)=0$ (with $s_0$ and $e_0$ both greater than 0).
+		S+E&stretch(harpoons.rtlb)_(k_(-1))^(k_1) C_1 stretch(->)^(k_2) E+P\ 
+		S+C_1&stretch(harpoons.rtlb)_(k_(-3))^(k_3) C_2 stretch(->)^(k_4) C_1+P
+	 $ where the $k$s are (positive) rate constants and $C_1$ and $C_2$ are enzyme-substrate complexes. With lower case letters denoting concentrations, and intial conditions $s(0)=s_0$, $e(0)=e_0$, $c_1(0)=c_2(0)=p(0)=0$ (with $s_0$ and $e_0$ both greater than 0).
 	#parts[
 		+ /* 2a */ Write down the differential equation model based on the Law of Mass Action.
 			
-		+ /* 2b */ If $epsilon=(e_0)/(s_0) << 1$, $tau=k_1 e_0 t$, $u=(s)/(s_0)$, $v_(i)=(c_(i))/(e_0)$, $i=1,2$, show that the non-dimensional model reduces to $ 
-				(dif u)/(dif tau)=f (u, v_1, v_2 ), quad epsilon (dif v_(i))/(dif tau)=g_(i)(u, v_1 ; v_2 ), quad i=1,2
+		+ /* 2b */ If $epsilon=(e_0)/(s_0) << 1$, $tau=k_1 e_0 t$, $u=(s)/(s_0)$, $v_i=(c_i)/(e_0)$, $i=1,2$, show that the non-dimensional model reduces to $ 
+				(dif u)/(dif tau)=f (u, v_1, v_2 ), quad epsilon (dif v_(i))/(dif tau)=g_i (u, v_1 , v_2 ), quad i=1,2
 			 $ and determine $f, g_1$ and $g_2$.
 			
 		+ /* 2c */ Hence show that for $tau >> epsilon$ the uptake of $u$ is given by $ 
-				(dif u)/(dif r)=-r(u)=-u (A+B U)/(C+u+D u^2),
+				(dif u)/(dif tau)=-r(u)=-u (A+B U)/(C+u+D u^2),
 			 $ where $A, B, C$ and $D$ are positive parameters which you should find. (You may simply quote the quasi-steady-state assumption.)
 			
 		+ /* 2d */ When $k_2=0$, sketch $r(u)$ as a function of $u$ and compare it with the Michaelis-Menten uptake.
@@ -47,15 +47,15 @@
 + /* 3 */ A simple oscillator system takes the form: $ 
 		epsilon (dif u)/(dif t) & =v-f(u) \ 
 		(dif v)/(dif t) & =-u,
-	 $ where $u(t)$ and $v(t)$ can take negative values, and $epsilon$ is a small parameter, $0<epsilon << 1$. Assume that $f(u)=(1)/(3) u^3-u$ (the well-known Van der Pol oscillator).
+	 $ where $u(t)$ and $v(t)$ can take negative values, and $epsilon$ is a small parameter, $0<epsilon << 1$. Assume that $f(u)=1/3 u^3-u$ (the well-known Van der Pol oscillator).
 	#parts[
 		+ /* 3a */ Draw the $(u, v)$ phase plane and illustrate the fast and slow portions of the limit cycle trajectory.
 			
 		+ /* 3b */ Draw the corresponding graphs of $u(t)$ and $v(t)$ as functions of time.
 			
-		+ /* 3c */ On the phase plane, show that one of the slow (quasi-steady state) portions goes from approximately $(2, (2)/(3))$ to $(1,-(2)/(3))$.
+		+ /* 3c */ On the phase plane, show that one of the slow (quasi-steady state) portions goes from approximately $(2, 2/3)$ to $(1,-2/3)$.
 			
-		+ /* 3d */ Exploiting the fact that along this portion, $v$ is approximately $(1)/(3) u^3-u$, use the differential equation for $v$ to show that the time taken to travel between the two points is approximately $T=(3)/(2)-ln 2$.
+		+ /* 3d */ Exploiting the fact that along this portion, $v$ is approximately $1/3 u^3-u$, use the differential equation for $v$ to show that the time taken to travel between the two points is approximately $T=3/2-ln 2$.
 			
 		+ /* 3e */ Hence deduce that the period of oscillation is approximately $3-2 ln 2$.
 	]
